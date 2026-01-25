@@ -10,9 +10,9 @@
 
 <style>
 :root{
-  --green:#0E6B4F;
-  --blue:#0B1F33;
-  --gray:#cfcfcf;
+  --green:#1fa37a;
+  --blue:#0b1f33;
+  --gray:#d6d6d6;
   --white:#ffffff;
 }
 
@@ -54,7 +54,10 @@ header{
   letter-spacing:1px;
 }
 
-.logo img{height:42px}
+.logo img{
+  height:42px;
+  display:block;
+}
 
 .nav-links{
   list-style:none;
@@ -84,45 +87,45 @@ header{
 
 .nav-links a:hover::after{width:100%}
 
-/* =================  ================= */
+/* ================= HERO ================= */
 .hero{
   margin-top:90px;
-  height:75vh;
+  min-height:75vh;
   background:
-    linear-gradient(rgba(11,31,51,.7),rgba(11,31,51,.7)),
+    linear-gradient(rgba(11,31,51,.75),rgba(11,31,51,.75)),
     url("images/hero-bg.jpg") center/cover no-repeat;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
-  padding:2rem;
+  padding:3rem 2rem;
 }
 
-.hero-box{
-  padding:3rem 4rem;
+.hero-content{
+  max-width:1100px;
 }
-  .hero-title{
-  font-size:5.2rem;
+
+.hero-title{
+  font-size:5.6rem;
   font-weight:800;
+  letter-spacing:6px;
   color:var(--green);
-  letter-spacing:5px;
 }
 
 .hero-subtitle{
-  margin-top:1rem;
-  font-size:1.2rem;
-  letter-spacing:3px;
-  color:#d0d0d0;
+  margin-top:.8rem;
+  font-size:1.1rem;
+  letter-spacing:4px;
+  color:var(--gray);
 }
 
 .hero-claim{
-  margin-top:2.2rem;
-  font-size:2.8rem;
+  margin-top:2.5rem;
+  font-size:3rem;
   font-weight:500;
   color:var(--green);
   line-height:1.3;
 }
-
 
 /* ================= CONTENT BLOCKS ================= */
 .section{
@@ -137,7 +140,9 @@ header{
   gap:4rem;
 }
 
-.block:nth-child(even){flex-direction:row-reverse}
+.block:nth-child(even){
+  flex-direction:row-reverse;
+}
 
 .block-text{
   flex:1;
@@ -145,7 +150,7 @@ header{
 
 .block-text h3{
   margin:0 0 1.2rem;
-  font-size:2.4rem;
+  font-size:2.6rem;
   color:var(--green);
   letter-spacing:2px;
 }
@@ -161,7 +166,7 @@ header{
 
 .block-image img{
   width:100%;
-  height:280px;
+  height:300px;
   object-fit:cover;
   border-radius:6px;
   box-shadow:0 10px 30px rgba(0,0,0,.2);
@@ -189,7 +194,8 @@ form label{
   margin-top:1.2rem;
 }
 
-form input,form textarea{
+form input,
+form textarea{
   width:100%;
   padding:.7rem;
   margin-top:.3rem;
@@ -197,7 +203,9 @@ form input,form textarea{
   font-family:'Montserrat',sans-serif;
 }
 
-form textarea{min-height:120px}
+form textarea{
+  min-height:120px;
+}
 
 form button{
   margin-top:2rem;
@@ -214,7 +222,7 @@ form button{
 footer{
   background:var(--blue);
   color:#ccc;
-  padding:4rem 2rem 1.5rem;
+  padding:4rem 2rem 2rem;
 }
 
 .footer-inner{
@@ -229,7 +237,7 @@ footer{
 .footer-brand h3{
   margin:0;
   color:var(--green);
-  font-size:1.4rem;
+  font-size:1.6rem;
 }
 
 .footer-brand h4{
@@ -243,7 +251,9 @@ footer{
   padding:0;
 }
 
-.footer-links li{margin:.6rem 0}
+.footer-links li{
+  margin:.6rem 0;
+}
 
 .footer-links a{
   color:#ccc;
@@ -264,8 +274,10 @@ footer{
 <header>
   <nav class="navbar">
     <div class="logo">
-      <img src="images/M-2.png" alt="MANAGECH"> MANAGECH
+      <img src="images/M-2.png" alt="MANAGECH">
+      MANAGECH
     </div>
+
     <ul class="nav-links">
       <li><a href="#">Chi siamo</a></li>
       <li><a href="#">Servizi</a></li>
@@ -276,90 +288,17 @@ footer{
   </nav>
 </header>
 
-<div class="hero-box">
-  <div class="hero-title">MANAGECH</div>
-  <div class="hero-subtitle">ENGINEERING & MANAGEMENT STUDIO ASSOCIATO</div>
-  <div class="hero-claim">Ingegneria del valore, gestione della complessità.</div>
-</div>
-</div>
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-title">MANAGECH</div>
+    <div class="hero-subtitle">ENGINEERING & MANAGEMENT STUDIO ASSOCIATO</div>
+    <div class="hero-claim">
+      Ingegneria del valore, gestione della complessità.
+    </div>
+  </div>
+</section>
 
 <section class="section">
   <div class="block">
     <div class="block-text">
-      <h3>INGEGNERIA STRATEGICA</h3>
-      <p>Supportiamo decisioni complesse integrando competenze tecniche, economiche e gestionali.</p>
-    </div>
-    <div class="block-image">
-      <img src="images/processi.jpg">
-    </div>
-  </div>
-
-  <div class="block">
-    <div class="block-text">
-      <h3>GESTIONE DI GARE E COMMESSE</h3>
-      <p>Affianchiamo imprese e studi nella strutturazione e nel controllo di progetti ad alta complessità.</p>
-    </div>
-    <div class="block-image">
-      <img src="images/gare-commesse.jpg">
-    </div>
-  </div>
-
-  <div class="block">
-    <div class="block-text">
-      <h3>CONSULENZA DIREZIONALE</h3>
-      <p>Trasformiamo dati, processi e strategie in valore concreto e misurabile.</p>
-    </div>
-    <div class="block-image">
-      <img src="images/consulenza.jpg">
-    </div>
-  </div>
-</section>
-
-<section class="form-section">
-  <div class="form-wrapper">
-    <p>
-      Per informazioni e richieste di collaborazione, il nostro team è a disposizione per supportarvi.
-    </p>
-
-    <form>
-      <label>Nome*</label><input required>
-      <label>Cognome*</label><input required>
-      <label>Telefono*</label><input required>
-      <label>Email*</label><input type="email" required>
-      <label>Azienda*</label><input required>
-      <label>Ruolo in azienda*</label><input required>
-      <label>Provincia*</label><input required>
-      <label>Richiesta</label><textarea></textarea>
-      <button>Invia richiesta</button>
-    </form>
-  </div>
-</section>
-
-<footer>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <h3>MANAGECH</h3>
-      <h4>INGEGNERIA & MANAGEMENT STUDIO ASSOCIATO</h4>
-      <p>Piazza Mazzini 27 – Roma<br>
-      +39 349 390 7663<br>
-      segreteria@managech.com</p>
-    </div>
-
-    <div class="footer-links">
-      <ul>
-        <li><a href="#">Chi siamo</a></li>
-        <li><a href="#">Servizi</a></li>
-        <li><a href="contatti.html">Contatti</a></li>
-        <li><a href="#">Lavora con noi</a></li>
-        <li><a href="#">Blog</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    © 2026 MANAGECH INGEGNERIA & MANAGEMENT STUDIO ASSOCIATO | P. IVA 18387251004
-  </div>
-</footer>
-
-</body>
-</html>
+      <h3>INGEGNERIA
