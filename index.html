@@ -10,6 +10,7 @@
   --green: #1FA67A; /* verde leggibile */
   --blue: #0B1F33;  /* header e footer */
   --white: #ffffff;
+  --gray-text: #d1d1d1; /* grigio chiaro per sottotitolo */
 }
 
 html { scroll-behavior: smooth; }
@@ -17,60 +18,130 @@ body { margin:0; font-family:"Helvetica Neue", Arial, sans-serif; background: va
 
 /* ================= HEADER ================= */
 header {
-  position: fixed; top:0; width:100%; height:90px; background: var(--blue); z-index:1000;
-  display:flex; align-items:center; padding:0 2rem;
+  position: fixed;
+  top:0;
+  width:100%;
+  height:90px;
+  background: var(--blue);
+  z-index:1000;
+  display:flex;
+  align-items:center;
+  padding:0 2rem;
 }
-.navbar { display:flex; align-items:center; justify-content:space-between; width:100%; max-width:1200px; margin:0 auto; }
-
-.logo { display:flex; align-items:center; gap:0.8rem; color: var(--green); font-weight:700; font-size:1.2rem; letter-spacing:1px; }
+.navbar {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  width:100%;
+  max-width:1200px;
+  margin:0 auto;
+}
+.logo {
+  display:flex;
+  align-items:center;
+  gap:0.8rem;
+  color: var(--green);
+  font-weight:700;
+  font-size:1.2rem;
+  letter-spacing:1px;
+}
 .logo img { height:42px; }
-
-.nav-links { list-style:none; display:flex; gap:2rem; margin:0; padding:0; flex-wrap:wrap; }
+.nav-links { list-style:none; display:flex; gap:2rem; margin:0; padding:0; }
 .nav-links a { color: var(--white); text-decoration:none; font-size:0.95rem; letter-spacing:0.5px; position:relative; }
 .nav-links a::after { content:""; position:absolute; bottom:-6px; left:0; width:0; height:2px; background:var(--green); transition:width 0.3s ease; }
 .nav-links a:hover::after { width:100%; }
 
 /* ================= HERO ================= */
 .hero {
-  margin-top:90px; height:600px; 
+  margin-top:90px;
+  height:600px;
   background: linear-gradient(rgba(11,31,51,0.6), rgba(11,31,51,0.6)), url("images/hero-bg.jpg") center/cover no-repeat;
-  display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; color: var(--white); padding:0 2rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:0 2rem;
 }
-.hero h1 { font-size:4rem; margin:0; color:var(--green); letter-spacing:3px; }
-.hero h2 { font-size:1.6rem; margin:0.5rem 0 1rem 0; color: var(--white); font-weight:400; letter-spacing:1px; }
-.hero p { font-size:1.8rem; margin-top:0.5rem; max-width:800px; line-height:1.4; }
+.hero h1 {
+  font-size:4rem;
+  color: var(--green);
+  margin:0;
+  letter-spacing:3px;
+}
+.hero h2 {
+  font-size:1.6rem;
+  color: var(--gray-text);
+  margin:0.5rem 0 1rem 0;
+  font-weight:400;
+}
+.hero p {
+  font-size:2rem;
+  color: var(--green);
+  margin-top:0.5rem;
+  max-width:800px;
+  line-height:1.4;
+}
 
-/* ================= FORM HERO ================= */
-.hero form { background: rgba(255,255,255,0.95); padding:2rem; border-radius:8px; box-shadow:0 5px 15px rgba(0,0,0,0.2); max-width:600px; margin-top:2rem; }
-.hero form label { display:block; margin-top:1rem; font-weight:500; color: var(--blue); }
-.hero form input, .hero form textarea { width:100%; padding:0.6rem; margin-top:0.3rem; border-radius:5px; border:1px solid #ccc; font-size:1rem; }
-.hero form textarea { resize: vertical; height:100px; }
-.hero form button { margin-top:1.5rem; background:var(--green); color:white; font-weight:bold; border:none; padding:0.8rem 2rem; border-radius:5px; cursor:pointer; transition:0.3s; }
-.hero form button:hover { background:#138764; }
+/* ================= BLOCCI CONTENUTO ================= */
+.content-block {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  max-width:1000px;
+  margin:4rem auto;
+  padding:0 2rem;
+}
+.content-block h2 {
+  font-size:2rem;
+  color:var(--green);
+  margin-bottom:0.5rem;
+  text-transform:uppercase;
+}
+.content-block p { max-width:700px; font-size:1.4rem; line-height:1.6; }
 
-/* ================= BLOCCO CONTENUTI ALTERNATI ================= */
-.content-block { display:flex; align-items:center; justify-content:center; max-width:1200px; margin:4rem auto; padding:0 2rem; min-height:350px; font-size:1.4rem; line-height:1.6; }
-.content-block:nth-child(even) { flex-direction:row-reverse; background:#f5f5f5; }
-.content-block h2 { font-size:2rem; color:var(--green); margin-bottom:0.5rem; }
-.content-block p { max-width:600px; }
+/* ================= FORM ================= */
+form {
+  background: #f9f9f9;
+  padding:2rem;
+  border-radius:8px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  max-width:700px;
+  margin:2rem auto;
+}
+form label { display:block; margin-top:1rem; font-weight:500; color: var(--blue); }
+form input, form textarea { width:100%; padding:0.6rem; margin-top:0.3rem; border-radius:5px; border:1px solid #ccc; font-size:1rem; }
+form textarea { resize: vertical; height:100px; }
+form button { margin-top:1.5rem; background:var(--green); color:white; font-weight:bold; border:none; padding:0.8rem 2rem; border-radius:5px; cursor:pointer; transition:0.3s; }
+form button:hover { background:#138764; }
 
 /* ================= FOOTER ================= */
-footer { background: var(--blue); color:#fff; padding:3rem 2rem; display:flex; flex-wrap:wrap; justify-content:space-between; }
-.footer-left { flex:1; min-width:200px; }
+footer {
+  background: var(--blue);
+  color:#fff;
+  padding:3rem 2rem;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+}
+.footer-left { flex:1; min-width:200px; margin-bottom:1.5rem; }
+.footer-left h3 { margin-bottom:1rem; color: var(--green); }
 .footer-left p { margin:0.3rem 0; }
 .footer-right { flex:1; min-width:200px; }
 .footer-links { display:flex; flex-direction:column; margin-top:1rem; }
 .footer-links a { color: var(--green); text-decoration:none; margin:0.2rem 0; }
 .footer-links a:hover { text-decoration:underline; }
+.footer-copy { width:100%; text-align:center; margin-top:2rem; font-size:0.85rem; }
 
 /* ================= MOBILE ================= */
 @media (max-width:768px){
   .hero h1 { font-size:3rem; }
-  .hero h2 { font-size:1.3rem; }
-  .hero p { font-size:1.3rem; }
+  .hero h2 { font-size:1.2rem; }
+  .hero p { font-size:1.6rem; }
   .nav-links { gap:1rem; flex-wrap:wrap; justify-content:center; }
-  .content-block { flex-direction:column !important; text-align:center; }
-  .hero form { width:90%; }
+  .content-block { padding:0 1rem; }
+  form { width:90%; }
 }
 </style>
 </head>
@@ -84,18 +155,45 @@ footer { background: var(--blue); color:#fff; padding:3rem 2rem; display:flex; f
       <img src="images/M-2.png" alt="MANAGECH"> MANAGECH
     </div>
     <ul class="nav-links">
+      <li><a href="#about">Chi siamo</a></li>
+      <li><a href="#services">Servizi</a></li>
       <li><a href="#contact-home">Contatti</a></li>
-      <li><a href="#blog">Blog</a></li>
       <li><a href="#lavora">Lavora con noi</a></li>
+      <li><a href="#blog">Blog</a></li>
     </ul>
   </nav>
 </header>
 
-<!-- HERO piena con titolo, sottotitolo, frase di impatto e form -->
+<!-- HERO -->
 <div class="hero">
   <h1>MANAGECH</h1>
-  <h2>INGEGNERIA & MANAGEMENT STUDIO ASSOCIATO</h2>
+  <h2>ENGINEERING & MANAGEMENT STUDIO ASSOCIATO</h2>
   <p>Ingegneria del valore, gestione della complessità.</p>
+</div>
+
+<!-- BLOCCI CONTENUTO -->
+<div class="content-block">
+  <h2>OTTIMIZZAZIONE DEI PROCESSI</h2>
+  <p>Supportiamo le aziende nell'analisi, pianificazione e gestione dei processi per massimizzare efficienza e performance in contesti complessi.</p>
+</div>
+
+<div class="content-block">
+  <h2>GESTIONE GARE E PROGETTI</h2>
+  <p>Assistenza completa in tutte le fasi delle gare d’appalto e nel controllo di tempi, costi e risorse dei progetti, garantendo sicurezza e precisione.</p>
+</div>
+
+<div class="content-block">
+  <h2>CONSULENZA STRATEGICA</h2>
+  <p>Affianchiamo le aziende nella definizione di strategie operative e di crescita, trasformazione digitale e innovazione tecnologica, per risultati sostenibili.</p>
+</div>
+
+<div class="content-block">
+  <h2>FORMAZIONE E SVILUPPO</h2>
+  <p>Programmi dedicati alla crescita manageriale e organizzativa, leadership e ottimizzazione delle strutture aziendali per performance eccellenti.</p>
+</div>
+
+<!-- FORM CONTATTO HOME -->
+<section id="contact-home">
   <form>
     <label>Nome*</label><input type="text" required>
     <label>Cognome*</label><input type="text" required>
@@ -107,54 +205,28 @@ footer { background: var(--blue); color:#fff; padding:3rem 2rem; display:flex; f
     <label>Hai qualche richiesta particolare?</label><textarea></textarea>
     <button type="submit">Invia</button>
   </form>
-</div>
+</section>
 
-<!-- BLOCCI DI CONTENUTO ALTERNATI -->
-<div class="content-block">
-  <div>
-    <h2>Ottimizzazione dei processi</h2>
-    <p>Supportiamo le aziende nell'analisi, pianificazione e gestione dei processi per massimizzare efficienza e performance in contesti complessi.</p>
-  </div>
-</div>
-
-<div class="content-block">
-  <div>
-    <h2>Gestione gare e progetti</h2>
-    <p>Assistenza completa in tutte le fasi delle gare d’appalto e nel controllo di tempi, costi e risorse dei progetti, garantendo sicurezza e precisione.</p>
-  </div>
-</div>
-
-<div class="content-block">
-  <div>
-    <h2>Consulenza strategica</h2>
-    <p>Affianchiamo le aziende nella definizione di strategie operative e di crescita, trasformazione digitale e innovazione tecnologica, per risultati sostenibili.</p>
-  </div>
-</div>
-
-<div class="content-block">
-  <div>
-    <h2>Formazione e sviluppo</h2>
-    <p>Programmi dedicati alla crescita manageriale e organizzativa, leadership e ottimizzazione delle strutture aziendali per performance eccellenti.</p>
-  </div>
-</div>
-
-<!-- FOOTER con contatti e mappa verticale -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-left">
+    <h3>MANAGECH - INGEGNERIA & MANAGEMENT STUDIO ASSOCIATO</h3>
     <p>📍 Piazza Mazzini 27, 00178 Roma</p>
     <p>📞 +39 3493907663 | +39 3358116800</p>
     <p>✉️ segreteria@managech.com | managech@pec.it</p>
-    <p>© 2026 MANAGECH – P.IVA 18387251004</p>
   </div>
   <div class="footer-right">
     <div class="footer-links">
+      <a href="#about">Chi siamo</a>
+      <a href="#services">Servizi</a>
       <a href="#contact-home">Contatti</a>
-      <a href="#blog">Blog</a>
       <a href="#lavora">Lavora con noi</a>
-      <a href="#">Termini e condizioni</a>
+      <a href="#blog">Blog</a>
       <a href="#">Privacy & Cookie</a>
+      <a href="#">Termini e condizioni</a>
     </div>
   </div>
+  <div class="footer-copy">© 2026 MANAGECH – P.IVA 18387251004</div>
 </footer>
 
 </body>
