@@ -5,7 +5,11 @@
 <title>MANAGECH – Chi siamo</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 :root{
@@ -59,7 +63,6 @@ header{
 
 .logo img{
   height:42px;
-  display:block;
 }
 
 .nav-links{
@@ -122,66 +125,66 @@ header{
   color:var(--gray);
 }
 
-/* ================= SEZIONI ================= */
-.section{
+/* ================= TEAM ================= */
+.team-section{
   padding:6rem 2rem;
+  max-width:1200px;
+  margin:0 auto;
 }
 
-.section h2{
-  text-align:center;
+.team-section h2{
   font-size:3rem;
   color:var(--green);
-  margin-bottom:2rem;
-}
-
-.section p{
-  max-width:900px;
-  margin:1rem auto;
-  font-size:1.1rem;
-  line-height:1.7;
   text-align:center;
+  margin-bottom:3rem;
 }
 
-/* ================= TEAM ================= */
 .team-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  display:flex;
+  flex-wrap:wrap;
   gap:2rem;
-  max-width:1100px;
-  margin:3rem auto 0;
+  justify-content:center;
 }
 
 .team-member{
-  text-align:center;
-  padding:1rem;
+  flex:1 1 280px; /* rettangoli più larghi */
+  max-width:320px;
+  background:#f4f4f4;
   border-radius:8px;
-  box-shadow:0 10px 25px rgba(0,0,0,.1);
-  transition:transform .3s;
-  background:#fff;
-}
-
-.team-member:hover{
-  transform:translateY(-5px);
+  box-shadow:0 5px 20px rgba(0,0,0,0.1);
+  padding:2rem;
+  text-align:center;
 }
 
 .team-member img{
-  width:150px;
-  height:150px;
-  object-fit:cover;
+  width:120px;
+  height:120px;
   border-radius:50%;
+  object-fit:cover;
   margin-bottom:1rem;
 }
 
-.team-member h4{
-  margin:0.5rem 0 0;
+.team-member h3{
+  font-size:1.5rem;
   color:var(--green);
-  font-size:1.2rem;
+  margin-bottom:.5rem;
 }
 
-.team-member p{
-  margin:0.3rem 0 0;
+.team-member p.role{
   font-size:.95rem;
   color:#555;
+  margin-bottom:1rem;
+}
+
+.team-member p.contact{
+  font-size:.9rem;
+  color:#333;
+  margin:0.2rem 0;
+}
+
+.team-member p.contact i{
+  color:var(--green);
+  margin-right:6px;
 }
 
 /* ================= FOOTER ================= */
@@ -212,6 +215,11 @@ footer{
   color:#aaa;
 }
 
+.footer-brand i{
+  color:var(--green);
+  margin-right:8px;
+}
+
 .footer-links ul{
   list-style:none;
   padding:0;
@@ -234,7 +242,6 @@ footer{
 }
 </style>
 </head>
-
 <body>
 
 <!-- ================= HEADER ================= -->
@@ -260,62 +267,47 @@ footer{
 <section class="hero">
   <div class="hero-content">
     <div class="hero-title">Chi siamo</div>
-    <div class="hero-subtitle">Passione per l'ingegneria, esperienza nel management</div>
+    <div class="hero-subtitle">Il nostro team di professionisti esperti al tuo servizio</div>
   </div>
 </section>
 
-<!-- ================= MISSIONE ================= -->
-<section class="section">
-  <h2>La nostra missione</h2>
-  <p>
-    MANAGECH si impegna a trasformare complessità in valore concreto. 
-    Uniamo competenze tecniche, economiche e gestionali per supportare aziende e organizzazioni nei loro progetti più sfidanti.
-    Il nostro approccio integrato garantisce decisioni rapide, efficaci e sostenibili.
-  </p>
-</section>
-
-<!-- ================= VALORI ================= -->
-<section class="section" style="background:#f4f4f4;">
-  <h2>I nostri valori</h2>
-  <p>
-    Integrità, innovazione e eccellenza sono i principi che guidano il nostro lavoro. 
-    Crediamo nella trasparenza, nella crescita continua e nella creazione di soluzioni sostenibili e misurabili. 
-    La nostra priorità è fornire valore reale ai clienti, con un approccio etico e orientato ai risultati.
-  </p>
-</section>
-
 <!-- ================= TEAM ================= -->
-<section class="section">
-  <h2>Il nostro team</h2>
+<section class="team-section">
+  <h2>Il nostro Team</h2>
   <div class="team-grid">
+    
     <div class="team-member">
       <img src="images/team1.jpg" alt="Mario Rossi">
-      <h4>Giulio Gargano</h4>
-      <p>CEO & Founder</p>
-      <p>Fondatore dello studio, guida strategica e sviluppo dei progetti complessi.</p>
-      <p>giulio.gargano@managech.com</p>
-      <p>+39 335 811 6800</p>
+      <h3>Mario Rossi</h3>
+      <p class="role">CEO & Ingegneria Strategica</p>
+      <p class="contact"><i class="fas fa-phone"></i> +39 349 111 2222</p>
+      <p class="contact"><i class="fas fa-envelope"></i> mario.rossi@managech.com</p>
     </div>
+
     <div class="team-member">
       <img src="images/team2.jpg" alt="Laura Bianchi">
-      <h4>Stefano Petullà</h4>
-      <p>CEO & Founder</p>
-      <p>Fondatore dello studio, gestione operativa, coordinamento dei team e ottimizzazione dei processi interni.</p>
-      <p>stefano.petulla@managech.com</p>
-      <p>+39 349 390 7663</p>
+      <h3>Laura Bianchi</h3>
+      <p class="role">Direzione Operativa</p>
+      <p class="contact"><i class="fas fa-phone"></i> +39 349 333 4444</p>
+      <p class="contact"><i class="fas fa-envelope"></i> laura.bianchi@managech.com</p>
     </div>
+
     <div class="team-member">
       <img src="images/team3.jpg" alt="Giuseppe Verdi">
-      <h4>Giuliano Leotta</h4>
-      <p>Responsabile Progetti</p>
-      <p>Supervisione delle commesse, controllo qualità e gestione dei rischi dei progetti.</p>
+      <h3>Giuseppe Verdi</h3>
+      <p class="role">Consulenza Direzionale</p>
+      <p class="contact"><i class="fas fa-phone"></i> +39 349 555 6666</p>
+      <p class="contact"><i class="fas fa-envelope"></i> giuseppe.verdi@managech.com</p>
     </div>
+
     <div class="team-member">
-      <img src="images/team4.jpg" alt="Francesca Neri">
-      <h4>Francesca Neri</h4>
-      <p>Consulente Direzionale</p>
-      <p>Supporto strategico ai clienti, analisi dei dati e trasformazione dei processi in valore concreto.</p>
+      <img src="images/team4.jpg" alt="Anna Neri">
+      <h3>Anna Neri</h3>
+      <p class="role">Gestione Gare e Commesse</p>
+      <p class="contact"><i class="fas fa-phone"></i> +39 349 777 8888</p>
+      <p class="contact"><i class="fas fa-envelope"></i> anna.neri@managech.com</p>
     </div>
+
   </div>
 </section>
 
@@ -325,9 +317,11 @@ footer{
     <div class="footer-brand">
       <h3>MANAGECH</h3>
       <h4>INGEGNERIA & MANAGEMENT STUDIO ASSOCIATO</h4>
-      <p>Piazza Mazzini 27, 00178 Roma<br>
-      +39 349 390 7663<br>
-      segreteria@managech.com</p>
+      <p>
+        <i class="fas fa-map-marker-alt"></i> Piazza Mazzini 27, 00178 Roma<br>
+        <i class="fas fa-phone"></i> +39 349 390 7663<br>
+        <i class="fas fa-envelope"></i> segreteria@managech.com
+      </p>
     </div>
 
     <div class="footer-links">
