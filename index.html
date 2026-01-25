@@ -1,235 +1,179 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <title>MANAGECH - Ingegneria & Management</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>MANAGECH - Ingegneria & Management</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    :root {
-      --green: #1f6f54;
-      --black: #0f0f0f;
-      --dark-gray: #1a1a1a;
-      --white: #ffffff;
-    }
+<style>
+:root {
+  --green: #013220;
+  --blue: #0B1F33;
+  --white: #ffffff;
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
+html { scroll-behavior: smooth; }
+body { margin:0; font-family:"Helvetica Neue", Arial, sans-serif; background: var(--white); color: var(--blue); }
 
-    body {
-      margin: 0;
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      background: var(--white);
-      color: var(--black);
-    }
+/* ================= HEADER ================= */
+header {
+  position: fixed; top:0; width:100%; height:90px; background: var(--blue); z-index:1000;
+  display:flex; align-items:center;
+}
 
-    /* ================= HEADER ================= */
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      height: 90px; /* header più alto */
-      background: var(--dark-gray);
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-    }
+.navbar {
+  max-width:1200px; margin:0 auto; padding:0 2rem;
+  width:100%; display:flex; align-items:center; justify-content:space-between;
+}
 
-    .navbar {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+.logo { display:flex; align-items:center; gap:0.8rem; color: var(--green); font-weight:700; font-size:1.2rem; letter-spacing:1px; }
+.logo img { height:42px; }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      color: var(--green);
-      font-weight: 700;
-      font-size: 1.2rem;
-      letter-spacing: 1px;
-    }
+.nav-links { list-style:none; display:flex; gap:2rem; margin:0; padding:0; flex-wrap:wrap; }
+.nav-links a { color: var(--white); text-decoration:none; font-size:0.95rem; letter-spacing:0.5px; position:relative; }
+.nav-links a::after { content:""; position:absolute; bottom:-6px; left:0; width:0; height:2px; background:var(--green); transition:width 0.3s ease; }
+.nav-links a:hover::after { width:100%; }
 
-    .logo img {
-      height: 42px;
-    }
+/* ================= HERO ================= */
+.hero {
+  margin-top: 90px; height: 540px; /* 6 volte header */
+  background: linear-gradient(rgba(11,31,51,0.5), rgba(11,31,51,0.5)), url("images/hero-bg.jpg") center/cover no-repeat;
+  display:flex; align-items:center; justify-content:center; text-align:center; color: var(--white); padding:0 2rem;
+}
+.hero h1 { font-size:4rem; margin:0; color:var(--green); letter-spacing:3px; }
+.hero p { font-size:1.8rem; margin-top:1rem; max-width:800px; line-height:1.4; }
 
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-      margin: 0;
-      padding: 0;
-    }
+/* ================= SEZIONI ================= */
+section { max-width:1000px; margin:4rem auto; padding:0 2rem; }
+section h2 { color: var(--green); font-size:2rem; margin-bottom:1rem; }
+section p, section li { font-size:1rem; line-height:1.7; }
+ul { padding-left:1.2rem; }
 
-    .nav-links a {
-      color: var(--white);
-      text-decoration: none;
-      font-size: 0.95rem;
-      letter-spacing: 0.5px;
-      position: relative;
-    }
+/* ================= CONTACT FORM ================= */
+form { background: #f9f9f9; padding:2rem; border-radius:8px; box-shadow:0 5px 15px rgba(0,0,0,0.1); max-width:800px; margin:2rem auto; }
+form label { display:block; margin-top:1rem; font-weight:500; }
+form input, form textarea { width:100%; padding:0.6rem; margin-top:0.3rem; border-radius:5px; border:1px solid #ccc; font-size:1rem; }
+form textarea { resize: vertical; height:100px; }
+form button { margin-top:1.5rem; background:var(--green); color:white; font-weight:bold; border:none; padding:0.8rem 2rem; border-radius:5px; cursor:pointer; transition:0.3s; }
+form button:hover { background:#006140; }
 
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      bottom: -6px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--green);
-      transition: width 0.3s ease;
-    }
+/* ================= FOOTER ================= */
+footer { background: var(--blue); color:#fff; text-align:center; padding:2rem 1rem; font-size:0.9rem; }
+footer a { color: var(--green); text-decoration:none; margin:0 0.5rem; }
+footer a:hover { text-decoration:underline; }
+.footer-links { margin-top:0.5rem; }
 
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    /* ================= HERO ================= */
-    .hero {
-      margin-top: 90px; /* spazio header */
-      height: 70vh; /* circa 3-4x header */
-      background: linear-gradient(
-          rgba(15,15,15,0.65),
-          rgba(15,15,15,0.65)
-        ),
-        url("images/hero-bg.jpg") center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: var(--white);
-      padding: 0 2rem;
-    }
-
-    .hero h1 {
-      font-size: 3.5rem;
-      margin: 0;
-      color: var(--green);
-      letter-spacing: 3px;
-    }
-
-    .hero p {
-      font-size: 1.6rem;
-      margin-top: 1rem;
-      max-width: 800px;
-      line-height: 1.4;
-    }
-
-    /* ================= SEZIONI ================= */
-    section {
-      max-width: 1000px;
-      margin: 4rem auto;
-      padding: 0 2rem;
-    }
-
-    section h2 {
-      color: var(--green);
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    section p, section li {
-      font-size: 1rem;
-      line-height: 1.7;
-    }
-
-    ul {
-      padding-left: 1.2rem;
-    }
-
-    /* ================= FOOTER ================= */
-    footer {
-      background: var(--black);
-      color: #aaa;
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 0.85rem;
-    }
-
-    /* ================= MOBILE ================= */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-
-      .hero p {
-        font-size: 1.2rem;
-      }
-
-      .nav-links {
-        gap: 1.2rem;
-      }
-    }
-  </style>
+/* ================= MOBILE ================= */
+@media (max-width:768px){
+  .hero h1 { font-size:3rem; }
+  .hero p { font-size:1.3rem; }
+  .nav-links { gap:1rem; flex-wrap:wrap; justify-content:center; }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">
-        <img src="images/M-2.png" alt="MANAGECH">
-        MANAGECH
-      </div>
-      <ul class="nav-links">
-        <li><a href="#about">Chi siamo</a></li>
-        <li><a href="#services">Servizi</a></li>
-        <li><a href="#contacts">Contatti</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- HERO -->
-  <div class="hero">
-    <div>
-      <h1>MANAGECH</h1>
-      <p>Ingegneria del valore, gestione della complessità.</p>
+<!-- HEADER -->
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="images/M-2.png" alt="MANAGECH"> MANAGECH
     </div>
-  </div>
-
-  <!-- CHI SIAMO -->
-  <section id="about">
-    <h2>Chi siamo</h2>
-    <p>
-      MANAGECH – Ingegneria & Management Studio Associato nasce con l’obiettivo
-      di valorizzare competenze ingegneristiche e manageriali a supporto di
-      imprese, enti e professionisti in contesti complessi e ad alta intensità
-      decisionale.
-    </p>
-  </section>
-
-  <!-- SERVIZI -->
-  <section id="services">
-    <h2>Servizi</h2>
-    <ul>
-      <li>Supporto alle gare d’appalto pubbliche e private</li>
-      <li>Project & Cost Control</li>
-      <li>Consulenza strategica e direzionale</li>
-      <li>Controllo di gestione e KPI</li>
-      <li>Trasformazione digitale, AI e analytics</li>
-      <li>Risk management e compliance</li>
+    <ul class="nav-links">
+      <li><a href="#about">Chi siamo</a></li>
+      <li><a href="#services">Servizi</a></li>
+      <li><a href="#contacts">Contatti</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#lavora">Lavora con noi</a></li>
     </ul>
-  </section>
+  </nav>
+</header>
 
-  <!-- CONTATTI -->
-  <section id="contacts">
-    <h2>Contatti</h2>
-    <p>Email: info@managech.it</p>
-    <p>Telefono: +39 0123 456789</p>
-  </section>
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <h1>MANAGECH</h1>
+    <p>Ingegneria del valore, gestione della complessità.</p>
+  </div>
+</div>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2026 MANAGECH – Ingegneria & Management Studio Associato
-  </footer>
+<!-- CHI SIAMO -->
+<section id="about">
+  <h2>Chi siamo</h2>
+  <p>
+    MANAGECH – Ingegneria & Management Studio Associato nasce con l’obiettivo
+    di valorizzare competenze ingegneristiche e manageriali a supporto di
+    imprese, enti e professionisti in contesti complessi e ad alta intensità
+    decisionale.
+  </p>
+</section>
+
+<!-- SERVIZI -->
+<section id="services">
+  <h2>Servizi</h2>
+  <ul>
+    <li>Supporto alle gare d’appalto pubbliche e private</li>
+    <li>Project & Cost Control</li>
+    <li>Consulenza strategica e direzionale</li>
+    <li>Controllo di gestione e KPI</li>
+    <li>Trasformazione digitale, AI e analytics</li>
+    <li>Risk management e compliance</li>
+  </ul>
+</section>
+
+<!-- HOME CONTACT FORM -->
+<section id="contact-home">
+  <h2>Contattaci</h2>
+  <form>
+    <label>Nome*</label><input type="text" required>
+    <label>Cognome*</label><input type="text" required>
+    <label>Telefono*</label><input type="tel" required>
+    <label>Email*</label><input type="email" required>
+    <label>Azienda*</label><input type="text" required>
+    <label>Ruolo in azienda*</label><input type="text" required>
+    <label>Provincia*</label><input type="text" required>
+    <label>Hai qualche richiesta particolare?</label><textarea></textarea>
+    <button type="submit">Invia</button>
+  </form>
+</section>
+
+<!-- CONTATTI -->
+<section id="contacts">
+  <h2>Contatti</h2>
+  <p>📍 MANAGECH - INGEGNERIA & MANAGEMENT STUDIO ASSOCIATO</p>
+  <p>📌 Piazza Mazzini 27, 00178 Roma</p>
+  <p>📞 +39 3493907663 | +39 3358116800</p>
+  <p>✉️ segreteria@managech.com | managech@pec.it</p>
+
+  <!-- FORM CONTATTI STESSO DELLA HOME -->
+  <form>
+    <label>Nome*</label><input type="text" required>
+    <label>Cognome*</label><input type="text" required>
+    <label>Telefono*</label><input type="tel" required>
+    <label>Email*</label><input type="email" required>
+    <label>Azienda*</label><input type="text" required>
+    <label>Ruolo in azienda*</label><input type="text" required>
+    <label>Provincia*</label><input type="text" required>
+    <label>Hai qualche richiesta particolare?</label><textarea></textarea>
+    <button type="submit">Invia</button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>© 2026 MANAGECH – Ingegneria & Management Studio Associato | P.IVA 18387251004</div>
+  <div class="footer-links">
+    <a href="#home">Home</a>|
+    <a href="#about">Chi siamo</a>|
+    <a href="#services">Servizi</a>|
+    <a href="#contacts">Contatti</a>|
+    <a href="#blog">Blog</a>|
+    <a href="#lavora">Lavora con noi</a>|
+    <a href="#">Termini e condizioni</a>|
+    <a href="#">Privacy & Cookie</a>
+  </div>
+</footer>
 
 </body>
 </html>
