@@ -125,26 +125,51 @@ header{
   color:var(--gray);
 }
 
-/* ================= VISION & MISSION ================= */
+/* ================= CONTENT BLOCKS (Vision/Mission) ================= */
 .section{
-  padding:4rem 2rem;
-  max-width:1100px;
-  margin:0 auto;
+  padding:6rem 2rem;
+}
+
+.block{
+  max-width:1200px;
+  margin:0 auto 6rem;
   display:flex;
-  flex-direction:column;
-  gap:3rem;
+  align-items:center;
+  gap:4rem;
 }
 
-.section h3{
-  font-size:2.2rem;
+.block:nth-child(even){
+  flex-direction:row-reverse;
+}
+
+.block-text{
+  flex:1;
+}
+
+.block-text h3{
+  margin:0 0 1.2rem;
+  font-size:2.6rem;
   color:var(--green);
-  margin-bottom:1rem;
+  letter-spacing:2px;
 }
 
-.section p{
-  font-size:1.1rem;
+.block-text p{
+  font-size:1.15rem;
   line-height:1.7;
-  color:#333;
+}
+
+/* BLOCCO IMMAGINI */
+.block-image{
+  flex:1;
+}
+
+.block-image img{
+  width:100%;
+  height:360px;
+  object-fit:cover;
+  border-radius:8px;
+  background:#eaeaea;
+  box-shadow:0 15px 40px rgba(0,0,0,.18);
 }
 
 /* ================= TEAM ================= */
@@ -169,13 +194,19 @@ header{
 }
 
 .team-member{
-  flex:1 1 300px; /* rettangoli più larghi */
+  flex:1 1 300px;
   max-width:340px;
   background:#f4f4f4;
   border-radius:8px;
   box-shadow:0 5px 20px rgba(0,0,0,0.1);
   padding:2rem;
   text-align:center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* transizione hover */
+}
+
+.team-member:hover{
+  transform: translateY(-5px) scale(1.03);
+  box-shadow:0 15px 35px rgba(0,0,0,0.2);
 }
 
 .team-member img{
@@ -293,15 +324,26 @@ footer{
   </div>
 </section>
 
-<!-- ================= VISION & MISSION ================= -->
+<!-- ================= VISION & MISSION BLOCCO ================= -->
 <section class="section">
-  <div>
-    <h3>Vision</h3>
-    <p>Diventare il punto di riferimento per le imprese nella gestione della complessità, creando soluzioni innovative e sostenibili che generano valore duraturo.</p>
+  <div class="block">
+    <div class="block-text">
+      <h3>Vision</h3>
+      <p>Diventare il punto di riferimento per le imprese nella gestione della complessità, creando soluzioni innovative e sostenibili che generano valore duraturo.</p>
+    </div>
+    <div class="block-image">
+      <img src="images/vision.jpg" alt="Vision">
+    </div>
   </div>
-  <div>
-    <h3>Mission</h3>
-    <p>Supportare i nostri clienti con competenze integrate in ingegneria, management e consulenza direzionale, trasformando dati e processi in decisioni efficaci e risultati misurabili.</p>
+
+  <div class="block">
+    <div class="block-text">
+      <h3>Mission</h3>
+      <p>Supportare i nostri clienti con competenze integrate in ingegneria, management e consulenza direzionale, trasformando dati e processi in decisioni efficaci e risultati misurabili.</p>
+    </div>
+    <div class="block-image">
+      <img src="images/mission.jpg" alt="Mission">
+    </div>
   </div>
 </section>
 
