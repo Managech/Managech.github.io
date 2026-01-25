@@ -5,286 +5,269 @@
 <title>MANAGECH - Ingegneria & Management</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- GOOGLE FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --green: #1FA67A;
-  --blue: #0B1F33;
-  --white: #ffffff;
-  --gray-text: #d6d6d6;
+:root{
+  --green:#1FA67A;
+  --blue:#0B1F33;
+  --white:#ffffff;
+  --gray:#cfcfcf;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  background: var(--white);
-  color: var(--blue);
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:'Montserrat',sans-serif;
+  color:var(--blue);
 }
 
 /* ================= HEADER ================= */
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 90px;
-  background: var(--blue);
-  z-index: 1000;
-  display: flex;
-  align-items: center;
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  height:90px;
+  background:rgba(11,31,51,0.95);
+  backdrop-filter: blur(4px);
+  z-index:1000;
+  display:flex;
+  align-items:center;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 0 2rem;
+.navbar{
+  width:100%;
+  padding:0 2rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
-/* LOGO A SINISTRA */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  color: var(--green);
-  font-weight: 700;
-  font-size: 1.2rem;
-  letter-spacing: 1px;
+.logo{
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  color:var(--green);
+  font-weight:700;
+  letter-spacing:1px;
 }
 
-.logo img {
-  height: 42px;
-  display: block;
+.logo img{height:42px;display:block}
+
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:2rem;
+  margin:0;
+  padding:0;
 }
 
-/* MENU A DESTRA */
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
+.nav-links a{
+  color:#fff;
+  text-decoration:none;
+  font-size:.9rem;
+  font-weight:500;
+  position:relative;
 }
 
-.nav-links a {
-  color: var(--white);
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
-  position: relative;
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:2px;
+  background:var(--green);
+  transition:.3s;
 }
 
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  bottom: -6px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--green);
-  transition: width 0.3s ease;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
-}
+.nav-links a:hover::after{width:100%}
 
 /* ================= HERO ================= */
-.hero {
-  margin-top: 90px;
-  height: 650px;
+.hero{
+  margin-top:90px;
+  height:680px;
   background:
-    linear-gradient(rgba(11,31,51,0.65), rgba(11,31,51,0.65)),
-    url("images/hero-bg.jpg") center / cover no-repeat;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0 2rem;
+    linear-gradient(rgba(11,31,51,.65),rgba(11,31,51,.65)),
+    url("images/hero-bg.jpg") center/cover no-repeat;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:0 2rem;
 }
 
-.hero h1 {
-  font-size: 4rem;
-  font-weight: 800;
-  color: var(--green);
-  margin: 0;
-  letter-spacing: 3px;
+.hero h1{
+  font-size:4.8rem;
+  font-weight:800;
+  color:var(--green);
+  margin:0;
+  letter-spacing:4px;
 }
 
-.hero h2 {
-  font-size: 1.4rem;
-  font-weight: 400;
-  color: var(--gray-text);
-  margin: 0.8rem 0 1.2rem 0;
+.hero h2{
+  font-size:1.6rem;
+  font-weight:400;
+  color:var(--gray);
+  margin:.8rem 0 1.4rem 0;
 }
 
-.hero p {
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--green);
-  max-width: 900px;
-  line-height: 1.4;
+.hero p{
+  font-size:2.4rem;
+  font-weight:600;
+  color:var(--green);
+  max-width:900px;
 }
 
 /* ================= CONTENT BLOCKS ================= */
-.content-block {
-  max-width: 1000px;
-  margin: 5rem auto;
-  padding: 0 2rem;
-  text-align: center;
+.content-block{
+  max-width:1200px;
+  margin:6rem auto;
+  padding:0 2rem;
+  display:flex;
+  align-items:center;
+  gap:4rem;
 }
 
-.content-block h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--green);
-  text-transform: uppercase;
-  margin-bottom: 1rem;
+.content-block.reverse{
+  flex-direction:row-reverse;
 }
 
-.content-block p {
-  font-size: 1.4rem;
-  font-weight: 400;
-  line-height: 1.6;
-  max-width: 800px;
-  margin: 0 auto;
+.content-text{
+  flex:1;
 }
 
-/* ================= CONTACT FORM ================= */
-#contact-home {
-  padding: 4rem 2rem;
+.content-text h2{
+  text-transform:uppercase;
+  color:var(--green);
+  font-size:2.2rem;
+  margin-bottom:1rem;
 }
 
-form {
-  background: #f8f8f8;
-  padding: 2.5rem;
-  border-radius: 8px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-  max-width: 720px;
-  margin: 0 auto;
+.content-text p{
+  font-size:1.4rem;
+  line-height:1.6;
 }
 
-form label {
-  display: block;
-  margin-top: 1rem;
-  font-weight: 500;
+.content-placeholder{
+  flex:1;
+  height:260px;
+  background:#eaeaea;
 }
 
-form input,
-form textarea {
-  width: 100%;
-  padding: 0.7rem;
-  margin-top: 0.3rem;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.95rem;
+/* ================= FORM ================= */
+#contact-home{
+  padding:5rem 2rem;
 }
 
-form textarea {
-  resize: vertical;
-  height: 120px;
+.form-intro{
+  max-width:700px;
+  margin:0 auto 2rem auto;
+  text-align:center;
+  font-size:1.1rem;
 }
 
-form button {
-  margin-top: 2rem;
-  background: var(--green);
-  color: white;
-  font-weight: 600;
-  border: none;
-  padding: 0.9rem 2.5rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
+form{
+  max-width:720px;
+  margin:0 auto;
+  background:#f8f8f8;
+  padding:2.5rem;
+  border-radius:8px;
+  box-shadow:0 6px 20px rgba(0,0,0,.1);
 }
 
-form button:hover {
-  background: #148d65;
+form label{
+  display:block;
+  margin-top:1rem;
+  font-weight:500;
+}
+
+form input,form textarea{
+  width:100%;
+  margin-top:.3rem;
+  padding:.7rem;
+  font-family:'Montserrat',sans-serif;
+  border-radius:5px;
+  border:1px solid #ccc;
+}
+
+form textarea{height:120px}
+
+form button{
+  margin-top:2rem;
+  padding:.9rem 2.5rem;
+  background:var(--green);
+  color:#fff;
+  border:none;
+  font-weight:600;
+  border-radius:5px;
+  cursor:pointer;
 }
 
 /* ================= FOOTER ================= */
-footer {
-  background: var(--blue);
-  color: white;
-  padding: 3.5rem 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+footer{
+  background:var(--blue);
+  color:#fff;
+  padding:4rem 2rem 2rem 2rem;
 }
 
-.footer-left {
-  flex: 1;
-  min-width: 250px;
+.footer-top{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  gap:3rem;
 }
 
-.footer-left h3 {
-  color: var(--green);
-  margin-bottom: 1rem;
-  font-size: 1rem;
+.footer-brand h3{
+  margin:0;
+  color:var(--green);
+  font-size:1.2rem;
+  font-weight:700;
 }
 
-.footer-left p {
-  margin: 0.4rem 0;
-  font-size: 0.9rem;
+.footer-brand h4{
+  margin:.3rem 0 1rem 0;
+  color:var(--gray);
+  font-weight:400;
 }
 
-.footer-right {
-  flex: 1;
-  min-width: 200px;
+.footer-links{
+  display:flex;
+  flex-direction:column;
 }
 
-.footer-links {
-  display: flex;
-  flex-direction: column;
+.footer-links a{
+  color:var(--green);
+  text-decoration:none;
+  margin:.3rem 0;
 }
 
-.footer-links a {
-  color: var(--green);
-  text-decoration: none;
-  font-size: 0.9rem;
-  margin: 0.3rem 0;
-}
-
-.footer-links a:hover {
-  text-decoration: underline;
-}
-
-.footer-copy {
-  width: 100%;
-  text-align: center;
-  margin-top: 2.5rem;
-  font-size: 0.8rem;
-  color: #cccccc;
+.footer-copy{
+  text-align:center;
+  font-size:.75rem;
+  color:#bfbfbf;
+  margin-top:3rem;
 }
 
 /* ================= MOBILE ================= */
-@media (max-width: 768px) {
-  .hero h1 { font-size: 3rem; }
-  .hero p { font-size: 1.6rem; }
-  .nav-links { gap: 1rem; }
+@media(max-width:900px){
+  .content-block,
+  .content-block.reverse{
+    flex-direction:column;
+    text-align:center;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header>
   <nav class="navbar">
     <div class="logo">
-      <img src="images/M-2.png" alt="MANAGECH">
-      MANAGECH
+      <img src="images/M-2.png" alt="MANAGECH"> MANAGECH
     </div>
     <ul class="nav-links">
       <li><a href="#">Chi siamo</a></li>
@@ -296,31 +279,40 @@ footer {
   </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <h1>MANAGECH</h1>
   <h2>ENGINEERING & MANAGEMENT STUDIO ASSOCIATO</h2>
   <p>Ingegneria del valore, gestione della complessità.</p>
 </section>
 
-<!-- CONTENT -->
 <section class="content-block">
-  <h2>OTTIMIZZAZIONE DEI PROCESSI</h2>
-  <p>Supportiamo imprese e organizzazioni nella gestione dei processi complessi, migliorando performance, controllo e sostenibilità economica.</p>
+  <div class="content-text">
+    <h2>OTTIMIZZAZIONE DEI PROCESSI</h2>
+    <p>Approccio ingegneristico e manageriale per migliorare performance, efficienza e controllo.</p>
+  </div>
+  <div class="content-placeholder"></div>
+</section>
+
+<section class="content-block reverse">
+  <div class="content-text">
+    <h2>GESTIONE GARE E COMMESSE</h2>
+    <p>Supporto tecnico-economico nelle gare d’appalto e nella gestione delle commesse complesse.</p>
+  </div>
+  <div class="content-placeholder"></div>
 </section>
 
 <section class="content-block">
-  <h2>GESTIONE GARE E COMMESSE</h2>
-  <p>Affianchiamo i clienti in tutte le fasi delle gare d’appalto e nella gestione tecnico-economica delle commesse.</p>
+  <div class="content-text">
+    <h2>CONSULENZA STRATEGICA</h2>
+    <p>Decisioni solide, data-driven e orientate alla creazione di valore sostenibile.</p>
+  </div>
+  <div class="content-placeholder"></div>
 </section>
 
-<section class="content-block">
-  <h2>CONSULENZA STRATEGICA</h2>
-  <p>Strategia, innovazione e trasformazione digitale per decisioni solide e orientate al valore.</p>
-</section>
-
-<!-- CONTACT FORM -->
 <section id="contact-home">
+  <div class="form-intro">
+    Per informazioni e richieste di collaborazione, il nostro team è a disposizione per supportarvi.
+  </div>
   <form>
     <label>Nome*</label><input required>
     <label>Cognome*</label><input required>
@@ -329,23 +321,22 @@ footer {
     <label>Azienda*</label><input required>
     <label>Ruolo in azienda*</label><input required>
     <label>Provincia*</label><input required>
-    <label>Hai qualche richiesta particolare?</label>
-    <textarea></textarea>
-    <button type="submit">Invia richiesta</button>
+    <label>Richiesta</label><textarea></textarea>
+    <button>Invia richiesta</button>
   </form>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <div class="footer-left">
-    <h3>MANAGECH - INGEGNERIA & MANAGEMENT STUDIO ASSOCIATO</h3>
-    <p>📍 Piazza Mazzini 27, 00178 Roma</p>
-    <p>📞 +39 3493907663 | +39 3358116800</p>
-    <p>✉️ segreteria@managech.com</p>
-    <p>✉️ managech@pec.it</p>
-  </div>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <h3>MANAGECH</h3>
+      <h4>INGEGNERIA & MANAGEMENT STUDIO ASSOCIATO</h4>
+      <p>Piazza Mazzini 27, 00178 Roma</p>
+      <p>+39 3493907663 · +39 3358116800</p>
+      <p>segreteria@managech.com</p>
+      <p>managech@pec.it</p>
+    </div>
 
-  <div class="footer-right">
     <div class="footer-links">
       <a href="#">Chi siamo</a>
       <a href="#">Servizi</a>
@@ -358,7 +349,7 @@ footer {
   </div>
 
   <div class="footer-copy">
-    © 2026 MANAGECH – P. IVA 18387251004
+    © 2026 MANAGECH INGEGNERIA & MANAGEMENT STUDIO ASSOCIATO | P. IVA 18387251004
   </div>
 </footer>
 
