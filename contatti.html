@@ -5,7 +5,11 @@
 <title>MANAGECH – Contatti</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 :root{
@@ -59,7 +63,6 @@ header{
 
 .logo img{
   height:42px;
-  display:block;
 }
 
 .nav-links{
@@ -122,10 +125,31 @@ header{
   color:var(--gray);
 }
 
+/* ================= BLOCCHI INFORMAZIONI ================= */
+.contact-info{
+  max-width:700px;
+  margin:3rem auto 2rem;
+  background:#f4f4f4;
+  border-radius:8px;
+  padding:2rem;
+  text-align:center;
+  box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+.contact-info p{
+  font-size:1.1rem;
+  margin:0.8rem 0;
+}
+
+.contact-info i{
+  color:var(--green);
+  margin-right:8px;
+}
+
 /* ================= FORM CONTATTI ================= */
 .form-section{
-  background:#f4f4f4;
-  padding:5rem 2rem;
+  background:#f9f9f9;
+  padding:3rem 2rem 6rem;
 }
 
 .form-wrapper{
@@ -197,6 +221,11 @@ footer{
   color:#aaa;
 }
 
+.footer-brand i{
+  color:var(--green);
+  margin-right:8px;
+}
+
 .footer-links ul{
   list-style:none;
   padding:0;
@@ -249,6 +278,15 @@ footer{
   </div>
 </section>
 
+<!-- ================= INFORMAZIONI AZIENDA ================= -->
+<section class="contact-info">
+  <p><i class="fas fa-building"></i> MANAGECH – INGEGNERIA & MANAGEMENT STUDIO ASSOCIATO</p>
+  <p><i class="fas fa-map-marker-alt"></i> Piazza Mazzini 27, 00178 Roma</p>
+  <p><i class="fas fa-phone"></i> +39 349 390 7663</p>
+  <p><i class="fas fa-envelope"></i> segreteria@managech.com</p>
+  <p><i class="fas fa-envelope"></i> managech@pec.it</p>
+</section>
+
 <!-- ================= FORM CONTATTI ================= -->
 <section class="form-section">
   <div class="form-wrapper">
@@ -277,9 +315,11 @@ footer{
     <div class="footer-brand">
       <h3>MANAGECH</h3>
       <h4>INGEGNERIA & MANAGEMENT STUDIO ASSOCIATO</h4>
-      <p>Piazza Mazzini 27, 00178 Roma<br>
-      +39 349 390 7663<br>
-      segreteria@managech.com</p>
+      <p>
+        <i class="fas fa-map-marker-alt"></i> Piazza Mazzini 27, 00178 Roma<br>
+        <i class="fas fa-phone"></i> +39 349 390 7663<br>
+        <i class="fas fa-envelope"></i> segreteria@managech.com
+      </p>
     </div>
 
     <div class="footer-links">
