@@ -461,37 +461,37 @@ footer{
   <h2>I nostri Valori</h2>
 
   <div class="values-grid">
-    <div class="value-card">
+    <div class="value-card fade-in">
       <div class="value-icon"><i class="fas fa-compass"></i></div>
       <h3>Rigorosità e metodo</h3>
       <p>Operiamo con un approccio ingegneristico e manageriale fondato su analisi, modelli strutturati e misurabilità, per garantire controllo, affidabilità e risultati concreti.</p>
     </div>
 
-    <div class="value-card">
+    <div class="value-card fade-in">
       <div class="value-icon"><i class="fas fa-scale-balanced"></i></div>
       <h3>Responsabilità professionale</h3>
       <p>Agiamo nel rispetto della normativa e dei principi deontologici, tutelando gli interessi dei clienti con indipendenza, correttezza e trasparenza.</p>
     </div>
 
-    <div class="value-card">
+    <div class="value-card fade-in">
       <div class="value-icon"><i class="fas fa-chart-line"></i></div>
       <h3>Orientamento al valore</h3>
       <p>Trasformiamo la complessità in valore misurabile, migliorando performance economiche, organizzative e decisionali.</p>
     </div>
 
-    <div class="value-card">
+    <div class="value-card fade-in">
       <div class="value-icon"><i class="fas fa-network-wired"></i></div>
       <h3>Integrazione delle competenze</h3>
       <p>Integriamo ingegneria, management, economia e tecnologia per affrontare problemi complessi con soluzioni coerenti ed efficaci.</p>
     </div>
 
-    <div class="value-card">
+    <div class="value-card fade-in">
       <div class="value-icon"><i class="fas fa-users-gear"></i></div>
       <h3>Sviluppo delle persone</h3>
       <p>Investiamo nella crescita delle competenze, della leadership e della cultura manageriale come leva strategica di lungo periodo.</p>
     </div>
 
-    <div class="value-card">
+    <div class="value-card fade-in">
       <div class="value-icon"><i class="fas fa-microchip"></i></div>
       <h3>Innovazione responsabile</h3>
       <p>Promuoviamo l’innovazione digitale e data-driven come strumento concreto, adottando soluzioni avanzate in modo consapevole, sostenibile e orientato al business.</p>
@@ -504,23 +504,23 @@ footer{
   <h2>Il nostro Team</h2>
   <div class="team-grid">
     
-    <div class="team-member">
-      <img src="images/gargano.jpg" alt="Giulio Gargano">
+    <div class="team-member fade-in">
+      <img src="images/gargano.jpg" alt="Gabriele Gargano">
       <h3>Giulio Gargano</h3>
       <p class="role">Founder & CEO</p>
       <p class="contact"><i class="fas fa-phone"></i> +39 335 811 6800</p>
       <p class="contact"><i class="fas fa-envelope"></i> giulio.gargano@managech.com</p>
     </div>
 
-    <div class="team-member">
+    <div class="team-member fade-in">
       <img src="images/laura.jpg" alt="Laura Bianchi">
       <h3>Stefano Petullà</h3>
-      <p class="role">Founder & Managing Partner</p>
+      <p class="role">Founder & CEO</p>
       <p class="contact"><i class="fas fa-phone"></i> +39 349 390 7663</p>
       <p class="contact"><i class="fas fa-envelope"></i> stefano.petulla@managech.com</p>
     </div>
 
-    <div class="team-member">
+    <div class="team-member fade-in">
       <img src="images/giuseppe.jpg" alt="Giuseppe Verdi">
       <h3>Giuliano Leotta</h3>
       <p class="role">Consulenza Direzionale</p>
@@ -528,7 +528,7 @@ footer{
       <p class="contact"><i class="fas fa-envelope"></i> giuliano.leotta@managech.com</p>
     </div>
 
-    <div class="team-member">
+    <div class="team-member fade-in">
       <img src="images/anna.jpg" alt="Anna Neri">
       <h3>Anna Neri</h3>
       <p class="role">Gestione Gare e Commesse</p>
@@ -536,6 +536,47 @@ footer{
       <p class="contact"><i class="fas fa-envelope"></i> a.neri@managech.com</p>
     </div>
 
+  </div>
+</section>
+
+<!-- ================= SCRIPT FADE-IN ================= -->
+<script>
+const faders = document.querySelectorAll('.fade-in');
+
+const appearOptions = {
+  threshold: 0.1,
+  rootMargin: "0px 0px -50px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll){
+  entries.forEach(entry => {
+    if(!entry.isIntersecting){
+      return;
+    } else {
+      entry.target.classList.add('appear');
+      appearOnScroll.unobserve(entry.target);
+    }
+  });
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
+</script>
+
+<style>
+/* FADE-IN ANIMATION */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
   </div>
 </section>
 
