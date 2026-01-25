@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<title>MANAGECH – Ingegneria & Management</title>
+<title>MANAGECH – Home</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,10 +15,13 @@
   --white:#ffffff;
 }
 
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
 body{
-  margin:0;
   font-family:'Montserrat',sans-serif;
   background:#fff;
   color:var(--blue);
@@ -43,11 +46,12 @@ header{
   justify-content:space-between;
 }
 
-.logo{
+.logo a{
   display:flex;
   align-items:center;
   gap:.8rem;
   color:var(--green);
+  text-decoration:none;
   font-weight:700;
   font-size:1.3rem;
   letter-spacing:1px;
@@ -62,8 +66,6 @@ header{
   list-style:none;
   display:flex;
   gap:2rem;
-  margin:0;
-  padding:0;
 }
 
 .nav-links a{
@@ -84,7 +86,9 @@ header{
   transition:.3s;
 }
 
-.nav-links a:hover::after{width:100%}
+.nav-links a:hover::after{
+  width:100%;
+}
 
 /* ================= HERO ================= */
 .hero{
@@ -272,11 +276,14 @@ footer{
 
 <body>
 
+<!-- ================= HEADER ================= -->
 <header>
   <nav class="navbar">
     <div class="logo">
-      <img src="images/M-2.png" alt="MANAGECH">
-      MANAGECH
+      <a href="index.html">
+        <img src="images/M-2.png" alt="MANAGECH">
+        MANAGECH
+      </a>
     </div>
     <ul class="nav-links">
       <li><a href="chi-siamo.html">Chi siamo</a></li>
@@ -288,6 +295,7 @@ footer{
   </nav>
 </header>
 
+<!-- ================= HERO ================= -->
 <section class="hero">
   <div class="hero-content">
     <div class="hero-title">MANAGECH</div>
@@ -298,38 +306,43 @@ footer{
   </div>
 </section>
 
+<!-- ================= BLOCCO SERVIZI ================= -->
 <section class="section">
   <div class="block">
     <div class="block-text">
       <h3>INGEGNERIA STRATEGICA</h3>
-      <p>Supportiamo decisioni complesse integrando competenze tecniche, economiche e gestionali.</p>
+      <p>Supportiamo decisioni complesse integrando competenze tecniche, economiche e gestionali.
+      Forniamo strumenti di analisi e simulazione per valutare scenari e prendere decisioni più informate e consapevoli.</p>
     </div>
     <div class="block-image">
-      <img src="images/processi.jpg" alt="">
+      <img src="images/processi.jpg" alt="Processi aziendali e ingegneria strategica">
     </div>
   </div>
 
   <div class="block">
     <div class="block-text">
       <h3>GESTIONE DI GARE E COMMESSE</h3>
-      <p>Affianchiamo imprese e studi nella strutturazione e nel controllo di progetti ad alta complessità.</p>
+      <p>Affianchiamo imprese e studi nella strutturazione e nel controllo di progetti ad alta complessità.
+      La nostra esperienza garantisce l’ottimizzazione di tempi, costi e risorse, riducendo rischi e inefficienze.</p>
     </div>
     <div class="block-image">
-      <img src="images/gare-commesse.jpg" alt="">
+      <img src="images/gare-commesse.jpg" alt="Gestione gare e commesse">
     </div>
   </div>
 
   <div class="block">
     <div class="block-text">
       <h3>CONSULENZA DIREZIONALE</h3>
-      <p>Trasformiamo dati, processi e strategie in valore concreto e misurabile.</p>
+      <p>Trasformiamo dati, processi e strategie in valore concreto e misurabile.
+      Offriamo supporto decisionale e progettazione di modelli organizzativi e gestionali efficaci, su misura per ogni cliente.</p>
     </div>
     <div class="block-image">
-      <img src="images/consulenza.jpg" alt="">
+      <img src="images/consulenza.jpg" alt="Consulenza direzionale">
     </div>
   </div>
 </section>
 
+<!-- ================= FORM CONTATTI ================= -->
 <section class="form-section">
   <div class="form-wrapper">
     <p>
@@ -338,19 +351,20 @@ footer{
     </p>
 
     <form>
-      <label>Nome*</label><input required>
-      <label>Cognome*</label><input required>
-      <label>Telefono*</label><input required>
-      <label>Email*</label><input type="email" required>
-      <label>Azienda*</label><input required>
-      <label>Ruolo in azienda*</label><input required>
-      <label>Provincia*</label><input required>
-      <label>Richiesta</label><textarea></textarea>
-      <button>Invia richiesta</button>
+      <label>Nome*</label><input name="nome" required>
+      <label>Cognome*</label><input name="cognome" required>
+      <label>Telefono*</label><input name="telefono" required>
+      <label>Email*</label><input type="email" name="email" required>
+      <label>Azienda*</label><input name="azienda" required>
+      <label>Ruolo in azienda*</label><input name="ruolo" required>
+      <label>Provincia*</label><input name="provincia" required>
+      <label>Richiesta</label><textarea name="richiesta"></textarea>
+      <button type="submit">Invia richiesta</button>
     </form>
   </div>
 </section>
 
+<!-- ================= FOOTER ================= -->
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
@@ -363,7 +377,7 @@ footer{
 
     <div class="footer-links">
       <ul>
-        <li><a href="#">Chi siamo</a></li>
+        <li><a href="chi-siamo.html">Chi siamo</a></li>
         <li><a href="#">Servizi</a></li>
         <li><a href="contatti.html">Contatti</a></li>
         <li><a href="#">Lavora con noi</a></li>
