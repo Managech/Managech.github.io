@@ -2,24 +2,26 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<title>MANAGECH - Ingegneria & Management</title>
+<title>MANAGECH – Ingegneria & Management</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --green:#1FA67A;
+  --green:#013220;
   --blue:#0B1F33;
-  --white:#ffffff;
   --gray:#cfcfcf;
+  --white:#ffffff;
 }
 
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+
 body{
   margin:0;
   font-family:'Montserrat',sans-serif;
+  background:#fff;
   color:var(--blue);
 }
 
@@ -27,33 +29,32 @@ body{
 header{
   position:fixed;
   top:0;
+  left:0;
   width:100%;
   height:90px;
-  background:rgba(11,31,51,0.95);
-  backdrop-filter: blur(4px);
+  background:var(--blue);
   z-index:1000;
-  display:flex;
-  align-items:center;
 }
 
 .navbar{
-  width:100%;
-  padding:0 2rem;
+  height:100%;
+  padding:0 3rem;
   display:flex;
-  justify-content:space-between;
   align-items:center;
+  justify-content:space-between;
 }
 
 .logo{
   display:flex;
   align-items:center;
-  gap:.6rem;
+  gap:.8rem;
   color:var(--green);
   font-weight:700;
+  font-size:1.3rem;
   letter-spacing:1px;
 }
 
-.logo img{height:42px;display:block}
+.logo img{height:42px}
 
 .nav-links{
   list-style:none;
@@ -66,16 +67,15 @@ header{
 .nav-links a{
   color:#fff;
   text-decoration:none;
-  font-size:.9rem;
-  font-weight:500;
+  font-size:.95rem;
   position:relative;
 }
 
 .nav-links a::after{
   content:"";
   position:absolute;
-  left:0;
   bottom:-6px;
+  left:0;
   width:0;
   height:2px;
   background:var(--green);
@@ -87,177 +87,176 @@ header{
 /* ================= HERO ================= */
 .hero{
   margin-top:90px;
-  height:680px;
+  height:75vh;
   background:
-    linear-gradient(rgba(11,31,51,.65),rgba(11,31,51,.65)),
+    linear-gradient(rgba(11,31,51,.7),rgba(11,31,51,.7)),
     url("images/hero-bg.jpg") center/cover no-repeat;
   display:flex;
-  flex-direction:column;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   text-align:center;
-  padding:0 2rem;
+  padding:2rem;
+}
+
+.hero-box{
+  background:rgba(0,0,0,.35);
+  padding:3rem 4rem;
+  border-radius:8px;
 }
 
 .hero h1{
-  font-size:4.8rem;
-  font-weight:800;
-  color:var(--green);
   margin:0;
+  font-size:4.2rem;
+  color:var(--green);
   letter-spacing:4px;
 }
 
 .hero h2{
-  font-size:1.6rem;
-  font-weight:400;
+  margin:.8rem 0 1.8rem;
+  font-size:1.1rem;
   color:var(--gray);
-  margin:.8rem 0 1.4rem 0;
+  letter-spacing:3px;
 }
 
 .hero p{
   font-size:2.4rem;
-  font-weight:600;
   color:var(--green);
   max-width:900px;
+  margin:0 auto;
+  line-height:1.3;
 }
 
 /* ================= CONTENT BLOCKS ================= */
-.content-block{
+.section{
+  padding:6rem 2rem;
+}
+
+.block{
   max-width:1200px;
-  margin:6rem auto;
-  padding:0 2rem;
+  margin:0 auto 6rem;
   display:flex;
   align-items:center;
   gap:4rem;
 }
 
-.content-block.reverse{
-  flex-direction:row-reverse;
-}
+.block:nth-child(even){flex-direction:row-reverse}
 
-.content-text{
+.block-text{
   flex:1;
 }
 
-.content-text h2{
-  text-transform:uppercase;
+.block-text h3{
+  margin:0 0 1.2rem;
+  font-size:2.4rem;
   color:var(--green);
-  font-size:2.2rem;
-  margin-bottom:1rem;
+  letter-spacing:2px;
 }
 
-.content-text p{
-  font-size:1.4rem;
-  line-height:1.6;
+.block-text p{
+  font-size:1.15rem;
+  line-height:1.7;
 }
 
-.content-placeholder{
+.block-image{
   flex:1;
-  height:260px;
-  background:#eaeaea;
+}
+
+.block-image img{
+  width:100%;
+  height:280px;
+  object-fit:cover;
+  border-radius:6px;
+  box-shadow:0 10px 30px rgba(0,0,0,.2);
 }
 
 /* ================= FORM ================= */
-#contact-home{
+.form-section{
+  background:#f4f4f4;
   padding:5rem 2rem;
 }
 
-.form-intro{
+.form-wrapper{
   max-width:700px;
-  margin:0 auto 2rem auto;
-  text-align:center;
-  font-size:1.1rem;
+  margin:auto;
 }
 
-form{
-  max-width:720px;
-  margin:0 auto;
-  background:#f8f8f8;
-  padding:2.5rem;
-  border-radius:8px;
-  box-shadow:0 6px 20px rgba(0,0,0,.1);
+.form-wrapper p{
+  font-size:1.1rem;
+  margin-bottom:2rem;
 }
 
 form label{
   display:block;
-  margin-top:1rem;
-  font-weight:500;
+  font-size:.85rem;
+  margin-top:1.2rem;
 }
 
 form input,form textarea{
   width:100%;
-  margin-top:.3rem;
   padding:.7rem;
-  font-family:'Montserrat',sans-serif;
-  border-radius:5px;
+  margin-top:.3rem;
   border:1px solid #ccc;
+  font-family:'Montserrat',sans-serif;
 }
 
-form textarea{height:120px}
+form textarea{min-height:120px}
 
 form button{
   margin-top:2rem;
-  padding:.9rem 2.5rem;
   background:var(--green);
   color:#fff;
   border:none;
-  font-weight:600;
-  border-radius:5px;
+  padding:.9rem 2rem;
+  font-size:.9rem;
+  letter-spacing:1px;
   cursor:pointer;
 }
 
 /* ================= FOOTER ================= */
 footer{
   background:var(--blue);
-  color:#fff;
-  padding:4rem 2rem 2rem 2rem;
+  color:#ccc;
+  padding:4rem 2rem 1.5rem;
 }
 
-.footer-top{
+.footer-inner{
+  max-width:1200px;
+  margin:auto;
   display:flex;
-  flex-wrap:wrap;
   justify-content:space-between;
+  flex-wrap:wrap;
   gap:3rem;
 }
 
 .footer-brand h3{
   margin:0;
   color:var(--green);
-  font-size:1.2rem;
-  font-weight:700;
+  font-size:1.4rem;
 }
 
 .footer-brand h4{
-  margin:.3rem 0 1rem 0;
-  color:var(--gray);
+  margin:.3rem 0 1.5rem;
   font-weight:400;
+  color:#aaa;
 }
 
-.footer-links{
-  display:flex;
-  flex-direction:column;
+.footer-links ul{
+  list-style:none;
+  padding:0;
 }
+
+.footer-links li{margin:.6rem 0}
 
 .footer-links a{
-  color:var(--green);
+  color:#ccc;
   text-decoration:none;
-  margin:.3rem 0;
 }
 
-.footer-copy{
+.footer-bottom{
   text-align:center;
-  font-size:.75rem;
-  color:#bfbfbf;
   margin-top:3rem;
-}
-
-/* ================= MOBILE ================= */
-@media(max-width:900px){
-  .content-block,
-  .content-block.reverse{
-    flex-direction:column;
-    text-align:center;
-  }
+  font-size:.75rem;
+  color:#888;
 }
 </style>
 </head>
@@ -272,83 +271,95 @@ footer{
     <ul class="nav-links">
       <li><a href="#">Chi siamo</a></li>
       <li><a href="#">Servizi</a></li>
-      <li><a href="#">Contatti</a></li>
+      <li><a href="contatti.html">Contatti</a></li>
       <li><a href="#">Lavora con noi</a></li>
       <li><a href="#">Blog</a></li>
     </ul>
   </nav>
 </header>
 
-<section class="hero">
-  <h1>MANAGECH</h1>
-  <h2>ENGINEERING & MANAGEMENT STUDIO ASSOCIATO</h2>
-  <p>Ingegneria del valore, gestione della complessità.</p>
+<div class="hero">
+  <div class="hero-box">
+    <h1>MANAGECH</h1>
+    <h2>ENGINEERING & MANAGEMENT STUDIO ASSOCIATO</h2>
+    <p>Ingegneria del valore, gestione della complessità.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="block">
+    <div class="block-text">
+      <h3>INGEGNERIA STRATEGICA</h3>
+      <p>Supportiamo decisioni complesse integrando competenze tecniche, economiche e gestionali.</p>
+    </div>
+    <div class="block-image">
+      <img src="images/processi.jpg">
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-text">
+      <h3>GESTIONE DI GARE E COMMESSE</h3>
+      <p>Affianchiamo imprese e studi nella strutturazione e nel controllo di progetti ad alta complessità.</p>
+    </div>
+    <div class="block-image">
+      <img src="images/gare-commesse.jpg">
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-text">
+      <h3>CONSULENZA DIREZIONALE</h3>
+      <p>Trasformiamo dati, processi e strategie in valore concreto e misurabile.</p>
+    </div>
+    <div class="block-image">
+      <img src="images/consulenza.jpg">
+    </div>
+  </div>
 </section>
 
-<section class="content-block">
-  <div class="content-text">
-    <h2>OTTIMIZZAZIONE DEI PROCESSI</h2>
-    <p>Approccio ingegneristico e manageriale per migliorare performance, efficienza e controllo.</p>
-  </div>
-  <div class="content-placeholder"></div>
-</section>
+<section class="form-section">
+  <div class="form-wrapper">
+    <p>
+      Per informazioni e richieste di collaborazione, il nostro team è a disposizione per supportarvi.
+    </p>
 
-<section class="content-block reverse">
-  <div class="content-text">
-    <h2>GESTIONE GARE E COMMESSE</h2>
-    <p>Supporto tecnico-economico nelle gare d’appalto e nella gestione delle commesse complesse.</p>
+    <form>
+      <label>Nome*</label><input required>
+      <label>Cognome*</label><input required>
+      <label>Telefono*</label><input required>
+      <label>Email*</label><input type="email" required>
+      <label>Azienda*</label><input required>
+      <label>Ruolo in azienda*</label><input required>
+      <label>Provincia*</label><input required>
+      <label>Richiesta</label><textarea></textarea>
+      <button>Invia richiesta</button>
+    </form>
   </div>
-  <div class="content-placeholder"></div>
-</section>
-
-<section class="content-block">
-  <div class="content-text">
-    <h2>CONSULENZA STRATEGICA</h2>
-    <p>Decisioni solide, data-driven e orientate alla creazione di valore sostenibile.</p>
-  </div>
-  <div class="content-placeholder"></div>
-</section>
-
-<section id="contact-home">
-  <div class="form-intro">
-    Per informazioni e richieste di collaborazione, il nostro team è a disposizione per supportarvi.
-  </div>
-  <form>
-    <label>Nome*</label><input required>
-    <label>Cognome*</label><input required>
-    <label>Telefono*</label><input required>
-    <label>Email*</label><input type="email" required>
-    <label>Azienda*</label><input required>
-    <label>Ruolo in azienda*</label><input required>
-    <label>Provincia*</label><input required>
-    <label>Richiesta</label><textarea></textarea>
-    <button>Invia richiesta</button>
-  </form>
 </section>
 
 <footer>
-  <div class="footer-top">
+  <div class="footer-inner">
     <div class="footer-brand">
       <h3>MANAGECH</h3>
       <h4>INGEGNERIA & MANAGEMENT STUDIO ASSOCIATO</h4>
-      <p>Piazza Mazzini 27, 00178 Roma</p>
-      <p>+39 3493907663 · +39 3358116800</p>
-      <p>segreteria@managech.com</p>
-      <p>managech@pec.it</p>
+      <p>Piazza Mazzini 27 – Roma<br>
+      +39 349 390 7663<br>
+      segreteria@managech.com</p>
     </div>
 
     <div class="footer-links">
-      <a href="#">Chi siamo</a>
-      <a href="#">Servizi</a>
-      <a href="#">Contatti</a>
-      <a href="#">Lavora con noi</a>
-      <a href="#">Blog</a>
-      <a href="#">Privacy & Cookie</a>
-      <a href="#">Termini e condizioni</a>
+      <ul>
+        <li><a href="#">Chi siamo</a></li>
+        <li><a href="#">Servizi</a></li>
+        <li><a href="contatti.html">Contatti</a></li>
+        <li><a href="#">Lavora con noi</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
     </div>
   </div>
 
-  <div class="footer-copy">
+  <div class="footer-bottom">
     © 2026 MANAGECH INGEGNERIA & MANAGEMENT STUDIO ASSOCIATO | P. IVA 18387251004
   </div>
 </footer>
