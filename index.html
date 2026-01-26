@@ -243,6 +243,17 @@ form textarea{
   border:1px solid #ccc;
   font-family:'Montserrat',sans-serif;
 }
+    
+/* Armonizzazione campo prefisso con gli input */
+form select[name="prefisso"] {
+  padding: 0.7rem;            /* stesso padding degli input */
+  font-family: 'Montserrat', sans-serif; 
+  font-size: 0.85rem;         /* stessa dimensione font input */
+  height: 38px;               /* stessa altezza degli input */
+  border: 1px solid #ccc;     
+  border-radius: 0;           /* se vuoi come gli input */
+  cursor: pointer;
+}
 
 form textarea{
   min-height:120px;
@@ -434,7 +445,7 @@ footer{
       <label>Telefono*</label>
       
 <div style="display:flex; gap:0.5rem; align-items:center;">
-  <select name="prefisso" required style="padding:0.5rem; font-family:'Montserrat',sans-serif;">
+  <select name="prefisso" required>
   <!-- Europa -->
   <option value="+43">🇦🇹 Austria +43</option>
   <option value="+32">🇧🇪 Belgio +32</option>
@@ -492,7 +503,7 @@ footer{
 </select>
 
   </select>
-  <input type="tel" name="telefono" placeholder="345 6789012" required style="flex:1; padding:0.5rem; font-family:'Montserrat',sans-serif;">
+   <input type="tel" name="telefono" placeholder="345 6789012" required style="flex:1; padding:0.7rem; font-family:'Montserrat',sans-serif;">
 </div>
 
       <label>Email*</label><input type="email" name="email" required>
