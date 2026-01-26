@@ -306,20 +306,25 @@ footer{
   
 .privacy-check {
   display: grid;
-  grid-template-columns: auto 1fr; /* checkbox + testo */
-  gap: 0.6rem;
-  align-items: start; /* checkbox allineato con l’inizio del testo */
+  grid-template-columns: auto 1fr; /* colonna checkbox + colonna testo */
+  gap: 0.6rem; /* distanza tra checkbox e testo */
+  align-items: start; /* allinea checkbox con la prima riga del testo */
   margin-top: 1.5rem;
   font-size: 0.85rem;
   line-height: 1.4;
 }
 
 .privacy-check input[type="checkbox"] {
-  margin: 0; /* niente offset, allineamento gestito dal grid */
+  margin: 0;           /* elimina margini indesiderati */
+  padding: 0;          /* elimina padding interno */
+  flex-shrink: 0;      /* non ridurre la checkbox */
+  margin-top: 0.15rem; /* piccolo offset per centrare verticalmente con la prima riga del testo */
 }
 
 .privacy-check label {
-  margin: 0; /* elimina eventuali margini del label */
+  margin: 0;            /* nessun margine extra */
+  padding-left: 0.2rem; /* piccolo padding extra per creare spazio tra checkbox e testo */
+  display: block;
 }
 
 .privacy-check a {
