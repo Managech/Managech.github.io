@@ -304,7 +304,7 @@ footer{
   color:#888;
 }
   
- .privacy-check {
+ .-check {
   display: flex;
   align-items: center; /* allinea verticalmente checkbox e testo */
   gap: 0.6rem;        /* distanza checkbox - testo */
@@ -313,13 +313,13 @@ footer{
   line-height: 1.4;
 }
 
-.privacy-check input[type="checkbox"] {
+.-check input[type="checkbox"] {
   width: 16px;
   height: 16px;
   margin: 0;
 }
 
-.privacy-check span a {
+.-check span a {
   color: var(--green);
   text-decoration: underline;
 }
@@ -420,10 +420,10 @@ footer{
       <label>Richiesta</label><textarea name="richiesta"></textarea>
       <div class="privacy-check">
   <input type="checkbox" id="privacy" required>
-  <span>
+  <label for="privacy">
     Dichiaro di aver preso visione e di accettare integralmente
     <a href="privacy.html" target="_blank">l'informativa privacy</a>
-  </span>
+  </label>
 </div>
 
       <button type="submit">Invia richiesta</button>
