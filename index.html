@@ -304,22 +304,25 @@ footer{
   color:#888;
 }
   
- .-check {
+ .privacy-check {
   display: flex;
-  align-items: center; /* allinea verticalmente checkbox e testo */
-  gap: 0.6rem;        /* distanza checkbox - testo */
+  align-items: flex-start;  /* checkbox in alto rispetto al testo multilinea */
+  gap: 0.6rem;
   margin-top: 1.5rem;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   line-height: 1.4;
 }
 
-.-check input[type="checkbox"] {
-  width: 16px;
-  height: 16px;
-  margin: 0;
+.privacy-check input[type="checkbox"] {
+  margin-top: 0.2rem; /* piccolo offset per allineare meglio il checkbox con la prima riga di testo */
+  flex-shrink: 0;     /* checkbox non si riduce */
 }
 
-.-check span a {
+.privacy-check label {
+  display: inline-block;
+}
+  
+.privacy-check a {
   color: var(--green);
   text-decoration: underline;
 }
