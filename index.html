@@ -315,25 +315,27 @@ footer{
   
 .privacy-check {
   display: grid;
-  grid-template-columns: auto 1fr; /* colonna checkbox + colonna testo */
-  gap: 0.6rem; /* distanza tra checkbox e testo */
-  align-items: start; /* allinea checkbox con la prima riga del testo */
+  grid-template-columns: auto 1fr; /* checkbox + testo */
+  gap: 0.6rem;                     /* spazio tra checkbox e testo */
+  align-items: start;               /* checkbox allineato alla prima riga del testo */
   margin-top: 1.5rem;
   font-size: 0.85rem;
   line-height: 1.4;
+  cursor: pointer;                  /* permette clic anche sul testo */
 }
 
 .privacy-check input[type="checkbox"] {
-  margin: 0;           /* elimina margini indesiderati */
-  padding: 0;          /* elimina padding interno */
-  flex-shrink: 0;      /* non ridurre la checkbox */
-  margin-top: 0.15rem; /* piccolo offset per centrare verticalmente con la prima riga del testo */
+  margin: 0;            /* nessun margine */
+  padding: 0;           /* nessun padding */
+  width: 18px;           /* dimensione visibile e cliccabile */
+  height: 18px;          /* dimensione visibile e cliccabile */
+  cursor: pointer;       /* indica che si può cliccare */
 }
 
 .privacy-check label {
-  margin: 0;            /* nessun margine extra */
-  padding-left: 0.2rem; /* piccolo padding extra per creare spazio tra checkbox e testo */
+  margin: 0;
   display: block;
+  cursor: pointer;       /* cliccando sul testo, la checkbox si flagga */
 }
 
 .privacy-check a {
