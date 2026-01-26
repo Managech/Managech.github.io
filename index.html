@@ -244,14 +244,18 @@ form textarea{
   font-family:'Montserrat',sans-serif;
 }
     
-/* Armonizzazione campo prefisso con gli input */
 form select[name="prefisso"] {
-  padding: 0.7rem;            /* stesso padding degli input */
+  padding: 0.65rem 0.7rem;    /* leggero offset verticale per allineare il testo */
   font-family: 'Montserrat', sans-serif; 
-  font-size: 0.85rem;         /* stessa dimensione font input */
-  height: 38px;               /* stessa altezza degli input */
+  font-size: 0.85rem;       
+  height: 38px;              
+  line-height: 1.2;           /* allineamento verticale del testo */
   border: 1px solid #ccc;     
-  border-radius: 0;           /* se vuoi come gli input */
+  border-radius: 0;           
+  box-sizing: border-box;      /* padding + height coerenti */
+  appearance: none;            /* rimuove freccia nativa browser */
+  -webkit-appearance: none;    
+  -moz-appearance: none;      
   cursor: pointer;
 }
 
@@ -503,7 +507,7 @@ footer{
 </select>
 
   </select>
-   <input type="tel" name="telefono" placeholder="345 6789012" required style="flex:1; padding:0.7rem; font-family:'Montserrat',sans-serif;">
+    <input type="tel" name="telefono" placeholder="345 6789012" required style="flex:1; padding:0.7rem; font-family:'Montserrat',sans-serif; margin-top:0;">
 </div>
 
       <label>Email*</label><input type="email" name="email" required>
