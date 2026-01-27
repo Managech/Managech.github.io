@@ -495,6 +495,88 @@ footer{
     text-align:center;
   }
 }
+/* ================= SEZIONE CONSULENZA STRATEGICA ================= */
+.strategic-section {
+  position: relative;
+  background: url('images/consulenza-strategica.jpg') center/cover no-repeat;
+  min-height: 100vh; /* altezza schermo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+
+.strategic-overlay {
+  width: 100%;
+  max-width: 1200px;
+  background: linear-gradient(to right, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.6) 100%);
+  padding: 3rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.strategic-content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 2rem;
+}
+
+.strategic-text {
+  flex: 2; /* 2/3 dello spazio */
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.strategic-text h2 {
+  font-size: 3rem;
+  color: var(--green);
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.strategic-text p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--blue);
+}
+
+.strategic-image {
+  flex: 1; /* 1/3 dello spazio */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.strategic-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  object-fit: cover;
+}
+
+/* Riduzione spazi verticali su mobile */
+@media (max-width: 992px) {
+  .strategic-overlay {
+    flex-direction: column;
+    padding: 2rem;
+  }
+  .strategic-content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .strategic-image {
+    order: -1; /* immagine sopra il testo su mobile */
+  }
+  .strategic-text h2 {
+    font-size: 2.4rem;
+  }
+}
   
 </style>
 </head>
@@ -531,33 +613,23 @@ footer{
   </div>
 </section>
 
-<!-- ================= PRIMA SEZIONE: CONSULENZA STRATEGICA ================= -->
-<section class="section strategic-consulting" style="min-height:100vh; display:flex; align-items:center; justify-content:center; padding:4rem 2rem; background:#fff;">
-  <div class="strategic-container" style="display:flex; flex-wrap:wrap; max-width:1200px; width:100%; gap:3rem; align-items:center;">
-
-    <!-- Testo -->
-    <div class="strategic-text" style="flex:1; min-width:320px; text-align:justify;">
-      <h3 style="font-size:3rem; color:var(--green); margin-bottom:2rem; letter-spacing:1px; text-align:left;">
-        Consulenza Strategica
-      </h3>
-      <p style="font-size:1.2rem; line-height:1.8; margin-bottom:1.5rem;">
-        MANAGECH supporta aziende, enti e professionisti nella trasformazione delle sfide in opportunità di crescita. Il nostro approccio integra competenze ingegneristiche, manageriali e analitiche, garantendo decisioni consapevoli e massimizzazione del valore sostenibile.
-      </p>
-      <p style="font-size:1.2rem; line-height:1.8; margin-bottom:1.5rem;">
-        Grazie all’esperienza maturata in contesti complessi e diversificati, offriamo strumenti strategici su misura per pianificare, gestire e monitorare obiettivi di lungo periodo, senza perdere di vista performance, rischi e innovazione tecnologica.
-      </p>
-      <p style="font-size:1.2rem; line-height:1.8;">
-        La consulenza strategica di Managech è il punto di partenza per costruire percorsi aziendali solidi, efficienti e capaci di generare valore concreto nel tempo.
-      </p>
-    </div>
-
-    <!-- Box immagine -->
-    <div class="strategic-image" style="flex:1; min-width:300px; display:flex; justify-content:center;">
-      <div style="width:100%; max-width:450px; border-radius:15px; overflow:hidden; box-shadow:0 20px 50px rgba(0,0,0,0.15); transition:transform 0.3s ease;">
-        <img src="images/strategic-consulting.jpg" alt="Consulenza Strategica Managech" style="width:100%; height:100%; object-fit:cover; display:block;">
+<!-- ================= SEZIONE CONSULENZA STRATEGICA ================= -->
+<section class="strategic-section">
+  <div class="strategic-overlay">
+    <div class="strategic-content">
+      <div class="strategic-text">
+        <h2>Consulenza Strategica</h2>
+        <p>
+          L’Associazione Managech supporta aziende, consorzi e professionisti nello sviluppo del business, nella gestione dei processi e dell’innovazione tecnologica. 
+          Grazie a competenze manageriali, strategiche e consulenziali maturate in contesti complessi, il nostro team offre un supporto concreto per ottimizzare le performance economiche, prendere decisioni efficaci e affrontare le trasformazioni organizzative e digitali.
+          La nostra consulenza strategica non si limita alla teoria: integriamo approcci ingegneristici e manageriali per generare valore sostenibile, garantendo coerenza tra obiettivi, risorse e processi.
+        </p>
+      </div>
+      <div class="strategic-image">
+        <!-- Puoi sostituire l'immagine con una a tua scelta -->
+        <img src="images/consulenza-strategica.jpg" alt="Consulenza Strategica Managech">
       </div>
     </div>
-
   </div>
 </section>
 
