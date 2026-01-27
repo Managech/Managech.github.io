@@ -498,35 +498,37 @@ footer{
 /* ================= SEZIONE CONSULENZA STRATEGICA ================= */
 .strategic-section {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* testo a sx, immagine a dx */
-  min-height: 500px; /* altezza minima stabile */
+  grid-template-columns: repeat(2, 1fr); /* testo a sx, immagine a dx */
+  align-items: center;                  /* testo e immagine centrati verticalmente */
+  gap: 0;                               /* niente gap extra */
+  max-width: 1200px;
+  margin: 0 auto;                       /* centra sezione */
+  padding: 0;                            /* niente padding globale */
 }
 
 .strategic-text {
-  padding: 4rem 3rem;   /* margini coerenti */
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* testo centrato verticalmente */
+  padding: 2rem 2rem 2rem 4rem;   /* margine sx maggiore, padding uniforme sopra/dx/inf */
   text-align: justify;
-  max-width: 600px;     /* limita larghezza testo */
-  margin-left: auto;    /* allineato a sinistra */
+  max-width: 550px;                /* limita la larghezza del testo */
+  margin: 0;                        /* rimuove margin auto */
 }
 
 .strategic-text h2 {
-  font-size: 2.8rem;
+  font-size: 2.2rem;                /* leggermente più piccolo per compattezza */
   color: var(--green);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .strategic-text p {
-  font-size: 1.15rem;
-  line-height: 1.7;
+  font-size: 1.05rem;               /* dimensione leggermente più piccola */
+  line-height: 1.6;                 /* riduce l’altezza della sezione */
   color: var(--blue);
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 .strategic-image {
   width: 100%;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -535,7 +537,6 @@ footer{
   height: 100%;
   object-fit: cover;
   display: block;
-  border-radius: 0; /* rimuovi se vuoi bordi arrotondati */
   transition: transform 0.3s;
 }
 
@@ -546,16 +547,16 @@ footer{
 /* ================= RESPONSIVE ================= */
 @media (max-width: 992px) {
   .strategic-section {
-    grid-template-columns: 1fr; /* colonna singola */
+    grid-template-columns: 1fr;   /* colonna singola su mobile */
+    gap: 1rem;
   }
   .strategic-text {
-    max-width: 100%;
     padding: 2rem;
+    max-width: 100%;
     text-align: justify;
-    margin-left: 0;
   }
   .strategic-image {
-    min-height: 300px;
+    min-height: 250px;
   }
 }
   
