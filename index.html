@@ -503,22 +503,25 @@ footer{
   min-height: 100vh; /* altezza schermo */
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding: 2rem; /* ridotto lo spazio verticale */
+  justify-content: center;  /* centra verticalmente il contenuto */
+  padding: 2rem;
 }
 
 .strategic-overlay {
   width: 100%;
   max-width: 1200px;
-  background: rgba(255,255,255,0.85); /* solo leggero sfondo bianco, no gradiente interno */
-  padding: 2rem;
+  background: rgba(255,255,255,0.85); /* sfondo semitrasparente */
+  padding: 3rem 2rem;
   border-radius: 12px;
+  box-sizing: border-box;
 }
 
 .strategic-content {
-  display: flex;
-  flex-direction: row;
   width: 100%;
+  display: flex;
+  justify-content: flex-start; /* o center se vuoi centrato */
+  align-items: center;
+  flex-direction: column;      /* testo solo in colonna */
   gap: 2rem;
 }
 
@@ -542,17 +545,6 @@ footer{
   line-height: 1.8;
   color: var(--blue);
 }
-
-/* Riduzione spazi verticali su mobile */
-@media (max-width: 992px) {
-  .strategic-overlay {
-    flex-direction: column;
-    padding: 2rem;
-  }
-  .strategic-content {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
   
 </style>
 </head>
@@ -600,10 +592,6 @@ footer{
           Grazie a competenze manageriali, strategiche e consulenziali maturate in contesti complessi, il nostro team offre un supporto concreto per ottimizzare le performance economiche, prendere decisioni efficaci e affrontare le trasformazioni organizzative e digitali.
           La nostra consulenza strategica non si limita alla teoria: integriamo approcci ingegneristici e manageriali per generare valore sostenibile, garantendo coerenza tra obiettivi, risorse e processi.
         </p>
-      </div>
-      <div class="strategic-image">
-        <!-- Puoi sostituire l'immagine con una a tua scelta -->
-        <img src="images/consulenza-strategica.jpg" alt="Consulenza Strategica Managech">
       </div>
     </div>
   </div>
