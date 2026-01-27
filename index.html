@@ -427,10 +427,10 @@ footer{
   margin-bottom:1rem;
 }
 
-/* ===== SERVIZI GRID PREMIUM ===== */
+/* ===== SERVIZI GRID PREMIUM (SOLUZIONE 3) ===== */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* larghezza minima 260px, flessibile */
   gap: 2rem;
   margin-top: 2rem;
 }
@@ -439,10 +439,10 @@ footer{
   background: #fff;
   border-radius: 16px;
   padding: 2rem 1.8rem;
-  min-height: 240px;       /* più alta */
+  min-height: 260px;        /* più alta */
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* testo distribuito in alto */
+  justify-content: center;  /* testo centrato verticalmente */
   align-items: center;
   text-align: center;
   position: relative;
@@ -476,8 +476,8 @@ footer{
 }
 
 .service-card p {
-  font-size: 1rem;          /* leggermente più piccolo per distinguere titolo/descrizione */
-  line-height: 1.7;
+  font-size: 1rem;       /* testo più piccolo rispetto al titolo */
+  line-height: 1.6;
   color: var(--blue);
   opacity: 0.85;
 }
@@ -495,14 +495,6 @@ footer{
 
 .service-card:hover h4,
 .service-card:hover p {
-  color:#fff;
-}
-
-
-.service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-  background: var(--green);
   color:#fff;
 }
 
