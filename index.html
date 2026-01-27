@@ -560,7 +560,7 @@ footer{
 
 .strategic-container {
   display: flex;
-  align-items: flex-start;
+  align-items: flex-start; /* allineamento in alto */
   width: 100%;
   max-width: 1400px;  
   margin: 0 auto;
@@ -570,24 +570,29 @@ footer{
 
 .strategic-text {
   flex: 1;
-  padding: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* allinea il testo in alto */
   text-align: justify;
+  margin: 0; /* rimuove eventuali margini */
+  padding: 0;
+}
+
+.strategic-text h2 {
+  margin-top: 0;  /* rimuove margine superiore */
+  margin-bottom: 1rem; /* margine inferiore uniforme */
 }
 
 .strategic-text p {
-  font-size: 1.15rem;
-  line-height: 1.7;
-  color: var(--blue);
-  margin-bottom: 1rem;
+  margin-top: 0;
+  margin-bottom: 1rem; /* margini inferiori uniformi */
 }
 
 .strategic-image {
   flex: 1;
+  height: auto;
+  max-height: 100%; /* prende tutta l’altezza del testo */
   overflow: hidden;
-  aspect-ratio: 16/9;
   border-radius: 8px;
   box-shadow: 0 15px 40px rgba(0,0,0,.18);
 }
