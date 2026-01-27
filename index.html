@@ -560,59 +560,62 @@ footer{
 
 .strategic-container {
   display: flex;
-  align-items: flex-start;
-  width: 100%;
-  max-width: 1400px;  
-  margin: 0 auto;
-  gap: 2rem;
-  padding: 0 2rem;    
+  align-items: center;      /* allinea testo e immagine verticalmente al centro */
+  justify-content: space-between;
+  max-width: 1200px;        /* stessa larghezza dei blocchi Chi siamo */
+  margin: 0 auto 6rem auto; /* centrato e con margine inferiore */
+  gap: 4rem;                /* distanza tra testo e immagine */
+  padding: 0 2rem;
 }
 
 .strategic-text {
   flex: 1;
-  padding: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center;  /* allinea testo verticalmente */
   text-align: justify;
 }
 
+.strategic-text h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--green);
+  font-size: 2.6rem;
+}
+
 .strategic-text p {
+  margin-bottom: 1rem;
   font-size: 1.15rem;
   line-height: 1.7;
   color: var(--blue);
-  margin-bottom: 1rem;
 }
 
 .strategic-image {
   flex: 1;
-  overflow: hidden;
-  aspect-ratio: 16/9;
-  border-radius: 8px;
-  box-shadow: 0 15px 40px rgba(0,0,0,.18);
 }
 
 .strategic-image img {
   width: 100%;
   height: 100%;
+  max-height: 360px;  /* stessa altezza dei blocchi Chi siamo */
   object-fit: cover;
-  display: block;
+  border-radius: 8px;
+  box-shadow: 0 15px 40px rgba(0,0,0,.18);
 }
 
 /* Mobile */
 @media (max-width: 992px) {
   .strategic-container {
     flex-direction: column;
-    padding: 0 1.5rem;  /* margini laterali ridotti per tablet/mobile */
     text-align: center;
   }
+
   .strategic-text {
-    text-align: center;
     margin-bottom: 2rem;
   }
-  .strategic-image {
-    width: 100%;
-    aspect-ratio: 16/9;
+
+  .strategic-image img {
+    max-height: 320px;
   }
 }
 /* ===== SERVICE CARD PERFETTA ===== */
