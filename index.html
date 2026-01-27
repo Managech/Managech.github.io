@@ -374,6 +374,111 @@ footer{
   display: inline-block;
   width: 20px;           /* allinea perfettamente le icone */
 }
+/* ===== BLOCCO CENTRALE HOME ===== */
+.central-block {
+  background:#fff;
+  padding:6rem 2rem;
+}
+
+.central-section {
+  max-width:1200px;
+  margin:0 auto 4rem;
+}
+
+.central-section h3 {
+  color: var(--green);
+  font-size:2.4rem;
+  margin-bottom:1.5rem;
+  letter-spacing:1px;
+}
+
+.central-section p {
+  font-size:1.1rem;
+  line-height:1.7;
+  color: var(--blue);
+}
+
+.central-section ul {
+  list-style: disc inside;
+  font-size:1.1rem;
+  line-height:1.7;
+  color: var(--blue);
+}
+
+.central-section ul li {
+  margin-bottom:1rem;
+}
+
+/* ===== SERVIZI GRID ===== */
+.services-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap:1rem;
+  margin-top:2rem;
+}
+
+.service-card {
+  background:#f4f4f4;
+  padding:1.5rem;
+  border-radius:8px;
+  text-align:center;
+  font-weight:500;
+  font-size:1rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor:pointer;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  background: var(--green);
+  color:#fff;
+}
+
+/* ===== WHY GRID ===== */
+.why-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap:2rem;
+  margin-top:2rem;
+}
+
+.why-card {
+  background:#f4f4f4;
+  padding:1.5rem;
+  border-radius:8px;
+  text-align:center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor:pointer;
+}
+
+.why-card i {
+  font-size:2rem;
+  color: var(--green);
+  margin-bottom:0.8rem;
+}
+
+.why-card h4 {
+  font-size:1.2rem;
+  margin-bottom:0.5rem;
+}
+
+.why-card p {
+  font-size:1rem;
+  line-height:1.5;
+  color: var(--blue);
+}
+
+.why-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  background: var(--green);
+  color:#fff;
+}
+
+.why-card:hover p {
+  color:#fff;
+}
 
 </style>
 </head>
@@ -410,40 +515,72 @@ footer{
   </div>
 </section>
 
-<!-- ================= BLOCCO SERVIZI ================= -->
-<section class="section">
-  <div class="block">
-    <div class="block-text">
-      <h3>INGEGNERIA STRATEGICA</h3>
-      <p>Supportiamo decisioni complesse integrando competenze tecniche, economiche e gestionali.
-      Forniamo strumenti di analisi e simulazione per valutare scenari e prendere decisioni più informate e consapevoli.</p>
-    </div>
-    <div class="block-image">
-      <img src="images/processi.jpg" alt="Processi aziendali e ingegneria strategica">
+<!-- ================= BLOCCO CENTRALE HOME ================= -->
+<section class="section central-block">
+
+  <!-- 1️⃣ CONSULENZA STRATEGICA -->
+  <div class="central-section copy-section">
+    <h3>Cos'è la consulenza strategica</h3>
+    <p>
+      La consulenza strategica di MANAGECH supporta le aziende nella definizione di obiettivi chiari, nella valutazione dei processi e nella creazione di piani concreti per ottenere risultati misurabili. 
+      Grazie alla combinazione di competenze tecniche, economiche e gestionali, offriamo soluzioni su misura per ogni realtà.
+    </p>
+  </div>
+
+  <!-- 2️⃣ SERVIZI OFFERTI -->
+  <div class="central-section services-section">
+    <h3>I nostri servizi</h3>
+    <div class="services-grid">
+      <div class="service-card">Consulenza strategica</div>
+      <div class="service-card">Due Diligence Industriale</div>
+      <div class="service-card">Ottimizzazione dei Processi</div>
+      <div class="service-card">Piani Industriali</div>
+      <div class="service-card">Contabilità Industriale e Controllo di Gestione</div>
+      <div class="service-card">Finanza Agevolata</div>
+      <div class="service-card">Formazione</div>
+      <div class="service-card">Altri servizi su richiesta</div>
     </div>
   </div>
 
-  <div class="block">
-    <div class="block-text">
-      <h3>GESTIONE DI GARE E COMMESSE</h3>
-      <p>Affianchiamo imprese e studi nella strutturazione e nel controllo di progetti ad alta complessità.
-      La nostra esperienza garantisce l’ottimizzazione di tempi, costi e risorse, riducendo rischi e inefficienze.</p>
-    </div>
-    <div class="block-image">
-      <img src="images/gare-commesse.jpg" alt="Gestione gare e commesse">
+  <!-- 3️⃣ METODOLOGIA -->
+  <div class="central-section methodology-section">
+    <h3>Il nostro approccio</h3>
+    <ul>
+      <li><strong>Definizione degli obiettivi:</strong> Identificazione delle priorità e degli obiettivi strategici dell'azienda.</li>
+      <li><strong>Analisi:</strong> Studio approfondito dei processi, dei dati e delle risorse disponibili.</li>
+      <li><strong>Misura dello stato attuale:</strong> Valutazione oggettiva delle performance e identificazione delle aree di miglioramento.</li>
+      <li><strong>Definizione delle azioni correttive:</strong> Pianificazione di interventi mirati per ottimizzare processi e risultati.</li>
+      <li><strong>Implementazione:</strong> Supporto nell’esecuzione delle azioni e monitoraggio dei risultati.</li>
+    </ul>
+  </div>
+
+  <!-- 4️⃣ PERCHÉ SCEGLIERE MANAGECH -->
+  <div class="central-section why-section">
+    <h3>Perché scegliere MANAGECH</h3>
+    <div class="why-grid">
+      <div class="why-card">
+        <i class="fas fa-lightbulb"></i>
+        <h4>Soluzioni innovative</h4>
+        <p>Offriamo approcci creativi e personalizzati per massimizzare il valore aziendale.</p>
+      </div>
+      <div class="why-card">
+        <i class="fas fa-chart-line"></i>
+        <h4>Risultati misurabili</h4>
+        <p>Monitoriamo ogni intervento con indicatori chiari per garantire performance concrete.</p>
+      </div>
+      <div class="why-card">
+        <i class="fas fa-users"></i>
+        <h4>Team multidisciplinare</h4>
+        <p>Professionisti con competenze tecniche, economiche e gestionali sempre a disposizione.</p>
+      </div>
+      <div class="why-card">
+        <i class="fas fa-shield-alt"></i>
+        <h4>Affidabilità e trasparenza</h4>
+        <p>Operiamo con massima trasparenza, rispettando tempi, costi e obiettivi concordati.</p>
+      </div>
     </div>
   </div>
 
-  <div class="block">
-    <div class="block-text">
-      <h3>CONSULENZA DIREZIONALE</h3>
-      <p>Trasformiamo dati, processi e strategie in valore concreto e misurabile.
-      Offriamo supporto decisionale e progettazione di modelli organizzativi e gestionali efficaci, su misura per ogni cliente.</p>
-    </div>
-    <div class="block-image">
-      <img src="images/consulenza.jpg" alt="Consulenza direzionale">
-    </div>
-  </div>
 </section>
 
 <!-- ================= FORM CONTATTI ================= -->
