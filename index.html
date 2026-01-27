@@ -30,7 +30,8 @@ body{
   background:#fff;
   color:var(--blue);
 }
-  .form-tags{
+
+.form-tags{
   display:flex;
   gap:1rem;
   margin-bottom:2rem;
@@ -380,39 +381,15 @@ footer{
 /* ===== BLOCCO CENTRALE HOME ===== */
 .central-block {
   background:#fff;
-  padding:6rem 2rem;
+  padding:6rem 0; /* vertical only */
 }
 
 /* ===== CENTRAL SECTION ===== */
 .central-section {
   width: 100%;
   max-width: 1400px;   
-  margin: 0 auto 4rem auto;
-  padding: 0 2rem;     
-}
-
-.central-section h3 {
-  color: var(--green);
-  font-size:2.4rem;
-  margin-bottom:1.5rem;
-  letter-spacing:1px;
-}
-
-.central-section p {
-  font-size:1.1rem;
-  line-height:1.7;
-  color: var(--blue);
-}
-
-.central-section ul {
-  list-style: disc inside;
-  font-size:1.1rem;
-  line-height:1.7;
-  color: var(--blue);
-}
-
-.central-section ul li {
-  margin-bottom:1rem;
+  margin: 0 auto;
+  padding: 0 2rem; /* only horizontal padding */
 }
 
 /* ===== SERVIZI GRID ===== */
@@ -423,24 +400,6 @@ footer{
   margin-top:2rem;
 }
 
-.service-card {
-  background:#f4f4f4;
-  padding:1.5rem;
-  border-radius:8px;
-  text-align:center;
-  font-weight:500;
-  font-size:1rem;
-  transition: transform 0.3s, box-shadow 0.3s;
-  cursor:pointer;
-}
-
-.service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-  background: var(--green);
-  color:#fff;
-}
-
 /* ===== WHY GRID ===== */
 .why-grid {
   display:grid;
@@ -449,52 +408,10 @@ footer{
   margin-top:2rem;
 }
 
-.why-card {
-  background:#f4f4f4;
-  padding:1.5rem;
-  border-radius:8px;
-  text-align:center;
-  transition: transform 0.3s, box-shadow 0.3s;
-  cursor:pointer;
-}
-
-.why-card i {
-  font-size:2rem;
-  color: var(--green);
-  margin-bottom:0.8rem;
-}
-
-.why-card h4 {
-  font-size:1.2rem;
-  margin-bottom:0.5rem;
-}
-
-.why-card p {
-  font-size:1rem;
-  line-height:1.5;
-  color: var(--blue);
-}
-
-.why-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-  background: var(--green);
-  color:#fff;
-}
-
-.why-card:hover p {
-  color:#fff;
-}
-
-/* Hover effect su immagine */
-.strategic-image div:hover {
-  transform: translateY(-10px) scale(1.02);
-}
-
 /* ===== STRATEGIC SECTION ===== */
 .strategic-section {
   width: 100%;
-  padding: 4rem 2rem;
+  padding: 4rem 0; /* vertical only */
 }
 
 .strategic-container {
@@ -504,7 +421,7 @@ footer{
   max-width: 1400px;  
   margin: 0 auto;
   gap: 2rem;
-  padding: 0 2rem;    
+  padding: 0; /* remove duplicate padding */
 }
 
 .strategic-text {
@@ -595,9 +512,9 @@ footer{
   </div>
 </section>
 
+<!-- ================= STRATEGIC ================= -->
 <section class="strategic-section">
   <div class="strategic-container">
-    <!-- TESTO -->
     <div class="strategic-text">
       <h2>Consulenza Strategica</h2>
       <p>
@@ -611,7 +528,6 @@ footer{
       </p>
     </div>
 
-    <!-- IMMAGINE -->
     <div class="strategic-image">
       <img src="images/consulenza-strategica.jpg" alt="Consulenza Strategica Managech">
     </div>
