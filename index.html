@@ -497,27 +497,19 @@ footer{
 }
 /* ================= SEZIONE CONSULENZA STRATEGICA ================= */
 .strategic-section {
-  width: 100%;
-}
-
-.strategic-content {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: stretch; /* testo e immagine stessa altezza */
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* testo a sx, immagine a dx */
+  min-height: 500px; /* altezza minima stabile */
 }
 
 .strategic-text {
-  flex: 1;
-  background: #fff;
-  padding: 4rem 3rem 4rem 3rem; /* margini coerenti su tutti i lati */
+  padding: 4rem 3rem;   /* margini coerenti */
   display: flex;
   flex-direction: column;
   justify-content: center; /* testo centrato verticalmente */
   text-align: justify;
-  box-sizing: border-box;
+  max-width: 600px;     /* limita larghezza testo */
+  margin-left: auto;    /* allineato a sinistra */
 }
 
 .strategic-text h2 {
@@ -534,17 +526,16 @@ footer{
 }
 
 .strategic-image {
-  flex: 1;
-  position: relative;
+  width: 100%;
   overflow: hidden;
-  margin-right: calc(-100vw + 1200px); /* forza il bordo destro fino allo schermo */
 }
 
 .strategic-image img {
-  width: 100vw; /* riempie tutta la larghezza dello schermo */
+  width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  border-radius: 0; /* rimuovi se vuoi bordi arrotondati */
   transition: transform 0.3s;
 }
 
@@ -554,28 +545,17 @@ footer{
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 992px) {
-  .strategic-content {
-    flex-direction: column;
-  }
-  .strategic-text, .strategic-image {
-    width: 100%;
-    min-height: 300px;
+  .strategic-section {
+    grid-template-columns: 1fr; /* colonna singola */
   }
   .strategic-text {
-    justify-content: flex-start;
+    max-width: 100%;
     padding: 2rem;
-  }
-  .strategic-text h2 {
-    text-align: center;
-  }
-  .strategic-text p {
     text-align: justify;
+    margin-left: 0;
   }
   .strategic-image {
-    margin-right: 0;
-  }
-  .strategic-image img {
-    width: 100%;
+    min-height: 300px;
   }
 }
   
@@ -614,27 +594,22 @@ footer{
   </div>
 </section>
 
-<!-- ================= SEZIONE CONSULENZA STRATEGICA ================= -->
 <section class="strategic-section">
-  <div class="strategic-content">
-    <!-- TESTO -->
-    <div class="strategic-text">
-      <h2>Consulenza Strategica</h2>
-      <p>
-        L’Associazione Managech supporta aziende, consorzi e professionisti nello sviluppo del business, nella gestione dei processi e dell’innovazione tecnologica.
-      </p>
-      <p>
-        Grazie a competenze manageriali, strategiche e consulenziali maturate in contesti complessi, il nostro team offre un supporto concreto per ottimizzare le performance economiche, prendere decisioni efficaci e affrontare le trasformazioni organizzative e digitali.
-      </p>
-      <p>
-        La nostra consulenza strategica non si limita alla teoria: integriamo approcci ingegneristici e manageriali per generare valore sostenibile, garantendo coerenza tra obiettivi, risorse e processi.
-      </p>
-    </div>
+  <div class="strategic-text">
+    <h2>Consulenza Strategica</h2>
+    <p>
+      L’Associazione Managech supporta aziende, consorzi e professionisti nello sviluppo del business, nella gestione dei processi e dell’innovazione tecnologica.
+    </p>
+    <p>
+      Grazie a competenze manageriali, strategiche e consulenziali maturate in contesti complessi, il nostro team offre un supporto concreto per ottimizzare le performance economiche, prendere decisioni efficaci e affrontare le trasformazioni organizzative e digitali.
+    </p>
+    <p>
+      La nostra consulenza strategica non si limita alla teoria: integriamo approcci ingegneristici e manageriali per generare valore sostenibile, garantendo coerenza tra obiettivi, risorse e processi.
+    </p>
+  </div>
 
-    <!-- IMMAGINE -->
-    <div class="strategic-image">
-      <img src="images/consulenza-strategica.jpg" alt="Consulenza Strategica Managech">
-    </div>
+  <div class="strategic-image">
+    <img src="images/consulenza-strategica.jpg" alt="Consulenza Strategica Managech">
   </div>
 </section>
 
