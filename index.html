@@ -498,23 +498,21 @@ footer{
 /* ================= SEZIONE CONSULENZA STRATEGICA ================= */
 .strategic-section {
   position: relative;
-  background: url('images/consulenza-strategica.jpg') center/cover no-repeat;
+  background: linear-gradient(to right, rgba(255,255,255,0.85), rgba(255,255,255,0.3)),
+              url('images/consulenza-strategica.jpg') center/cover no-repeat;
   min-height: 100vh; /* altezza schermo */
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 4rem 2rem;
+  justify-content: flex-start;
+  padding: 2rem; /* ridotto lo spazio verticale */
 }
 
 .strategic-overlay {
   width: 100%;
   max-width: 1200px;
-  background: linear-gradient(to right, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.6) 100%);
-  padding: 3rem;
+  background: rgba(255,255,255,0.85); /* solo leggero sfondo bianco, no gradiente interno */
+  padding: 2rem;
   border-radius: 12px;
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
 }
 
 .strategic-content {
@@ -545,21 +543,6 @@ footer{
   color: var(--blue);
 }
 
-.strategic-image {
-  flex: 1; /* 1/3 dello spazio */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.strategic-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  object-fit: cover;
-}
-
 /* Riduzione spazi verticali su mobile */
 @media (max-width: 992px) {
   .strategic-overlay {
@@ -570,13 +553,6 @@ footer{
     flex-direction: column;
     gap: 1.5rem;
   }
-  .strategic-image {
-    order: -1; /* immagine sopra il testo su mobile */
-  }
-  .strategic-text h2 {
-    font-size: 2.4rem;
-  }
-}
   
 </style>
 </head>
