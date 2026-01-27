@@ -560,6 +560,36 @@ footer{
     aspect-ratio: 16/9;
   }
 }
+  /* CONTENITORE GENERALE */
+.home-sections {
+  width: 100%;
+}
+
+/* BLOCCO BASE */
+.home-block {
+  width: 100%;
+  padding: 5rem 3vw; /* 3vw = margini dinamici, molto più naturali */
+  min-height: 520px; /* altezza uniforme */
+  display: flex;
+  align-items: center;
+}
+
+/* CONTENUTO INTERNO */
+.home-block > * {
+  max-width: 1600px; /* PIÙ LARGO di prima */
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* SFONDI ALTERNATI */
+.block-white {
+  background: #ffffff;
+}
+
+.block-gray {
+  background: #f4f4f4;
+}
+
 </style>
 </head>
 
@@ -595,9 +625,9 @@ footer{
   </div>
 </section>
 
-<section class="strategic-section">
-  <div class="strategic-container">
-    <!-- TESTO -->
+<section class="home-sections">
+
+  <section class="home-block block-white">
     <div class="strategic-text">
       <h2>Consulenza Strategica</h2>
       <p>
@@ -619,7 +649,7 @@ footer{
 </section>
 
 <!-- 2️⃣ SERVIZI OFFERTI -->
-<div class="central-section services-section">
+<section class="home-block block-gray">
   <h3>I nostri servizi</h3>
   <div class="services-grid">
     <div class="service-card">Consulenza strategica</div>
@@ -632,9 +662,10 @@ footer{
     <div class="service-card">Altri servizi su richiesta</div>
   </div>
 </div>
+</section>
 
 <!-- 3️⃣ METODOLOGIA -->
-<div class="central-section methodology-section">
+<section class="home-block block-white">
   <h3>Il nostro approccio</h3>
   <ul>
     <li><strong>Definizione degli obiettivi:</strong> Identificazione delle priorità e degli obiettivi strategici dell'azienda.</li>
@@ -644,9 +675,10 @@ footer{
     <li><strong>Implementazione:</strong> Supporto nell’esecuzione delle azioni e monitoraggio dei risultati.</li>
   </ul>
 </div>
-
+</section>
+  
 <!-- 4️⃣ PERCHÉ SCEGLIERE MANAGECH -->
-<div class="central-section why-section">
+<section class="home-block block-gray">
   <h3>Perché scegliere MANAGECH</h3>
   <div class="why-grid">
     <div class="why-card">
@@ -671,7 +703,8 @@ footer{
     </div>
   </div>
 </div>
-
+</section>
+  
 <!-- ================= FORM CONTATTI ================= -->
 <section class="form-section">
   <div class="form-wrapper">
