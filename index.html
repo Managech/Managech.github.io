@@ -431,9 +431,8 @@ footer{
   margin-top:2rem;
 }
 
-..service-card {
+.service-card {
   background: #f4f4f4;
-  padding: 1.5rem;
   border-radius: 8px;
   text-align: center;
   font-weight: 500;
@@ -441,11 +440,14 @@ footer{
   transition: transform 0.3s, box-shadow 0.3s;
   cursor: pointer;
 
-  display: flex;             /* usa flexbox */
-  flex-direction: column;    /* allinea testo verticalmente */
-  justify-content: center;   /* centra verticalmente */
-  align-items: center;       /* centra orizzontalmente */
-  min-height: 150px;         /* altezza minima uniforme, puoi modificare */
+  display: flex;              /* Flex per centrare il contenuto */
+  flex-direction: column;     
+  justify-content: center;    /* Centra verticalmente */
+  align-items: center;        /* Centra orizzontalmente */
+
+  padding: 1.5rem;
+  min-height: 160px;          /* Altezza minima uniforme */
+  box-sizing: border-box;     /* Include padding nella dimensione */
 }
 
 .service-card:hover {
