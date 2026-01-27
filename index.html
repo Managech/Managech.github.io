@@ -496,26 +496,42 @@ footer{
   }
 }
 .strategic-section {
+  width: 100%;
+  padding: 0;
+  background: #fff;
+}
+
+.strategic-container {
   display: flex;
   align-items: stretch;      /* testo e immagine stessa altezza */
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0;
 }
 
 .strategic-text {
   flex: 1;
-  padding: 3rem 2rem 3rem 4rem;  /* margine sx più ampio, altri più piccoli */
-  max-width: 550px;              /* evita che il testo si allunghi troppo */
-  text-align: justify;
+  padding: 4rem 2rem 4rem 5rem; /* margine SX più largo, altri piccoli */
   display: flex;
   flex-direction: column;
-  justify-content: center;       /* centratura verticale */
+  justify-content: center;      /* centrato verticalmente */
+  text-align: justify;
+}
+
+.strategic-text h2 {
+  font-size: 2.8rem;
+  color: var(--green);
+  margin-bottom: 1.5rem;
+}
+
+.strategic-text p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--blue);
+  margin-bottom: 1rem;
 }
 
 .strategic-image {
   flex: 1;
-  margin: 0;                     /* niente margini */
   overflow: hidden;
 }
 
@@ -526,14 +542,14 @@ footer{
   display: block;
 }
 
-/* ================= RESPONSIVE ================= */
+/* Mobile */
 @media (max-width: 992px) {
-  .strategic-section {
+  .strategic-container {
     flex-direction: column;
   }
   .strategic-text {
-    max-width: 100%;
     padding: 2rem;
+    max-width: 100%;
   }
   .strategic-image {
     width: 100%;
@@ -577,23 +593,28 @@ footer{
 </section>
 
 <section class="strategic-section">
-  <div class="strategic-text">
-    <h2>Consulenza Strategica</h2>
-    <p>
-      L’Associazione Managech supporta aziende, consorzi e professionisti nello sviluppo del business, nella gestione dei processi e dell’innovazione tecnologica.
-    </p>
-    <p>
-      Grazie a competenze manageriali, strategiche e consulenziali maturate in contesti complessi, il nostro team offre un supporto concreto per ottimizzare le performance economiche, prendere decisioni efficaci e affrontare le trasformazioni organizzative e digitali.
-    </p>
-    <p>
-      La nostra consulenza strategica non si limita alla teoria: integriamo approcci ingegneristici e manageriali per generare valore sostenibile, garantendo coerenza tra obiettivi, risorse e processi.
-    </p>
-  </div>
+  <div class="strategic-container">
+    <!-- TESTO -->
+    <div class="strategic-text">
+      <h2>Consulenza Strategica</h2>
+      <p>
+        L’Associazione Managech supporta aziende, consorzi e professionisti nello sviluppo del business, nella gestione dei processi e dell’innovazione tecnologica.
+      </p>
+      <p>
+        Grazie a competenze manageriali, strategiche e consulenziali maturate in contesti complessi, il nostro team offre un supporto concreto per ottimizzare le performance economiche, prendere decisioni efficaci e affrontare le trasformazioni organizzative e digitali.
+      </p>
+      <p>
+        La nostra consulenza strategica integra approcci ingegneristici e manageriali per generare valore sostenibile.
+      </p>
+    </div>
 
-  <div class="strategic-image">
-    <img src="images/consulenza-strategica.jpg" alt="Consulenza Strategica Managech">
+    <!-- IMMAGINE -->
+    <div class="strategic-image">
+      <img src="images/consulenza-strategica.jpg" alt="Consulenza Strategica Managech">
+    </div>
   </div>
 </section>
+
 
   <!-- 2️⃣ SERVIZI OFFERTI -->
   <div class="central-section services-section">
