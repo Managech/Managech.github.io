@@ -502,20 +502,21 @@ footer{
 
 .strategic-content {
   display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch; /* testo e immagine stessa altezza */
+  gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
-  flex-wrap: nowrap;
-  align-items: stretch; /* testo e immagine avranno la stessa altezza */
-  gap: 2rem;
 }
 
 .strategic-text {
   flex: 1;
   background: #fff;
-  padding: 3rem 2rem;
+  padding: 4rem 3rem 4rem 3rem; /* margini coerenti su tutti i lati */
   display: flex;
   flex-direction: column;
   justify-content: center; /* testo centrato verticalmente */
+  text-align: justify;
   box-sizing: border-box;
 }
 
@@ -536,18 +537,19 @@ footer{
   flex: 1;
   position: relative;
   overflow: hidden;
+  margin-right: calc(-100vw + 1200px); /* forza il bordo destro fino allo schermo */
 }
 
 .strategic-image img {
-  width: 100%;
+  width: 100vw; /* riempie tutta la larghezza dello schermo */
   height: 100%;
-  object-fit: cover; /* riempie tutto lo spazio */
+  object-fit: cover;
   display: block;
   transition: transform 0.3s;
 }
 
 .strategic-image:hover img {
-  transform: scale(1.05); /* effetto hover professionale */
+  transform: scale(1.05);
 }
 
 /* ================= RESPONSIVE ================= */
@@ -568,6 +570,12 @@ footer{
   }
   .strategic-text p {
     text-align: justify;
+  }
+  .strategic-image {
+    margin-right: 0;
+  }
+  .strategic-image img {
+    width: 100%;
   }
 }
   
@@ -613,7 +621,7 @@ footer{
     <div class="strategic-text">
       <h2>Consulenza Strategica</h2>
       <p>
-        L’Associazione Managech supporta aziende, consorzi e professionisti nello sviluppo del business, nella gestione dei processi e dell’innovazione tecnologica. 
+        L’Associazione Managech supporta aziende, consorzi e professionisti nello sviluppo del business, nella gestione dei processi e dell’innovazione tecnologica.
       </p>
       <p>
         Grazie a competenze manageriali, strategiche e consulenziali maturate in contesti complessi, il nostro team offre un supporto concreto per ottimizzare le performance economiche, prendere decisioni efficaci e affrontare le trasformazioni organizzative e digitali.
