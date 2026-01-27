@@ -30,7 +30,7 @@ body{
   background:#fff;
   color:var(--blue);
 }
-  .form-tags{
+.form-tags{
   display:flex;
   gap:1rem;
   margin-bottom:2rem;
@@ -163,15 +163,14 @@ header{
 }
 
 .block {
-  max-width: 100%;
+  max-width: 100%; /* prima 1200px */
   margin: 0 auto 6rem;
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 2rem; /* prima 4rem */
 }
-
 .block-image {
-  flex: 1;
+  flex: 1 1 50%; /* aggiornato: suggerimento extra immagini */
   width: auto;
   height: 360px;
 }
@@ -195,11 +194,11 @@ header{
   font-size:1.15rem;
   line-height:1.7;
 }
-
+  
 .block-text-form{
   font-size:1.15rem;
   line-height:1.7;
-  color: var(--blue);
+  color: var(--blue); 
   margin-bottom:2rem;
 }
 
@@ -260,7 +259,7 @@ form select[name="prefisso"] {
   height: 38px;              
   line-height: 1.2;
   border: 1px solid #ccc;     
-  border-radius: 0;           
+  border-radius: 0;
   box-sizing: border-box;
   appearance: none;
   -webkit-appearance: none;    
@@ -383,12 +382,11 @@ footer{
   padding:6rem 2rem;
 }
 
-/* ===== CENTRAL SECTION ===== */
 .central-section {
   width: 100%;
-  max-width: 1400px;   
-  margin: 0 auto 4rem auto;
-  padding: 0 2rem;     
+  max-width: none;
+  margin: 0 0 4rem 0;
+  padding: 0 1rem; /* padding laterale intermedio */
 }
 
 .central-section h3 {
@@ -491,20 +489,30 @@ footer{
   transform: translateY(-10px) scale(1.02);
 }
 
-/* ===== STRATEGIC SECTION ===== */
+/* Responsive */
+@media (max-width: 900px) {
+  .strategic-container {
+    flex-direction: column-reverse;
+    text-align:justify;
+  }
+  .strategic-text h3 {
+    text-align:center;
+  }
+}
 .strategic-section {
   width: 100%;
   padding: 4rem 2rem;
+  background: #fff;
 }
 
 .strategic-container {
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 1400px;  
-  margin: 0 auto;
-  gap: 2rem;
-  padding: 0 2rem;    
+  max-width: none;
+  margin: 0;
+  gap: 1.5rem; /* gap intermedio tra testo e immagine */
+  padding: 0 1rem; /* padding laterale un po’ più stretto */
 }
 
 .strategic-text {
@@ -530,7 +538,7 @@ footer{
 }
 
 .strategic-image {
-  flex: 1;
+  flex: 1 1 50%; /* suggerimento extra per immagine */
   overflow: hidden;
   aspect-ratio: 16/9;
   border-radius: 8px;
@@ -548,8 +556,6 @@ footer{
 @media (max-width: 992px) {
   .strategic-container {
     flex-direction: column;
-    padding: 0 1.5rem;  /* margini laterali ridotti per tablet/mobile */
-    text-align: center;
   }
   .strategic-text {
     text-align: center;
@@ -560,36 +566,6 @@ footer{
     aspect-ratio: 16/9;
   }
 }
-  /* CONTENITORE GENERALE */
-.home-sections {
-  width: 100%;
-}
-
-/* BLOCCO BASE */
-.home-block {
-  width: 100%;
-  padding: 5rem 3vw; /* 3vw = margini dinamici, molto più naturali */
-  min-height: 520px; /* altezza uniforme */
-  display: flex;
-  align-items: center;
-}
-
-/* CONTENUTO INTERNO */
-.home-block > * {
-  max-width: 1600px; /* PIÙ LARGO di prima */
-  margin: 0 auto;
-  width: 100%;
-}
-
-/* SFONDI ALTERNATI */
-.block-white {
-  background: #ffffff;
-}
-
-.block-gray {
-  background: #f4f4f4;
-}
-
 </style>
 </head>
 
@@ -625,9 +601,9 @@ footer{
   </div>
 </section>
 
-<section class="home-sections">
-
-  <section class="home-block block-white">
+<section class="strategic-section">
+  <div class="strategic-container">
+    <!-- TESTO -->
     <div class="strategic-text">
       <h2>Consulenza Strategica</h2>
       <p>
@@ -649,7 +625,7 @@ footer{
 </section>
 
 <!-- 2️⃣ SERVIZI OFFERTI -->
-<section class="home-block block-gray">
+<div class="central-section services-section">
   <h3>I nostri servizi</h3>
   <div class="services-grid">
     <div class="service-card">Consulenza strategica</div>
@@ -662,10 +638,9 @@ footer{
     <div class="service-card">Altri servizi su richiesta</div>
   </div>
 </div>
-</section>
 
 <!-- 3️⃣ METODOLOGIA -->
-<section class="home-block block-white">
+<div class="central-section methodology-section">
   <h3>Il nostro approccio</h3>
   <ul>
     <li><strong>Definizione degli obiettivi:</strong> Identificazione delle priorità e degli obiettivi strategici dell'azienda.</li>
@@ -675,10 +650,9 @@ footer{
     <li><strong>Implementazione:</strong> Supporto nell’esecuzione delle azioni e monitoraggio dei risultati.</li>
   </ul>
 </div>
-</section>
-  
+
 <!-- 4️⃣ PERCHÉ SCEGLIERE MANAGECH -->
-<section class="home-block block-gray">
+<div class="central-section why-section">
   <h3>Perché scegliere MANAGECH</h3>
   <div class="why-grid">
     <div class="why-card">
@@ -703,8 +677,7 @@ footer{
     </div>
   </div>
 </div>
-</section>
-  
+
 <!-- ================= FORM CONTATTI ================= -->
 <section class="form-section">
   <div class="form-wrapper">
@@ -731,13 +704,66 @@ footer{
 
       <label for="telefono">Telefono*</label>
       
-      <div style="display:flex; gap:0.5rem; align-items:center;">
-        <select name="prefisso" required>
-          <option value="+39" selected>🇮🇹 Italia +39</option>
-          <!-- altri prefissi -->
-        </select>
-        <input id="telefono" type="tel" name="telefono" placeholder="340 1234567" required style="flex:1; padding:0.7rem; font-family:'Montserrat',sans-serif; margin-top:0;">
-      </div>
+<div style="display:flex; gap:0.5rem; align-items:center;">
+  <select name="prefisso" required>
+    <!-- Europa -->
+    <option value="+43">🇦🇹 Austria +43</option>
+    <option value="+32">🇧🇪 Belgio +32</option>
+    <option value="+359">🇧🇬 Bulgaria +359</option>
+    <option value="+385">🇭🇷 Croazia +385</option>
+    <option value="+357">🇨🇾 Cipro +357</option>
+    <option value="+420">🇨🇿 Repubblica Ceca +420</option>
+    <option value="+45">🇩🇰 Danimarca +45</option>
+    <option value="+372">🇪🇪 Estonia +372</option>
+    <option value="+358">🇫🇮 Finlandia +358</option>
+    <option value="+33">🇫🇷 Francia +33</option>
+    <option value="+49">🇩🇪 Germania +49</option>
+    <option value="+30">🇬🇷 Grecia +30</option>
+    <option value="+36">🇭🇺 Ungheria +36</option>
+    <option value="+353">🇮🇪 Irlanda +353</option>
+    <option value="+39" selected>🇮🇹 Italia +39</option>
+    <option value="+371">🇱🇻 Lettonia +371</option>
+    <option value="+423">🇱🇮 Liechtenstein +423</option>
+    <option value="+370">🇱🇹 Lituania +370</option>
+    <option value="+352">🇱🇺 Lussemburgo +352</option>
+    <option value="+356">🇲🇹 Malta +356</option>
+    <option value="+31">🇳🇱 Paesi Bassi +31</option>
+    <option value="+48">🇵🇱 Polonia +48</option>
+    <option value="+351">🇵🇹 Portogallo +351</option>
+    <option value="+40">🇷🇴 Romania +40</option>
+    <option value="+7">🇷🇺 Russia +7</option>
+    <option value="+381">🇷🇸 Serbia +381</option>
+    <option value="+421">🇸🇰 Slovacchia +421</option>
+    <option value="+386">🇸🇮 Slovenia +386</option>
+    <option value="+34">🇪🇸 Spagna +34</option>
+    <option value="+46">🇸🇪 Svezia +46</option>
+    <option value="+41">🇨🇭 Svizzera +41</option>
+    <option value="+44">🇬🇧 Regno Unito +44</option>
+    <option value="+39">🇻🇦 Città del Vaticano +39</option>
+    <!-- Principali stati globalizzati -->
+    <option value="+1">🇺🇸 USA +1</option>
+    <option value="+1">🇨🇦 Canada +1</option>
+    <option value="+86">🇨🇳 Cina +86</option>
+    <option value="+91">🇮🇳 India +91</option>
+    <option value="+81">🇯🇵 Giappone +81</option>
+    <option value="+55">🇧🇷 Brasile +55</option>
+    <option value="+61">🇦🇺 Australia +61</option>
+    <option value="+27">🇿🇦 Sud Africa +27</option>
+    <option value="+82">🇰🇷 Corea del Sud +82</option>
+    <option value="+60">🇲🇾 Malesia +60</option>
+    <option value="+65">🇸🇬 Singapore +65</option>
+    <option value="+66">🇹🇭 Thailandia +66</option>
+    <option value="+971">🇦🇪 Emirati Arabi Uniti +971</option>
+    <option value="+98">🇮🇷 Iran +98</option>
+    <option value="+964">🇮🇶 Iraq +964</option>
+    <option value="+52">🇲🇽 Messico +52</option>
+    <option value="+57">🇨🇴 Colombia +57</option>
+    <option value="+56">🇨🇱 Cile +56</option>
+  </select>
+
+  <input id="telefono" type="tel" name="telefono" placeholder="340 1234567" required style="flex:1; padding:0.7rem; font-family:'Montserrat',sans-serif; margin-top:0;">
+
+</div>
 
       <label for="email">Email*</label>
       <input id="email" type="email" name="email" required>
