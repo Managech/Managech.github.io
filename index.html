@@ -544,6 +544,7 @@ footer{
   </label>
 </div>
 
+      <input type="hidden" name="telefono_completo" id="telefono_completo">
       <button type="submit">Invia richiesta</button>
     </form>
   </div>
@@ -577,6 +578,14 @@ footer{
     © 2026 MANAGECH - INGEGNERIA & MANAGEMENT STUDIO ASSOCIATO | P. IVA 18387251004
   </div>
 </footer>
+  
+<script>
+document.querySelector("form").addEventListener("submit", function () {
+  const prefisso = document.querySelector('select[name="prefisso"]').value;
+  const telefono = document.querySelector('input[name="telefono"]').value;
+  document.getElementById("telefono_completo").value = prefisso + " " + telefono;
+});
+</script>
 
 </body>
 </html>
