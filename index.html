@@ -495,40 +495,27 @@ footer{
     text-align:center;
   }
 }
-/* ================= SEZIONE CONSULENZA STRATEGICA ================= */
 .strategic-section {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* testo a sx, immagine a dx */
-  align-items: center;                  /* testo e immagine centrati verticalmente */
-  gap: 0;                               /* niente gap extra */
+  display: flex;
+  align-items: stretch;      /* testo e immagine stessa altezza */
   max-width: 1200px;
-  margin: 0 auto;                       /* centra sezione */
-  padding: 0;                            /* niente padding globale */
+  margin: 0 auto;
+  padding: 0;
 }
 
 .strategic-text {
-  padding: 2rem 2rem 2rem 4rem;   /* margine sx maggiore, padding uniforme sopra/dx/inf */
+  flex: 1;
+  padding: 3rem 2rem 3rem 4rem;  /* margine sx più ampio, altri più piccoli */
+  max-width: 550px;              /* evita che il testo si allunghi troppo */
   text-align: justify;
-  max-width: 550px;                /* limita la larghezza del testo */
-  margin: 0;                        /* rimuove margin auto */
-}
-
-.strategic-text h2 {
-  font-size: 2.2rem;                /* leggermente più piccolo per compattezza */
-  color: var(--green);
-  margin-bottom: 1rem;
-}
-
-.strategic-text p {
-  font-size: 1.05rem;               /* dimensione leggermente più piccola */
-  line-height: 1.6;                 /* riduce l’altezza della sezione */
-  color: var(--blue);
-  margin-bottom: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;       /* centratura verticale */
 }
 
 .strategic-image {
-  width: 100%;
-  height: 100%;
+  flex: 1;
+  margin: 0;                     /* niente margini */
   overflow: hidden;
 }
 
@@ -537,26 +524,20 @@ footer{
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.3s;
-}
-
-.strategic-image:hover img {
-  transform: scale(1.05);
 }
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 992px) {
   .strategic-section {
-    grid-template-columns: 1fr;   /* colonna singola su mobile */
-    gap: 1rem;
+    flex-direction: column;
   }
   .strategic-text {
-    padding: 2rem;
     max-width: 100%;
-    text-align: justify;
+    padding: 2rem;
   }
   .strategic-image {
-    min-height: 250px;
+    width: 100%;
+    height: 250px;
   }
 }
   
