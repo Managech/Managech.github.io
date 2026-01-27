@@ -168,12 +168,42 @@ header{
   padding:4rem 2rem; /* padding più contenuto */
 }
 
-.central-section {
+.central-section, .strategic-section {
   width: 100%;
-  max-width: 1200px; /* limite massimo per non allargare troppo */
+  max-width: 100%;      /* rimuove limite fisso, permette al contenuto di allargarsi */
   margin: 0 auto 4rem auto;
-  padding: 0 1.5rem; /* via di mezzo tra stretto e largo */
+  padding: 0 3%;        /* padding proporzionale, via di mezzo tra stretto e largo */
 }
+
+.strategic-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;      /* permette alle immagini/testo di occupare più spazio */
+  margin: 0 auto;
+  gap: 2rem;
+  padding: 0 3%;        /* padding proporzionale */
+}
+
+@media (max-width: 1200px) {
+  .central-section, .strategic-section,
+  .strategic-container {
+    padding: 0 2%;      /* leggermente più stretto su schermi medi */
+  }
+}
+
+@media (max-width: 992px) {
+  .strategic-container {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .strategic-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+  }
+}
+
 
 .block {
   max-width: 100%;
