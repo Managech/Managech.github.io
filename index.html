@@ -560,6 +560,49 @@ footer{
     aspect-ratio: 16/9;
   }
 }
+/* ===== BLOCCO CENTRALE UNIFICATO ===== */
+.central-wrapper {
+  width: 100%;
+}
+
+/* sezione singola */
+.central-slice {
+  width: 100%;
+  padding: 5rem 0;
+}
+
+/* sfondo alternato */
+.central-slice.bg-light {
+  background: #f4f4f4;
+}
+
+/* contenuto interno */
+.central-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  min-height: 420px; /* altezza simile a Consulenza Strategica */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* titoli */
+.central-inner h3 {
+  color: var(--green);
+  font-size: 2.6rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+/* responsive */
+@media (max-width: 992px) {
+  .central-inner {
+    min-height: auto;
+    padding: 0 1.5rem;
+  }
+}
+  
 </style>
 </head>
 
@@ -595,82 +638,95 @@ footer{
   </div>
 </section>
 
-<section class="strategic-section">
-  <div class="strategic-container">
-    <!-- TESTO -->
-    <div class="strategic-text">
-      <h2>Consulenza Strategica</h2>
-      <p>
-        L’Associazione Managech supporta aziende, consorzi e professionisti nello sviluppo del business, nella gestione dei processi e dell’innovazione tecnologica.
-      </p>
-      <p>
-        Grazie a competenze manageriali, strategiche e consulenziali maturate in contesti complessi, il nostro team offre un supporto concreto per ottimizzare le performance economiche, prendere decisioni efficaci e affrontare le trasformazioni organizzative e digitali.
-      </p>
-      <p>
-        La nostra consulenza strategica integra approcci ingegneristici e manageriali per generare valore sostenibile.
-      </p>
-    </div>
+ <!-- ================= CENTRALE ================= --> 
+<div class="central-wrapper">
 
-    <!-- IMMAGINE -->
-    <div class="strategic-image">
-      <img src="images/consulenza-strategica.jpg" alt="Consulenza Strategica Managech">
-    </div>
-  </div>
-</section>
+  <!-- 1️⃣ CONSULENZA STRATEGICA -->
+  <section class="central-slice">
+    <div class="central-inner strategic-container">
+      <div class="strategic-text">
+        <h2>Consulenza Strategica</h2>
+        <p>
+          L’Associazione Managech supporta aziende, consorzi e professionisti nello sviluppo del business,
+          nella gestione dei processi e dell’innovazione tecnologica.
+        </p>
+        <p>
+          Grazie a competenze manageriali e consulenziali maturate in contesti complessi,
+          supportiamo decisioni efficaci e trasformazioni organizzative e digitali.
+        </p>
+        <p>
+          La nostra consulenza integra approcci ingegneristici e manageriali per generare valore sostenibile.
+        </p>
+      </div>
 
-<!-- 2️⃣ SERVIZI OFFERTI -->
-<div class="central-section services-section">
-  <h3>I nostri servizi</h3>
-  <div class="services-grid">
-    <div class="service-card">Consulenza strategica</div>
-    <div class="service-card">Due Diligence Industriale</div>
-    <div class="service-card">Ottimizzazione dei Processi</div>
-    <div class="service-card">Piani Industriali</div>
-    <div class="service-card">Contabilità Industriale e Controllo di Gestione</div>
-    <div class="service-card">Finanza Agevolata</div>
-    <div class="service-card">Formazione</div>
-    <div class="service-card">Altri servizi su richiesta</div>
-  </div>
+      <div class="strategic-image">
+        <img src="images/consulenza-strategica.jpg" alt="Consulenza Strategica Managech">
+      </div>
+    </div>
+  </section>
+
+  <!-- 2️⃣ SERVIZI -->
+  <section class="central-slice bg-light">
+    <div class="central-inner">
+      <h3>I nostri servizi</h3>
+      <div class="services-grid">
+        <div class="service-card">Consulenza strategica</div>
+        <div class="service-card">Due Diligence Industriale</div>
+        <div class="service-card">Ottimizzazione dei Processi</div>
+        <div class="service-card">Piani Industriali</div>
+        <div class="service-card">Contabilità Industriale</div>
+        <div class="service-card">Finanza Agevolata</div>
+        <div class="service-card">Formazione</div>
+        <div class="service-card">Servizi su richiesta</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3️⃣ APPROCCIO -->
+  <section class="central-slice">
+    <div class="central-inner">
+      <h3>Il nostro approccio</h3>
+      <ul>
+        <li><strong>Obiettivi chiari</strong> e condivisi</li>
+        <li><strong>Analisi strutturata</strong> dei processi</li>
+        <li><strong>Misurazione</strong> delle performance</li>
+        <li><strong>Azioni mirate</strong> e sostenibili</li>
+        <li><strong>Supporto continuo</strong> all’implementazione</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 4️⃣ PERCHÉ MANAGECH -->
+  <section class="central-slice bg-light">
+    <div class="central-inner">
+      <h3>Perché scegliere MANAGECH</h3>
+      <div class="why-grid">
+        <div class="why-card">
+          <i class="fas fa-lightbulb"></i>
+          <h4>Soluzioni innovative</h4>
+          <p>Approcci personalizzati orientati al valore.</p>
+        </div>
+        <div class="why-card">
+          <i class="fas fa-chart-line"></i>
+          <h4>Risultati misurabili</h4>
+          <p>Indicatori chiari e performance concrete.</p>
+        </div>
+        <div class="why-card">
+          <i class="fas fa-users"></i>
+          <h4>Team multidisciplinare</h4>
+          <p>Competenze tecniche e manageriali integrate.</p>
+        </div>
+        <div class="why-card">
+          <i class="fas fa-shield-alt"></i>
+          <h4>Affidabilità</h4>
+          <p>Trasparenza, metodo e visione di lungo periodo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </div>
 
-<!-- 3️⃣ METODOLOGIA -->
-<div class="central-section methodology-section">
-  <h3>Il nostro approccio</h3>
-  <ul>
-    <li><strong>Definizione degli obiettivi:</strong> Identificazione delle priorità e degli obiettivi strategici dell'azienda.</li>
-    <li><strong>Analisi:</strong> Studio approfondito dei processi, dei dati e delle risorse disponibili.</li>
-    <li><strong>Misura dello stato attuale:</strong> Valutazione oggettiva delle performance e identificazione delle aree di miglioramento.</li>
-    <li><strong>Definizione delle azioni correttive:</strong> Pianificazione di interventi mirati per ottimizzare processi e risultati.</li>
-    <li><strong>Implementazione:</strong> Supporto nell’esecuzione delle azioni e monitoraggio dei risultati.</li>
-  </ul>
-</div>
-
-<!-- 4️⃣ PERCHÉ SCEGLIERE MANAGECH -->
-<div class="central-section why-section">
-  <h3>Perché scegliere MANAGECH</h3>
-  <div class="why-grid">
-    <div class="why-card">
-      <i class="fas fa-lightbulb"></i>
-      <h4>Soluzioni innovative</h4>
-      <p>Offriamo approcci creativi e personalizzati per massimizzare il valore aziendale.</p>
-    </div>
-    <div class="why-card">
-      <i class="fas fa-chart-line"></i>
-      <h4>Risultati misurabili</h4>
-      <p>Monitoriamo ogni intervento con indicatori chiari per garantire performance concrete.</p>
-    </div>
-    <div class="why-card">
-      <i class="fas fa-users"></i>
-      <h4>Team multidisciplinare</h4>
-      <p>Professionisti con competenze tecniche, economiche e gestionali sempre a disposizione.</p>
-    </div>
-    <div class="why-card">
-      <i class="fas fa-shield-alt"></i>
-      <h4>Affidabilità e trasparenza</h4>
-      <p>Operiamo con massima trasparenza, rispettando tempi, costi e obiettivi concordati.</p>
-    </div>
-  </div>
-</div>
 
 <!-- ================= FORM CONTATTI ================= -->
 <section class="form-section">
