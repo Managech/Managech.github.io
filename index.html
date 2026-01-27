@@ -431,15 +431,21 @@ footer{
   margin-top:2rem;
 }
 
-.service-card {
-  background:#f4f4f4;
-  padding:1.5rem;
-  border-radius:8px;
-  text-align:center;
-  font-weight:500;
-  font-size:1rem;
+..service-card {
+  background: #f4f4f4;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1rem;
   transition: transform 0.3s, box-shadow 0.3s;
-  cursor:pointer;
+  cursor: pointer;
+
+  display: flex;             /* usa flexbox */
+  flex-direction: column;    /* allinea testo verticalmente */
+  justify-content: center;   /* centra verticalmente */
+  align-items: center;       /* centra orizzontalmente */
+  min-height: 150px;         /* altezza minima uniforme, puoi modificare */
 }
 
 .service-card:hover {
