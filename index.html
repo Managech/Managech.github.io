@@ -466,9 +466,11 @@ footer{
       <input type="text" name="_gotcha" style="display:none">
 
       <label for="nome">Nome*</label>
-      <input id="nome" name="nome">
-      <label>Cognome*</label><input name="cognome" required>
-      <label>Telefono*</label>
+      <input id="nome" name="nome" required>
+      <label for="cognome">Cognome*</label>
+      <input id="cognome" name="cognome" required>
+
+      <label for="telefono">Telefono*</label>
       
 <div style="display:flex; gap:0.5rem; align-items:center;">
   <select name="prefisso" required>
@@ -528,14 +530,21 @@ footer{
   <option value="+56">🇨🇱 Cile +56</option>
 </select>
 
-    <input type="tel" name="telefono" placeholder="345 6789012" required style="flex:1; padding:0.7rem; font-family:'Montserrat',sans-serif; margin-top:0;">
+    <input id="telefono" type="tel" name="telefono" placeholder="340 1234567" required style="flex:1; padding:0.7rem; font-family:'Montserrat',sans-serif; margin-top:0;">
+
 </div>
 
-      <label>Email*</label><input type="email" name="email" required>
-      <label>Azienda*</label><input name="azienda" required>
-      <label>Ruolo in azienda*</label><input name="ruolo" required>
-      <label>Provincia*</label><input name="provincia" required>
-      <label>Richiesta*</label><textarea name="richiesta" required></textarea>
+      <label for="email">Email*</label>
+      <input id="email" type="email" name="email" required>
+      <label for="azienda">Azienda*</label>
+      <input id="azienda" name="azienda" required>
+      <label for="ruolo">Ruolo in azienda*</label>
+      <input id="ruolo" name="ruolo" required>
+      <label for="provincia">Provincia*</label>
+      <input id="provincia" name="provincia" required>
+      <label for="richiesta">Richiesta*</label>
+      <textarea id="richiesta" name="richiesta" required></textarea>
+
       <div class="privacy-check">
  <input type="checkbox" id="privacy" name="privacy" required>
   <label for="privacy">
