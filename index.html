@@ -441,27 +441,19 @@ footer{
 
 .service-card {
   background: #fff;
-  border-radius: 14px;
-  padding: 2.4rem 2rem;
-  min-height: 220px;
+  border-radius: 16px;
+  padding: 2rem 1.8rem;
+  min-height: 260px;        /* più alta */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center;  /* testo centrato verticalmente */
   align-items: center;
   text-align: center;
   position: relative;
   overflow: hidden;
   box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-  /* ✅ aggiorniamo la transizione per effetto più fluido */
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-              box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.35s ease;
 }
-
-.service-card:hover {
-  transform: translateY(-12px) scale(1.03); /* sollevamento + leggero ingrandimento */
-  box-shadow: 0 25px 60px rgba(0,0,0,0.16); /* ombra più morbida e profonda */
-}
-
 
 .service-card::after {
   content:"";
@@ -492,6 +484,13 @@ footer{
   line-height: 1.6;
   color: var(--blue);
   opacity: 0.85;
+}
+
+.service-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 22px 55px rgba(0,0,0,0.14);
+  background: var(--green);
+  color:#fff;
 }
 
 .service-card:hover .service-icon {
