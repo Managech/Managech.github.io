@@ -30,8 +30,7 @@ body{
   background:#fff;
   color:var(--blue);
 }
-
-.form-tags{
+  .form-tags{
   display:flex;
   gap:1rem;
   margin-bottom:2rem;
@@ -160,50 +159,8 @@ header{
 
 /* ================= CONTENT BLOCKS ================= */
 .section{
-  padding:4rem 2rem; /* ridotto da 6rem per via di mezzo */
+  padding:6rem 2rem;
 }
-
-.central-block {
-  background:#fff;
-  padding:4rem 2rem; /* padding più contenuto */
-}
-
-.central-section, .strategic-section {
-  width: 100%;
-  max-width: 100%;      /* rimuove limite fisso, permette al contenuto di allargarsi */
-  margin: 0 auto 4rem auto;
-  padding: 0 3%;        /* padding proporzionale, via di mezzo tra stretto e largo */
-}
-
-.strategic-container {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  max-width: 100%;      /* permette alle immagini/testo di occupare più spazio */
-  margin: 0 auto;
-  gap: 2rem;
-  padding: 0 3%;        /* padding proporzionale */
-}
-
-@media (max-width: 1200px) {
-  .central-section, .strategic-section,
-  .strategic-container {
-    padding: 0 2%;      /* leggermente più stretto su schermi medi */
-  }
-}
-
-@media (max-width: 992px) {
-  .strategic-container {
-    flex-direction: column;
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  .strategic-image {
-    width: 100%;
-    aspect-ratio: 16/9;
-  }
-}
-
 
 .block {
   max-width: 100%;
@@ -303,7 +260,7 @@ form select[name="prefisso"] {
   height: 38px;              
   line-height: 1.2;
   border: 1px solid #ccc;     
-  border-radius: 0;
+  border-radius: 0;           
   box-sizing: border-box;
   appearance: none;
   -webkit-appearance: none;    
@@ -423,14 +380,39 @@ footer{
 /* ===== BLOCCO CENTRALE HOME ===== */
 .central-block {
   background:#fff;
-  padding:4rem 2rem;
+  padding:6rem 2rem;
 }
 
+/* ===== CENTRAL SECTION ===== */
 .central-section {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1200px;   /* larghezza massima */
   margin: 0 auto 4rem auto;
-  padding: 0 1.5rem;
+  padding: 0 2rem;     /* margine laterale via di mezzo */
+}
+
+.central-section h3 {
+  color: var(--green);
+  font-size:2.4rem;
+  margin-bottom:1.5rem;
+  letter-spacing:1px;
+}
+
+.central-section p {
+  font-size:1.1rem;
+  line-height:1.7;
+  color: var(--blue);
+}
+
+.central-section ul {
+  list-style: disc inside;
+  font-size:1.1rem;
+  line-height:1.7;
+  color: var(--blue);
+}
+
+.central-section ul li {
+  margin-bottom:1rem;
 }
 
 /* ===== SERVIZI GRID ===== */
@@ -512,18 +494,17 @@ footer{
 /* ===== STRATEGIC SECTION ===== */
 .strategic-section {
   width: 100%;
-  padding: 4rem 1.5rem;
-  background: #fff;
+  padding: 4rem 2rem;
 }
 
 .strategic-container {
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1200px;  /* larghezza massima */
   margin: 0 auto;
-  gap: 1.8rem;
-  padding: 0 1.5rem;
+  gap: 2rem;
+  padding: 0 2rem;    /* margini laterali via di mezzo */
 }
 
 .strategic-text {
@@ -563,10 +544,12 @@ footer{
   display: block;
 }
 
-/* Responsive */
+/* Mobile */
 @media (max-width: 992px) {
   .strategic-container {
     flex-direction: column;
+    padding: 0 1rem;
+    text-align: center;
   }
   .strategic-text {
     text-align: center;
@@ -614,6 +597,7 @@ footer{
 
 <section class="strategic-section">
   <div class="strategic-container">
+    <!-- TESTO -->
     <div class="strategic-text">
       <h2>Consulenza Strategica</h2>
       <p>
@@ -627,13 +611,14 @@ footer{
       </p>
     </div>
 
+    <!-- IMMAGINE -->
     <div class="strategic-image">
       <img src="images/consulenza-strategica.jpg" alt="Consulenza Strategica Managech">
     </div>
   </div>
 </section>
 
-<!-- ================= SEZIONI CENTRALI ================= -->
+<!-- 2️⃣ SERVIZI OFFERTI -->
 <div class="central-section services-section">
   <h3>I nostri servizi</h3>
   <div class="services-grid">
@@ -648,6 +633,7 @@ footer{
   </div>
 </div>
 
+<!-- 3️⃣ METODOLOGIA -->
 <div class="central-section methodology-section">
   <h3>Il nostro approccio</h3>
   <ul>
@@ -659,6 +645,7 @@ footer{
   </ul>
 </div>
 
+<!-- 4️⃣ PERCHÉ SCEGLIERE MANAGECH -->
 <div class="central-section why-section">
   <h3>Perché scegliere MANAGECH</h3>
   <div class="why-grid">
@@ -710,9 +697,11 @@ footer{
       <input id="cognome" name="cognome" required>
 
       <label for="telefono">Telefono*</label>
+      
       <div style="display:flex; gap:0.5rem; align-items:center;">
         <select name="prefisso" required>
-          <!-- opzioni come nel tuo codice -->
+          <option value="+39" selected>🇮🇹 Italia +39</option>
+          <!-- altri prefissi -->
         </select>
         <input id="telefono" type="tel" name="telefono" placeholder="340 1234567" required style="flex:1; padding:0.7rem; font-family:'Montserrat',sans-serif; margin-top:0;">
       </div>
