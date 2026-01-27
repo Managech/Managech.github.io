@@ -497,14 +497,13 @@ footer{
 }
 /* ================= SEZIONE CONSULENZA STRATEGICA ================= */
 .strategic-section {
-  position: relative;
+  min-height: 500px;       /* più bassa */
+  display: flex;
+  align-items: center;      /* verticale */
+  justify-content: flex-start;
+  padding: 4rem 2rem;      /* spazio intorno al testo */
   background: linear-gradient(to right, rgba(255,255,255,0.85), rgba(255,255,255,0.3)),
               url('images/consulenza-strategica.jpg') center/cover no-repeat;
-  min-height: 100vh; /* altezza schermo */
-  display: flex;
-  align-items: center;
-  justify-content: center;  /* centra verticalmente il contenuto */
-  padding: 2rem;
 }
 
 .strategic-overlay {
