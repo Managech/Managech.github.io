@@ -1,1 +1,178 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>MANAGECH – Servizi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+  --green:#1fa37a;
+  --blue:#0b1f33;
+  --gray:#f4f4f4;
+  --white:#ffffff;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:'Montserrat',sans-serif;
+  background:#ffffff;
+  color:var(--blue);
+}
+
+/* ===== SEZIONE SERVIZI ===== */
+.services-section{
+  padding:6rem 2rem;
+}
+
+.services-section h2{
+  text-align:center;
+  font-size:2.6rem;
+  color:var(--green);
+  margin-bottom:3rem;
+  letter-spacing:1px;
+}
+
+/* ===== GRID ===== */
+.services-grid{
+  max-width:1200px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+  gap:2rem;
+}
+
+/* ===== SERVICE CARD ===== */
+.service-card{
+  background:var(--white);
+  border-radius:14px;
+  padding:2.4rem 2rem;
+  min-height:240px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+
+  box-shadow:0 12px 30px rgba(0,0,0,0.08);
+  transition:all 0.35s ease;
+}
+
+/* Accento superiore */
+.service-card::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:4px;
+  background:var(--green);
+}
+
+/* Icona */
+.service-icon{
+  font-size:2.2rem;
+  color:var(--green);
+  margin-bottom:1.2rem;
+  transition:transform 0.35s ease;
+}
+
+/* Titolo servizio */
+.service-card h4{
+  font-size:1.25rem;
+  font-weight:600;
+  color:var(--blue);
+  margin-bottom:0.8rem;
+}
+
+/* Descrizione */
+.service-card p{
+  font-size:1.15rem;
+  line-height:1.7;
+  color:var(--blue);
+  opacity:0.85;
+}
+
+/* Hover */
+.service-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 22px 55px rgba(0,0,0,0.14);
+}
+
+.service-card:hover .service-icon{
+  transform:scale(1.12);
+}
+</style>
+</head>
+
+<body>
+
+<section class="services-section">
+  <h2>I nostri servizi</h2>
+
+  <div class="services-grid">
+
+    <div class="service-card">
+      <div class="service-icon">
+        <i class="fas fa-chart-line"></i>
+      </div>
+      <h4>Consulenza strategica</h4>
+      <p>
+        Supporto decisionale e organizzativo per la crescita sostenibile
+        dell’impresa.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <i class="fas fa-industry"></i>
+      </div>
+      <h4>Due Diligence Industriale</h4>
+      <p>
+        Analisi tecnica e operativa per valutare asset, processi e
+        investimenti.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <i class="fas fa-cogs"></i>
+      </div>
+      <h4>Ottimizzazione dei processi</h4>
+      <p>
+        Miglioramento dell’efficienza operativa e riduzione dei costi
+        aziendali.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <i class="fas fa-file-invoice-dollar"></i>
+      </div>
+      <h4>Controllo di gestione</h4>
+      <p>
+        Sistemi di monitoraggio economico-finanziario a supporto delle
+        decisioni.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
