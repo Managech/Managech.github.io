@@ -480,6 +480,22 @@ footer{
   color:#fff;
 }
 
+/* Hover effect su immagine */
+.strategic-image div:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .strategic-container {
+    flex-direction: column-reverse;
+    text-align:justify;
+  }
+  .strategic-text h3 {
+    text-align:center;
+  }
+}
+  
 </style>
 </head>
 
@@ -515,24 +531,35 @@ footer{
   </div>
 </section>
 
- <!-- ================= PRIMA SEZIONE: CONSULENZA STRATEGICA ================= -->
-<section class="section strategic-consulting" style="min-height:100vh; display:flex; align-items:center; padding:4rem 2rem; background:#fff;">
-  <div class="block-text" style="max-width:900px; margin:auto; text-align:center;">
-    <h3 style="font-size:3rem; color:var(--green); margin-bottom:1.5rem; letter-spacing:1px;">
-      Consulenza Strategica
-    </h3>
-    <p style="font-size:1.2rem; line-height:1.8; margin-bottom:1.2rem;">
-      MANAGECH offre consulenza strategica ad aziende, enti e professionisti che vogliono trasformare le sfide in opportunità di crescita. Il nostro approccio integra competenze ingegneristiche, manageriali e analitiche per supportare decisioni consapevoli, ottimizzare processi complessi e massimizzare il valore sostenibile.
-    </p>
-    <p style="font-size:1.2rem; line-height:1.8; margin-bottom:1.2rem;">
-      La nostra esperienza in contesti aziendali eterogenei e complessi ci permette di fornire strumenti strategici su misura, aiutando i leader a pianificare, gestire e monitorare obiettivi di lungo periodo, senza perdere di vista performance, rischi e innovazione tecnologica.
-    </p>
-    <p style="font-size:1.2rem; line-height:1.8;">
-      La consulenza strategica di Managech è il punto di partenza per costruire percorsi aziendali solidi, efficienti e capaci di generare valore concreto nel tempo.
-    </p>
+<!-- ================= PRIMA SEZIONE: CONSULENZA STRATEGICA ================= -->
+<section class="section strategic-consulting" style="min-height:100vh; display:flex; align-items:center; justify-content:center; padding:4rem 2rem; background:#fff;">
+  <div class="strategic-container" style="display:flex; flex-wrap:wrap; max-width:1200px; width:100%; gap:3rem; align-items:center;">
+
+    <!-- Testo -->
+    <div class="strategic-text" style="flex:1; min-width:320px; text-align:justify;">
+      <h3 style="font-size:3rem; color:var(--green); margin-bottom:2rem; letter-spacing:1px; text-align:left;">
+        Consulenza Strategica
+      </h3>
+      <p style="font-size:1.2rem; line-height:1.8; margin-bottom:1.5rem;">
+        MANAGECH supporta aziende, enti e professionisti nella trasformazione delle sfide in opportunità di crescita. Il nostro approccio integra competenze ingegneristiche, manageriali e analitiche, garantendo decisioni consapevoli e massimizzazione del valore sostenibile.
+      </p>
+      <p style="font-size:1.2rem; line-height:1.8; margin-bottom:1.5rem;">
+        Grazie all’esperienza maturata in contesti complessi e diversificati, offriamo strumenti strategici su misura per pianificare, gestire e monitorare obiettivi di lungo periodo, senza perdere di vista performance, rischi e innovazione tecnologica.
+      </p>
+      <p style="font-size:1.2rem; line-height:1.8;">
+        La consulenza strategica di Managech è il punto di partenza per costruire percorsi aziendali solidi, efficienti e capaci di generare valore concreto nel tempo.
+      </p>
+    </div>
+
+    <!-- Box immagine -->
+    <div class="strategic-image" style="flex:1; min-width:300px; display:flex; justify-content:center;">
+      <div style="width:100%; max-width:450px; border-radius:15px; overflow:hidden; box-shadow:0 20px 50px rgba(0,0,0,0.15); transition:transform 0.3s ease;">
+        <img src="images/strategic-consulting.jpg" alt="Consulenza Strategica Managech" style="width:100%; height:100%; object-fit:cover; display:block;">
+      </div>
+    </div>
+
   </div>
 </section>
-
 
   <!-- 2️⃣ SERVIZI OFFERTI -->
   <div class="central-section services-section">
