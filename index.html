@@ -513,7 +513,7 @@ footer{
 
 .strategic-container {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
   max-width: 1400px;  
   margin: 0 auto;
@@ -564,9 +564,9 @@ footer{
     margin-bottom: 2rem;
   }
   .strategic-image {
-    width: 100%;
-    aspect-ratio: 16/9;
-  }
+  max-height: 360px; /* evita che l’immagine diventi enorme */
+  flex: 1;           /* mantiene il ridimensionamento proporzionale */
+}
 }
 
 .service-card::after {
