@@ -721,22 +721,17 @@ footer{
 /* FRECCE ALLINEATE AL CENTRO DEI RETTANGOLI */
 .process-arrow {
   display: flex;
-  align-items: center;   /* allinea verticalmente */
+  align-items: center;   /* centra verticalmente rispetto ai box */
   justify-content: center;
-  font-size: 2.2rem;
+  font-size: 2.8rem;     /* ingrandisce la freccia */
   color: var(--green);
-  opacity: 0.9;
-  margin: 0 1.5rem;     /* spazio tra freccia e rettangoli */
+  opacity: 0.95;
+  margin: 0 1.5rem;     /* distanza dai rettangoli */
 }
 
-/* freccia con linea più lunga */
+/* rimuoviamo la linea sottile inutilizzata */
 .process-arrow::after {
-  content: "";
-  display: block;
-  width: 50px;           /* lunghezza linea */
-  height: 2px;
-  background: var(--green);
-  margin-left: 0.5rem;   /* distanza tra simbolo e linea */
+  content: none;
 }
 
 /* hover box */
