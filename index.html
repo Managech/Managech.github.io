@@ -30,8 +30,7 @@ body{
   background:#fff;
   color:var(--blue);
 }
-
-.form-tags{
+  .form-tags{
   display:flex;
   gap:1rem;
   margin-bottom:2rem;
@@ -392,19 +391,19 @@ footer{
   padding: 0 2rem;     
 }
 
-h2 {
+  h2 {
   color: var(--green);
-  font-size: 2.6rem; 
+  font-size: 2.6rem; /* scegli la dimensione che ti piace, ad esempio 2.6rem */
   margin-bottom: 1.5rem;
   letter-spacing: 1px;
-  font-weight: 700;
+  font-weight: 700; /* opzionale, per uniformare il peso */
 }
 
-.services-section h2 {
+  .services-section h2 {
   margin-bottom: 3rem;
 }
 
-.central-section h2 {
+  .central-section h2 {
   text-align: center;
 }
 
@@ -432,10 +431,10 @@ h2 {
   margin-bottom:1rem;
 }
 
-/* ===== SERVIZI GRID PREMIUM ===== */
+/* ===== SERVIZI GRID PREMIUM (SOLUZIONE 3) ===== */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* larghezza minima 260px, flessibile */
   gap: 2rem;
   margin-top: 2rem;
 }
@@ -444,60 +443,16 @@ h2 {
   background: #fff;
   border-radius: 16px;
   padding: 2rem 1.8rem;
-  min-height: 260px;        
+  min-height: 260px;        /* più alta */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center;  /* testo centrato verticalmente */
   align-items: center;
   text-align: center;
   position: relative;
   overflow: hidden;
   box-shadow: 0 12px 30px rgba(0,0,0,0.08);
   transition: all 0.35s ease;
-}
-
-.service-card::after {
-  content:"";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: var(--green);
-}
-
-.service-icon {
-  font-size: 2.2rem;
-  color: var(--green);
-  margin-bottom: 1.2rem;
-  transition: transform 0.35s ease;
-}
-
-.service-card h4 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--blue);
-  margin-bottom: 0.8rem;
-}
-
-.service-card p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--blue);
-  opacity: 0.8;
-}
-
-.service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 22px 55px rgba(0,0,0,0.14);
-}
-
-.service-card:hover .service-icon {
-  transform: scale(1.12);
-}
-
-.services-section {
-  margin-top: 6rem;
 }
 
 /* ===== WHY GRID ===== */
@@ -543,6 +498,11 @@ h2 {
 
 .why-card:hover p {
   color:#fff;
+}
+
+/* Hover effect su immagine */
+.strategic-image div:hover {
+  transform: translateY(-10px) scale(1.02);
 }
 
 /* ===== STRATEGIC SECTION ===== */
@@ -592,10 +552,11 @@ h2 {
   display: block;
 }
 
+/* Mobile */
 @media (max-width: 992px) {
   .strategic-container {
     flex-direction: column;
-    padding: 0 1.5rem; 
+    padding: 0 1.5rem;  /* margini laterali ridotti per tablet/mobile */
     text-align: center;
   }
   .strategic-text {
@@ -608,22 +569,79 @@ h2 {
   }
 }
 
-/* ===== PROCESS FLOW - IL NOSTRO APPROCCIO (OTTIMIZZATO) ===== */
+.service-card::after {
+  content:"";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--green);
+}
+
+.service-icon {
+  font-size: 2.2rem;
+  color: var(--green);
+  margin-bottom: 1.2rem;
+  transition: transform 0.35s ease;
+}
+
+.service-card h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--blue);
+  margin-bottom: 0.8rem;
+}
+
+.service-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--blue);
+  opacity: 0.8;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 22px 55px rgba(0,0,0,0.14);
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.12);
+}
+
+  .services-section {
+  margin-top: 6rem;
+}
+
+  /* Spaziatura uniforme titoli principali */
+.central-section h2,
+.strategic-section h2,
+.form-section h2 {
+  margin-top: 6rem;   /* spazio sopra identico a "Servizi" */
+  margin-bottom: 3rem; /* spazio sotto identico a "Servizi" */
+  text-align: center;  /* mantiene centratura, se vuoi */
+}
+
+/* ===== PROCESS FLOW - IL NOSTRO APPROCCIO ===== */
+
+/* contenitore principale del flusso */
 .process-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
-  margin-top: 3.5rem;
+  gap: 6rem; /* spazio tra le righe */
+  margin-top: 4rem;
 }
 
+/* righe del flusso */
 .process-row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  gap: 3.5rem;
+  gap: 4rem; /* spazio tra i box per le frecce */
   flex-wrap: wrap;
 }
 
+/* singolo step */
 .process-step {
   position: relative;
   display: flex;
@@ -631,87 +649,100 @@ h2 {
   align-items: center;
 }
 
+/* box smussato */
 .step-box {
   position: relative;
   background: #fff;
   border-radius: 16px;
-  min-width: 240px;
-  min-height: 70px;
-  padding: 0.9rem 1.2rem;
+
+  /* dimensioni */
+  min-width: 260px;
+  min-height: 80px;
+  padding: 1rem 1.4rem;
+
+  /* tipografia */
   font-family: 'Montserrat', sans-serif;
   font-size: 0.95rem;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
   color: var(--blue);
+
+  /* CENTRATURA DEL TESTO */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* verticale */
+  align-items: center;     /* orizzontale */
+
   text-align: center;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.12);
   z-index: 1;
 }
 
+/* numero task sopra il box */
 .step-box::before {
   content: attr(data-step);
   position: absolute;
-  top: -28px;
+  top: -32px; /* sopra il rettangolo */
   left: 50%;
   transform: translateX(-50%);
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: var(--green);
   color: #fff;
   font-weight: 800;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 5px 16px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   z-index: 2;
 }
 
+/* descrizione sotto il box */
 .step-box span {
   position: absolute;
-  top: calc(100% + 0.6rem);
+  top: calc(100% + 0.8rem);
   left: 50%;
   transform: translateX(-50%);
-  width: 200px; 
+  width: 220px; 
   font-size: 0.9rem;
   font-weight: 400;
   text-transform: lowercase;
-  font-style: normal;
+  font-style: normal; /* non italic */
   color: var(--blue);
   text-align: center;
   line-height: 1.4;
   z-index: 0;
 }
 
+/* FRECCE ALLINEATE AL CENTRO DEI RETTANGOLI */
 .process-arrow {
   display: flex;
-  align-items: center;
+  align-items: center;   /* allinea verticalmente */
   justify-content: center;
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: var(--green);
   opacity: 0.9;
-  margin: 0 1rem;
+  margin: 0 1.5rem;     /* spazio tra freccia e rettangoli */
 }
 
+/* freccia con linea più lunga */
 .process-arrow::after {
   content: "";
   display: block;
-  width: 40px;
+  width: 50px;           /* lunghezza linea */
   height: 2px;
   background: var(--green);
-  margin-left: 0.4rem;
+  margin-left: 0.5rem;   /* distanza tra simbolo e linea */
 }
 
+/* hover box */
 .process-step:hover .step-box {
   background: var(--green);
   color: #fff;
-  transform: translateY(-3px);
+  transform: translateY(-4px);
   transition: all 0.3s ease;
 }
 
@@ -719,39 +750,44 @@ h2 {
   color: #fff;
 }
 
+/* MOBILE: flusso verticale */
 @media (max-width: 992px) {
   .process-row {
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 3rem;
   }
+
   .process-arrow {
     transform: rotate(90deg);
   }
+
   .process-arrow::after {
-    width: 20px;
-    left: -20px;
+    width: 25px;
+    left: -25px;
   }
 }
-
-/* SPAZIATURA TRA SEZIONI COERENTE */
+/* ===== SPAZIATURA COERENTE TRA SEZIONI ===== */
 .central-section,
 .strategic-section,
 .form-section,
 .services-section,
 .why-section {
-  padding-top: 6rem;
-  padding-bottom: 4rem;
+  padding-top: 6rem;   /* spazio sopra le sezioni coerente con i titoli principali */
+  padding-bottom: 4rem; /* spazio sotto le sezioni */
 }
 
+/* Sezione “Perché scegliere MANAGECH” più distante dal flusso */
 .why-section {
-  margin-top: 8rem;
+  margin-top: 8rem; /* aumenta lo spazio rispetto al processo */
 }
 
+/* Mantieni centratura del titolo */
 .why-section h2 {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 3rem; /* distanza dal contenuto interno della griglia */
 }
 
+/* Regola margini dei titoli principali del processo e servizi */
 .central-section h2,
 .services-section h2,
 .strategic-section h2,
@@ -760,6 +796,8 @@ h2 {
   margin-bottom: 3rem;
   text-align: center;
 }
+
+
 </style>
 </head>
 
@@ -795,9 +833,9 @@ h2 {
   </div>
 </section>
 
-<!-- ================= STRATEGIC ================= -->
 <section class="strategic-section">
   <div class="strategic-container">
+    <!-- TESTO -->
     <div class="strategic-text">
       <h2>Consulenza Strategica</h2>
       <p>
@@ -810,69 +848,153 @@ h2 {
         La nostra consulenza strategica integra approcci ingegneristici e manageriali per generare valore sostenibile.
       </p>
     </div>
+
+    <!-- IMMAGINE -->
     <div class="strategic-image">
       <img src="images/consulenza-strategica.jpg" alt="Consulenza Strategica Managech">
     </div>
   </div>
 </section>
 
-<!-- ================= SERVIZI ================= -->
+<!-- 2️⃣ SERVIZI OFFERTI -->
 <div class="central-section services-section">
   <h2>I nostri servizi</h2>
   <div class="services-grid">
-    <!-- Cards come nel tuo esempio originale -->
+    <div class="service-card">
+      
+    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+    <h4>Consulenza strategica</h4>
+    <p>Supporto decisionale e organizzativo per la crescita sostenibile dell’impresa.</p>
+    </div>
+    
+    <div class="service-card">
+    <div class="service-icon"><i class="fas fa-industry"></i></div>
+    <h4>Due Diligence Industriale</h4>
+    <p>Analisi tecnica e operativa per valutare asset, processi e investimenti.</p>
+    </div>
+  
+    <div class="service-card">
+    <div class="service-icon"><i class="fas fa-cogs"></i></div>
+    <h4>Ottimizzazione dei Processi</h4>
+    <p>Miglioramento dell’efficienza operativa e riduzione dei costi aziendali.</p>
+    </div>
+
+    <div class="service-card">
+    <div class="service-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+    <h4>Contabilità Industriale e Controllo di Gestione</h4>
+    <p>Sistemi di monitoraggio economico-finanziario a supporto delle decisioni.</p>
+    </div>
+    
+    <div class="service-card">
+    <div class="service-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+    <h4>Piani Industriali</h4>
+    <p>Progettazione di strategie industriali per sviluppo e crescita aziendale.</p>
+    </div>
+    
+    <div class="service-card">
+    <div class="service-icon"><i class="fas fa-hand-holding-usd"></i></div>
+    <h4>Finanza Agevolata</h4>
+    <p>Individuazione e gestione di incentivi, contributi e finanziamenti dedicati.</p>
+    </div>
+    
+    <div class="service-card">
+    <div class="service-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+    <h4>Formazione</h4>
+    <p>Programmi di training tecnico e manageriale per team e dirigenti.</p>
+    </div>
+
+    <div class="service-card">
+    <div class="service-icon"><i class="fas fa-plus-circle"></i></div>
+    <h4>Altri servizi su richiesta</h4>
+    <p>Soluzioni personalizzate per esigenze specifiche e progetti speciali.</p>
+    </div>
   </div>
 </div>
 
-<!-- ================= PROCESS FLOW ================= -->
 <div class="central-section methodology-section">
   <h2>Il nostro approccio</h2>
+
   <div class="process-wrapper">
+
+    <!-- RIGA 1 -->
     <div class="process-row">
+
       <div class="process-step">
         <div class="step-box" data-step="1">
           DEFINIZIONE OBIETTIVI
           <span>Identificazione delle priorità e degli obiettivi strategici</span>
         </div>
       </div>
+
       <div class="process-arrow">➜</div>
+
       <div class="process-step">
         <div class="step-box" data-step="2">
           ANALISI
           <span>Studio approfondito di processi, dati e risorse disponibili</span>
         </div>
       </div>
+
     </div>
+
+    <!-- RIGA 2 -->
     <div class="process-row">
+
       <div class="process-step">
         <div class="step-box" data-step="3">
           MISURAZIONE
           <span>Valutazione delle performance e individuazione criticità</span>
         </div>
       </div>
+
       <div class="process-arrow">➜</div>
+
       <div class="process-step">
         <div class="step-box" data-step="4">
           AZIONI CORRETTIVE
           <span>Pianificazione di interventi mirati di ottimizzazione</span>
         </div>
       </div>
+
       <div class="process-arrow">➜</div>
+
       <div class="process-step">
         <div class="step-box" data-step="5">
           IMPLEMENTAZIONE
           <span>Supporto operativo e monitoraggio dei risultati</span>
         </div>
       </div>
+
     </div>
+
   </div>
 </div>
 
-<!-- ================= WHY MANAGECH ================= -->
+
+<!-- 4️⃣ PERCHÉ SCEGLIERE MANAGECH -->
 <div class="central-section why-section">
   <h2>Perché scegliere MANAGECH</h2>
   <div class="why-grid">
-    <!-- Cards come nel tuo esempio originale -->
+    <div class="why-card">
+      <i class="fas fa-lightbulb"></i>
+      <h4>Soluzioni innovative</h4>
+      <p>Offriamo approcci creativi e personalizzati per massimizzare il valore aziendale.</p>
+    </div>
+    <div class="why-card">
+      <i class="fas fa-chart-line"></i>
+      <h4>Risultati misurabili</h4>
+      <p>Monitoriamo ogni intervento con indicatori chiari per garantire performance concrete.</p>
+    </div>
+    <div class="why-card">
+      <i class="fas fa-users"></i>
+      <h4>Team multidisciplinare</h4>
+      <p>Professionisti con competenze tecniche, economiche e gestionali sempre a disposizione.</p>
+    </div>
+    <div class="why-card">
+      <i class="fas fa-shield-alt"></i>
+      <h4>Affidabilità e trasparenza</h4>
+      <p>Operiamo con massima trasparenza, rispettando tempi, costi e obiettivi concordati.</p>
+    </div>
   </div>
 </div>
 
@@ -880,28 +1002,36 @@ h2 {
 <section class="form-section">
   <div class="form-wrapper">
     <h2>Definiamo insieme il percorso</h2>
+    
     <p class="block-text-form">    
-      Compila il modulo per ricevere una consulenza gratuita...
+      Compila il modulo per ricevere una consulenza gratuita. Il nostro team è a disposizione per fornire informazioni, valutare richieste di collaborazione e accompagnare la tua azienda nella definizione di un percorso sostenibile, coerente con le priorità strategiche e gli obiettivi organizzativi.
     </p>
+
     <div class="form-tags">
       <span><i class="fas fa-comments"></i> Consulenza gratuita</span>
       <span><i class="fas fa-clock"></i> Risposta entro 24h</span>
     </div>
+
     <form action="https://formspree.io/f/xreqljvv" method="POST">
       <input type="hidden" name="_subject" value="Nuova richiesta dal sito MANAGECH">
       <input type="hidden" name="_template" value="table">
       <input type="text" name="_gotcha" style="display:none">
+
       <label for="nome">Nome*</label>
       <input id="nome" name="nome" required>
       <label for="cognome">Cognome*</label>
       <input id="cognome" name="cognome" required>
+
       <label for="telefono">Telefono*</label>
+      
       <div style="display:flex; gap:0.5rem; align-items:center;">
         <select name="prefisso" required>
           <option value="+39" selected>🇮🇹 Italia +39</option>
+          <!-- altri prefissi -->
         </select>
         <input id="telefono" type="tel" name="telefono" placeholder="340 1234567" required style="flex:1; padding:0.7rem; font-family:'Montserrat',sans-serif; margin-top:0;">
       </div>
+
       <label for="email">Email*</label>
       <input id="email" type="email" name="email" required>
       <label for="azienda">Azienda*</label>
@@ -912,6 +1042,7 @@ h2 {
       <input id="provincia" name="provincia" required>
       <label for="richiesta">Richiesta*</label>
       <textarea id="richiesta" name="richiesta" required></textarea>
+
       <div class="privacy-check">
         <input type="checkbox" id="privacy" name="privacy" required>
         <label for="privacy">
@@ -919,6 +1050,7 @@ h2 {
           <a href="privacy.html" target="_blank">l'informativa privacy</a>
         </label>
       </div>
+
       <input type="hidden" name="telefono_completo" id="telefono_completo">
       <button type="submit">Invia richiesta</button>
     </form>
@@ -937,6 +1069,7 @@ h2 {
         <i class="fas fa-envelope"></i> segreteria@managech.com
       </p>
     </div>
+
     <div class="footer-links">
       <ul>
         <li><a href="chi-siamo.html">Chi siamo</a></li>
@@ -947,11 +1080,12 @@ h2 {
       </ul>
     </div>
   </div>
+
   <div class="footer-bottom">
     © 2026 MANAGECH - INGEGNERIA & MANAGEMENT STUDIO ASSOCIATO | P. IVA 18387251004
   </div>
 </footer>
-
+  
 <script>
 document.querySelector("form").addEventListener("submit", function () {
   const prefisso = document.querySelector('select[name="prefisso"]').value;
