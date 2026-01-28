@@ -455,53 +455,6 @@ footer{
   transition: all 0.35s ease;
 }
 
-.service-card::after {
-  content:"";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: var(--green);
-}
-
-.service-icon {
-  font-size: 2.4rem;
-  color: var(--green);
-  margin-bottom: 1.4rem;
-  transition: transform 0.35s ease;
-}
-
-.service-card h4 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--blue);
-  margin-bottom: 0.8rem;
-}
-
-.service-card p {
-  font-size: 1rem;       /* testo più piccolo rispetto al titolo */
-  line-height: 1.6;
-  color: var(--blue);
-  opacity: 0.85;
-}
-
-.service-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 22px 55px rgba(0,0,0,0.14);
-  background: var(--green);
-  color:#fff;
-}
-
-.service-card:hover .service-icon {
-  transform: scale(1.2);
-}
-
-.service-card:hover h4,
-.service-card:hover p {
-  color:#fff;
-}
-
 /* ===== WHY GRID ===== */
 .why-grid {
   display:grid;
@@ -671,15 +624,6 @@ footer{
 
   /* ===== PROCESS FLOW - IL NOSTRO APPROCCIO ===== */
 
-.process-flow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.8rem;
-  flex-wrap: wrap;
-  margin-top: 3rem;
-}
-
 .process-step {
   background: #f9f9f9;
   border-left: 4px solid var(--green);
@@ -689,33 +633,11 @@ footer{
   position: relative;
 }
 
-.process-step h4 {
-  font-size: 1.1rem;
-  margin-bottom: 0.6rem;
-  color: var(--blue);
-}
-
 .process-step p {
   font-size: 0.95rem;
   line-height: 1.6;
   color: var(--blue);
   opacity: 0.85;
-}
-
-.step-number {
-  position: absolute;
-  top: -14px;
-  left: -14px;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: var(--green);
-  color: #fff;
-  font-weight: 700;
-  font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .process-arrow {
@@ -740,12 +662,87 @@ footer{
   .process-flow {
     flex-direction: column;
   }
+}
+  /* ===== IL NOSTRO APPROCCIO – PROCESSO DINAMICO ===== */
 
-  .process-arrow i {
+.process-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 4rem;
+}
+
+/* righe */
+.process-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+/* task */
+.process-step {
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* box titolo */
+.step-box {
+  width: 100%;
+  padding: 1.4rem 1.2rem;
+  background: #ffffff;
+  border: 2px solid var(--green);
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+  color: var(--blue);
+  text-transform: uppercase;
+}
+
+/* descrizione FUORI dal box */
+.process-step p {
+  margin-top: 0.9rem;
+  font-size: 0.95rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--blue);
+  opacity: 0.85;
+  text-align: center;
+}
+
+/* frecce */
+.process-arrow {
+  font-size: 2.2rem;
+  color: var(--green);
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+/* micro-interazione */
+.process-step:hover .step-box {
+  background: var(--green);
+  color: #fff;
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
+}
+
+/* mobile */
+@media (max-width: 992px) {
+  .process-row {
+    flex-direction: column;
+  }
+
+  .process-arrow {
     transform: rotate(90deg);
   }
 }
-  
+
 </style>
 </head>
 
