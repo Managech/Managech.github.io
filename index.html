@@ -717,28 +717,25 @@ footer{
   z-index: 0;
 }
 
-/* frecce tra i box */
+/* FRECCE ALLINEATE AL CENTRO DEI RETTANGOLI */
 .process-arrow {
-  position: relative;
-  font-size: 2rem;
+  display: flex;
+  align-items: center;   /* allinea verticalmente */
+  justify-content: center;
+  font-size: 2.2rem;
   color: var(--green);
   opacity: 0.9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: 0 1.5rem;     /* spazio tra freccia e rettangoli */
 }
 
-/* linea freccia */
+/* freccia con linea più lunga */
 .process-arrow::after {
   content: "";
-  position: absolute;
-  top: 50%;
-  left: -30px;
-  width: 30px; /* più lunga rispetto al font */
+  display: block;
+  width: 50px;           /* lunghezza linea */
   height: 2px;
   background: var(--green);
-  transform: translateY(-50%);
-  z-index: 0;
+  margin-left: 0.5rem;   /* distanza tra simbolo e linea */
 }
 
 /* hover box */
