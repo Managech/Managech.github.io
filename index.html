@@ -731,13 +731,15 @@ footer{
 /* descrizione */
 .step-box span {
   position: absolute;
-  top: calc(100% + 0.8rem); /* fuori dal rettangolo */
+  top: calc(100% + 0.8rem);
   left: 50%;
   transform: translateX(-50%);
   width: 240px;
 
   font-size: 0.95rem;
   font-style: italic;
+  font-weight: 400;          /* NON bold */
+  text-transform: lowercase; /* stampatello minuscolo */
   line-height: 1.5;
   color: var(--blue);
   opacity: 0.85;
