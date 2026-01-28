@@ -685,18 +685,25 @@ footer{
 
 /* BOX UNICO (titolo + descrizione) */
 .step-box {
-  width: 100%;
-  min-height: 200px; /* 🔒 stessa altezza per tutti */
-  padding: 2.2rem 1.6rem 1.8rem;
-  background: #ffffff;
-  border: 2px solid var(--green);
+  position: relative;
+  background: #fff;
   border-radius: 16px;
+
+  /* dimensioni */
+  min-width: 300px;   /* PIÙ LARGO */
+  min-height: 64px;   /* PIÙ BASSO */
+
+  padding: 0.9rem 1.4rem;
+
+  /* tipografia */
+  font-family: 'Montserrat', sans-serif; /* stesso font del sito */
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1rem;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
 /* NUMERO */
