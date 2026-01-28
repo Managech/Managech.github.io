@@ -685,6 +685,82 @@ footer{
   text-align: center;  /* mantiene centratura, se vuoi */
 }
 
+  /* ===== PROCESS FLOW - IL NOSTRO APPROCCIO ===== */
+
+.process-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.8rem;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+.process-step {
+  background: #f9f9f9;
+  border-left: 4px solid var(--green);
+  padding: 1.6rem 1.4rem;
+  max-width: 220px;
+  text-align: left;
+  position: relative;
+}
+
+.process-step h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+  color: var(--blue);
+}
+
+.process-step p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--blue);
+  opacity: 0.85;
+}
+
+.step-number {
+  position: absolute;
+  top: -14px;
+  left: -14px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--green);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.process-arrow {
+  font-size: 1.6rem;
+  color: var(--green);
+  opacity: 0.6;
+}
+
+/* Hover micro-dinamica */
+.process-step:hover {
+  background: var(--green);
+  color: #fff;
+}
+
+.process-step:hover h4,
+.process-step:hover p {
+  color: #fff;
+}
+
+/* Mobile: flusso verticale */
+@media (max-width: 992px) {
+  .process-flow {
+    flex-direction: column;
+  }
+
+  .process-arrow i {
+    transform: rotate(90deg);
+  }
+}
   
 </style>
 </head>
@@ -799,17 +875,60 @@ footer{
   </div>
 </div>
 
-<!-- 3️⃣ METODOLOGIA -->
 <div class="central-section methodology-section">
   <h2>Il nostro approccio</h2>
-  <ul>
-    <li><strong>Definizione degli obiettivi:</strong> Identificazione delle priorità e degli obiettivi strategici dell'azienda.</li>
-    <li><strong>Analisi:</strong> Studio approfondito dei processi, dei dati e delle risorse disponibili.</li>
-    <li><strong>Misura dello stato attuale:</strong> Valutazione oggettiva delle performance e identificazione delle aree di miglioramento.</li>
-    <li><strong>Definizione delle azioni correttive:</strong> Pianificazione di interventi mirati per ottimizzare processi e risultati.</li>
-    <li><strong>Implementazione:</strong> Supporto nell’esecuzione delle azioni e monitoraggio dei risultati.</li>
-  </ul>
+
+  <div class="process-flow">
+
+    <div class="process-step">
+      <span class="step-number">1</span>
+      <h4>Definizione degli obiettivi</h4>
+      <p>Identificazione delle priorità e degli obiettivi strategici dell'azienda.</p>
+    </div>
+
+    <div class="process-arrow">
+      <i class="fas fa-arrow-right"></i>
+    </div>
+
+    <div class="process-step">
+      <span class="step-number">2</span>
+      <h4>Analisi</h4>
+      <p>Studio approfondito dei processi, dei dati e delle risorse disponibili.</p>
+    </div>
+
+    <div class="process-arrow">
+      <i class="fas fa-arrow-right"></i>
+    </div>
+
+    <div class="process-step">
+      <span class="step-number">3</span>
+      <h4>Misura dello stato attuale</h4>
+      <p>Valutazione oggettiva delle performance e individuazione delle aree di miglioramento.</p>
+    </div>
+
+    <div class="process-arrow">
+      <i class="fas fa-arrow-right"></i>
+    </div>
+
+    <div class="process-step">
+      <span class="step-number">4</span>
+      <h4>Azioni correttive</h4>
+      <p>Pianificazione di interventi mirati per ottimizzare processi e risultati.</p>
+    </div>
+
+    <div class="process-arrow">
+      <i class="fas fa-arrow-right"></i>
+    </div>
+
+    <div class="process-step">
+      <span class="step-number">5</span>
+      <h4>Implementazione</h4>
+      <p>Supporto operativo e monitoraggio continuo dei risultati.</p>
+    </div>
+
+  </div>
 </div>
+
 
 <!-- 4️⃣ PERCHÉ SCEGLIERE MANAGECH -->
 <div class="central-section why-section">
