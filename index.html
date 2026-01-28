@@ -513,12 +513,14 @@ footer{
 
 .strategic-container {
   display: flex;
-  align-items: center;
+  align-items: center;       /* centra verticalmente il testo e l’immagine */
+  justify-content: space-between;
   width: 100%;
-  max-width: 1400px;  
+  max-width: 1400px;
   margin: 0 auto;
   gap: 2rem;
-  padding: 0 2rem;    
+  padding: 0 2rem;
+  min-height: 360px;         /* uguale all’altezza dell’immagine */
 }
 
 .strategic-text {
@@ -531,16 +533,20 @@ footer{
 }
 
 .strategic-text p {
+  margin-top: 0;      /* elimina margine sopra */
+  margin-bottom: 0.5rem; /* margine sotto ridotto */
   font-size: 1.15rem;
   line-height: 1.7;
   color: var(--blue);
-  margin-bottom: 0.5rem;
 }
 
 .strategic-image {
+  display: flex;
+  align-items: center;    /* centra verticalmente l’immagine nel contenitore */
+  justify-content: center;
   flex: 1;
+  max-height: 360px;
   overflow: hidden;
-  aspect-ratio: 16/9;
   border-radius: 8px;
   box-shadow: 0 15px 40px rgba(0,0,0,.18);
 }
@@ -552,21 +558,23 @@ footer{
   display: block;
 }
 
-/* Mobile */
 @media (max-width: 992px) {
   .strategic-container {
     flex-direction: column;
-    padding: 0 1.5rem;  /* margini laterali ridotti per tablet/mobile */
     text-align: center;
+    gap: 2rem; /* distanza tra testo e immagine */
   }
+
   .strategic-text {
     text-align: center;
-    margin-bottom: 2rem;
+    margin: 0; /* elimina margini extra */
   }
+
   .strategic-image {
-  max-height: 360px; /* evita che l’immagine diventi enorme */
-  flex: 1;           /* mantiene il ridimensionamento proporzionale */
-}
+    width: 100%;
+    aspect-ratio: 16/9;
+    max-height: none;
+  }
 }
 
 .service-card::after {
