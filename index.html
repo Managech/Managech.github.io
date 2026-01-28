@@ -766,6 +766,36 @@ footer{
     left: -25px;
   }
 }
+/* ===== SPAZIATURA COERENTE TRA SEZIONI ===== */
+.central-section,
+.strategic-section,
+.form-section,
+.services-section,
+.why-section {
+  padding-top: 6rem;   /* spazio sopra le sezioni coerente con i titoli principali */
+  padding-bottom: 4rem; /* spazio sotto le sezioni */
+}
+
+/* Sezione “Perché scegliere MANAGECH” più distante dal flusso */
+.why-section {
+  margin-top: 8rem; /* aumenta lo spazio rispetto al processo */
+}
+
+/* Mantieni centratura del titolo */
+.why-section h2 {
+  text-align: center;
+  margin-bottom: 3rem; /* distanza dal contenuto interno della griglia */
+}
+
+/* Regola margini dei titoli principali del processo e servizi */
+.central-section h2,
+.services-section h2,
+.strategic-section h2,
+.form-section h2 {
+  margin-top: 6rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
 
 
 </style>
