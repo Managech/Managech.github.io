@@ -513,37 +513,32 @@ footer{
 
 .strategic-container {
   display: flex;
-  align-items: center;       /* centra verticalmente il testo e l’immagine */
+  align-items: center;      /* centra verticalmente testo e immagine */
   justify-content: space-between;
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
   gap: 2rem;
   padding: 0 2rem;
-  min-height: 360px;         /* uguale all’altezza dell’immagine */
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .strategic-text {
+  flex: 1;               /* occupa metà del container */
   display: flex;
   flex-direction: column;
-  justify-content: center; /* centra verticalmente */
-  height: 100%;            /* occupa tutta l’altezza del container */
-  margin: 0;               /* elimina eventuali margini extra */
-  padding: 0;              /* elimina padding interno */
+  justify-content: center; /* centra verticalmente il testo */
+  margin: 0;
+  padding: 0;
 }
 
 .strategic-text p {
-  margin-top: 0;      /* elimina margine sopra */
-  margin-bottom: 0.5rem; /* margine sotto ridotto */
-  font-size: 1.15rem;
-  line-height: 1.7;
-  color: var(--blue);
+  margin-top: 0;
+  margin-bottom: 1rem;  /* spazio sotto ogni paragrafo */
 }
 
 .strategic-image {
   flex: 1;
   max-height: 360px;
-  height: 360px; /* fissa l’altezza dell’immagine */
+  height: 360px;      /* Fissa altezza */
   overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 15px 40px rgba(0,0,0,.18);
