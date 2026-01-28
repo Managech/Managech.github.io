@@ -633,13 +633,6 @@ footer{
   position: relative;
 }
 
-.process-step p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: var(--blue);
-  opacity: 0.85;
-}
-
 .process-arrow {
   font-size: 1.6rem;
   color: var(--green);
@@ -663,12 +656,12 @@ footer{
     flex-direction: column;
   }
 }
-  /* ===== IL NOSTRO APPROCCIO – PROCESSO DINAMICO ===== */
+ /* ===== IL NOSTRO APPROCCIO – PROCESSO NUMERATO ===== */
 
 .process-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 4rem;
   margin-top: 4rem;
 }
 
@@ -677,71 +670,121 @@ footer{
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2.5rem;
+  gap: 4.5rem; /* spazio per frecce più lunghe */
   flex-wrap: wrap;
 }
 
 /* task */
 .process-step {
-  width: 240px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 260px;
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 
-/* box titolo */
+/* BOX UNICO (titolo + descrizione) */
 .step-box {
   width: 100%;
-  padding: 1.4rem 1.2rem;
+  min-height: 200px; /* 🔒 stessa altezza per tutti */
+  padding: 2.2rem 1.6rem 1.8rem;
   background: #ffffff;
   border: 2px solid var(--green);
-  border-radius: 12px;
+  border-radius: 16px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* NUMERO */
+.step-box::before {
+  content: attr(data-step);
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--green);
+  color: #fff;
   font-weight: 700;
   font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* titolo */
+.step-box {
+  font-size: 0.9rem;
   letter-spacing: 1.5px;
-  color: var(--blue);
   text-transform: uppercase;
-}
-
-/* descrizione FUORI dal box */
-.process-step p {
-  margin-top: 0.9rem;
-  font-size: 0.95rem;
-  font-style: italic;
-  line-height: 1.5;
-  color: var(--blue);
-  opacity: 0.85;
-  text-align: center;
-}
-
-/* frecce */
-.process-arrow {
-  font-size: 2.2rem;
-  color: var(--green);
   font-weight: 700;
+  color: var(--blue);
+}
+
+/* descrizione */
+.step-box span {
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-transform: none;
+  opacity: 0.85;
+}
+
+/* FRECCE */
+.process-arrow {
+  position: relative;
+  font-size: 2.6rem; /* più grandi */
+  color: var(--green);
   opacity: 0.9;
 }
 
-/* micro-interazione */
+/* allunga visivamente la freccia */
+.process-arrow::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -40px;
+  width: 40px;
+  height: 2px;
+  background: var(--green);
+  transform: translateY(-50%);
+}
+
+/* hover */
 .process-step:hover .step-box {
   background: var(--green);
   color: #fff;
-  transform: translateY(-4px);
+  transform: translateY(-6px);
   transition: all 0.3s ease;
+}
+
+.process-step:hover .step-box span {
+  color: #fff;
 }
 
 /* mobile */
 @media (max-width: 992px) {
   .process-row {
     flex-direction: column;
+    gap: 3rem;
   }
 
   .process-arrow {
     transform: rotate(90deg);
   }
+
+  .process-arrow::after {
+    width: 30px;
+    left: -30px;
+  }
 }
+
 
 </style>
 </head>
@@ -864,39 +907,41 @@ footer{
     <!-- RIGA 1 -->
     <div class="process-row">
       <div class="process-step">
-        <div class="step-box">DEFINIZIONE OBIETTIVI</div>
-        <p>Identificazione delle priorità e degli obiettivi strategici.</p>
+      
+        <div class="step-box" data-step="1">
+      DEFINIZIONE OBIETTIVI
+      <span>Identificazione delle priorità e degli obiettivi strategici.</span>
       </div>
+
+      <div class="process-arrow">➜</div>
+        
+      <div class="process-step">
+       <div class="step-box" data-step="2">
+       ANALISI
+       <span>Studio approfondito di processi, dati e risorse disponibili.</span>
+       </div>
+
+       <!-- RIGA 2 -->
+       <div class="process-row">
+       <div class="step-box" data-step="3">
+       MISURAZIONE
+       <span>Valutazione delle performance e individuazione criticità.</span>
+       </div>
 
       <div class="process-arrow">➜</div>
 
       <div class="process-step">
-        <div class="step-box">ANALISI</div>
-        <p>Studio approfondito di processi, dati e risorse disponibili.</p>
-      </div>
-    </div>
+       <div class="step-box" data-step="4">
+       AZIONI CORRETTIVE
+       <span>Pianificazione di interventi mirati di ottimizzazione.</span>
+       </div>
+      
+        <div class="process-arrow">➜</div>
 
-    <!-- RIGA 2 -->
-    <div class="process-row">
-      <div class="process-step">
-        <div class="step-box">MISURAZIONE</div>
-        <p>Valutazione delle performance e individuazione criticità.</p>
-      </div>
-
-      <div class="process-arrow">➜</div>
-
-      <div class="process-step">
-        <div class="step-box">AZIONI CORRETTIVE</div>
-        <p>Pianificazione di interventi mirati di ottimizzazione.</p>
-      </div>
-
-      <div class="process-arrow">➜</div>
-
-      <div class="process-step">
-        <div class="step-box">IMPLEMENTAZIONE</div>
-        <p>Supporto operativo e monitoraggio dei risultati.</p>
-      </div>
-    </div>
+      <div class="step-box" data-step="5">
+       IMPLEMENTAZIONE
+       <span>Supporto operativo e monitoraggio dei risultati.</span>
+       </div>
   </div>
 </div>
 
