@@ -819,6 +819,66 @@ footer{
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   z-index: 0; /* dietro al contenuto */
 }
+.strategic-text h2 {
+  margin-top: 0;        /* elimina margine sopra il titolo */
+  margin-bottom: 1rem;  /* riduce il margine sotto */
+}
+
+.strategic-text p {
+  margin-top: 0;        /* elimina margine sopra ogni paragrafo */
+  margin-bottom: 0.8rem;/* riduce margine sotto */
+}
+/* ===== CORREZIONE SPAZIATURA STRATEGIC SECTION ===== */
+.strategic-container {
+  align-items: center;       /* centra verticalmente testo e immagine */
+}
+
+.strategic-text {
+  margin: 0;                 /* elimina margini extra */
+  padding: 0;                /* rimuove padding interno che crea spazio in più */
+}
+
+.strategic-image {
+  display: flex;
+  align-items: center;       /* centra verticalmente l'immagine */
+  justify-content: center;
+  max-height: 360px;
+}
+
+.strategic-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* ===== CORREZIONE CENTRATURA MOBILE ===== */
+@media (max-width: 992px) {
+  .strategic-container {
+    flex-direction: column;
+    align-items: center;       /* centra orizzontalmente e verticalmente */
+    text-align: center;        /* testo centrato */
+  }
+
+  .strategic-text {
+    margin: 0;                 /* rimuove margini extra */
+    padding: 0;                /* rimuove padding interno */
+  }
+
+  .strategic-image {
+    width: 100%;
+    max-height: none;          /* lascia che l'immagine si adatti */
+    height: auto;
+    align-items: center;       /* centra l'immagine */
+    justify-content: center;
+  }
+
+  .strategic-image img {
+    width: 100%;
+    height: auto;              /* mantiene proporzioni corrette */
+    object-fit: cover;
+    display: block;
+  }
+}
 
 
 </style>
