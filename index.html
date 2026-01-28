@@ -541,14 +541,15 @@ footer{
 }
 
 .strategic-image {
-  display: flex;
-  align-items: center;    /* centra verticalmente l’immagine nel contenitore */
-  justify-content: center;
   flex: 1;
   max-height: 360px;
+  height: 360px; /* fissa l’altezza dell’immagine */
   overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 15px 40px rgba(0,0,0,.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .strategic-image img {
@@ -566,9 +567,13 @@ footer{
   }
 
   .strategic-text {
-    text-align: center;
-    margin: 0; /* elimina margini extra */
-  }
+  flex: 1; /* occupa metà spazio, come l'immagine */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centra verticalmente il testo */
+  margin: 0;
+  padding: 0;
+}
 
   .strategic-image {
     width: 100%;
@@ -825,9 +830,10 @@ footer{
 }
 
 .strategic-text p {
-  margin-top: 0;        /* elimina margine sopra ogni paragrafo */
-  margin-bottom: 0.8rem;/* riduce margine sotto */
+  margin-top: 0;
+  margin-bottom: 1rem; /* o 1.2rem come prima */
 }
+
 /* ===== CORREZIONE SPAZIATURA STRATEGIC SECTION ===== */
 .strategic-container {
   align-items: center;       /* centra verticalmente testo e immagine */
