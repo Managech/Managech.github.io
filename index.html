@@ -522,17 +522,21 @@ footer{
 }
 
 .strategic-text {
-  flex: 1;               /* occupa metà del container */
+  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* centra verticalmente il testo */
+  justify-content: center;
+  text-align: justify;   /* testo giustificato come prima */
   margin: 0;
   padding: 0;
 }
 
 .strategic-text p {
-  margin-top: 0;
-  margin-bottom: 1rem;  /* spazio sotto ogni paragrafo */
+  margin-top: 0;          /* nessun margine sopra il paragrafo */
+  margin-bottom: 1.7rem;  /* margine sotto come prima */
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--blue);
 }
 
 .strategic-image {
@@ -820,10 +824,13 @@ footer{
   z-index: 0; /* dietro al contenuto */
 }
 .strategic-text h2 {
-  margin-top: 0;        /* elimina margine sopra il titolo */
-  margin-bottom: 1rem;  /* riduce il margine sotto */
+  margin-top: 0;         /* niente margine sopra il titolo */
+  margin-bottom: 1rem;   /* margine sotto titolo */
+  font-size: 2.6rem;     /* dimensione originale */
+  color: var(--green);
+  letter-spacing: 1px;
 }
-
+  
 .strategic-text p {
   margin-top: 0;
   margin-bottom: 1rem; /* o 1.2rem come prima */
