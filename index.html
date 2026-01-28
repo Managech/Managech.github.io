@@ -730,12 +730,18 @@ footer{
 
 /* descrizione */
 .step-box span {
+  position: absolute;
+  top: calc(100% + 0.8rem); /* fuori dal rettangolo */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 240px;
+
   font-size: 0.95rem;
-  font-weight: 400;
+  font-style: italic;
   line-height: 1.5;
-  letter-spacing: normal;
-  text-transform: none;
+  color: var(--blue);
   opacity: 0.85;
+  text-align: center;
 }
 
 /* FRECCE */
