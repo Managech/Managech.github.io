@@ -622,41 +622,7 @@ footer{
   text-align: center;  /* mantiene centratura, se vuoi */
 }
 
-  /* ===== PROCESS FLOW - IL NOSTRO APPROCCIO ===== */
-
-.process-step {
-  background: #f9f9f9;
-  border-left: 4px solid var(--green);
-  padding: 1.6rem 1.4rem;
-  max-width: 220px;
-  text-align: left;
-  position: relative;
-}
-
-.process-arrow {
-  font-size: 1.6rem;
-  color: var(--green);
-  opacity: 0.6;
-}
-
-/* Hover micro-dinamica */
-.process-step:hover {
-  background: var(--green);
-  color: #fff;
-}
-
-.process-step:hover h4,
-.process-step:hover p {
-  color: #fff;
-}
-
-/* Mobile: flusso verticale */
-@media (max-width: 992px) {
-  .process-flow {
-    flex-direction: column;
-  }
-}
- /* ===== IL NOSTRO APPROCCIO – PROCESSO NUMERATO ===== */
+ /* ===== PROCESS FLOW - IL NOSTRO APPROCCIO ===== */
 
 /* contenitore principale del flusso */
 .process-wrapper {
@@ -669,7 +635,7 @@ footer{
 /* righe del flusso */
 .process-row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: 5rem; /* aumenta lo spazio tra i box per far "respirare" le frecce */
   flex-wrap: wrap;
@@ -681,6 +647,7 @@ footer{
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: auto;
 }
 
 /* box smussato */
@@ -688,71 +655,24 @@ footer{
   position: relative;
   background: #fff;
   border-radius: 16px;
-
-  /* dimensioni più grandi */
   min-width: 360px;  /* più largo */
   min-height: 100px; /* più alto */
   padding: 1rem 1.6rem;
-
-  /* tipografia coerente con il sito */
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
   text-align: center;
-
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-}
-
-/* descrizione fuori dal rettangolo */
-.step-box span {
-  display: block;
-  margin-top: 0.8rem;
-  font-weight: 400;     /* normale */
-  text-transform: lowercase; /* stampatello minuscolo */
-  font-size: 0.95rem;
   color: var(--blue);
-  max-width: 380px;     /* evita che la descrizione vada troppo larga */
-  text-align: center;
-}
-
-/* frecce */
-.process-arrow {
-  font-size: 2rem;
-  color: var(--green);
-  opacity: 0.8;
-}
-
-
-/* BOX UNICO (titolo + descrizione) */
-.step-box {
-  position: relative;
-  background: #fff;
-  border-radius: 16px;
-
-  /* dimensioni */
-  min-width: 300px;   /* PIÙ LARGO */
-  min-height: 64px;   /* PIÙ BASSO */
-
-  padding: 0.9rem 1.4rem;
-
-  /* tipografia */
-  font-family: 'Montserrat', sans-serif; /* stesso font del sito */
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-
-  text-align: center;
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
-/* NUMERO */
+/* numero task fuori dal box */
 .step-box::before {
   content: attr(data-step);
   position: absolute;
-  top: -26px;
+  top: -28px;
   left: 50%;
   transform: translateX(-50%);
   width: 56px;
@@ -768,23 +688,13 @@ footer{
   box-shadow: 0 8px 22px rgba(0,0,0,0.18);
 }
 
-/* titolo */
-.step-box {
-  font-size: 0.9rem;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--blue);
-}
-
-/* descrizione */
+/* descrizione fuori dal box */
 .step-box span {
   position: absolute;
   top: calc(100% + 0.8rem);
   left: 50%;
   transform: translateX(-50%);
-  width: 240px;
-
+  width: 280px; /* larghezza descrizione */
   font-size: 0.95rem;
   font-style: italic;
   font-weight: 400;          /* NON bold */
@@ -795,12 +705,15 @@ footer{
   text-align: center;
 }
 
-/* FRECCE */
+/* frecce tra i task */
 .process-arrow {
   position: relative;
   font-size: 2.6rem; /* più grandi */
   color: var(--green);
   opacity: 0.9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* allunga visivamente la freccia */
@@ -815,7 +728,7 @@ footer{
   transform: translateY(-50%);
 }
 
-/* hover */
+/* hover micro-dinamica */
 .process-step:hover .step-box {
   background: var(--green);
   color: #fff;
@@ -827,7 +740,7 @@ footer{
   color: #fff;
 }
 
-/* mobile */
+/* MOBILE: flusso verticale */
 @media (max-width: 992px) {
   .process-row {
     flex-direction: column;
@@ -843,7 +756,6 @@ footer{
     left: -30px;
   }
 }
-
 
 </style>
 </head>
