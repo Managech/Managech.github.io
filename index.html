@@ -793,6 +793,24 @@ footer{
   margin-bottom: 3rem;
   text-align: center;
 }
+.methodology-section {
+  position: relative;
+  padding: 6rem 2rem; /* spazio sopra e sotto per il contenuto */
+  overflow: hidden;   /* così il triangolo non esce dai bordi */
+}
+
+.methodology-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(31,163,122,0.15), transparent 70%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  z-index: 0; /* dietro al contenuto */
+}
 
 
 </style>
