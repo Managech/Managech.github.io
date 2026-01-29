@@ -50,6 +50,17 @@ header{
   justify-content:space-between;
 }
 
+. a{
+  display:flex;
+  align-items:center;
+  gap:.8rem;
+  color:var(--green);
+  text-decoration:none;
+  font-weight:700;
+  font-size:1.3rem;
+  letter-spacing:1px;
+}
+
 .logo img{
   height:54px;
 }
@@ -88,7 +99,7 @@ header{
   min-height:50vh;
   background:
     linear-gradient(rgba(11,31,51,.75),rgba(11,31,51,.75)),
-    url("images/hero-chi-siamo.jpg") center/cover no-repeat;
+    url("images/hero-chi-siamo2.jpg") center/cover no-repeat;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -116,27 +127,27 @@ header{
 
 /* ================= CONTENT BLOCKS (Vision/Mission) ================= */
 .section{
-  padding:6rem 0; /* padding verticale, non laterale */
+  padding:6rem 2rem;
 }
 
 .block{
+  max-width:1200px;
+  margin:0 auto 6rem;
   display:flex;
-  flex-wrap:wrap; /* rende responsive */
-  align-items:stretch; 
-  margin-bottom:6rem;
-  position:relative;
+  align-items:center;
+  gap:4rem;
+}
+
+.block:nth-child(even){
+  flex-direction:row-reverse;
 }
 
 .block-text{
-  flex:1 1 500px;
-  max-width:600px;
-  padding:3rem;
-  background:#fff;
-  z-index:2;
+  flex:1;
 }
 
 .block-text h3{
-  margin-bottom:1rem;
+  margin:0 0 1rem;
   font-size:2.2rem;
   color:var(--green);
   letter-spacing:2px;
@@ -148,43 +159,16 @@ header{
 }
 
 .block-image{
-  flex:1 1 50%;
-  position:relative;
-  min-width:0;
+  flex:1;
 }
 
 .block-image img{
-  width:100vw; /* tutta la larghezza della finestra */
-  height:100%;
+  width:100%;
+  height:320px;
   object-fit:cover;
-  display:block;
-  position:relative;
-}
-
-/* Spostamento immagini ai margini laterali */
-.block:nth-child(odd) .block-image img {
-  margin-left: calc(-50% + 50vw); /* Vision: lato destro */
-}
-
-.block:nth-child(even) .block-image img {
-  margin-right: calc(-50% + 50vw); /* Mission: lato sinistro */
-}
-
-/* Responsive mobile */
-@media (max-width:1024px){
-  .block{
-    flex-direction:column;
-  }
-
-  .block-image img{
-    width:100%;
-    margin:0;
-  }
-
-  .block-text{
-    max-width:100%;
-    padding:2rem;
-  }
+  border-radius:8px;
+  background:#eaeaea;
+  box-shadow:0 15px 40px rgba(0,0,0,.18);
 }
 
 /* ================= VALORI ================= */
@@ -358,14 +342,14 @@ footer{
   font-size:.75rem;
   color:#888;
 }
-
+  
 .footer-brand p {
-  line-height: 1.8; 
+  line-height: 1.8;      /* interlinea uniforme */
 }
 
 .footer-brand p i {
   display: inline-block;
-  width: 20px;
+  width: 20px;           /* allinea perfettamente le icone */
 }
 
 /* ================= FADE-IN ================= */
@@ -379,30 +363,6 @@ footer{
   opacity:1;
   transform: translateY(0);
 }
-
-/* ================= BUTTON ================= */
-form button,
-.btn-discover{
-  display: inline-block;
-  background: var(--green);
-  color: #fff;
-  padding: 0.9rem 2rem;
-  font-size: 0.95rem;
-  font-weight:600;
-  border:none;
-  border-radius:6px;
-  text-decoration:none;
-  letter-spacing:1px;
-  cursor:pointer;
-  transition: background 0.3s, transform 0.3s;
-}
-
-form button:hover,
-.btn-discover:hover{
-  background:#17845e;
-  transform: translateY(-2px);
-}
-
 </style>
 </head>
 <body>
