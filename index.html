@@ -756,20 +756,22 @@ footer{
 /* ===== SPAZIATURA COERENTE TRA SEZIONI ===== */
 .central-section,
 .form-section,
-.services-section,
-.why-section {
+.services-section, {
   padding-top: 2rem;   /* spazio sopra le sezioni coerente con i titoli principali */
   padding-bottom: 2rem; /* spazio sotto le sezioni */
 }
 
 /* Sezione “Perché scegliere MANAGECH” più distante dal flusso */
 .why-section {
+  width: 100%;              /* occupa tutta la larghezza */
   margin-top: 4rem;         /* distanza dal processo */
   background-color: var(--blue); /* sfondo blu */
-  padding: 4rem 2rem;       /* spazio interno */
+  padding: 4rem 0;       /* spazio interno */
   border-radius: 8px;       /* opzionale, per smussare i bordi */
 }
 
+
+  
 /* Mantieni centratura del titolo */
 .why-section h2 {
   text-align: center;
