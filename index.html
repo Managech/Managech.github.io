@@ -512,46 +512,28 @@ footer{
   transform: translateY(-10px) scale(1.02);
 }
 
-/* ===== STRATEGIC SECTION ===== */
+/* ===== STRATEGIC SECTION – BLOCCO DEFINITIVO ===== */
+
 .strategic-section {
   padding: 0;
 }
 
 .strategic-container {
   display: flex;
-  align-items: center;      /* centra verticalmente testo e immagine */
-  justify-content: space-between;
-  gap: 0;
-  padding: 0 2rem;
-  min-height: calc(100vh - 90px); /* header già compensato */
-  max-width: 100%;
-  margin: 0;
+  min-height: calc(100vh - 90px); /* altezza header */
+  width: 100%;
 }
 
-  .strategic-text {
+.strategic-text {
   flex: 1;
-  padding: 0;
+  padding: 6rem;
   display: flex;
-  text-align: justify;
   flex-direction: column;
   justify-content: center;
 }
 
-.strategic-text p {
-  margin-top: 0;          /* nessun margine sopra il paragrafo */
-  margin-bottom: 1.7rem;  /* margine sotto come prima */
-  font-size: 1.15rem;
-  line-height: 1.7;
-  color: var(--blue);
-}
-
 .strategic-image {
   flex: 1;
-  height: 100%;
-  overflow: hidden;
-  border-radius: 0;
-  box-shadow: none;
-  display: flex;
 }
 
 .strategic-image img {
@@ -561,26 +543,20 @@ footer{
   display: block;
 }
 
+/* ===== MOBILE ===== */
 @media (max-width: 992px) {
   .strategic-container {
     flex-direction: column;
-    text-align: center;
-    gap: 2rem; /* distanza tra testo e immagine */
+    min-height: auto;
+  }
+
+  .strategic-image {
+    height: 280px;
   }
 
   .strategic-text {
-  flex: 1; /* occupa metà spazio, come l'immagine */
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* centra verticalmente il testo */
-  margin: 0;
-  padding: 0;
-}
-
-  .strategic-image {
-    width: 100%;
-    aspect-ratio: 16/9;
-    max-height: none;
+    padding: 2rem;
+    text-align: center;
   }
 }
 
@@ -625,7 +601,6 @@ footer{
 }
 
  .services-section {
-  margin-top: 2rem;          /* spazio sopra la sezione */
   padding: 4rem 0;           /* spazio verticale interno */
   background-color: #f4f4f4; /* sfondo grigio chiaro */
 }
@@ -837,59 +812,6 @@ footer{
   margin-top: 0;
   margin-bottom: 1rem; /* o 1.2rem come prima */
 }
-
-/* ===== CORREZIONE SPAZIATURA STRATEGIC SECTION ===== */
-.strategic-container {
-  align-items: center;       /* centra verticalmente testo e immagine */
-}
-
-.strategic-text {
-  margin: 0;                 /* elimina margini extra */
-  padding: 0;                /* rimuove padding interno che crea spazio in più */
-}
-
-.strategic-image {
-  display: flex;
-  align-items: center;       /* centra verticalmente l'immagine */
-  justify-content: center;
-  max-height: 360px;
-}
-
-.strategic-image img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-/* ===== CORREZIONE CENTRATURA MOBILE ===== */
-@media (max-width: 992px) {
-  .strategic-container {
-    flex-direction: column;
-    align-items: center;       /* centra orizzontalmente e verticalmente */
-    text-align: center;        /* testo centrato */
-  }
-
-  .strategic-text {
-    margin: 0;                 /* rimuove margini extra */
-    padding: 0;                /* rimuove padding interno */
-  }
-
-  .strategic-image {
-    width: 100%;
-    max-height: none;          /* lascia che l'immagine si adatti */
-    height: auto;
-    align-items: center;       /* centra l'immagine */
-    justify-content: center;
-  }
-
-  .strategic-image img {
-    width: 100%;
-    height: auto;              /* mantiene proporzioni corrette */
-    object-fit: cover;
-    display: block;
-  }
-}
-
 
 </style>
 </head>
