@@ -364,6 +364,44 @@ footer{
   opacity:1;
   transform: translateY(0);
 }
+.block {
+  display: flex;
+  align-items: stretch; /* le immagini riempiono tutta l'altezza del blocco */
+  gap: 2rem; /* spazio tra testo e immagine */
+  position: relative;
+  overflow: hidden;
+}
+
+.block-text {
+  flex: 1;          /* testo occupa metà blocco */
+  padding: 3rem;    /* mantiene il padding interno */
+  z-index: 1;       /* assicura che il testo stia sopra l'immagine se si sovrappone */
+  background: #fff; /* opzionale: sfondo bianco per il testo */
+}
+
+.block-image {
+  flex: 1;          /* immagine occupa metà blocco */
+  position: relative;
+  overflow: hidden;
+}
+
+.block-image img {
+  height: 100%;           /* altezza uguale al blocco */
+  object-fit: cover;      /* evita deformazioni */
+  width: 100vw;           /* larghezza pari all'intera finestra */
+  position: relative;
+}
+
+/* Spingere le immagini verso il lato corretto */
+.block:nth-child(odd) .block-image img {
+  margin-left: calc(-50% + 50vw); /* Vision: spinge l'immagine verso il margine destro */
+}
+
+.block:nth-child(even) .block-image img {
+  margin-right: calc(-50% + 50vw); /* Mission: spinge l'immagine verso il margine sinistro */
+}
+
+  
 </style>
 </head>
 <body>
