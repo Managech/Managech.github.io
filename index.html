@@ -11,156 +11,155 @@
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<!-- CSS Pulito —>
-</style>
-:root {
-  --green: #1fa37a;
-  --blue: #0b1f33;
-  --gray: #d6d6d6;
-  --white: #ffffff;
+<style>
+:root{
+  --green:#1fa37a;
+  --blue:#0b1f33;
+  --gray:#d6d6d6;
+  --white:#ffffff;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
-body {
-  font-family: 'Montserrat', sans-serif;
-  background: #fff;
-  color: var(--blue);
+body{
+  font-family:'Montserrat',sans-serif;
+  background:#fff;
+  color:var(--blue);
+}
+  .form-tags{
+  display:flex;
+  gap:1rem;
+  margin-bottom:2rem;
+  flex-wrap:wrap;
 }
 
-/* ================= FORM TAGS ================= */
-.form-tags {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
+.form-tags span{
+  background:#fff;
+  border:1px solid var(--green);
+  color:var(--blue);
+  padding:.55rem 1.3rem;
+  border-radius:30px;
+  font-size:.8rem;
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  font-weight:500;
 }
 
-.form-tags span {
-  background: #fff;
-  border: 1px solid var(--green);
-  color: var(--blue);
-  padding: 0.55rem 1.3rem;
-  border-radius: 30px;
-  font-size: 0.8rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-weight: 500;
-}
-
-.form-tags i {
-  color: var(--green);
+.form-tags i{
+  color:var(--green);
 }
 
 /* ================= HEADER ================= */
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 90px;
-  background: var(--blue);
-  z-index: 1000;
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:90px;
+  background:var(--blue);
+  z-index:1000;
 }
 
-.navbar {
-  height: 100%;
-  padding: 0 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.navbar{
+  height:100%;
+  padding:0 3rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
 
-.logo a {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  color: var(--green);
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 1.3rem;
-  letter-spacing: 1px;
+.logo a{
+  display:flex;
+  align-items:center;
+  gap:.8rem;
+  color:var(--green);
+  text-decoration:none;
+  font-weight:700;
+  font-size:1.3rem;
+  letter-spacing:1px;
 }
 
-.logo img {
-  height: 54px;
-  display: block;
+.logo img{
+  height:54px;
+  display:block;
 }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:2rem;
 }
 
-.nav-links a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 0.95rem;
-  position: relative;
+.nav-links a{
+  color:#fff;
+  text-decoration:none;
+  font-size:.95rem;
+  position:relative;
 }
 
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  bottom: -6px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--green);
-  transition: 0.3s;
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  bottom:-6px;
+  left:0;
+  width:0;
+  height:2px;
+  background:var(--green);
+  transition:.3s;
 }
 
-.nav-links a:hover::after {
-  width: 100%;
+.nav-links a:hover::after{
+  width:100%;
 }
 
 /* ================= HERO ================= */
-.hero {
-  margin-top: 90px;
-  min-height: 75vh;
-  background: linear-gradient(rgba(11,31,51,0.75), rgba(11,31,51,0.75)), url("images/hero-bg.jpg") center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 3rem 2rem;
+.hero{
+  margin-top:90px;
+  min-height:75vh;
+  background:
+    linear-gradient(rgba(11,31,51,.75),rgba(11,31,51,.75)),
+    url("images/hero-bg.jpg") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:3rem 2rem;
 }
 
-.hero-content {
-  max-width: 1100px;
+.hero-content{
+  max-width:1100px;
 }
 
-.hero-title {
-  font-size: 5.6rem;
-  font-weight: 800;
-  letter-spacing: 6px;
-  color: var(--green);
+.hero-title{
+  font-size:5.6rem;
+  font-weight:800;
+  letter-spacing:6px;
+  color:var(--green);
 }
 
-.hero-subtitle {
-  margin-top: 0.8rem;
-  font-size: 1.1rem;
-  letter-spacing: 4px;
-  color: var(--gray);
+.hero-subtitle{
+  margin-top:.8rem;
+  font-size:1.1rem;
+  letter-spacing:4px;
+  color:var(--gray);
 }
 
-.hero-claim {
-  margin-top: 3rem;
-  font-size: 3rem;
-  font-weight: 500;
-  color: var(--green);
-  line-height: 1.6;
+.hero-claim{
+  margin-top:3rem;
+  font-size:3rem;
+  font-weight:500;
+  color:var(--green);
+  line-height:1.6;
 }
 
-/* ================= SECTION BLOCKS ================= */
-.section {
-  padding: 6rem 2rem;
+/* ================= CONTENT BLOCKS ================= */
+.section{
+  padding:6rem 2rem;
 }
 
 .block {
@@ -171,58 +170,63 @@ header {
   gap: 2rem;
 }
 
-.block:nth-child(even) {
-  flex-direction: row-reverse;
-}
-
-.block-text {
-  flex: 1;
-}
-
-.block-text h3 {
-  margin: 0 0 1.2rem;
-  font-size: 2.6rem;
-  color: var(--green);
-  letter-spacing: 2px;
-}
-
-.block-text p,
-.block-text-form {
-  font-size: 1.15rem;
-  line-height: 1.7;
-  color: var(--blue);
-  margin-bottom: 2rem;
-}
-
 .block-image {
   flex: 1;
   width: auto;
   height: 360px;
 }
 
-.block-image img {
-  width: 100%;
-  height: 360px;
-  object-fit: cover;
-  border-radius: 8px;
-  background: #eaeaea;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.18);
+.block:nth-child(even){
+  flex-direction:row-reverse;
+}
+
+.block-text{
+  flex:1;
+}
+
+.block-text h3{
+  margin:0 0 1.2rem;
+  font-size:2.6rem;
+  color:var(--green);
+  letter-spacing:2px;
+}
+
+.block-text p{
+  font-size:1.15rem;
+  line-height:1.7;
+}
+
+.block-text-form{
+  font-size:1.15rem;
+  line-height:1.7;
+  color: var(--blue);
+  margin-bottom:2rem;
+}
+
+/* 🔹 BLOCCO IMMAGINI */
+.block-image img{
+  width:100%;
+  height:360px;
+  object-fit:cover;
+  border-radius:8px;
+  background:#eaeaea;
+  box-shadow:0 15px 40px rgba(0,0,0,.18);
 }
 
 /* ================= FORM ================= */
-.form-section {
-  background: #f4f4f4;
-  padding: 5rem 2rem;
+.form-section{
+  background:#f4f4f4;
+  padding:5rem 2rem;
 }
 
-.form-wrapper {
-  max-width: 700px;
-  margin: auto;
+.form-wrapper{
+  max-width:700px;
+  margin:auto;
 }
 
-.form-wrapper p {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
+.form-wrapper p{
+  font-size:1.1rem;
+  margin-bottom:2rem;
 }
 
 .form-wrapper h3 {
@@ -234,49 +238,113 @@ header {
   letter-spacing: 1px;
 }
 
-form label {
-  display: block;
-  font-size: 0.85rem;
-  margin-top: 1.2rem;
+form label{
+  display:block;
+  font-size:.85rem;
+  margin-top:1.2rem;
 }
 
 form input,
-form textarea {
-  width: 100%;
-  padding: 0.7rem;
-  margin-top: 0.3rem;
-  border: 1px solid #ccc;
-  font-family: 'Montserrat', sans-serif;
+form textarea{
+  width:100%;
+  padding:.7rem;
+  margin-top:.3rem;
+  border:1px solid #ccc;
+  font-family:'Montserrat',sans-serif;
 }
-
+    
 form select[name="prefisso"] {
   padding: 0.65rem 0.7rem;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.85rem;
-  height: 38px;
+  font-family: 'Montserrat', sans-serif; 
+  font-size: 0.85rem;       
+  height: 38px;              
   line-height: 1.2;
-  border: 1px solid #ccc;
+  border: 1px solid #ccc;     
+  border-radius: 0;           
   box-sizing: border-box;
   appearance: none;
+  -webkit-appearance: none;    
+  -moz-appearance: none;      
   cursor: pointer;
 }
 
-form textarea {
-  min-height: 120px;
+form textarea{
+  min-height:120px;
 }
 
-form button {
-  margin-top: 2rem;
-  background: var(--green);
-  color: #fff;
-  border: none;
-  padding: 0.9rem 2rem;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
-  cursor: pointer;
+form button{
+  margin-top:2rem;
+  background:var(--green);
+  color:#fff;
+  border:none;
+  padding:.9rem 2rem;
+  font-size:.9rem;
+  letter-spacing:1px;
+  cursor:pointer;
 }
 
-/* PRIVACY CHECK */
+/* ================= FOOTER ================= */
+footer{
+  background:var(--blue);
+  color:#ccc;
+  padding:4rem 2rem 2rem;
+}
+
+.footer-inner{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:3rem;
+}
+  
+.footer-logo {
+  max-width: 280px;   /* regolabile */
+  width: 100%;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.footer-brand h3{
+  margin:0;
+  color:var(--green);
+  font-size:1.6rem;
+}
+
+.footer-brand h4{
+  margin:.3rem 0 1.5rem;
+  font-weight:400;
+  color:#aaa;
+}
+
+.footer-brand i{
+  color:var(--green);
+  margin-right:8px;
+}
+
+.footer-links ul{
+  list-style:none;
+  padding:0;
+  margin: 0;
+}
+
+.footer-links li{
+  margin:.6rem 0;
+}
+
+.footer-links a{
+  color:#ccc;
+  text-decoration:none;
+}
+
+.footer-bottom{
+  text-align:center;
+  margin-top:3rem;
+  font-size:.75rem;
+  color:#888;
+}
+  
 .privacy-check {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -285,9 +353,12 @@ form button {
   margin-top: 1.5rem;
   font-size: 0.85rem;
   line-height: 1.4;
+  cursor: pointer;
 }
 
 .privacy-check input[type="checkbox"] {
+  margin: 0;
+  padding: 0;
   width: 18px;
   height: 18px;
   cursor: pointer;
@@ -296,89 +367,81 @@ form button {
 .privacy-check label {
   margin: 0;
   display: block;
+  cursor: pointer;
 }
 
 .privacy-check a {
   color: var(--green);
   text-decoration: underline;
 }
-
-/* ================= FOOTER ================= */
-footer {
-  background: var(--blue);
-  color: #ccc;
-  padding: 4rem 2rem 2rem;
+  
+.footer-brand p {
+  line-height: 1.8;
 }
 
-.footer-inner {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 3rem;
+.footer-brand p i {
+  display: inline-block;
+  width: 20px;
 }
 
-.footer-logo {
-  max-width: 280px;
+/* ===== BLOCCO CENTRALE HOME ===== */
+.central-block {
+  background:#fff;
+  padding:6rem 2rem;
+}
+
+/* ===== CENTRAL SECTION ===== */
+.central-section {
   width: 100%;
+  max-width: 1400px;   
+  margin: 0 auto 4rem auto;
+  padding: 0 2rem;     
+}
+
+  h2 {
+  color: var(--green);
+  font-size: 2.6rem; /* scegli la dimensione che ti piace, ad esempio 2.6rem */
   margin-bottom: 1.5rem;
-  display: block;
+  letter-spacing: 1px;
+  font-weight: 700; /* opzionale, per uniformare il peso */
 }
 
-.footer-brand h3 {
-  margin: 0;
-  color: var(--green);
-  font-size: 1.6rem;
+  .services-section h2 {
+  margin-bottom: 3rem;
 }
 
-.footer-brand h4 {
-  margin: 0.3rem 0 1.5rem;
-  font-weight: 400;
-  color: #aaa;
-}
-
-.footer-brand i {
-  color: var(--green);
-  margin-right: 8px;
-}
-
-.footer-links ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-links li {
-  margin: 0.6rem 0;
-}
-
-.footer-links a {
-  color: #ccc;
-  text-decoration: none;
-}
-
-.footer-bottom {
+  .central-section h2 {
   text-align: center;
-  margin-top: 3rem;
-  font-size: 0.75rem;
-  color: #888;
 }
 
-/* ================= CENTRAL BLOCK HOME ================= */
-.central-block,
-.central-section,
-.services-section,
-.why-section,
-.form-section {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+.central-section h3 {
+  color: var(--green);
+  font-size:2.4rem;
+  margin-bottom:1.5rem;
+  letter-spacing:1px;
 }
 
-/* ================= SERVICES GRID ================= */
+.central-section p {
+  font-size:1.1rem;
+  line-height:1.7;
+  color: var(--blue);
+}
+
+.central-section ul {
+  list-style: disc inside;
+  font-size:1.15rem;
+  line-height:1.7;
+  color: var(--blue);
+}
+
+.central-section ul li {
+  margin-bottom:1rem;
+}
+
+/* ===== SERVIZI GRID PREMIUM (SOLUZIONE 3) ===== */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* larghezza minima 260px, flessibile */
   gap: 2rem;
   margin-top: 2rem;
 }
@@ -387,10 +450,10 @@ footer {
   background: #fff;
   border-radius: 16px;
   padding: 2rem 1.8rem;
-  min-height: 260px;
+  min-height: 260px;        /* più alta */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center;  /* testo centrato verticalmente */
   align-items: center;
   text-align: center;
   position: relative;
@@ -399,8 +462,106 @@ footer {
   transition: all 0.35s ease;
 }
 
+/* ===== WHY GRID ===== */
+.why-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap:2rem;
+  margin-top:2rem;
+}
+
+.why-card {
+  background:#f4f4f4;
+  padding:1.5rem;
+  border-radius:8px;
+  text-align:center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor:pointer;
+}
+
+.why-card i {
+  font-size:2rem;
+  color: var(--green);
+  margin-bottom:0.8rem;
+}
+
+.why-card h4 {
+  font-size:1.2rem;
+  margin-bottom:0.5rem;
+}
+
+.why-card p {
+  font-size:1.15rem;
+  line-height:1.7;
+  color: var(--blue);
+}
+
+.why-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  background: var(--green);
+  color:#fff;
+}
+
+.why-card:hover p {
+  color:#fff;
+}
+
+/* Hover effect su immagine */
+.strategic-image div:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+/* ===== STRATEGIC SECTION – BLOCCO DEFINITIVO ===== */
+
+.strategic-section {
+  padding: 0;
+}
+
+.strategic-container {
+  display: flex;
+  min-height: auto; /* altezza header */
+  width: 100%;
+}
+
+.strategic-text {
+  flex: 1;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.strategic-image {
+  flex: 1;
+}
+
+.strategic-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 992px) {
+  .strategic-container {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .strategic-image {
+    height: 280px;
+  }
+
+  .strategic-text {
+    padding: 2rem;
+    text-align: center;
+  }
+}
+
 .service-card::after {
-  content: "";
+  content:"";
   position: absolute;
   top: 0;
   left: 0;
@@ -439,108 +600,40 @@ footer {
   transform: scale(1.12);
 }
 
-/* ================= WHY GRID ================= */
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+ .services-section {
+  padding: 4rem 0;           /* spazio verticale interno */
+  background-color: #f4f4f4; /* sfondo grigio chiaro */
 }
 
-.why-card {
-  background: #f4f4f4;
-  padding: 1.5rem;
-  border-radius: 8px;
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-  cursor: pointer;
+  /* Spaziatura uniforme titoli principali */
+.central-section h2,
+.strategic-section h2,
+.form-section h2 {
+  margin-top: 4rem;   /* spazio sopra identico a "Servizi" */
+  margin-bottom: 3rem; /* spazio sotto identico a "Servizi" */
+  text-align: center;  /* mantiene centratura, se vuoi */
 }
 
-.why-card i {
-  font-size: 2rem;
-  color: var(--green);
-  margin-bottom: 0.8rem;
-}
+/* ===== PROCESS FLOW - IL NOSTRO APPROCCIO ===== */
 
-.why-card h4 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
-.why-card p {
-  font-size: 1.15rem;
-  line-height: 1.7;
-  color: var(--blue);
-}
-
-.why-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-  background: var(--green);
-  color: #fff;
-}
-
-.why-card:hover p {
-  color: #fff;
-}
-
-/* ================= STRATEGIC SECTION ================= */
-.strategic-section {
-  padding: 0;
-}
-
-.strategic-container {
-  display: flex;
-  width: 100%;
-}
-
-.strategic-text {
-  flex: 1;
-  padding: 4rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.strategic-text h2 {
-  margin-top: 3rem;
-  margin-bottom: 1rem;
-  font-size: 2.6rem;
-  color: var(--green);
-  letter-spacing: 1px;
-}
-
-.strategic-text p {
-  margin-bottom: 1rem;
-}
-
-.strategic-image {
-  flex: 1;
-}
-
-.strategic-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* ================= PROCESS FLOW ================= */
+/* contenitore principale del flusso */
 .process-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 6rem;
+  gap: 6rem; /* spazio tra le righe */
   margin-top: 4rem;
 }
 
+/* righe del flusso */
 .process-row {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  gap: 4rem;
+  gap: 4rem; /* spazio tra i box per le frecce */
   flex-wrap: wrap;
 }
 
+/* singolo step */
 .process-step {
   position: relative;
   display: flex;
@@ -548,32 +641,41 @@ footer {
   align-items: center;
 }
 
+/* box smussato */
 .step-box {
   position: relative;
   background: #fff;
   border-radius: 16px;
+
+  /* dimensioni */
   min-width: 260px;
   min-height: 80px;
   padding: 1rem 1.4rem;
+
+  /* tipografia */
   font-family: 'Montserrat', sans-serif;
   font-size: 0.95rem;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
   color: var(--blue);
+
+  /* CENTRATURA DEL TESTO */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* verticale */
+  align-items: center;     /* orizzontale */
+
   text-align: center;
   box-shadow: 0 8px 22px rgba(0,0,0,0.12);
   z-index: 1;
 }
 
+/* numero task sopra il box */
 .step-box::before {
   content: attr(data-step);
   position: absolute;
-  top: -32px;
+  top: -32px; /* sopra il rettangolo */
   left: 50%;
   transform: translateX(-50%);
   width: 44px;
@@ -590,34 +692,40 @@ footer {
   z-index: 2;
 }
 
+/* descrizione sotto il box */
 .step-box span {
   position: absolute;
   top: calc(100% + 0.8rem);
   left: 50%;
   transform: translateX(-50%);
-  width: 220px;
+  width: 220px; 
   font-size: 0.9rem;
   font-weight: 400;
   text-transform: lowercase;
+  font-style: normal; /* non italic */
   color: var(--blue);
   text-align: center;
   line-height: 1.4;
+  z-index: 0;
 }
 
+/* FRECCE ALLINEATE AL CENTRO DEI RETTANGOLI */
 .process-arrow {
   display: flex;
-  align-items: center;
+  align-items: center;   /* centra verticalmente rispetto ai box */
   justify-content: center;
-  font-size: 2.8rem;
+  font-size: 2.8rem;     /* ingrandisce la freccia */
   color: var(--green);
   opacity: 0.95;
-  margin: 0 1.5rem;
+  margin: 0 1.5rem;     /* distanza dai rettangoli */
 }
 
+/* rimuoviamo la linea sottile inutilizzata */
 .process-arrow::after {
   content: none;
 }
 
+/* hover box */
 .process-step:hover .step-box {
   background: var(--green);
   color: #fff;
@@ -629,21 +737,8 @@ footer {
   color: #fff;
 }
 
-/* ================= MOBILE ================= */
+/* MOBILE: flusso verticale */
 @media (max-width: 992px) {
-  .strategic-container {
-    flex-direction: column;
-  }
-
-  .strategic-image {
-    height: 280px;
-  }
-
-  .strategic-text {
-    padding: 2rem;
-    text-align: center;
-  }
-
   .process-row {
     flex-direction: column;
     gap: 3rem;
@@ -658,17 +753,77 @@ footer {
     left: -25px;
   }
 }
+/* ===== SPAZIATURA COERENTE TRA SEZIONI ===== */
+.central-section,
+.form-section,
+.services-section,
+.why-section {
+  padding-top: 2rem;   /* spazio sopra le sezioni coerente con i titoli principali */
+  padding-bottom: 2rem; /* spazio sotto le sezioni */
+}
 
-<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+/* Sezione “Perché scegliere MANAGECH” più distante dal flusso */
+.why-section {
+  margin-top: 4rem; /* aumenta lo spazio rispetto al processo */
+}
+
+/* Mantieni centratura del titolo */
+.why-section h2 {
+  text-align: center;
+  margin-bottom: 3rem; /* distanza dal contenuto interno della griglia */
+}
+
+/* Regola margini dei titoli principali del processo e servizi */
+.central-section h2,
+.services-section h2,
+.strategic-section h2,
+.form-section h2 {
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+.methodology-section {
+  position: relative;
+  padding: 6rem 2rem; /* spazio sopra e sotto per il contenuto */
+  overflow: hidden;   /* così il triangolo non esce dai bordi */
+}
+
+.methodology-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(31,163,122,0.15), transparent 70%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  z-index: 0; /* dietro al contenuto */
+}
+.strategic-text h2 {
+  margin-top: 3rem;      /* aumenta lo spazio sopra il titolo */
+  margin-bottom: 1rem;   /* margine sotto il titolo */
+  font-size: 2.6rem;
+  color: var(--green);
+  letter-spacing: 1px;
+}
+  
+.strategic-text p {
+  margin-top: 0;
+  margin-bottom: 1rem; /* o 1.2rem come prima */
+}
+
 </style>
+</head>
+
+<body>
+
 <!-- ================= HEADER ================= -->
 <header>
   <nav class="navbar">
     <div class="logo">
       <a href="index.html">
-        <img src="images/1-4.png" alt="MANAGECH">
+        <img src="images/1-4.png">
       </a>
     </div>
     <ul class="nav-links">
@@ -684,141 +839,155 @@ footer {
 <!-- ================= HERO ================= -->
 <section class="hero">
   <div class="hero-content">
-    <img src="images/1-4.png" alt="MANAGECH" style="max-width:800px; width:100%; height:auto;">
+   <img src="images/1-4.png" alt="MANAGECH" style="max-width: 800px; width: 100%; height: auto;">
     <div class="hero-claim">
       Ingegneria del valore, gestione della complessità.
     </div>
   </div>
 </section>
 
-<!-- ================= STRATEGIC SECTION ================= -->
 <section class="strategic-section">
   <div class="strategic-container">
-
+    <!-- TESTO -->
     <div class="strategic-text">
       <h2>Consulenza Strategica</h2>
-      <p>Managech supporta aziende, consorzi e professionisti nello sviluppo del business, nella gestione dei processi e dell’innovazione tecnologica.</p>
-      <p>Grazie a competenze manageriali, strategiche e consulenziali maturate in contesti complessi, il nostro team offre un supporto concreto per ottimizzare le performance economiche, prendere decisioni efficaci e affrontare le trasformazioni organizzative e digitali.</p>
-      <p>La nostra consulenza strategica integra approcci ingegneristici e manageriali per generare valore sostenibile.</p>
+      <p>
+        Managech supporta aziende, consorzi e professionisti nello sviluppo del business, nella gestione dei processi e dell’innovazione tecnologica.
+      </p>
+      <p>
+        Grazie a competenze manageriali, strategiche e consulenziali maturate in contesti complessi, il nostro team offre un supporto concreto per ottimizzare le performance economiche, prendere decisioni efficaci e affrontare le trasformazioni organizzative e digitali.
+      </p>
+      <p>
+        La nostra consulenza strategica integra approcci ingegneristici e manageriali per generare valore sostenibile.
+      </p>
     </div>
 
+    <!-- IMMAGINE -->
     <div class="strategic-image">
       <img src="images/consulenza-strategica5.jpg" alt="Consulenza Strategica Managech">
     </div>
-
   </div>
 </section>
 
-<!-- ================= SERVICES ================= -->
+<!-- 2️⃣ SERVIZI OFFERTI -->
 <section class="services-section">
   <div class="central-section">
-    <h2>I nostri servizi</h2>
-    <div class="services-grid">
+  <h2>I nostri servizi</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      
+    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+    <h4>Consulenza strategica</h4>
+    <p>Supporto decisionale e organizzativo per la crescita sostenibile dell’impresa.</p>
+    </div>
+    
+    <div class="service-card">
+    <div class="service-icon"><i class="fas fa-industry"></i></div>
+    <h4>Due Diligence Industriale</h4>
+    <p>Analisi tecnica e operativa per valutare asset, processi e investimenti.</p>
+    </div>
+  
+    <div class="service-card">
+    <div class="service-icon"><i class="fas fa-cogs"></i></div>
+    <h4>Ottimizzazione dei Processi</h4>
+    <p>Miglioramento dell’efficienza operativa e riduzione dei costi aziendali.</p>
+    </div>
 
-      <div class="service-card">
-        <div class="service-icon"><i class="fas fa-chart-line"></i></div>
-        <h4>Consulenza strategica</h4>
-        <p>Supporto decisionale e organizzativo per la crescita sostenibile dell’impresa.</p>
-      </div>
+    <div class="service-card">
+    <div class="service-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+    <h4>Contabilità Industriale e Controllo di Gestione</h4>
+    <p>Sistemi di monitoraggio economico-finanziario a supporto delle decisioni.</p>
+    </div>
+    
+    <div class="service-card">
+    <div class="service-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+    <h4>Piani Industriali</h4>
+    <p>Progettazione di strategie industriali per sviluppo e crescita aziendale.</p>
+    </div>
+    
+    <div class="service-card">
+    <div class="service-icon"><i class="fas fa-hand-holding-usd"></i></div>
+    <h4>Finanza Agevolata</h4>
+    <p>Individuazione e gestione di incentivi, contributi e finanziamenti dedicati.</p>
+    </div>
+    
+    <div class="service-card">
+    <div class="service-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+    <h4>Formazione</h4>
+    <p>Programmi di training tecnico e manageriale per team e dirigenti.</p>
+    </div>
 
-      <div class="service-card">
-        <div class="service-icon"><i class="fas fa-industry"></i></div>
-        <h4>Due Diligence Industriale</h4>
-        <p>Analisi tecnica e operativa per valutare asset, processi e investimenti.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon"><i class="fas fa-cogs"></i></div>
-        <h4>Ottimizzazione dei Processi</h4>
-        <p>Miglioramento dell’efficienza operativa e riduzione dei costi aziendali.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon"><i class="fas fa-file-invoice-dollar"></i></div>
-        <h4>Contabilità Industriale e Controllo di Gestione</h4>
-        <p>Sistemi di monitoraggio economico-finanziario a supporto delle decisioni.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon"><i class="fas fa-file-invoice-dollar"></i></div>
-        <h4>Piani Industriali</h4>
-        <p>Progettazione di strategie industriali per sviluppo e crescita aziendale.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon"><i class="fas fa-hand-holding-usd"></i></div>
-        <h4>Finanza Agevolata</h4>
-        <p>Individuazione e gestione di incentivi, contributi e finanziamenti dedicati.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-        <h4>Formazione</h4>
-        <p>Programmi di training tecnico e manageriale per team e dirigenti.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon"><i class="fas fa-plus-circle"></i></div>
-        <h4>Altri servizi su richiesta</h4>
-        <p>Soluzioni personalizzate per esigenze specifiche e progetti speciali.</p>
-      </div>
-
+    <div class="service-card">
+    <div class="service-icon"><i class="fas fa-plus-circle"></i></div>
+    <h4>Altri servizi su richiesta</h4>
+    <p>Soluzioni personalizzate per esigenze specifiche e progetti speciali.</p>
     </div>
   </div>
 </section>
+  </div>
 
-<!-- ================= PROCESS FLOW ================= -->
-<section class="central-section methodology-section">
+<div class="central-section methodology-section">
   <h2>Il nostro approccio</h2>
 
   <div class="process-wrapper">
 
-    <!-- Riga 1 -->
+    <!-- RIGA 1 -->
     <div class="process-row">
+
       <div class="process-step">
         <div class="step-box" data-step="1">
           DEFINIZIONE OBIETTIVI
           <span>Identificazione delle priorità e degli obiettivi strategici</span>
         </div>
       </div>
+
       <div class="process-arrow">➜</div>
+
       <div class="process-step">
         <div class="step-box" data-step="2">
           ANALISI
           <span>Studio approfondito di processi, dati e risorse disponibili</span>
         </div>
       </div>
+
     </div>
 
-    <!-- Riga 2 -->
+    <!-- RIGA 2 -->
     <div class="process-row">
+
       <div class="process-step">
         <div class="step-box" data-step="3">
           MISURAZIONE
           <span>Valutazione delle performance e individuazione criticità</span>
         </div>
       </div>
+
       <div class="process-arrow">➜</div>
+
       <div class="process-step">
         <div class="step-box" data-step="4">
           AZIONI CORRETTIVE
           <span>Pianificazione di interventi mirati di ottimizzazione</span>
         </div>
       </div>
+
       <div class="process-arrow">➜</div>
+
       <div class="process-step">
         <div class="step-box" data-step="5">
           IMPLEMENTAZIONE
           <span>Supporto operativo e monitoraggio dei risultati</span>
         </div>
       </div>
+
     </div>
 
   </div>
-</section>
+</div>
 
-<!-- ================= WHY MANAGECH ================= -->
-<section class="central-section why-section">
+
+<!-- 4️⃣ PERCHÉ SCEGLIERE MANAGECH -->
+<div class="central-section why-section">
   <h2>Perché scegliere MANAGECH</h2>
   <div class="why-grid">
     <div class="why-card">
@@ -842,13 +1011,16 @@ footer {
       <p>Operiamo con massima trasparenza, rispettando tempi, costi e obiettivi concordati.</p>
     </div>
   </div>
-</section>
+</div>
 
-<!-- ================= CONTACT FORM ================= -->
+<!-- ================= FORM CONTATTI ================= -->
 <section class="form-section">
   <div class="form-wrapper">
     <h2>Definiamo insieme il percorso</h2>
-    <p class="block-text-form">Compila il modulo per ricevere una consulenza gratuita. Il nostro team è a disposizione per fornire informazioni, valutare richieste di collaborazione e accompagnare la tua azienda nella definizione di un percorso sostenibile, coerente con le priorità strategiche e gli obiettivi organizzativi.</p>
+    
+    <p class="block-text-form">    
+      Compila il modulo per ricevere una consulenza gratuita. Il nostro team è a disposizione per fornire informazioni, valutare richieste di collaborazione e accompagnare la tua azienda nella definizione di un percorso sostenibile, coerente con le priorità strategiche e gli obiettivi organizzativi.
+    </p>
 
     <div class="form-tags">
       <span><i class="fas fa-comments"></i> Consulenza gratuita</span>
@@ -862,37 +1034,88 @@ footer {
 
       <label for="nome">Nome*</label>
       <input id="nome" name="nome" required>
-
       <label for="cognome">Cognome*</label>
       <input id="cognome" name="cognome" required>
 
       <label for="telefono">Telefono*</label>
+      
       <div style="display:flex; gap:0.5rem; align-items:center;">
         <select name="prefisso" required>
           <option value="+39" selected>🇮🇹 Italia +39</option>
-          <!-- Altri prefissi... -->
+          <!-- Europa -->
+<option value="+43">🇦🇹 Austria +43</option>
+<option value="+32">🇧🇪 Belgio +32</option>
+<option value="+359">🇧🇬 Bulgaria +359</option>
+<option value="+385">🇭🇷 Croazia +385</option>
+<option value="+357">🇨🇾 Cipro +357</option>
+<option value="+420">🇨🇿 Repubblica Ceca +420</option>
+<option value="+45">🇩🇰 Danimarca +45</option>
+<option value="+372">🇪🇪 Estonia +372</option>
+<option value="+358">🇫🇮 Finlandia +358</option>
+<option value="+33">🇫🇷 Francia +33</option>
+<option value="+49">🇩🇪 Germania +49</option>
+<option value="+30">🇬🇷 Grecia +30</option>
+<option value="+36">🇭🇺 Ungheria +36</option>
+<option value="+353">🇮🇪 Irlanda +353</option>
+<option value="+39" selected>🇮🇹 Italia +39</option>
+<option value="+371">🇱🇻 Lettonia +371</option>
+<option value="+423">🇱🇮 Liechtenstein +423</option>
+<option value="+370">🇱🇹 Lituania +370</option>
+<option value="+352">🇱🇺 Lussemburgo +352</option>
+<option value="+356">🇲🇹 Malta +356</option>
+<option value="+31">🇳🇱 Paesi Bassi +31</option>
+<option value="+48">🇵🇱 Polonia +48</option>
+<option value="+351">🇵🇹 Portogallo +351</option>
+<option value="+40">🇷🇴 Romania +40</option>
+<option value="+7">🇷🇺 Russia +7</option>
+<option value="+381">🇷🇸 Serbia +381</option>
+<option value="+421">🇸🇰 Slovacchia +421</option>
+<option value="+386">🇸🇮 Slovenia +386</option>
+<option value="+34">🇪🇸 Spagna +34</option>
+<option value="+46">🇸🇪 Svezia +46</option>
+<option value="+41">🇨🇭 Svizzera +41</option>
+<option value="+44">🇬🇧 Regno Unito +44</option>
+<option value="+39">🇻🇦 Città del Vaticano +39</option>
+
+<!-- Principali stati globalizzati -->
+<option value="+1">🇺🇸 USA +1</option>
+<option value="+1">🇨🇦 Canada +1</option>
+<option value="+86">🇨🇳 Cina +86</option>
+<option value="+91">🇮🇳 India +91</option>
+<option value="+81">🇯🇵 Giappone +81</option>
+<option value="+55">🇧🇷 Brasile +55</option>
+<option value="+61">🇦🇺 Australia +61</option>
+<option value="+27">🇿🇦 Sud Africa +27</option>
+<option value="+82">🇰🇷 Corea del Sud +82</option>
+<option value="+60">🇲🇾 Malesia +60</option>
+<option value="+65">🇸🇬 Singapore +65</option>
+<option value="+66">🇹🇭 Thailandia +66</option>
+<option value="+971">🇦🇪 Emirati Arabi Uniti +971</option>
+<option value="+98">🇮🇷 Iran +98</option>
+<option value="+964">🇮🇶 Iraq +964</option>
+<option value="+52">🇲🇽 Messico +52</option>
+<option value="+57">🇨🇴 Colombia +57</option>
+<option value="+56">🇨🇱 Cile +56</option>
+
         </select>
-        <input id="telefono" type="tel" name="telefono" placeholder="340 1234567" required style="flex:1; padding:0.7rem; margin-top:0;">
+        <input id="telefono" type="tel" name="telefono" placeholder="340 1234567" required style="flex:1; padding:0.7rem; font-family:'Montserrat',sans-serif; margin-top:0;">
       </div>
 
       <label for="email">Email*</label>
       <input id="email" type="email" name="email" required>
-
       <label for="azienda">Azienda*</label>
       <input id="azienda" name="azienda" required>
-
       <label for="ruolo">Ruolo in azienda*</label>
       <input id="ruolo" name="ruolo" required>
-
       <label for="provincia">Provincia*</label>
       <input id="provincia" name="provincia" required>
-
       <label for="richiesta">Richiesta*</label>
       <textarea id="richiesta" name="richiesta" required></textarea>
 
       <div class="privacy-check">
         <input type="checkbox" id="privacy" name="privacy" required>
-        <label for="privacy">Dichiaro di aver preso visione e di accettare integralmente
+        <label for="privacy">
+          Dichiaro di aver preso visione e di accettare integralmente
           <a href="privacy.html" target="_blank">l'informativa privacy</a>
         </label>
       </div>
@@ -932,7 +1155,7 @@ footer {
     © 2026 MANAGECH - INGEGNERIA & MANAGEMENT STUDIO ASSOCIATO | P. IVA 18387251004
   </div>
 </footer>
-
+  
 <script>
 document.querySelector("form").addEventListener("submit", function () {
   const prefisso = document.querySelector('select[name="prefisso"]').value;
