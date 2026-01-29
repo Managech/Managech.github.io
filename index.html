@@ -5,11 +5,13 @@
 <title>MANAGECH – Home</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-/* ================= ROOT ================= */
 :root{
   --green:#1fa37a;
   --blue:#0b1f33;
@@ -28,21 +30,28 @@ body{
   background:#fff;
   color:var(--blue);
 }
-
-/* ================= TYPOGRAPHY ================= */
-h2{
-  color:var(--green);
-  font-size:2.6rem;
-  font-weight:700;
-  letter-spacing:1px;
-  text-align:center;
-  margin:4rem 0 3rem;
+  .form-tags{
+  display:flex;
+  gap:1rem;
+  margin-bottom:2rem;
+  flex-wrap:wrap;
 }
 
-p{
-  font-size:1.15rem;
-  line-height:1.7;
+.form-tags span{
+  background:#fff;
+  border:1px solid var(--green);
   color:var(--blue);
+  padding:.55rem 1.3rem;
+  border-radius:30px;
+  font-size:.8rem;
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  font-weight:500;
+}
+
+.form-tags i{
+  color:var(--green);
 }
 
 /* ================= HEADER ================= */
@@ -62,6 +71,17 @@ header{
   display:flex;
   align-items:center;
   justify-content:space-between;
+}
+
+.logo a{
+  display:flex;
+  align-items:center;
+  gap:.8rem;
+  color:var(--green);
+  text-decoration:none;
+  font-weight:700;
+  font-size:1.3rem;
+  letter-spacing:1px;
 }
 
 .logo img{
@@ -93,7 +113,9 @@ header{
   transition:.3s;
 }
 
-.nav-links a:hover::after{width:100%}
+.nav-links a:hover::after{
+  width:100%;
+}
 
 /* ================= HERO ================= */
 .hero{
@@ -109,7 +131,23 @@ header{
   padding:3rem 2rem;
 }
 
-.hero-content{max-width:1100px}
+.hero-content{
+  max-width:1100px;
+}
+
+.hero-title{
+  font-size:5.6rem;
+  font-weight:800;
+  letter-spacing:6px;
+  color:var(--green);
+}
+
+.hero-subtitle{
+  margin-top:.8rem;
+  font-size:1.1rem;
+  letter-spacing:4px;
+  color:var(--gray);
+}
 
 .hero-claim{
   margin-top:3rem;
@@ -119,109 +157,60 @@ header{
   line-height:1.6;
 }
 
-/* ================= STRATEGIC SECTION ================= */
-.strategic-section{padding:0}
-
-.strategic-container{
-  display:flex;
-  width:100%;
+/* ================= CONTENT BLOCKS ================= */
+.section{
+  padding:6rem 2rem;
 }
 
-.strategic-text{
+.block {
+  max-width: 100%;
+  margin: 0 auto 6rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.block-image {
+  flex: 1;
+  width: auto;
+  height: 360px;
+}
+
+.block:nth-child(even){
+  flex-direction:row-reverse;
+}
+
+.block-text{
   flex:1;
-  padding:4rem;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
 }
 
-.strategic-text h2{
-  text-align:left;
-  margin:0 0 1rem;
-}
-
-.strategic-text p{
-  line-height:1.75;
-  letter-spacing:.2px;
-  margin-bottom:1.2rem;
-  max-width:640px;
-}
-
-.strategic-image{flex:1}
-
-.strategic-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
-
-/* ================= SERVICES ================= */
-.services-section{
-  padding:4rem 0;
-  background:#f4f4f4;
-}
-
-.central-section{
-  max-width:1400px;
-  margin:auto;
-  padding:0 2rem;
-}
-
-.services-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:2rem;
-  margin-top:2rem;
-}
-
-.service-card{
-  background:#fff;
-  border-radius:16px;
-  padding:2rem 1.8rem;
-  min-height:260px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  text-align:center;
-  position:relative;
-  box-shadow:0 12px 30px rgba(0,0,0,.08);
-  transition:.35s;
-}
-
-.service-card::after{
-  content:"";
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:4px;
-  background:var(--green);
-}
-
-.service-card:hover{
-  transform:translateY(-10px);
-  box-shadow:0 22px 55px rgba(0,0,0,.14);
-}
-
-.service-icon{
-  font-size:2.2rem;
+.block-text h3{
+  margin:0 0 1.2rem;
+  font-size:2.6rem;
   color:var(--green);
-  margin-bottom:1.2rem;
-  transition:.35s;
+  letter-spacing:2px;
 }
 
-.service-card:hover .service-icon{transform:scale(1.12)}
-
-.service-card h4{
-  font-size:1.25rem;
-  margin-bottom:.8rem;
+.block-text p{
+  font-size:1.15rem;
+  line-height:1.7;
 }
 
-.service-card p{
-  font-size:1rem;
-  line-height:1.6;
-  opacity:.8;
+.block-text-form{
+  font-size:1.15rem;
+  line-height:1.7;
+  color: var(--blue);
+  margin-bottom:2rem;
+}
+
+/* 🔹 BLOCCO IMMAGINI */
+.block-image img{
+  width:100%;
+  height:360px;
+  object-fit:cover;
+  border-radius:8px;
+  background:#eaeaea;
+  box-shadow:0 15px 40px rgba(0,0,0,.18);
 }
 
 /* ================= FORM ================= */
@@ -235,32 +224,64 @@ header{
   margin:auto;
 }
 
-.block-text-form{
-  line-height:1.75;
-  letter-spacing:.2px;
+.form-wrapper p{
+  font-size:1.1rem;
   margin-bottom:2rem;
 }
 
-.form-tags{
-  display:flex;
-  gap:1rem;
-  margin-bottom:2rem;
-  flex-wrap:wrap;
+.form-wrapper h3 {
+  font-size: 2.4rem;
+  color: var(--green);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: 1px;
 }
 
-.form-tags span{
-  background:#fff;
-  border:1px solid var(--green);
-  padding:.55rem 1.3rem;
-  border-radius:30px;
-  font-size:.8rem;
-  font-weight:500;
-  display:flex;
-  align-items:center;
-  gap:.5rem;
+form label{
+  display:block;
+  font-size:.85rem;
+  margin-top:1.2rem;
 }
 
-.form-tags i{color:var(--green)}
+form input,
+form textarea{
+  width:100%;
+  padding:.7rem;
+  margin-top:.3rem;
+  border:1px solid #ccc;
+  font-family:'Montserrat',sans-serif;
+}
+    
+form select[name="prefisso"] {
+  padding: 0.65rem 0.7rem;
+  font-family: 'Montserrat', sans-serif; 
+  font-size: 0.85rem;       
+  height: 38px;              
+  line-height: 1.2;
+  border: 1px solid #ccc;     
+  border-radius: 0;           
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance: none;    
+  -moz-appearance: none;      
+  cursor: pointer;
+}
+
+form textarea{
+  min-height:120px;
+}
+
+form button{
+  margin-top:2rem;
+  background:var(--green);
+  color:#fff;
+  border:none;
+  padding:.9rem 2rem;
+  font-size:.9rem;
+  letter-spacing:1px;
+  cursor:pointer;
+}
 
 /* ================= FOOTER ================= */
 footer{
@@ -273,13 +294,48 @@ footer{
   max-width:1200px;
   margin:auto;
   display:flex;
-  gap:3rem;
+  justify-content:space-between;
   flex-wrap:wrap;
+  gap:3rem;
+}
+  
+.footer-logo {
+  max-width: 280px;   /* regolabile */
+  width: 100%;
+  margin-bottom: 1.5rem;
+  display: block;
 }
 
-.footer-logo{
-  max-width:280px;
-  margin-bottom:1.5rem;
+.footer-brand h3{
+  margin:0;
+  color:var(--green);
+  font-size:1.6rem;
+}
+
+.footer-brand h4{
+  margin:.3rem 0 1.5rem;
+  font-weight:400;
+  color:#aaa;
+}
+
+.footer-brand i{
+  color:var(--green);
+  margin-right:8px;
+}
+
+.footer-links ul{
+  list-style:none;
+  padding:0;
+  margin: 0;
+}
+
+.footer-links li{
+  margin:.6rem 0;
+}
+
+.footer-links a{
+  color:#ccc;
+  text-decoration:none;
 }
 
 .footer-bottom{
@@ -288,18 +344,480 @@ footer{
   font-size:.75rem;
   color:#888;
 }
-
-/* ================= MOBILE ================= */
-@media(max-width:992px){
-  .strategic-container{flex-direction:column}
-  .strategic-image{height:280px}
-  .strategic-text{text-align:center;padding:2rem}
-  .strategic-text h2{text-align:center}
+  
+.privacy-check {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.6rem;
+  align-items: start;
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  cursor: pointer;
 }
+
+.privacy-check input[type="checkbox"] {
+  margin: 0;
+  padding: 0;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.privacy-check label {
+  margin: 0;
+  display: block;
+  cursor: pointer;
+}
+
+.privacy-check a {
+  color: var(--green);
+  text-decoration: underline;
+}
+  
+.footer-brand p {
+  line-height: 1.8;
+}
+
+.footer-brand p i {
+  display: inline-block;
+  width: 20px;
+}
+
+/* ===== BLOCCO CENTRALE HOME ===== */
+.central-block {
+  background:#fff;
+  padding:6rem 2rem;
+}
+
+/* ===== CENTRAL SECTION ===== */
+.central-section {
+  width: 100%;
+  max-width: 1400px;   
+  margin: 0 auto 4rem auto;
+  padding: 0 2rem;     
+}
+
+  h2 {
+  color: var(--green);
+  font-size: 2.6rem; /* scegli la dimensione che ti piace, ad esempio 2.6rem */
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  font-weight: 700; /* opzionale, per uniformare il peso */
+}
+
+  .services-section h2 {
+  margin-bottom: 3rem;
+}
+
+  .central-section h2 {
+  text-align: center;
+}
+
+.central-section h3 {
+  color: var(--green);
+  font-size:2.4rem;
+  margin-bottom:1.5rem;
+  letter-spacing:1px;
+}
+
+.central-section p {
+  font-size:1.1rem;
+  line-height:1.7;
+  color: var(--blue);
+}
+
+.central-section ul {
+  list-style: disc inside;
+  font-size:1.15rem;
+  line-height:1.7;
+  color: var(--blue);
+}
+
+.central-section ul li {
+  margin-bottom:1rem;
+}
+
+/* ===== SERVIZI GRID PREMIUM (SOLUZIONE 3) ===== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* larghezza minima 260px, flessibile */
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem 1.8rem;
+  min-height: 260px;        /* più alta */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* testo centrato verticalmente */
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  transition: all 0.35s ease;
+}
+
+/* ===== WHY GRID ===== */
+.why-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap:2rem;
+  margin-top:2rem;
+}
+
+.why-card {
+  background:#f4f4f4;
+  padding:1.5rem;
+  border-radius:8px;
+  text-align:center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor:pointer;
+}
+
+.why-card i {
+  font-size:2rem;
+  color: var(--green);
+  margin-bottom:0.8rem;
+}
+
+.why-card h4 {
+  font-size:1.2rem;
+  margin-bottom:0.5rem;
+}
+
+.why-card p {
+  font-size:1.15rem;
+  line-height:1.7;
+  color: var(--blue);
+}
+
+.why-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  background: var(--green);
+  color:#fff;
+}
+
+.why-card:hover p {
+  color:#fff;
+}
+
+/* Hover effect su immagine */
+.strategic-image div:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+/* ===== STRATEGIC SECTION – BLOCCO DEFINITIVO ===== */
+
+.strategic-section {
+  padding: 0;
+}
+
+.strategic-container {
+  display: flex;
+  min-height: auto; /* altezza header */
+  width: 100%;
+}
+
+.strategic-text {
+  flex: 1;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.strategic-image {
+  flex: 1;
+}
+
+.strategic-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 992px) {
+  .strategic-container {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .strategic-image {
+    height: 280px;
+  }
+
+  .strategic-text {
+    padding: 2rem;
+    text-align: center;
+  }
+}
+
+.service-card::after {
+  content:"";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--green);
+}
+
+.service-icon {
+  font-size: 2.2rem;
+  color: var(--green);
+  margin-bottom: 1.2rem;
+  transition: transform 0.35s ease;
+}
+
+.service-card h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--blue);
+  margin-bottom: 0.8rem;
+}
+
+.service-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--blue);
+  opacity: 0.8;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 22px 55px rgba(0,0,0,0.14);
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.12);
+}
+
+ .services-section {
+  padding: 4rem 0;           /* spazio verticale interno */
+  background-color: #f4f4f4; /* sfondo grigio chiaro */
+}
+
+  /* Spaziatura uniforme titoli principali */
+.central-section h2,
+.strategic-section h2,
+.form-section h2 {
+  margin-top: 4rem;   /* spazio sopra identico a "Servizi" */
+  margin-bottom: 3rem; /* spazio sotto identico a "Servizi" */
+  text-align: center;  /* mantiene centratura, se vuoi */
+}
+
+/* ===== PROCESS FLOW - IL NOSTRO APPROCCIO ===== */
+
+/* contenitore principale del flusso */
+.process-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem; /* spazio tra le righe */
+  margin-top: 4rem;
+}
+
+/* righe del flusso */
+.process-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4rem; /* spazio tra i box per le frecce */
+  flex-wrap: wrap;
+}
+
+/* singolo step */
+.process-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* box smussato */
+.step-box {
+  position: relative;
+  background: #fff;
+  border-radius: 16px;
+
+  /* dimensioni */
+  min-width: 260px;
+  min-height: 80px;
+  padding: 1rem 1.4rem;
+
+  /* tipografia */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--blue);
+
+  /* CENTRATURA DEL TESTO */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* verticale */
+  align-items: center;     /* orizzontale */
+
+  text-align: center;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+  z-index: 1;
+}
+
+/* numero task sopra il box */
+.step-box::before {
+  content: attr(data-step);
+  position: absolute;
+  top: -32px; /* sopra il rettangolo */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--green);
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  z-index: 2;
+}
+
+/* descrizione sotto il box */
+.step-box span {
+  position: absolute;
+  top: calc(100% + 0.8rem);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px; 
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-transform: lowercase;
+  font-style: normal; /* non italic */
+  color: var(--blue);
+  text-align: center;
+  line-height: 1.4;
+  z-index: 0;
+}
+
+/* FRECCE ALLINEATE AL CENTRO DEI RETTANGOLI */
+.process-arrow {
+  display: flex;
+  align-items: center;   /* centra verticalmente rispetto ai box */
+  justify-content: center;
+  font-size: 2.8rem;     /* ingrandisce la freccia */
+  color: var(--green);
+  opacity: 0.95;
+  margin: 0 1.5rem;     /* distanza dai rettangoli */
+}
+
+/* rimuoviamo la linea sottile inutilizzata */
+.process-arrow::after {
+  content: none;
+}
+
+/* hover box */
+.process-step:hover .step-box {
+  background: var(--green);
+  color: #fff;
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
+}
+
+.process-step:hover .step-box span {
+  color: #fff;
+}
+
+/* MOBILE: flusso verticale */
+@media (max-width: 992px) {
+  .process-row {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .process-arrow {
+    transform: rotate(90deg);
+  }
+
+  .process-arrow::after {
+    width: 25px;
+    left: -25px;
+  }
+}
+/* ===== SPAZIATURA COERENTE TRA SEZIONI ===== */
+.central-section,
+.form-section,
+.services-section,
+.why-section {
+  padding-top: 2rem;   /* spazio sopra le sezioni coerente con i titoli principali */
+  padding-bottom: 2rem; /* spazio sotto le sezioni */
+}
+
+/* Sezione “Perché scegliere MANAGECH” più distante dal flusso */
+.why-section {
+  margin-top: 4rem; /* aumenta lo spazio rispetto al processo */
+}
+
+/* Mantieni centratura del titolo */
+.why-section h2 {
+  text-align: center;
+  margin-bottom: 3rem; /* distanza dal contenuto interno della griglia */
+}
+
+/* Regola margini dei titoli principali del processo e servizi */
+.central-section h2,
+.services-section h2,
+.strategic-section h2,
+.form-section h2 {
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+.methodology-section {
+  position: relative;
+  padding: 6rem 2rem; /* spazio sopra e sotto per il contenuto */
+  overflow: hidden;   /* così il triangolo non esce dai bordi */
+}
+
+.methodology-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(31,163,122,0.15), transparent 70%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  z-index: 0; /* dietro al contenuto */
+}
+.strategic-text h2 {
+  margin-top: 3rem;      /* aumenta lo spazio sopra il titolo */
+  margin-bottom: 1rem;   /* margine sotto il titolo */
+  font-size: 2.6rem;
+  color: var(--green);
+  letter-spacing: 1px;
+}
+  
+.strategic-text p {
+  margin-top: 0;
+  margin-bottom: 1rem; /* o 1.2rem come prima */
+}
+
 </style>
 </head>
 
 <body>
+
 <!-- ================= HEADER ================= -->
 <header>
   <nav class="navbar">
@@ -645,5 +1163,6 @@ document.querySelector("form").addEventListener("submit", function () {
   document.getElementById("telefono_completo").value = prefisso + " " + telefono;
 });
 </script>
+
 </body>
 </html>
