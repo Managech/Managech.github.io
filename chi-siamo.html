@@ -50,17 +50,6 @@ header{
   justify-content:space-between;
 }
 
-. a{
-  display:flex;
-  align-items:center;
-  gap:.8rem;
-  color:var(--green);
-  text-decoration:none;
-  font-weight:700;
-  font-size:1.3rem;
-  letter-spacing:1px;
-}
-
 .logo img{
   height:54px;
 }
@@ -127,30 +116,27 @@ header{
 
 /* ================= CONTENT BLOCKS (Vision/Mission) ================= */
 .section{
-  padding:0 2rem 6rem; /* togli padding superiore, lascia solo quello inferiore */
+  padding:6rem 0; /* padding verticale, non laterale */
 }
 
 .block{
-  max-width:1200px;
-  margin:0 auto;
   display:flex;
-  align-items:stretch; /* immagini prendono tutta l’altezza del blocco */
-}
-
-.block:nth-child(even){
-  flex-direction:row-reverse;
+  flex-wrap:wrap; /* rende responsive */
+  align-items:stretch; 
+  margin-bottom:6rem;
+  position:relative;
 }
 
 .block-text{
-  flex:1;
-  padding:3rem; /* spazio interno del testo */
-  display:flex;
-  flex-direction:column;
-  justify-content:center; /* testo centrato verticalmente */
+  flex:1 1 500px;
+  max-width:600px;
+  padding:3rem;
+  background:#fff;
+  z-index:2;
 }
 
 .block-text h3{
-  margin:0 0 1rem;
+  margin-bottom:1rem;
   font-size:2.2rem;
   color:var(--green);
   letter-spacing:2px;
@@ -162,14 +148,43 @@ header{
 }
 
 .block-image{
-  flex:1;
+  flex:1 1 50%;
+  position:relative;
+  min-width:0;
 }
 
 .block-image img{
-  width:100%;
+  width:100vw; /* tutta la larghezza della finestra */
   height:100%;
   object-fit:cover;
-  border-radius:0; /* immagini a filo dei margini */
+  display:block;
+  position:relative;
+}
+
+/* Spostamento immagini ai margini laterali */
+.block:nth-child(odd) .block-image img {
+  margin-left: calc(-50% + 50vw); /* Vision: lato destro */
+}
+
+.block:nth-child(even) .block-image img {
+  margin-right: calc(-50% + 50vw); /* Mission: lato sinistro */
+}
+
+/* Responsive mobile */
+@media (max-width:1024px){
+  .block{
+    flex-direction:column;
+  }
+
+  .block-image img{
+    width:100%;
+    margin:0;
+  }
+
+  .block-text{
+    max-width:100%;
+    padding:2rem;
+  }
 }
 
 /* ================= VALORI ================= */
@@ -343,14 +358,14 @@ footer{
   font-size:.75rem;
   color:#888;
 }
-  
+
 .footer-brand p {
-  line-height: 1.8;      /* interlinea uniforme */
+  line-height: 1.8; 
 }
 
 .footer-brand p i {
   display: inline-block;
-  width: 20px;           /* allinea perfettamente le icone */
+  width: 20px;
 }
 
 /* ================= FADE-IN ================= */
@@ -364,44 +379,30 @@ footer{
   opacity:1;
   transform: translateY(0);
 }
-.block {
-  display: flex;
-  align-items: stretch; /* le immagini riempiono tutta l'altezza del blocco */
-  gap: 2rem; /* spazio tra testo e immagine */
-  position: relative;
-  overflow: hidden;
+
+/* ================= BUTTON ================= */
+form button,
+.btn-discover{
+  display: inline-block;
+  background: var(--green);
+  color: #fff;
+  padding: 0.9rem 2rem;
+  font-size: 0.95rem;
+  font-weight:600;
+  border:none;
+  border-radius:6px;
+  text-decoration:none;
+  letter-spacing:1px;
+  cursor:pointer;
+  transition: background 0.3s, transform 0.3s;
 }
 
-.block-text {
-  flex: 1;          /* testo occupa metà blocco */
-  padding: 3rem;    /* mantiene il padding interno */
-  z-index: 1;       /* assicura che il testo stia sopra l'immagine se si sovrappone */
-  background: #fff; /* opzionale: sfondo bianco per il testo */
+form button:hover,
+.btn-discover:hover{
+  background:#17845e;
+  transform: translateY(-2px);
 }
 
-.block-image {
-  flex: 1;          /* immagine occupa metà blocco */
-  position: relative;
-  overflow: hidden;
-}
-
-.block-image img {
-  height: 100%;           /* altezza uguale al blocco */
-  object-fit: cover;      /* evita deformazioni */
-  width: 100vw;           /* larghezza pari all'intera finestra */
-  position: relative;
-}
-
-/* Spingere le immagini verso il lato corretto */
-.block:nth-child(odd) .block-image img {
-  margin-left: calc(-50% + 50vw); /* Vision: spinge l'immagine verso il margine destro */
-}
-
-.block:nth-child(even) .block-image img {
-  margin-right: calc(-50% + 50vw); /* Mission: spinge l'immagine verso il margine sinistro */
-}
-
-  
 </style>
 </head>
 <body>
