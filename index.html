@@ -786,8 +786,21 @@ footer{
   position: relative;
   padding: 6rem 2rem; /* spazio sopra e sotto per il contenuto */
   overflow: hidden;   /* così il triangolo non esce dai bordi */
+  background: var(--blue); /* sfondo blu identico all'header */
+  color: #fff; /* testo bianco per leggibilità */
+}
+/* Se vuoi rendere anche i titoli e paragrafi bianchi */
+.methodology-section h2,
+.methodology-section p,
+.methodology-section .step-box span {
+  color: #fff;
 }
 
+/* Se le frecce devono rimanere visibili sul blu */
+.process-arrow {
+  color: var(--green); /* mantiene verde */
+}
+  
 .methodology-section::before {
   content: "";
   position: absolute;
