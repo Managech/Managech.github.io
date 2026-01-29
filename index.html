@@ -769,13 +769,17 @@ footer{
   padding: 4rem 0;       /* spazio interno */
   border-radius: 8px;       /* opzionale, per smussare i bordi */
 }
-
-
-  
-/* Mantieni centratura del titolo */
 .why-section h2 {
   text-align: center;
-  margin-bottom: 3rem; /* distanza dal contenuto interno della griglia */
+  margin-bottom: 3rem;          /* distanza dal contenuto interno della griglia */
+  color: #fff;                  /* titolo bianco */
+}
+
+/* griglia dei contenuti centrata */
+.why-section .why-grid {
+  max-width: 1400px;            /* limita solo i contenuti centrali */
+  margin: 0 auto;               /* centra la griglia */
+  padding: 0 2rem;              /* piccolo padding laterale */
 }
 
 /* Regola margini dei titoli principali del processo e servizi */
