@@ -12,7 +12,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-/* ================= ROOT & RESET ================= */
 :root {
   --green: #1fa37a;
   --blue: #0b1f33;
@@ -30,41 +29,6 @@ body {
   font-family: 'Montserrat', sans-serif;
   background: #fff;
   color: var(--blue);
-}
-
-/* ================= TYPOGRAPHY ================= */
-h2 {
-  color: var(--green);
-  font-size: 2.6rem;
-  margin-top: 4rem;
-  margin-bottom: 3rem;
-  letter-spacing: 1px;
-  font-weight: 700;
-  text-align: center;
-}
-
-h3 {
-  color: var(--green);
-  font-size: 2.4rem;
-  margin-bottom: 1.5rem;
-  letter-spacing: 1px;
-}
-
-p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: var(--blue);
-}
-
-ul {
-  list-style: disc inside;
-  font-size: 1.15rem;
-  line-height: 1.7;
-  color: var(--blue);
-}
-
-ul li {
-  margin-bottom: 1rem;
 }
 
 /* ================= FORM TAGS ================= */
@@ -159,9 +123,7 @@ header {
 .hero {
   margin-top: 90px;
   min-height: 75vh;
-  background:
-    linear-gradient(rgba(11,31,51,.75), rgba(11,31,51,.75)),
-    url("images/hero-bg.jpg") center/cover no-repeat;
+  background: linear-gradient(rgba(11,31,51,0.75), rgba(11,31,51,0.75)), url("images/hero-bg.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -195,7 +157,7 @@ header {
   line-height: 1.6;
 }
 
-/* ================= CONTENT BLOCKS ================= */
+/* ================= SECTION BLOCKS ================= */
 .section {
   padding: 6rem 2rem;
 }
@@ -206,12 +168,6 @@ header {
   display: flex;
   align-items: center;
   gap: 2rem;
-}
-
-.block-image {
-  flex: 1;
-  width: auto;
-  height: 360px;
 }
 
 .block:nth-child(even) {
@@ -233,21 +189,23 @@ header {
 .block-text-form {
   font-size: 1.15rem;
   line-height: 1.7;
-}
-
-.block-text-form {
   color: var(--blue);
   margin-bottom: 2rem;
 }
 
-/* BLOCCO IMMAGINI */
+.block-image {
+  flex: 1;
+  width: auto;
+  height: 360px;
+}
+
 .block-image img {
   width: 100%;
   height: 360px;
   object-fit: cover;
   border-radius: 8px;
   background: #eaeaea;
-  box-shadow: 0 15px 40px rgba(0,0,0,.18);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.18);
 }
 
 /* ================= FORM ================= */
@@ -297,7 +255,6 @@ form select[name="prefisso"] {
   height: 38px;
   line-height: 1.2;
   border: 1px solid #ccc;
-  border-radius: 0;
   box-sizing: border-box;
   appearance: none;
   cursor: pointer;
@@ -327,19 +284,17 @@ form button {
   margin-top: 1.5rem;
   font-size: 0.85rem;
   line-height: 1.4;
-  cursor: pointer;
 }
 
 .privacy-check input[type="checkbox"] {
-  margin: 0;
   width: 18px;
   height: 18px;
+  cursor: pointer;
 }
 
 .privacy-check label {
   margin: 0;
   display: block;
-  cursor: pointer;
 }
 
 .privacy-check a {
@@ -409,37 +364,22 @@ footer {
   color: #888;
 }
 
-.footer-brand p {
-  line-height: 1.8;
-}
-
-.footer-brand p i {
-  display: inline-block;
-  width: 20px;
-}
-
-/* ================= CENTRAL BLOCKS ================= */
+/* ================= CENTRAL BLOCK HOME ================= */
 .central-block,
 .central-section,
-.form-section,
 .services-section,
-.why-section {
-  padding: 2rem;
+.why-section,
+.form-section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
-.central-section {
-  max-width: 1400px;
-  margin: 0 auto 4rem;
-}
-
-.services-grid,
-.why-grid {
-  display: grid;
-  gap: 2rem;
-}
-
+/* ================= SERVICES GRID ================= */
 .services-grid {
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .service-card {
@@ -498,48 +438,12 @@ footer {
   transform: scale(1.12);
 }
 
-/* ================= STRATEGIC SECTION ================= */
-.strategic-section {
-  padding: 0;
-}
-
-.strategic-container {
-  display: flex;
-  width: 100%;
-  min-height: auto;
-}
-
-.strategic-text {
-  flex: 1;
-  padding: 4rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.strategic-text h2 {
-  margin-top: 3rem;
-  margin-bottom: 1rem;
-}
-
-.strategic-text p {
-  margin-bottom: 1rem;
-}
-
-.strategic-image {
-  flex: 1;
-}
-
-.strategic-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
 /* ================= WHY GRID ================= */
 .why-grid {
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .why-card {
@@ -577,6 +481,47 @@ footer {
 
 .why-card:hover p {
   color: #fff;
+}
+
+/* ================= STRATEGIC SECTION ================= */
+.strategic-section {
+  padding: 0;
+}
+
+.strategic-container {
+  display: flex;
+  width: 100%;
+}
+
+.strategic-text {
+  flex: 1;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.strategic-text h2 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  font-size: 2.6rem;
+  color: var(--green);
+  letter-spacing: 1px;
+}
+
+.strategic-text p {
+  margin-bottom: 1rem;
+}
+
+.strategic-image {
+  flex: 1;
+}
+
+.strategic-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* ================= PROCESS FLOW ================= */
@@ -656,7 +601,6 @@ footer {
   color: var(--blue);
   text-align: center;
   line-height: 1.4;
-  z-index: 0;
 }
 
 .process-arrow {
@@ -684,11 +628,10 @@ footer {
   color: #fff;
 }
 
-/* ================= MEDIA QUERIES ================= */
+/* ================= MOBILE ================= */
 @media (max-width: 992px) {
   .strategic-container {
     flex-direction: column;
-    min-height: auto;
   }
 
   .strategic-image {
