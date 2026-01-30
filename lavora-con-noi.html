@@ -459,6 +459,45 @@ section[style*="background:#f4f4f4"] .form-wrapper {
   border-radius: 18px;
   box-shadow: 0 20px 45px rgba(11,31,51,0.08);
 }
+.file-upload {
+  position: relative;
+  display: inline-block;
+  margin-top: 0.6rem;
+}
+
+.file-upload input[type="file"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.file-upload span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1.4rem;
+  border: 1px solid var(--green);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--green);
+  background: #fff;
+  cursor: pointer;
+  transition: background .3s ease, color .3s ease, transform .2s ease;
+}
+
+.file-upload span::before {
+  content: "\f15b";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+}
+
+.file-upload:hover span {
+  background: var(--green);
+  color: #fff;
+  transform: translateY(-1px);
+}
 
   
 </style>
@@ -568,7 +607,7 @@ document.querySelector("form").addEventListener("submit", function () {
   qualora emergano opportunità coerenti.
 </p>
     
-    <form action="https://formspree.io/f/xreqljvv" method="POST">
+    <form action="https://formspree.io/f/xreqljvv" method="POST" enctype="multipart/form-data">
       <input type="hidden" name="_subject" value="Nuova candidatura dal sito MANAGECH">
       <input type="hidden" name="_template" value="table">
       <input type="text" name="_gotcha" style="display:none">
@@ -646,8 +685,13 @@ document.querySelector("form").addEventListener("submit", function () {
       <label for="email">Email*</label>
       <input id="email" type="email" name="email" required>
 
-      <label for="provincia">Provincia*</label>
-      <input id="provincia" name="provincia" required>
+   <label for="cv">Curriculum vitae (PDF o DOC)</label>
+
+<div class="file-upload">
+  <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+  <span>Allega CV</span>
+</div>
+
 
       <label for="richiesta">Richiesta*</label>
       <textarea id="richiesta" name="richiesta" required></textarea>
@@ -662,6 +706,11 @@ document.querySelector("form").addEventListener("submit", function () {
 
       <input type="hidden" name="telefono_completo" id="telefono_completo">
       <button type="submit">Candidati ora</button>
+<p style="font-size:0.75rem; color:#666; margin-top:0.4rem;">
+  Formati accettati: PDF, DOC, DOCX. Dimensione massima consigliata: 5MB.
+</p>
+
+      
     </form>
   </div>
 </section>
