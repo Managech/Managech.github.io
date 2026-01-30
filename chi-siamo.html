@@ -130,31 +130,29 @@ header{
   padding:6rem 2rem;
 }
 
-/* ===== VISION / MISSION – BLOCCO FULL IMAGE ===== */
+/* ===== VISION / MISSION – ALLINEAMENTO AL CENTRO SCHERMO ===== */
 
 .block{
+  display:flex;
   width:100%;
   margin:0 0 6rem;
-  display:flex;
   align-items:stretch;
 }
 
-/* contenitore testo */
+/* TESTO */
 .block-text{
-  width:50%;
-  padding:4rem 4rem;
+  width:calc(50% - 4rem); /* lo spazio rimanente */
+  padding:4rem;
   display:flex;
   flex-direction:column;
   justify-content:center;
 }
 
-/* contenitore immagine */
+/* IMMAGINE */
 .block-image{
-  width:50vw;              /* metà viewport */
-  position:relative;
+  width:50vw; /* ESATTAMENTE metà viewport */
 }
 
-/* immagine full height */
 .block-image img{
   width:100%;
   height:100%;
@@ -162,12 +160,12 @@ header{
   display:block;
 }
 
-/* ALTERNANZA: blocchi pari invertiti */
+/* BLOCCO PARI INVERTITO */
 .block:nth-child(even){
   flex-direction:row-reverse;
 }
 
-/* allineamento immagine al centro schermo */
+/* IMMAGINE A FILO ASSE CENTRALE */
 .block:nth-child(odd) .block-image{
   margin-right:calc(50% - 50vw);
 }
@@ -175,7 +173,6 @@ header{
 .block:nth-child(even) .block-image{
   margin-left:calc(50% - 50vw);
 }
-
 
 /* ===== ABOUT SPLIT (Vision / Mission) ===== */
 
@@ -227,24 +224,6 @@ header{
   object-fit: cover;
   display: block;
 }
-
-@media (max-width: 992px){
-  .block{
-    flex-direction:column;
-  }
-
-  .block-text,
-  .block-image{
-    width:100%;
-    padding:2rem;
-    margin:0;
-  }
-
-  .block-image{
-    height:260px;
-  }
-}
-
   
 /* ================= VALORI ================= */
 .values-section{
