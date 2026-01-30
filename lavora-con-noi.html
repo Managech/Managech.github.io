@@ -1,1 +1,580 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>MANAGECH – Lavora con noi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+  --green:#1fa37a;
+  --blue:#0b1f33;
+  --gray:#d6d6d6;
+  --white:#ffffff;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:'Montserrat',sans-serif;
+  background:#fff;
+  color:var(--blue);
+}
+
+/* ================= HEADER ================= */
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:90px;
+  background:var(--blue);
+  z-index:1000;
+}
+
+.navbar{
+  height:100%;
+  padding:0 3rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo a{
+  display:flex;
+  align-items:center;
+  gap:.8rem;
+  color:var(--green);
+  text-decoration:none;
+  font-weight:700;
+  font-size:1.3rem;
+  letter-spacing:1px;
+}
+
+.logo img{
+  height:54px;
+}
+
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:2rem;
+}
+
+.nav-links a{
+  color:#fff;
+  text-decoration:none;
+  font-size:.95rem;
+  position:relative;
+}
+
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  bottom:-6px;
+  left:0;
+  width:0;
+  height:2px;
+  background:var(--green);
+  transition:.3s;
+}
+
+.nav-links a:hover::after{
+  width:100%;
+}
+
+/* ================= HERO ================= */
+.hero{
+  margin-top:90px;
+  min-height:50vh;
+  background:
+    linear-gradient(rgba(11,31,51,.75),rgba(11,31,51,.75)),
+    url("images/hero-lavora-con-noi.jpg") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:3rem 2rem;
+}
+
+.hero-content{
+  max-width:1100px;
+}
+
+.hero-title{
+  font-size:4rem;
+  font-weight:800;
+  letter-spacing:4px;
+  color:var(--green);
+}
+
+.hero-subtitle{
+  margin-top:.8rem;
+  font-size:1.2rem;
+  letter-spacing:2px;
+  color:var(--gray);
+}
+
+/* ================= FORM ================= */
+.form-section{
+  background:#f4f4f4;
+  padding:5rem 2rem;
+}
+
+.form-wrapper{
+  max-width:700px;
+  margin:auto;
+}
+
+.form-wrapper p{
+  font-size:1.1rem;
+  margin-bottom:2rem;
+}
+
+.form-wrapper h3 {
+  font-size: 2.4rem;
+  color: var(--green);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: 1px;
+}
+
+.form-tags{
+  display:flex;
+  gap:1rem;
+  margin-bottom:2rem;
+  flex-wrap:wrap;
+}
+  
+.block-text-form {
+  font-size: 1.15rem;       /* dimensione testo leggibile */
+  line-height: 1.7;         /* spaziatura verticale identica alla home */
+  color: var(--blue);       /* stesso colore del testo dei block */
+  margin-bottom: 2rem;      /* distanza dal form o altri elementi */
+}
+
+.form-tags span{
+  background:#fff;
+  border:1px solid var(--green);
+  color:var(--blue);
+  padding:.55rem 1.3rem;
+  border-radius:30px;
+  font-size:.8rem;
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  font-weight:500;
+}
+
+.form-tags i{
+  color:var(--green);
+}
+
+form label{
+  display:block;
+  font-size:.85rem;
+  margin-top:1.2rem;
+}
+
+form input,
+form textarea{
+  width:100%;
+  padding:.7rem;
+  margin-top:.3rem;
+  border:1px solid #ccc;
+  font-family:'Montserrat',sans-serif;
+}
+
+form select[name="prefisso"] {
+  padding: 0.65rem 0.7rem;
+  font-family: 'Montserrat', sans-serif; 
+  font-size: 0.85rem;       
+  height: 38px;              
+  line-height: 1.2;
+  border: 1px solid #ccc;     
+  border-radius: 0;           
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance: none;    
+  -moz-appearance: none;      
+  cursor: pointer;
+}
+
+form textarea{
+  min-height:120px;
+}
+
+form button {
+  display: inline-block;
+  margin-top: 2rem;
+  background: var(--green);
+  color: #fff;
+  padding: 0.9rem 2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+form button:hover {
+  background: #17845e;
+  transform: translateY(-2px);
+}
+
+.privacy-check {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.6rem;
+  align-items: start;
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.privacy-check input[type="checkbox"] {
+  margin: 0;
+  padding: 0;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.privacy-check label {
+  margin: 0;
+  display: block;
+  cursor: pointer;
+}
+
+.privacy-check a {
+  color: var(--green);
+  text-decoration: underline;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  background:var(--blue);
+  color:#ccc;
+  padding:4rem 2rem 2rem;
+}
+
+.footer-inner{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:3rem;
+}
+  
+.footer-logo {
+  max-width: 280px;   /* regolabile */
+  width: 100%;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.footer-brand h3{
+  margin:0;
+  color:var(--green);
+  font-size:1.6rem;
+}
+
+.footer-brand h4{
+  margin:.3rem 0 1.5rem;
+  font-weight:400;
+  color:#aaa;
+}
+
+.footer-brand i{
+  color:var(--green);
+  margin-right:8px;
+}
+
+.footer-links ul{
+  list-style:none;
+  padding:0;
+  margin: 0;
+}
+
+.footer-links li{
+  margin:.6rem 0;
+}
+
+.footer-links a{
+  color:#ccc;
+  text-decoration:none;
+}
+
+.footer-bottom{
+  text-align:center;
+  margin-top:3rem;
+  font-size:.75rem;
+  color:#888;
+}
+  
+.footer-brand p {
+  line-height: 1.8;
+}
+
+.footer-brand p i {
+  display: inline-block;
+  width: 20px;
+}
+
+/* ===== ALLINEAMENTO FORM CONTATTI ALLA HOME ===== */
+
+/* Titolo identico alla homepage */
+.form-section h2 {
+  font-size: 2.4rem;
+  color: var(--green);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+/* Testo sopra il form identico alla homepage */
+.form-section .block-text-form {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--blue);
+  margin-bottom: 2rem;
+  max-width: 100%;
+}
+/* ================= INTRO SEO ================= */
+.contact-intro {
+  background: #f4f4f4;          /* sfondo leggero per separarla dall'hero */
+  padding: 3rem 2rem;           /* spazio verticale */
+  text-align: center;            /* testo centrato */
+}
+
+.contact-intro .central-section {
+  max-width: 900px;              /* mantiene il testo leggibile */
+  margin: 0 auto;
+}
+
+.contact-intro p {
+  font-size: 1.15rem;            /* coerente con testo form e blocchi */
+  line-height: 1.7;
+  color: var(--blue);
+  margin: 0;
+}
+
+  
+</style>
+</head>
+  
+<script>
+document.querySelector("form").addEventListener("submit", function () {
+  const prefisso = document.querySelector('select[name="prefisso"]').value;
+  const telefono = document.querySelector('input[name="telefono"]').value;
+  document.getElementById("telefono_completo").value = prefisso + " " + telefono;
+});
+</script>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html">
+        <img src="images/1-4.png">
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="chi-siamo.html">Chi siamo</a></li>
+      <li><a href="#">Servizi</a></li>
+      <li><a href="contatti.html">Contatti</a></li>
+      <li><a href="#">Lavora con noi</a></li>
+      <li><a href="#">Blog</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-title">Lavora con noi</div>
+    <div class="hero-subtitle">Il nostro team è a tua disposizione per ogni richiesta o collaborazione</div>
+  </div>
+</section>
+
+<!-- ================= INTRO SEO ================= -->
+<section class="contact-intro">
+  <div class="central-section">
+    <p>
+      Siamo a disposizione di imprese, professionisti e organizzazioni che desiderano approfondire i servizi di consulenza strategica, ingegneria gestionale e supporto decisionale offerti da MANAGECH.  
+      Contattaci per informazioni, richieste di collaborazione o per fissare un primo confronto conoscitivo con il nostro team. La nostra sede è a Roma, in Piazza Mazzini, facilmente raggiungibile e punto di riferimento per attività consulenziali su tutto il territorio nazionale.
+    </p>
+  </div>
+</section>
+
+
+  
+<!-- ================= FORM CONTATTI ================= -->
+<section class="form-section">
+  <div class="form-wrapper">
+    <h2>Definiamo insieme il percorso</h2>
+    
+    <p class="block-text-form">    
+      Compila il modulo per ricevere una consulenza gratuita. Il nostro team è a disposizione per fornire informazioni, valutare richieste di collaborazione e accompagnare la tua azienda nella definizione di un percorso sostenibile, coerente con le priorità strategiche e gli obiettivi organizzativi.
+    </p>
+
+    <div class="form-tags">
+      <span><i class="fas fa-comments"></i> Consulenza gratuita</span>
+      <span><i class="fas fa-clock"></i> Risposta entro 24h</span>
+    </div>
+
+    <form action="https://formspree.io/f/xreqljvv" method="POST">
+      <input type="hidden" name="_subject" value="Nuova richiesta dal sito MANAGECH">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_gotcha" style="display:none">
+
+      <label for="nome">Nome*</label>
+      <input id="nome" name="nome" required>
+
+      <label for="cognome">Cognome*</label>
+      <input id="cognome" name="cognome" required>
+
+      <label for="telefono">Telefono*</label>
+      <div style="display:flex; gap:0.5rem; align-items:center;">
+        <select name="prefisso" required>
+
+  <!-- Europa -->
+<option value="+43">🇦🇹 Austria +43</option>
+<option value="+32">🇧🇪 Belgio +32</option>
+<option value="+359">🇧🇬 Bulgaria +359</option>
+<option value="+385">🇭🇷 Croazia +385</option>
+<option value="+357">🇨🇾 Cipro +357</option>
+<option value="+420">🇨🇿 Repubblica Ceca +420</option>
+<option value="+45">🇩🇰 Danimarca +45</option>
+<option value="+372">🇪🇪 Estonia +372</option>
+<option value="+358">🇫🇮 Finlandia +358</option>
+<option value="+33">🇫🇷 Francia +33</option>
+<option value="+49">🇩🇪 Germania +49</option>
+<option value="+30">🇬🇷 Grecia +30</option>
+<option value="+36">🇭🇺 Ungheria +36</option>
+<option value="+353">🇮🇪 Irlanda +353</option>
+<option value="+39" selected>🇮🇹 Italia +39</option>
+<option value="+371">🇱🇻 Lettonia +371</option>
+<option value="+423">🇱🇮 Liechtenstein +423</option>
+<option value="+370">🇱🇹 Lituania +370</option>
+<option value="+352">🇱🇺 Lussemburgo +352</option>
+<option value="+356">🇲🇹 Malta +356</option>
+<option value="+31">🇳🇱 Paesi Bassi +31</option>
+<option value="+48">🇵🇱 Polonia +48</option>
+<option value="+351">🇵🇹 Portogallo +351</option>
+<option value="+40">🇷🇴 Romania +40</option>
+<option value="+7">🇷🇺 Russia +7</option>
+<option value="+381">🇷🇸 Serbia +381</option>
+<option value="+421">🇸🇰 Slovacchia +421</option>
+<option value="+386">🇸🇮 Slovenia +386</option>
+<option value="+34">🇪🇸 Spagna +34</option>
+<option value="+46">🇸🇪 Svezia +46</option>
+<option value="+41">🇨🇭 Svizzera +41</option>
+<option value="+44">🇬🇧 Regno Unito +44</option>
+<option value="+39">🇻🇦 Città del Vaticano +39</option>
+
+<!-- Principali stati globalizzati -->
+<option value="+1">🇺🇸 USA +1</option>
+<option value="+1">🇨🇦 Canada +1</option>
+<option value="+86">🇨🇳 Cina +86</option>
+<option value="+91">🇮🇳 India +91</option>
+<option value="+81">🇯🇵 Giappone +81</option>
+<option value="+55">🇧🇷 Brasile +55</option>
+<option value="+61">🇦🇺 Australia +61</option>
+<option value="+27">🇿🇦 Sud Africa +27</option>
+<option value="+82">🇰🇷 Corea del Sud +82</option>
+<option value="+60">🇲🇾 Malesia +60</option>
+<option value="+65">🇸🇬 Singapore +65</option>
+<option value="+66">🇹🇭 Thailandia +66</option>
+<option value="+971">🇦🇪 Emirati Arabi Uniti +971</option>
+<option value="+98">🇮🇷 Iran +98</option>
+<option value="+964">🇮🇶 Iraq +964</option>
+<option value="+52">🇲🇽 Messico +52</option>
+<option value="+57">🇨🇴 Colombia +57</option>
+<option value="+56">🇨🇱 Cile +56</option>
+
+        </select>
+
+        <input id="telefono" type="tel" name="telefono" placeholder="340 1234567" required style="flex:1; padding:0.7rem; font-family:'Montserrat',sans-serif; margin-top:0;">
+      </div>
+
+      <label for="email">Email*</label>
+      <input id="email" type="email" name="email" required>
+
+      <label for="azienda">Azienda*</label>
+      <input id="azienda" name="azienda" required>
+
+      <label for="ruolo">Ruolo in azienda*</label>
+      <input id="ruolo" name="ruolo" required>
+
+      <label for="provincia">Provincia*</label>
+      <input id="provincia" name="provincia" required>
+
+      <label for="richiesta">Richiesta*</label>
+      <textarea id="richiesta" name="richiesta" required></textarea>
+
+      <div class="privacy-check">
+        <input type="checkbox" id="privacy" name="privacy" required>
+        <label for="privacy">
+          Dichiaro di aver preso visione e di accettare integralmente
+          <a href="privacy.html" target="_blank">l'informativa privacy</a>
+        </label>
+      </div>
+
+      <input type="hidden" name="telefono_completo" id="telefono_completo">
+      <button type="submit">Invia richiesta</button>
+    </form>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="footer-inner">
+  <div class="footer-brand">
+    <img src="images/1-4.png" alt="MANAGECH" class="footer-logo">
+    <p>
+      <i class="fas fa-map-marker-alt"></i> Piazza G. Mazzini 27, 00195 Roma<br>
+      <i class="fas fa-phone"></i> +39 349 390 7663<br>
+      <i class="fas fa-envelope"></i> segreteria@managech.com
+    </p>
+  </div>
+
+  <div class="footer-links">
+    <ul>
+      <li><a href="chi-siamo.html">Chi siamo</a></li>
+      <li><a href="#">Servizi</a></li>
+      <li><a href="contatti.html">Contatti</a></li>
+      <li><a href="#">Lavora con noi</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="informativa-privacy.html">Informativa Privacy</a></li>
+      <li><a href="cookie-policy.html">Cookie Policy</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="footer-bottom">
+  © 2026 MANAGECH - INGEGNERIA & MANAGEMENT STUDIO ASSOCIATO | P. IVA 18387251004
+</div>
+
+</footer>
+</body>
+</html>
