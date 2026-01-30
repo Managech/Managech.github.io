@@ -170,7 +170,76 @@ header{
   background:#eaeaea;
   box-shadow:0 15px 40px rgba(0,0,0,.18);
 }
+/* ===== ABOUT SPLIT (Vision / Mission) ===== */
 
+.about-split-section {
+  width: 100%;
+}
+
+.about-split {
+  display: flex;
+  width: 100%;
+  min-height: 420px;
+}
+
+.about-split.reverse {
+  flex-direction: row-reverse;
+}
+
+/* TESTO */
+.about-text {
+  flex: 1;
+  padding: 6rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-text h3 {
+  color: var(--green);
+  font-size: 2.6rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.about-text p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--blue);
+  text-align: justify;
+}
+
+/* IMMAGINE FULL HEIGHT */
+.about-image {
+  flex: 1;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 992px) {
+  .about-split,
+  .about-split.reverse {
+    flex-direction: column;
+  }
+
+  .about-image {
+    height: 300px;
+  }
+
+  .about-text {
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+}
+
+
+  
 /* ================= VALORI ================= */
 .values-section{
   padding:6rem 2rem;
@@ -436,34 +505,38 @@ footer{
 </section>
 
 <!-- ================= VISION & MISSION BLOCCO ================= -->
-<section class="section">
-  <div class="block">
-    <div class="block-text" style="text-align:justify;">
+<section class="about-split-section">
+
+  <!-- VISION -->
+  <div class="about-split">
+    <div class="about-text">
       <h3>La nostra Vision</h3>
       <p>
-        La visione di <strong>Managech</strong> è essere un <strong>partner tecnico-strategico di riferimento</strong> per imprese, enti e professionisti che operano in contesti complessi e regolamentati. 
-        Vogliamo supportare i nostri clienti nella partecipazione a gare pubbliche e private, nella gestione strutturata delle commesse e nei processi di trasformazione organizzativa e digitale, fornendo strumenti concreti per prendere decisioni più consapevoli. 
-        Il nostro obiettivo è contribuire a creare organizzazioni solide, efficienti e competitive, capaci di generare valore sostenibile e di costruire basi durature per la crescita.
+        La visione di <strong>Managech</strong> è essere un <strong>partner tecnico-strategico di riferimento</strong> per imprese, enti e professionisti che operano in contesti complessi e regolamentati.
+        Vogliamo supportare i nostri clienti nella partecipazione a gare pubbliche e private, nella gestione strutturata delle commesse e nei processi di trasformazione organizzativa e digitale.
       </p>
     </div>
-    <div class="block-image">
+
+    <div class="about-image">
       <img src="images/vision.jpg" alt="Vision">
     </div>
   </div>
 
-  <div class="block">
-    <div class="block-text" style="text-align:justify;">
+  <!-- MISSION -->
+  <div class="about-split reverse">
+    <div class="about-text">
       <h3>La nostra Mission</h3>
       <p>
-        La missione di <strong>Managech</strong> è fornire <strong>assistenza tecnico-economica, manageriale e strategica</strong> a imprese, enti e professionisti che operano in contesti complessi e regolamentati. 
-        Affianchiamo i clienti nella partecipazione alle gare, nella gestione delle commesse, nello sviluppo di modelli decisionali basati su dati concreti e nell’adozione di soluzioni digitali e data-driven. 
-        Puntiamo a migliorare le performance operative e strategiche, a gestire i rischi in maniera efficace e a generare valore sostenibile, contribuendo allo sviluppo di organizzazioni più solide, innovative e competitive nel tempo.
+        La missione di <strong>Managech</strong> è fornire <strong>assistenza tecnico-economica, manageriale e strategica</strong> a imprese, enti e professionisti che operano in contesti complessi e regolamentati.
+        Affianchiamo i clienti nella partecipazione alle gare, nella gestione delle commesse e nell’adozione di soluzioni data-driven.
       </p>
     </div>
-    <div class="block-image">
+
+    <div class="about-image">
       <img src="images/mission.jpg" alt="Mission">
     </div>
   </div>
+
 </section>
 
 <!-- ================= VALORI ================= -->
