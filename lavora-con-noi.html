@@ -166,11 +166,30 @@ header{
 
 .form-tags {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
   margin-top: 2.5rem;
 }
 
+  .form-tags span {
+  text-align: left;
+  min-height: 110px;
+}
+
+  
+@media (max-width: 900px) {
+  .form-tags {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .form-tags {
+    grid-template-columns: 1fr;
+  }
+}
+
+  
 .form-tags span {
   background: #ffffff;
   border-radius: 14px;
@@ -498,7 +517,8 @@ document.querySelector("form").addEventListener("submit", function () {
   </div>
 </section>
 
-<section class="form-section">
+<section class="form-section wide-section">
+
   <div class="form-wrapper">
 
     <h2>Lavorare in MANAGECH</h2>
