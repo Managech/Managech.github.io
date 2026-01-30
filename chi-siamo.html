@@ -228,23 +228,22 @@ header{
   display: block;
 }
 
-/* ===== MOBILE ===== */
-@media (max-width: 992px) {
-  .about-split,
-  .about-split.reverse {
-    flex-direction: column;
+@media (max-width: 992px){
+  .block{
+    flex-direction:column;
   }
 
-  .about-image {
-    height: 300px;
+  .block-text,
+  .block-image{
+    width:100%;
+    padding:2rem;
+    margin:0;
   }
 
-  .about-text {
-    padding: 3rem 2rem;
-    text-align: center;
+  .block-image{
+    height:260px;
   }
 }
-
 
   
 /* ================= VALORI ================= */
