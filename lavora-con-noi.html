@@ -127,7 +127,7 @@ header{
 
 /* ================= FORM ================= */
 .form-section{
-  background:#f4f4f4;
+  background:#fff;
   padding:5rem 2rem;
 }
 
@@ -375,6 +375,17 @@ footer{
   color: var(--blue);
   margin: 0;
 }
+.form-wrapper {
+  max-width: 760px;
+}
+
+.form-section h2 {
+  margin-bottom: 2rem;
+}
+
+.block-text-form + .block-text-form {
+  margin-top: 1.2rem;
+}
 
   
 </style>
@@ -430,84 +441,38 @@ document.querySelector("form").addEventListener("submit", function () {
   </div>
 </section>
 
-<!-- ================= PERCHE' LAVORARE IN MANAGECH ================= -->
 <section class="form-section">
   <div class="form-wrapper">
 
-    <h2>Perché lavorare con noi</h2>
+    <h2>Lavorare in MANAGECH</h2>
 
     <p class="block-text-form">
       MANAGECH è uno studio di consulenza che opera nell’ambito dell’ingegneria gestionale,
       della strategia aziendale e del supporto alle decisioni.
-      Lavoriamo su progetti complessi, con un approccio analitico e multidisciplinare,
-      valorizzando competenze tecniche, capacità di problem solving e visione sistemica.
+      Lavoriamo su progetti complessi, a stretto contatto con imprese e istituzioni,
+      affiancando il management nei processi di trasformazione e crescita.
+    </p>
+
+    <p class="block-text-form">
+      Entrare in MANAGECH significa confrontarsi con problemi reali,
+      contesti organizzativi strutturati e decisioni ad alto impatto.
+      Cerchiamo persone curiose, rigorose e motivate, interessate a sviluppare
+      competenze analitiche e manageriali in un ambiente professionale
+      serio, collaborativo e orientato alla qualità.
     </p>
 
     <div class="form-tags">
       <span><i class="fas fa-chart-line"></i> Progetti strategici</span>
+      <span><i class="fas fa-brain"></i> Approccio analitico</span>
       <span><i class="fas fa-users"></i> Team multidisciplinare</span>
       <span><i class="fas fa-graduation-cap"></i> Crescita professionale</span>
     </div>
 
-  </div>
-</section>
-
-<!-- ================= PROFILI RICERCATI ================= -->
-  
-<section class="form-section" style="background:#fff;">
-  <div class="form-wrapper">
-
-    <h2>Profili ricercati</h2>
-
     <p class="block-text-form">
-      Valutiamo candidature di professionisti e giovani laureati interessati a sviluppare
-      competenze nell’ambito della consulenza direzionale e dell’ingegneria gestionale.
-      In particolare, ricerchiamo profili con background in:
-    </p>
-
-    <ul class="block-text-form" style="padding-left:1.2rem;">
-      <li>Ingegneria gestionale o discipline affini</li>
-      <li>Economia, management, finanza</li>
-      <li>Data analysis e supporto alle decisioni</li>
-      <li>Organizzazione aziendale e processi</li>
-    </ul>
-
-  </div>
-</section>
-
-<!-- ================= COSA OFFRIAMO ================= -->
-<section class="form-section">
-  <div class="form-wrapper">
-
-    <h2>Cosa offriamo</h2>
-
-    <p class="block-text-form">
-      Offriamo un ambiente di lavoro professionale, orientato alla qualità e alla crescita continua.
-      Le modalità di collaborazione vengono definite in funzione del profilo e dell’esperienza,
-      con percorsi strutturati di inserimento e sviluppo.
-    </p>
-
-    <div class="form-tags">
-      <span><i class="fas fa-briefcase"></i> Progetti ad alto valore</span>
-      <span><i class="fas fa-handshake"></i> Collaborazioni strutturate</span>
-      <span><i class="fas fa-brain"></i> Formazione continua</span>
-    </div>
-
-  </div>
-</section>
-  
-<!-- ================= PROCESSO DI SELEZIONE ================= -->  
-  
-  <section class="form-section" style="background:#fff;">
-  <div class="form-wrapper">
-
-    <h2>Il nostro processo di selezione</h2>
-
-    <p class="block-text-form">
-      Ogni candidatura viene valutata attentamente dal nostro team.
-      Il processo di selezione prevede una prima analisi del profilo,
-      seguita da uno o più colloqui conoscitivi finalizzati a comprendere
-      competenze, motivazioni e aspettative professionali.
+      Valutiamo candidature di laureandi, neolaureati e professionisti
+      con background in ingegneria gestionale, economia, management
+      o discipline affini, interessati alla consulenza direzionale
+      e al supporto ai processi decisionali.
     </p>
 
   </div>
@@ -515,22 +480,17 @@ document.querySelector("form").addEventListener("submit", function () {
 
   
 <!-- ================= FORM CANDIDATURA ================= -->
-<section class="form-section">
+<section class="form-section" style="background:#f4f4f4;">
   <div class="form-wrapper">
-    <h2>Candidatura spontanea</h2>
+    <h2>Candidati</h2>
     
-    <p class="block-text-form">
-  Invia la tua candidatura compilando il modulo.
+   <p class="block-text-form">
+  Se ti riconosci in questo approccio e vuoi metterti alla prova
+  in un contesto consulenziale strutturato, inviaci la tua candidatura.
   Valuteremo il tuo profilo con attenzione e ti contatteremo
-  qualora emergano opportunità coerenti con la tua esperienza
-  e le esigenze dello studio.
+  qualora emergano opportunità coerenti.
 </p>
     
-    <div class="form-tags">
-      <span><i class="fas fa-comments"></i> Consulenza gratuita</span>
-      <span><i class="fas fa-clock"></i> Risposta entro 24h</span>
-    </div>
-
     <form action="https://formspree.io/f/xreqljvv" method="POST">
       <input type="hidden" name="_subject" value="Nuova candidatura dal sito MANAGECH">
       <input type="hidden" name="_template" value="table">
