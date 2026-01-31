@@ -1,1 +1,261 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>MANAGECH – Blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+  --green:#1fa37a;
+  --blue:#0b1f33;
+  --gray:#d6d6d6;
+  --white:#ffffff;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:'Montserrat',sans-serif;
+  background:#fff;
+  color:var(--blue);
+}
+
+/* ================= HEADER ================= */
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:90px;
+  background:var(--blue);
+  z-index:1000;
+}
+
+.navbar{
+  height:100%;
+  padding:0 3rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo a{
+  display:flex;
+  align-items:center;
+  gap:.8rem;
+  color:var(--green);
+  text-decoration:none;
+  font-weight:700;
+  font-size:1.3rem;
+  letter-spacing:1px;
+}
+
+.logo img{
+  height:54px;
+}
+
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:2rem;
+}
+
+.nav-links a{
+  color:#fff;
+  text-decoration:none;
+  font-size:.95rem;
+  position:relative;
+}
+
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  bottom:-6px;
+  left:0;
+  width:0;
+  height:2px;
+  background:var(--green);
+  transition:.3s;
+}
+
+.nav-links a:hover::after{
+  width:100%;
+}
+
+/* ================= HERO ================= */
+.hero{
+  margin-top:90px;
+  padding:5rem 2rem;
+  background:
+    linear-gradient(rgba(11,31,51,.8),rgba(11,31,51,.8)),
+    url("images/hero-bg.jpg") center/cover no-repeat;
+  text-align:center;
+}
+
+.hero h1{
+  color:var(--green);
+  font-size:3.2rem;
+  letter-spacing:3px;
+  font-weight:800;
+}
+
+.hero p{
+  margin-top:1rem;
+  color:var(--gray);
+  letter-spacing:2px;
+}
+
+
+  
+
+/* ================= FOOTER ================= */
+footer{
+  background:var(--blue);
+  color:#ccc;
+  padding:4rem 2rem 2rem;
+}
+
+.footer-inner{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:3rem;
+}
+  
+.footer-logo {
+  max-width: 280px;   /* regolabile */
+  width: 100%;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.footer-brand h3{
+  margin:0;
+  color:var(--green);
+  font-size:1.6rem;
+}
+
+.footer-brand h4{
+  margin:.3rem 0 1.5rem;
+  font-weight:400;
+  color:#aaa;
+}
+
+.footer-brand i{
+  color:var(--green);
+  margin-right:8px;
+}
+
+.footer-links ul{
+  list-style:none;
+  padding:0;
+  margin: 0;
+}
+
+.footer-links li{
+  margin:.6rem 0;
+}
+
+.footer-links a{
+  color:#ccc;
+  text-decoration:none;
+}
+
+.footer-bottom{
+  text-align:center;
+  margin-top:3rem;
+  font-size:.75rem;
+  color:#888;
+}
+  
+.footer-brand p {
+  line-height: 1.8;
+}
+
+.footer-brand p i {
+  display: inline-block;
+  width: 20px;
+}
+
+  
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html">
+        <img src="images/1-4.png">
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="chi-siamo.html">Chi siamo</a></li>
+      <li><a href="#">Servizi</a></li>
+      <li><a href="contatti.html">Contatti</a></li>
+      <li><a href="lavora-con-noi.html">Lavora con noi</a></li>
+      <li><a href="#">Blog</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <h1>Coming soon</h1>
+  <p>Qui sarà presto disponibile la nuova sezione Blog con tutti i contenuti relativi ai nostri progetti</p>
+</section>
+
+<!-- ================= CONTENT ================= -->
+<section class="cookie-section">
+
+  <h2>Blog</h2>
+  
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="footer-inner">
+  <div class="footer-brand">
+    <img src="images/1-4.png" alt="MANAGECH" class="footer-logo">
+    <p>
+      <i class="fas fa-map-marker-alt"></i> Piazza G. Mazzini 27, 00195 Roma<br>
+      <i class="fas fa-phone"></i> +39 349 390 7663<br>
+      <i class="fas fa-envelope"></i> segreteria@managech.com
+    </p>
+  </div>
+
+  <div class="footer-links">
+    <ul>
+      <li><a href="chi-siamo.html">Chi siamo</a></li>
+      <li><a href="#">Servizi</a></li>
+      <li><a href="contatti.html">Contatti</a></li>
+      <li><a href="lavora-con-noi.html">Lavora con noi</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="informativa-privacy.html">Informativa Privacy</a></li>
+      <li><a href="cookie-policy.html">Cookie Policy</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="footer-bottom">
+  © 2026 MANAGECH - INGEGNERIA & MANAGEMENT STUDIO ASSOCIATO | P. IVA 18387251004
+</div>
+
+</footer>
+</body>
+</html>
