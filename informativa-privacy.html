@@ -159,18 +159,35 @@ footer{
   flex-wrap:wrap;
   gap:3rem;
 }
-
+  
 .footer-logo {
-  max-width:280px;
-  width:100%;
-  margin-bottom:1.5rem;
-  display:block;
+  max-width: 280px;   /* regolabile */
+  width: 100%;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.footer-brand h3{
+  margin:0;
+  color:var(--green);
+  font-size:1.6rem;
+}
+
+.footer-brand h4{
+  margin:.3rem 0 1.5rem;
+  font-weight:400;
+  color:#aaa;
+}
+
+.footer-brand i{
+  color:var(--green);
+  margin-right:8px;
 }
 
 .footer-links ul{
   list-style:none;
   padding:0;
-  margin:0;
+  margin: 0;
 }
 
 .footer-links li{
@@ -188,6 +205,16 @@ footer{
   font-size:.75rem;
   color:#888;
 }
+  
+.footer-brand p {
+  line-height: 1.8;
+}
+
+.footer-brand p i {
+  display: inline-block;
+  width: 20px;
+}
+  
 </style>
 </head>
 
@@ -278,21 +305,35 @@ footer{
 
 </section>
 
+<!-- ================= FOOTER ================= -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-brand">
-      <img src="images/1-4.png" class="footer-logo">
-    </div>
-    <div class="footer-links">
-      <ul>
-        <li><a href="informativa-privacy.html">Informativa Privacy</a></li>
-        <li><a href="cookie-policy.html">Cookie Policy</a></li>
-      </ul>
-    </div>
+  <div class="footer-brand">
+    <img src="images/1-4.png" alt="MANAGECH" class="footer-logo">
+    <p>
+      <i class="fas fa-map-marker-alt"></i> Piazza G. Mazzini 27, 00195 Roma<br>
+      <i class="fas fa-phone"></i> +39 349 390 7663<br>
+      <i class="fas fa-envelope"></i> segreteria@managech.com
+    </p>
   </div>
-  <div class="footer-bottom">
-    © 2026 MANAGECH - INGEGNERIA & MANAGEMENT STUDIO ASSOCIATO | P. IVA 18387251004
+
+  <div class="footer-links">
+    <ul>
+      <li><a href="chi-siamo.html">Chi siamo</a></li>
+      <li><a href="#">Servizi</a></li>
+      <li><a href="contatti.html">Contatti</a></li>
+      <li><a href="lavora-con-noi.html">Lavora con noi</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="informativa-privacy.html">Informativa Privacy</a></li>
+      <li><a href="cookie-policy.html">Cookie Policy</a></li>
+    </ul>
   </div>
+</div>
+
+<div class="footer-bottom">
+  © 2026 MANAGECH - INGEGNERIA & MANAGEMENT STUDIO ASSOCIATO | P. IVA 18387251004
+</div>
+
 </footer>
 
 </body>
