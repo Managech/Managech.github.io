@@ -518,10 +518,12 @@ section[style*="background:#f4f4f4"] .form-wrapper {
 </head>
   
 <script>
-document.querySelector("form").addEventListener("submit", function () {
-  const prefisso = document.querySelector('select[name="prefisso"]').value;
-  const telefono = document.querySelector('input[name="telefono"]').value;
-  document.getElementById("telefono_completo").value = prefisso + " " + telefono;
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelector("form").addEventListener("submit", function () {
+    const prefisso = document.querySelector('select[name="prefisso"]').value;
+    const telefono = document.querySelector('input[name="telefono"]').value;
+    document.getElementById("telefono_completo").value = prefisso + " " + telefono;
+  });
 });
 </script>
 
