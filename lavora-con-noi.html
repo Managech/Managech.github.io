@@ -507,6 +507,11 @@ section[style*="background:#f4f4f4"] .form-wrapper {
   color: #fff;
   transform: translateY(-1px);
 }
+.file-upload label {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
 
   
 </style>
@@ -695,9 +700,12 @@ document.querySelector("form").addEventListener("submit", function () {
       <input id="email" type="email" name="email" required>
 
 <div class="file-upload">
-  <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
-  <span>Allega CV</span>
+  <label for="cv">
+    <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+    <span>Allega CV</span>
+  </label>
 </div>
+
       <p style="font-size:0.75rem; color:#666; margin-top:0.4rem;">
   Formati accettati: PDF, DOC, DOCX. Dimensione massima consigliata: 5MB.
 </p>
