@@ -132,14 +132,11 @@ header{
   width: 100%;
 }
 
-/* ================= SERVIZI SECTION – FLEX COME VISION/MISSION ================= */
+/* singola fascia */
 .service-strip {
-  display: flex;
-  flex-wrap: wrap;
   min-height: 65vh;
-  align-items: stretch;
-  position: relative;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 
 /* colori */
@@ -173,13 +170,21 @@ header{
   direction: ltr;
 }
 
-/* testi e immagini prendono metà della larghezza ciascuno */
+/* testo */
 .service-text {
-  flex: 1;
-  padding: 6rem 4rem;
+  max-width: none;          /* niente limite */
+  padding: 0 1.5rem;          /* più vicino ai margini */
+  z-index: 2;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* verticale */
+  justify-content: center;  /* centro verticale */
+  align-items: flex-start; /* or center */
+}
+
+.service-icon-large {
+  font-size: 2.4rem;
+  color: var(--green);
+  margin-bottom: 1.2rem;
 }
 
 .service-text h3 {
@@ -193,47 +198,8 @@ header{
 .service-text p {
   font-size: 1.15rem;
   line-height: 1.7;
+  opacity: 0.95;
   text-align: justify;
-  color: var(--blue);
-}
-
-/* immagine full height */
-.service-image {
-  flex: 1;
-}
-
-.service-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* inverti fasce pari */
-.service-strip:nth-child(even) {
-  flex-direction: row-reverse;
-}
-
-/* ================= MOBILE ================= */
-@media (max-width: 992px) {
-  .service-strip {
-    flex-direction: column;
-    min-height: auto;
-  }
-
-  .service-text {
-    padding: 3rem 2rem;
-    text-align: center;
-  }
-
-  .service-image {
-    width: 100%;
-    height: 260px;
-  }
-
-  .service-image img {
-    height: 100%;
-  }
 }
 
 /* ===== STRUTTURA IMMAGINE FULL-HEIGHT ===== */
