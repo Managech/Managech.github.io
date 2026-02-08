@@ -162,11 +162,11 @@ header{
 }
 
 /* reverse automatico */
-.service-strip:nth-child(even) .inner {
+(even) .inner {
   direction: rtl;
 }
 
-.service-strip:nth-child(even) .inner > * {
+(even) .inner > * {
   direction: ltr;
 }
 
@@ -246,14 +246,14 @@ header{
 
 /* immagine a DESTRA → testo a SINISTRA */
 .service-strip:nth-child(odd) .service-text {
-  padding-left: 0.5rem;   /* vicino al bordo pagina */
+  padding-left: 0;   /* vicino al bordo pagina */
   padding-right: 5rem;    /* distanza dalla foto */
 }
 
 /* immagine a SINISTRA → testo a DESTRA */
 .service-strip:nth-child(even) .service-text {
   padding-left: 5rem;     /* distanza dalla foto */
-  padding-right: 0.5rem;  /* vicino al bordo pagina */
+  padding-right: 0;  /* vicino al bordo pagina */
 }
 
 /* default: immagine a destra */
