@@ -161,14 +161,26 @@ header{
   align-items: center;
 }
 
-/* reverse automatico */
-(even) .inner {
-  direction: rtl;
+/* ===== INVERSIONE COLONNE STRIP PARI ===== */
+
+/* default: testo prima, immagine dopo */
+.service-text {
+  order: 1;
 }
 
-(even) .inner > * {
-  direction: ltr;
+.service-image {
+  order: 2;
 }
+
+/* strip pari: immagine prima, testo dopo */
+.service-strip:nth-child(even) .service-image {
+  order: 1;
+}
+
+.service-strip:nth-child(even) .service-text {
+  order: 2;
+}
+
 
 /* testo */
 .service-text {
