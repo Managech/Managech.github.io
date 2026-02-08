@@ -161,6 +161,31 @@ header{
   align-items: center;
 }
 
+/* ===== IMMAGINI NELLA GRIGLIA ===== */
+.service-strip .inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* due colonne uguali */
+  gap: 4rem;
+  align-items: center;
+}
+
+/* immagine normale nella colonna */
+.service-image {
+  position: relative; /* normale, non assoluto */
+  width: 100%;
+  height: 100%;
+}
+
+/* inversione strip pari */
+.service-strip:nth-child(even) .service-text {
+  grid-column: 2;
+}
+
+.service-strip:nth-child(even) .service-image {
+  grid-column: 1;
+}
+
+  
 /* ===== INVERSIONE COLONNE STRIP PARI ===== */
 
 /* default: testo prima, immagine dopo */
@@ -231,14 +256,7 @@ header{
 }
 
 
-/* colonna immagine */
-.service-image {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 50%;
-}
-
+  
 /* immagine vera e propria */
 .service-image img {
   width: 100%;
