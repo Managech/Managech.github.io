@@ -125,7 +125,9 @@ header{
   color:var(--gray);
 }
 
+  
 /* ================= SERVIZI SECTION ================= */
+
 .services-wrapper {
   width: 100%;
 }
@@ -150,41 +152,26 @@ header{
 
 /* griglia interna */
 .service-strip .inner {
-  max-width: 1400px;
+  max-width: 100%;
   margin: auto;
-  padding: 3.5rem 2rem;
+  padding: 5rem 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
 }
 
-/* colonne testo/immagine */
-.service-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding-top: 0;
-  padding-bottom: 0;
-  max-width: none;
-  z-index: 2;
+/* ===== IMMAGINI NELLA GRIGLIA ===== */
+.service-strip .inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* due colonne uguali */
+  gap: 4rem;
+  align-items: center;
 }
 
-/* padding asimmetrico testo */
-.service-strip:nth-child(odd) .service-text {
-  padding-left: 0;
-  padding-right: 5rem;
-}
-
-.service-strip:nth-child(even) .service-text {
-  padding-left: 5rem;
-  padding-right: 0;
-}
-
-/* immagine */
+/* immagine normale nella colonna */
 .service-image {
-  position: relative;
+  position: relative; /* normale, non assoluto */
   width: 100%;
   height: 100%;
 }
@@ -198,15 +185,38 @@ header{
   grid-column: 1;
 }
 
-/* immagine vera e propria */
-.service-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  
+/* ===== INVERSIONE COLONNE STRIP PARI ===== */
+
+/* default: testo prima, immagine dopo */
+.service-text {
+  order: 1;
 }
 
-/* testo interno */
+.service-image {
+  order: 2;
+}
+
+/* strip pari: immagine prima, testo dopo */
+.service-strip:nth-child(even) .service-image {
+  order: 1;
+}
+
+.service-strip:nth-child(even) .service-text {
+  order: 2;
+}
+
+
+/* testo */
+.service-text {
+  max-width: none;          /* niente limite */
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* centro verticale */
+  align-items: flex-start; /* or center */
+}
+
 .service-icon-large {
   font-size: 2.4rem;
   color: var(--green);
@@ -228,6 +238,65 @@ header{
   text-align: justify;
 }
 
+/* ===== STRUTTURA IMMAGINE FULL-HEIGHT ===== */
+
+.service-strip {
+  position: relative;
+  overflow: hidden;
+}
+
+/* griglia interna */
+.service-strip .inner {
+  max-width: 1400px;
+  margin: auto;
+  padding: 3.5rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+
+  
+/* immagine vera e propria */
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== POSIZIONAMENTO ===== */
+/* ===== PADDING ASIMMETRICO TESTO ===== */
+
+/* reset base */
+.service-text {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* immagine a DESTRA → testo a SINISTRA */
+.service-strip:nth-child(odd) .service-text {
+  padding-left: 0;   /* vicino al bordo pagina */
+  padding-right: 5rem;    /* distanza dalla foto */
+}
+
+/* immagine a SINISTRA → testo a DESTRA */
+.service-strip:nth-child(even) .service-text {
+  padding-left: 5rem;     /* distanza dalla foto */
+  padding-right: 0;  /* vicino al bordo pagina */
+}
+
+/* default: immagine a destra */
+.service-strip .service-image {
+  right: 0;
+}
+
+/* sezioni pari: immagine a sinistra */
+.service-strip:nth-child(even) .service-image {
+  left: 0;
+  right: auto;
+}
+
 /* ===== MOBILE ===== */
 @media (max-width: 992px) {
   .service-strip {
@@ -237,26 +306,37 @@ header{
   .service-strip .inner {
     grid-template-columns: 1fr;
     padding: 3rem 2rem;
-    text-align: center;
   }
 
   .service-image {
     position: relative;
     width: 100%;
     height: 260px;
-    order: -1; /* immagine sopra il testo */
+    order: -1;
   }
 
   .service-text {
     padding: 0;
-    margin: auto;
     text-align: center;
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 992px) {
+  .service-strip .inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .service-text {
+    margin: auto;
   }
 
   .service-image img {
     height: 280px;
   }
 }
+
 
 /* ================= FOOTER ================= */
 footer{
@@ -275,7 +355,7 @@ footer{
 }
   
 .footer-logo {
-  max-width: 280px;
+  max-width: 280px;   /* regolabile */
   width: 100%;
   margin-bottom: 1.5rem;
   display: block;
@@ -329,6 +409,7 @@ footer{
   width: 20px;
 }
 
+  
 </style>
 </head>
 
