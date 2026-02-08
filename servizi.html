@@ -409,6 +409,68 @@ footer{
   width: 20px;
 }
 
+
+
+  /* ===== WHY SECTION (uguale alla Home) ===== */
+.why-section {
+  margin-top: 4rem;
+  padding: 2rem 2rem;
+}
+
+.why-section h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--green);
+  font-size: 2.6rem;
+  letter-spacing: 1px;
+}
+
+.why-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap:2rem;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.why-card {
+  background:#f4f4f4;
+  padding:1.5rem;
+  border-radius:8px;
+  text-align:center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor:pointer;
+}
+
+.why-card i {
+  font-size:2rem;
+  color: var(--green);
+  margin-bottom:0.8rem;
+}
+
+.why-card h4 {
+  font-size:1.2rem;
+  margin-bottom:0.5rem;
+}
+
+.why-card p {
+  font-size:1.15rem;
+  line-height:1.7;
+  color: var(--blue);
+}
+
+.why-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  background: var(--green);
+  color:#fff;
+}
+
+.why-card:hover p {
+  color:#fff;
+}
+
+  
   
 </style>
 </head>
@@ -544,6 +606,40 @@ footer{
 
 </section>
 
+
+
+<!-- ===== PERCHÉ SCEGLIERE MANAGECH ===== -->
+<section class="why-section">
+  <h2>Perché scegliere MANAGECH</h2>
+
+  <div class="why-grid">
+    <div class="why-card">
+      <i class="fas fa-lightbulb"></i>
+      <h4>Soluzioni innovative</h4>
+      <p>Offriamo approcci creativi e personalizzati per massimizzare il valore</p>
+    </div>
+
+    <div class="why-card">
+      <i class="fas fa-chart-line"></i>
+      <h4>Risultati misurabili</h4>
+      <p>Monitoriamo ogni intervento con indicatori chiari per garantire performance concrete</p>
+    </div>
+
+    <div class="why-card">
+      <i class="fas fa-users"></i>
+      <h4>Team multidisciplinare</h4>
+      <p>Professionisti con competenze tecniche, economiche e gestionali sempre a disposizione</p>
+    </div>
+
+    <div class="why-card">
+      <i class="fas fa-shield-alt"></i>
+      <h4>Affidabilità e trasparenza</h4>
+      <p>Operiamo con massima trasparenza, rispettando tempi, costi e obiettivi concordati</p>
+    </div>
+  </div>
+</section>
+
+  
 <!-- ================= FOOTER ================= -->
 <footer>
   <div class="footer-inner">
