@@ -764,22 +764,53 @@ footer{
   color: #fff;
 }
 
-/* MOBILE: flusso verticale */
-@media (max-width: 992px) {
-  .process-row {
-    flex-direction: column;
+@media (max-width: 768px){
+
+  /* ===== PROCESS FLOW MOBILE FIX ===== */
+
+  .process-wrapper{
     gap: 3rem;
   }
 
-  .process-arrow {
-    transform: rotate(90deg);
+  .process-row{
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
   }
 
-  .process-arrow::after {
-    width: 25px;
-    left: -25px;
+  .process-step{
+    width: 100%;
+    align-items: center;
   }
+
+  .step-box{
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* descrizione sotto il box non più assoluta */
+  .step-box span{
+    position: static;
+    transform: none;
+    width: 100%;
+    margin-top: 0.8rem;
+  }
+
+  /* nasconde le frecce orizzontali */
+  .process-arrow{
+    display: none;
+  }
+
+  /* aggiunge freccia verticale sotto ogni step tranne l’ultimo */
+  .process-step:not(:last-child)::after{
+    content: "↓";
+    font-size: 2rem;
+    color: var(--green);
+    margin-top: 2rem;
+  }
+
 }
+
 /* ===== SPAZIATURA COERENTE TRA SEZIONI ===== */
 .central-section,
 .form-section,
