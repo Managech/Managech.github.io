@@ -50,17 +50,6 @@ header{
   justify-content:space-between;
 }
 
-.logo a{
-  display:flex;
-  align-items:center;
-  gap:.8rem;
-  color:var(--green);
-  text-decoration:none;
-  font-weight:700;
-  font-size:1.3rem;
-  letter-spacing:1px;
-}
-
 .logo img{
   height:54px;
 }
@@ -125,21 +114,19 @@ header{
   color:var(--gray);
 }
 
-  
 /* ================= SERVIZI SECTION ================= */
-
 .services-wrapper {
   width: 100%;
 }
 
-/* singola fascia */
 .service-strip {
   min-height: 48vh;
   display: flex;
   align-items: center;
+  position: relative;
+  overflow: hidden;
 }
 
-/* colori */
 .service-strip.blue {
   background: var(--blue);
   color: #fff;
@@ -150,193 +137,136 @@ header{
   color: var(--blue);
 }
 
-/* griglia interna */
-.service-strip .inner {
-  max-width: 100%;
-  margin: auto;
-  padding: 5rem 2rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-}
-
-/* ===== IMMAGINI NELLA GRIGLIA ===== */
-.service-strip .inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* due colonne uguali */
-  gap: 4rem;
-  align-items: center;
-}
-
-/* immagine normale nella colonna */
-.service-image {
-  position: relative; /* normale, non assoluto */
-  width: 100%;
-  height: 100%;
-}
-
-/* inversione strip pari */
-.service-strip:nth-child(even) .service-text {
-  grid-column: 2;
-}
-
-.service-strip:nth-child(even) .service-image {
-  grid-column: 1;
-}
-
-  
-/* ===== INVERSIONE COLONNE STRIP PARI ===== */
-
-/* default: testo prima, immagine dopo */
-.service-text {
-  order: 1;
-}
-
-.service-image {
-  order: 2;
-}
-
-/* strip pari: immagine prima, testo dopo */
-.service-strip:nth-child(even) .service-image {
-  order: 1;
-}
-
-.service-strip:nth-child(even) .service-text {
-  order: 2;
-}
-
-
-/* testo */
-.service-text {
-  max-width: none;          /* niente limite */
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;  /* centro verticale */
-  align-items: flex-start; /* or center */
-}
-
-.service-icon-large {
-  font-size: 2.4rem;
-  color: var(--green);
-  margin-bottom: 1.2rem;
-}
-
-.service-text h3 {
-  font-size: 2.6rem;
-  font-weight: 700;
-  color: var(--green);
-  margin-bottom: 1.2rem;
-  letter-spacing: 1px;
-}
-
-.service-text p {
-  font-size: 1.15rem;
-  line-height: 1.7;
-  opacity: 0.95;
-  text-align: justify;
-}
-
-/* ===== STRUTTURA IMMAGINE FULL-HEIGHT ===== */
-
-.service-strip {
-  position: relative;
-  overflow: hidden;
-}
-
-/* griglia interna */
 .service-strip .inner {
   max-width: 1400px;
   margin: auto;
   padding: 3.5rem 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 4rem;
   align-items: center;
 }
 
-
-  
-/* immagine vera e propria */
-.service-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* ===== POSIZIONAMENTO ===== */
-/* ===== PADDING ASIMMETRICO TESTO ===== */
-
-/* reset base */
 .service-text {
-  padding-top: 0;
-  padding-bottom: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top:0;
+  padding-bottom:0;
 }
 
-/* immagine a DESTRA → testo a SINISTRA */
-.service-strip:nth-child(odd) .service-text {
-  padding-left: 0;   /* vicino al bordo pagina */
-  padding-right: 5rem;    /* distanza dalla foto */
+.service-text h3 {
+  font-size:2.6rem;
+  font-weight:700;
+  color: var(--green);
+  margin-bottom:1.2rem;
+  letter-spacing:1px;
 }
 
-/* immagine a SINISTRA → testo a DESTRA */
+.service-text p {
+  font-size:1.15rem;
+  line-height:1.7;
+  opacity:0.95;
+  text-align: justify;
+}
+
+/* inversione strip pari */
 .service-strip:nth-child(even) .service-text {
-  padding-left: 5rem;     /* distanza dalla foto */
-  padding-right: 0;  /* vicino al bordo pagina */
+  grid-column: 2;
+  order: 2;
+  padding-left:5rem;
+  padding-right:0;
 }
 
-/* default: immagine a destra */
-.service-strip .service-image {
-  right: 0;
-}
-
-/* sezioni pari: immagine a sinistra */
 .service-strip:nth-child(even) .service-image {
-  left: 0;
-  right: auto;
+  grid-column:1;
+  order:1;
+  left:0;
+  right:auto;
 }
 
-/* ===== MOBILE ===== */
-@media (max-width: 992px) {
-  .service-strip {
-    min-height: auto;
-  }
-
-  .service-strip .inner {
-    grid-template-columns: 1fr;
-    padding: 3rem 2rem;
-  }
-
-  .service-image {
-    position: relative;
-    width: 100%;
-    height: 260px;
-    order: -1;
-  }
-
-  .service-text {
-    padding: 0;
-    text-align: center;
-  }
+.service-strip:nth-child(odd) .service-text {
+  padding-left:0;
+  padding-right:5rem;
 }
 
-/* ===== MOBILE ===== */
-@media (max-width: 992px) {
-  .service-strip .inner {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .service-text {
-    margin: auto;
-  }
-
-  .service-image img {
-    height: 280px;
-  }
+.service-strip:nth-child(odd) .service-image {
+  right:0;
 }
 
+.service-image {
+  width:100%;
+  height:100%;
+  order:2;
+}
+
+.service-image img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* ================= WHY SECTION ================= */
+.why-section {
+  margin-top: 4rem;
+  padding: 2rem 2rem;
+}
+
+.why-section h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--green);
+  font-size: 2.6rem;
+  letter-spacing:1px;
+}
+
+.why-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap:2rem;
+  max-width:1400px;
+  margin:auto;
+}
+
+.why-card {
+  background:#f4f4f4;
+  padding:1.5rem;
+  border-radius:8px;
+  text-align:center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor:pointer;
+}
+
+.why-card i {
+  font-size:2rem;
+  color: var(--green);
+  margin-bottom:.8rem;
+}
+
+.why-card h4 {
+  font-size:1.2rem;
+  margin-bottom:.5rem;
+}
+
+.why-card p {
+  font-size:1.15rem;
+  line-height:1.7;
+  color: var(--blue);
+}
+
+.why-card:hover {
+  transform: translateY(-6px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.12);
+  background: var(--green);
+  color:#fff;
+}
+
+.why-card:hover p {
+  color:#fff;
+}
 
 /* ================= FOOTER ================= */
 footer{
@@ -355,7 +285,7 @@ footer{
 }
   
 .footer-logo {
-  max-width: 280px;   /* regolabile */
+  max-width: 280px;
   width: 100%;
   margin-bottom: 1.5rem;
   display: block;
@@ -367,21 +297,14 @@ footer{
   font-size:1.6rem;
 }
 
-.footer-brand h4{
-  margin:.3rem 0 1.5rem;
-  font-weight:400;
-  color:#aaa;
-}
-
-.footer-brand i{
-  color:var(--green);
-  margin-right:8px;
+.footer-brand p {
+  line-height:1.8;
 }
 
 .footer-links ul{
   list-style:none;
   padding:0;
-  margin: 0;
+  margin:0;
 }
 
 .footer-links li{
@@ -399,81 +322,10 @@ footer{
   font-size:.75rem;
   color:#888;
 }
-  
-.footer-brand p {
-  line-height: 1.8;
-}
-
-.footer-brand p i {
-  display: inline-block;
-  width: 20px;
-}
-
-
-
-  /* ===== WHY SECTION (uguale alla Home) ===== */
-.why-section {
-  margin-top: 4rem;
-  padding: 2rem 2rem;
-}
-
-.why-section h2 {
-  text-align: center;
-  margin-bottom: 3rem;
-  color: var(--green);
-  font-size: 2.6rem;
-  letter-spacing: 1px;
-}
-
-.why-grid {
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap:2rem;
-  max-width: 1400px;
-  margin: auto;
-}
-
-.why-card {
-  background:#f4f4f4;
-  padding:1.5rem;
-  border-radius:8px;
-  text-align:center;
-  transition: transform 0.3s, box-shadow 0.3s;
-  cursor:pointer;
-}
-
-.why-card i {
-  font-size:2rem;
-  color: var(--green);
-  margin-bottom:0.8rem;
-}
-
-.why-card h4 {
-  font-size:1.2rem;
-  margin-bottom:0.5rem;
-}
-
-.why-card p {
-  font-size:1.15rem;
-  line-height:1.7;
-  color: var(--blue);
-}
-
-.why-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-  background: var(--green);
-  color:#fff;
-}
-
-.why-card:hover p {
-  color:#fff;
-}
 
 /* ================= MOBILE GLOBAL ================= */
 @media (max-width: 768px){
 
-  /* HEADER */
   header{
     height:70px;
   }
@@ -483,10 +335,66 @@ footer{
   }
 
   .logo img {
-    height:42px; /* leggermente più piccolo su mobile */
+    height:42px;
   }
 
-  /* HERO */
+  .hamburger{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    cursor:pointer;
+  }
+
+  .hamburger span{
+    width:25px;
+    height:3px;
+    background:#fff;
+    transition:.4s;
+  }
+
+  .hamburger.active span:nth-child(1){
+    transform:rotate(45deg) translate(5px,5px);
+  }
+
+  .hamburger.active span:nth-child(2){
+    opacity:0;
+  }
+
+  .hamburger.active span:nth-child(3){
+    transform:rotate(-45deg) translate(6px,-6px);
+  }
+
+  .mobile-menu{
+    position:fixed;
+    top:70px;                
+    left:0;
+    width:100%;
+    background:var(--blue);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:1.8rem;
+    padding:2rem 0;
+    transform:translateY(-120%);
+    transition:transform .4s ease;
+    z-index:999;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+  }
+
+  .mobile-menu.active{
+    transform:translateY(0);
+  }
+
+  .mobile-menu a{
+    color:#fff;
+    font-size:1.4rem;
+    text-decoration:none;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
   .hero{
     margin-top:70px;
     min-height:60vh;
@@ -501,68 +409,64 @@ footer{
 
   .hero-subtitle{
     font-size:.95rem;
-    letter-spacing:0.5px;
+    letter-spacing:.5px;
     line-height:1.6;
   }
 
-  /* SERVIZI - STRIP SINGOLE */
   .service-strip {
-    min-height: auto;
+    min-height:auto;
     flex-direction: column !important;
-    padding: 2rem 1.5rem;
+    padding:2rem 1.5rem;
   }
 
   .service-strip .inner {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 0;
+    grid-template-columns:1fr;
+    gap:2rem;
+    padding:0;
   }
 
   .service-text {
-    padding: 0;
-    text-align: center;
-    margin: auto;
-    order: 2 !important;
+    padding:0;
+    text-align:center;
+    margin:auto;
+    order:2 !important;
   }
 
   .service-image {
-    width: 100%;
-    height: 260px;
-    order: 1 !important;
+    width:100%;
+    height:260px;
+    order:1 !important;
   }
 
   .service-image img {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
+    width:100%;
+    height:280px;
+    object-fit:cover;
   }
 
   .service-text h3 {
-    font-size: 1.6rem;
+    font-size:1.6rem;
   }
 
   .service-text p {
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size:1rem;
+    line-height:1.6;
   }
 
-  /* WHY SECTION */
   .why-section {
-    padding: 2rem 1.5rem;
+    padding:2rem 1.5rem;
   }
 
   .why-section h2 {
-    font-size: 1.8rem;
+    font-size:1.8rem;
   }
 
   .why-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns:1fr;
+    gap:1.5rem;
   }
 
 }
-  
-  
 </style>
 </head>
 
@@ -570,6 +474,14 @@ footer{
 
 <!-- ================= HEADER ================= -->
 <header>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="chi-siamo.html">Chi siamo</a>
+    <a href="servizi.html">Servizi</a>
+    <a href="contatti.html">Contatti</a>
+    <a href="lavora-con-noi.html">Lavora con noi</a>
+    <a href="case-study.html">Case Study</a>
+  </div>
+
   <nav class="navbar">
     <div class="logo">
       <a href="index.html">
@@ -581,8 +493,13 @@ footer{
       <li><a href="servizi.html">Servizi</a></li>
       <li><a href="contatti.html">Contatti</a></li>
       <li><a href="lavora-con-noi.html">Lavora con noi</a></li>
-      <li><a href="case-study.html#">Case Study</a></li>
+      <li><a href="case-study.html">Case Study</a></li>
     </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </nav>
 </header>
 
@@ -618,7 +535,7 @@ footer{
         <p>Supportiamo le aziende nella preparazione completa della documentazione di gara, dalla strategia alla stesura dei contenuti, assicurando conformità normativa e massimizzazione delle possibilità di successo. Accompagniamo il cliente in tutte le fasi, dal coordinamento interno alla gestione delle tempistiche, offrendo competenze specialistiche per gare complesse e progetti di alto valore.</p>
       </div>
       <div class="service-image">
-        <img src="images/gara.jpg" alt="preperazione gare">
+        <img src="images/gara.jpg" alt="preparazione gare">
       </div>
     </div>
   </section>
@@ -678,7 +595,7 @@ footer{
         <p>Progettiamo soluzioni tecnologiche integrate per garantire continuità operativa, interoperabilità e scalabilità dei sistemi aziendali. Connettiamo infrastrutture, applicazioni e processi, semplificando la gestione IT e favorendo un flusso informativo coerente e sicuro. L’obiettivo è creare ecosistemi digitali robusti che supportino la crescita e l’innovazione dell’impresa.</p>
       </div>
       <div class="service-image">
-        <img src="images/system-integration2.jpg" alt="">
+        <img src="images/system-integration2.jpg" alt="system integration">
       </div>
     </div>
   </section>
@@ -690,38 +607,32 @@ footer{
         <p>Sviluppiamo programmi formativi executive e tecnici personalizzati per team e dirigenti, mirati a sviluppare competenze strategiche, digitali e manageriali. Dai workshop pratici alla formazione su strumenti avanzati, garantiamo un apprendimento efficace e immediatamente applicabile, rafforzando la capacità decisionale, la leadership e la cultura aziendale.</p>
       </div>
       <div class="service-image">
-        <img src="images/training.jpg" alt="">
+        <img src="images/training.jpg" alt="formazione">
       </div>
     </div>
   </section>
 
 </section>
 
-
-
-<!-- ===== PERCHÉ SCEGLIERE MANAGECH ===== -->
+<!-- ===== WHY SECTION ===== -->
 <section class="why-section">
   <h2>Perché scegliere MANAGECH</h2>
-
   <div class="why-grid">
     <div class="why-card">
       <i class="fas fa-lightbulb"></i>
       <h4>Soluzioni innovative</h4>
       <p>Offriamo approcci creativi e personalizzati per massimizzare il valore</p>
     </div>
-
     <div class="why-card">
       <i class="fas fa-chart-line"></i>
       <h4>Risultati misurabili</h4>
       <p>Monitoriamo ogni intervento con indicatori chiari per garantire performance concrete</p>
     </div>
-
     <div class="why-card">
       <i class="fas fa-users"></i>
       <h4>Team multidisciplinare</h4>
       <p>Professionisti con competenze tecniche, economiche e gestionali sempre a disposizione</p>
     </div>
-
     <div class="why-card">
       <i class="fas fa-shield-alt"></i>
       <h4>Affidabilità e trasparenza</h4>
@@ -730,36 +641,44 @@ footer{
   </div>
 </section>
 
-  
 <!-- ================= FOOTER ================= -->
 <footer>
   <div class="footer-inner">
-  <div class="footer-brand">
-    <img src="images/1-4.png" alt="MANAGECH" class="footer-logo">
-    <p>
-      <i class="fas fa-map-marker-alt"></i> Piazza G. Mazzini 27, 00195 Roma<br>
-      <i class="fas fa-phone"></i> +39 349 390 7663<br>
-      <i class="fas fa-envelope"></i> segreteria@managech.com
-    </p>
+    <div class="footer-brand">
+      <img src="images/1-4.png" alt="MANAGECH" class="footer-logo">
+      <p>
+        <i class="fas fa-map-marker-alt"></i> Piazza G. Mazzini 27, 00195 Roma<br>
+        <i class="fas fa-phone"></i> +39 349 390 7663<br>
+        <i class="fas fa-envelope"></i> segreteria@managech.com
+      </p>
+    </div>
+    <div class="footer-links">
+      <ul>
+        <li><a href="chi-siamo.html">Chi siamo</a></li>
+        <li><a href="servizi.html">Servizi</a></li>
+        <li><a href="contatti.html">Contatti</a></li>
+        <li><a href="lavora-con-noi.html">Lavora con noi</a></li>
+        <li><a href="case-study.html">Case Study</a></li>
+        <li><a href="informativa-privacy.html">Informativa Privacy</a></li>
+        <li><a href="cookie-policy.html">Cookie Policy</a></li>
+      </ul>
+    </div>
   </div>
-
-  <div class="footer-links">
-    <ul>
-      <li><a href="chi-siamo.html">Chi siamo</a></li>
-      <li><a href="servizi.html">Servizi</a></li>
-      <li><a href="contatti.html">Contatti</a></li>
-      <li><a href="lavora-con-noi.html">Lavora con noi</a></li>
-      <li><a href="case-study.html">Case Study</a></li>
-      <li><a href="informativa-privacy.html">Informativa Privacy</a></li>
-      <li><a href="cookie-policy.html">Cookie Policy</a></li>
-    </ul>
+  <div class="footer-bottom">
+    © 2026 MANAGECH - INGEGNERIA & MANAGEMENT STUDIO ASSOCIATO | P. IVA 18387251004
   </div>
-</div>
-
-<div class="footer-bottom">
-  © 2026 MANAGECH - INGEGNERIA & MANAGEMENT STUDIO ASSOCIATO | P. IVA 18387251004
-</div>
-
 </footer>
+
+<!-- ================= SCRIPT HAMBURGER ================= -->
+<script>
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  mobileMenu.classList.toggle("active");
+});
+</script>
+
 </body>
 </html>
