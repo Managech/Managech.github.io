@@ -49,6 +49,70 @@ header{
   align-items:center;
   justify-content:space-between;
 }
+/* ===== MOBILE MENU ===== */
+.mobile-menu{
+  position: fixed;
+  top: 90px; /* sotto l'header */
+  left: 0;
+  width: 100%;
+  background: var(--blue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.8rem;
+  padding: 2rem 0;
+  transform: translateY(-120%);
+  transition: transform .4s ease;
+  z-index: 999;
+}
+
+.mobile-menu a{
+  color: #fff;
+  font-size: 1.4rem;
+  text-decoration: none;
+}
+
+.mobile-menu.active{
+  transform: translateY(0);
+}
+
+/* Hamburger */
+.hamburger{
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.hamburger span{
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  transition: .4s;
+}
+
+/* Animazione dell'hamburger quando attivo */
+.hamburger.active span:nth-child(1){
+  transform: rotate(45deg) translate(5px,5px);
+}
+
+.hamburger.active span:nth-child(2){
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3){
+  transform: rotate(-45deg) translate(6px,-6px);
+}
+
+/* Mostriamo hamburger solo su mobile */
+@media (max-width: 768px){
+  .hamburger{
+    display: flex;
+  }
+  .nav-links{
+    display: none;
+  }
+}
 
 .logo a{
   display:flex;
@@ -570,19 +634,36 @@ footer{
 
 <!-- ================= HEADER ================= -->
 <header>
+  <!-- Menu mobile nascosto -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="chi-siamo.html">Chi siamo</a>
+    <a href="servizi.html">Servizi</a>
+    <a href="contatti.html">Contatti</a>
+    <a href="lavora-con-noi.html">Lavora con noi</a>
+    <a href="case-study.html">Case Study</a>
+  </div>
+
   <nav class="navbar">
     <div class="logo">
       <a href="index.html">
-        <img src="images/1-4.png">
+        <img src="images/1-4.png" alt="MANAGECH">
       </a>
     </div>
+
     <ul class="nav-links">
       <li><a href="chi-siamo.html">Chi siamo</a></li>
       <li><a href="servizi.html">Servizi</a></li>
       <li><a href="contatti.html">Contatti</a></li>
       <li><a href="lavora-con-noi.html">Lavora con noi</a></li>
-      <li><a href="case-study.html#">Case Study</a></li>
+      <li><a href="case-study.html">Case Study</a></li>
     </ul>
+
+    <!-- Hamburger -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </nav>
 </header>
 
@@ -761,5 +842,16 @@ footer{
 </div>
 
 </footer>
+
+  <script>
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  mobileMenu.classList.toggle("active");
+});
+</script>
+
 </body>
 </html>
