@@ -49,70 +49,6 @@ header{
   align-items:center;
   justify-content:space-between;
 }
-/* ===== MOBILE MENU ===== */
-.mobile-menu{
-  position: fixed;
-  top: 90px; /* sotto l'header */
-  left: 0;
-  width: 100%;
-  background: var(--blue);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.8rem;
-  padding: 2rem 0;
-  transform: translateY(-120%);
-  transition: transform .4s ease;
-  z-index: 999;
-}
-
-.mobile-menu a{
-  color: #fff;
-  font-size: 1.4rem;
-  text-decoration: none;
-}
-
-.mobile-menu.active{
-  transform: translateY(0);
-}
-
-/* Hamburger */
-.hamburger{
-  display: none;
-  flex-direction: column;
-  gap: 6px;
-  cursor: pointer;
-}
-
-.hamburger span{
-  width: 25px;
-  height: 3px;
-  background: #fff;
-  transition: .4s;
-}
-
-/* Animazione dell'hamburger quando attivo */
-.hamburger.active span:nth-child(1){
-  transform: rotate(45deg) translate(5px,5px);
-}
-
-.hamburger.active span:nth-child(2){
-  opacity: 0;
-}
-
-.hamburger.active span:nth-child(3){
-  transform: rotate(-45deg) translate(6px,-6px);
-}
-
-/* Mostriamo hamburger solo su mobile */
-@media (max-width: 768px){
-  .hamburger{
-    display: flex;
-  }
-  .nav-links{
-    display: none;
-  }
-}
 
 .logo a{
   display:flex;
@@ -622,6 +558,76 @@ footer{
   .why-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+
+}
+
+/* ================= HAMBURGER ================= */
+
+.hamburger{
+  display:none;
+  flex-direction:column;
+  gap:6px;
+  cursor:pointer;
+}
+
+.hamburger span{
+  width:25px;
+  height:3px;
+  background:#fff;
+  transition:.4s;
+}
+
+.hamburger.active span:nth-child(1){
+  transform:rotate(45deg) translate(5px,5px);
+}
+
+.hamburger.active span:nth-child(2){
+  opacity:0;
+}
+
+.hamburger.active span:nth-child(3){
+  transform:rotate(-45deg) translate(6px,-6px);
+}
+
+/* MOBILE MENU */
+
+.mobile-menu{
+  position:fixed;
+  top:70px;                /* parte sotto header mobile */
+  left:0;
+  width:100%;
+  background:var(--blue);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:1.8rem;
+  padding:2rem 0;
+  transform:translateY(-120%);
+  transition:transform .4s ease;
+  z-index:999;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+.mobile-menu.active{
+  transform:translateY(0);
+}
+
+.mobile-menu a{
+  color:#fff;
+  font-size:1.4rem;
+  text-decoration:none;
+}
+
+/* NASCONDE MENU DESKTOP SU MOBILE */
+@media(max-width:768px){
+
+  .nav-links{
+    display:none;
+  }
+
+  .hamburger{
+    display:flex;
   }
 
 }
