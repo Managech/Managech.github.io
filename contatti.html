@@ -543,6 +543,26 @@ footer a:hover{
   }
 
 }
+@media (max-width: 768px){
+
+  /* Contenitore telefono */
+  .form-wrapper form div[style*="display:flex"]{
+    display: flex !important;
+    gap: 0.5rem;
+  }
+
+  /* Prefisso più stretto */
+  .form-wrapper select[name="prefisso"]{
+    flex: 0 0 35%;   /* occupa solo il 35% */
+    max-width: 35%;
+  }
+
+  /* Numero telefono più largo */
+  .form-wrapper input[name="telefono"]{
+    flex: 1;         /* occupa tutto lo spazio restante */
+  }
+
+}
 
   
 </style>
