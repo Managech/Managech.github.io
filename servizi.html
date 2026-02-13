@@ -245,6 +245,34 @@ header{
   position: relative;
   overflow: hidden;
 }
+
+/* ===== ALTEZZA UNIFORME PER TUTTE LE SEZIONI ===== */
+.service-strip {
+  display: flex;           /* già presente */
+  align-items: stretch;    /* cambia da center a stretch */
+}
+
+.service-strip .inner {
+  display: grid;           /* già presente */
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;    /* forza le colonne ad occupare tutta l’altezza */
+}
+
+.service-strip .service-text,
+.service-strip .service-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* mantiene testo centrato verticalmente */
+  height: 100%;            /* occupa tutta l’altezza della sezione */
+}
+
+.service-strip .service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* riempie tutta la colonna senza deformare */
+}
+
+  
 /* Allineamento altezza uniforme desktop */
 @media (min-width: 993px) {
   .service-strip {
