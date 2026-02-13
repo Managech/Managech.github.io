@@ -245,6 +245,24 @@ header{
   position: relative;
   overflow: hidden;
 }
+/* Allineamento altezza uniforme desktop */
+@media (min-width: 993px) {
+  .service-strip {
+    align-items: stretch; /* forza altezza uguale tra testo e immagine */
+  }
+
+  .service-strip .inner {
+    align-items: stretch;
+  }
+
+  .service-strip .service-text,
+  .service-strip .service-image {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* mantiene testo centrato verticalmente */
+  }
+}
 
 /* griglia interna */
 .service-strip .inner {
