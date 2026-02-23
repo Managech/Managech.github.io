@@ -2,10 +2,11 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<title>MANAGECH – Home</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="format-detection" content="telephone=no">
-  
+<meta name="description" content="MANAGECH – Consulenza strategica, gestione dei processi e innovazione tecnologica per aziende, consorzi e professionisti.">
+<title>MANAGECH – Home</title>
+
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -13,154 +14,214 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-:root{
-  --green:#1fa37a;
-  --blue:#0b1f33;
-  --gray:#d6d6d6;
-  --white:#ffffff;
+/* ================= CSS VARIABLES ================= */
+:root {
+  --green: #1fa37a;
+  --blue:  #0b1f33;
+  --gray:  #d6d6d6;
+  --white: #ffffff;
 }
 
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+/* ================= RESET ================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-body{
-  font-family:'Montserrat',sans-serif;
-  background:#fff;
-  color:var(--blue);
-}
-  .form-tags{
-  display:flex;
-  gap:1rem;
-  margin-bottom:2rem;
-  flex-wrap:wrap;
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #fff;
+  color: var(--blue);
 }
 
-.form-tags span{
-  background:#fff;
-  border:1px solid var(--green);
-  color:var(--blue);
-  padding:.55rem 1.3rem;
-  border-radius:30px;
-  font-size:.8rem;
-  display:flex;
-  align-items:center;
-  gap:.5rem;
-  font-weight:500;
+/* ================= FORM TAGS ================= */
+.form-tags {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
 }
 
-.form-tags i{
-  color:var(--green);
+.form-tags span {
+  background: #fff;
+  border: 1px solid var(--green);
+  color: var(--blue);
+  padding: .55rem 1.3rem;
+  border-radius: 30px;
+  font-size: .8rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-weight: 500;
+}
+
+.form-tags i {
+  color: var(--green);
 }
 
 /* ================= HEADER ================= */
-header{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:90px;
-  background:var(--blue);
-  z-index:1000;
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  background: var(--blue);
+  z-index: 1000;
 }
 
-.navbar{
-  height:100%;
-  padding:0 3rem;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+.navbar {
+  height: 100%;
+  padding: 0 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.logo a{
-  display:flex;
-  align-items:center;
-  gap:.8rem;
-  color:var(--green);
-  text-decoration:none;
-  font-weight:700;
-  font-size:1.3rem;
-  letter-spacing:1px;
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  color: var(--green);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
 }
 
-.logo img{
-  height:54px;
-  display:block;
+.logo img {
+  height: 54px;
+  display: block;
 }
 
-.nav-links{
-  list-style:none;
-  display:flex;
-  gap:2rem;
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
 }
 
-.nav-links a{
-  color:#fff;
-  text-decoration:none;
-  font-size:.95rem;
-  position:relative;
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: .95rem;
+  position: relative;
 }
 
-.nav-links a::after{
-  content:"";
-  position:absolute;
-  bottom:-6px;
-  left:0;
-  width:0;
-  height:2px;
-  background:var(--green);
-  transition:.3s;
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--green);
+  transition: .3s;
 }
 
-.nav-links a:hover::after{
-  width:100%;
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ================= HAMBURGER ================= */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  transition: .4s;
+}
+
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+
+/* ================= MOBILE MENU ================= */
+.mobile-menu {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  background: var(--blue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.8rem;
+  padding: 2rem 0;
+  transform: translateY(-120%);
+  transition: transform .4s ease;
+  z-index: 999;
+  box-shadow: 0 10px 30px rgba(0,0,0,.3);
+}
+
+.mobile-menu.active {
+  transform: translateY(0);
+}
+
+.mobile-menu a {
+  color: #fff;
+  font-size: 1.4rem;
+  text-decoration: none;
 }
 
 /* ================= HERO ================= */
-.hero{
-  margin-top:90px;
-  min-height:75vh;
+.hero {
+  margin-top: 90px;
+  min-height: 75vh;
   background:
-    linear-gradient(rgba(11,31,51,.75),rgba(11,31,51,.75)),
-    url("images/hero-bg.jpg") center/cover no-repeat;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:3rem 2rem;
+    linear-gradient(rgba(11,31,51,.75), rgba(11,31,51,.75)),
+    url("images/hero-bg.jpg") center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 2rem;
 }
 
-.hero-content{
-  max-width:1100px;
+.hero-content {
+  max-width: 1100px;
 }
 
-.hero-title{
-  font-size:5.6rem;
-  font-weight:800;
-  letter-spacing:6px;
-  color:var(--green);
+.hero-title {
+  font-size: 5.6rem;
+  font-weight: 800;
+  letter-spacing: 6px;
+  color: var(--green);
 }
 
-.hero-subtitle{
-  margin-top:.8rem;
-  font-size:1.1rem;
-  letter-spacing:4px;
-  color:var(--gray);
+.hero-subtitle {
+  margin-top: .8rem;
+  font-size: 1.1rem;
+  letter-spacing: 4px;
+  color: var(--gray);
 }
 
-.hero-claim{
-  margin-top:3rem;
-  font-size:3rem;
-  font-weight:500;
-  color:var(--gray);
-  line-height:1.6;
+.hero-claim {
+  margin-top: 3rem;
+  font-size: 3rem;
+  font-weight: 500;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+/* ================= GLOBAL HEADINGS ================= */
+h2 {
+  color: var(--green);
+  font-size: 2.6rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  font-weight: 700;
 }
 
 /* ================= CONTENT BLOCKS ================= */
-.section{
-  padding:6rem 2rem;
+.section {
+  padding: 6rem 2rem;
 }
 
 .block {
@@ -177,100 +238,129 @@ header{
   height: 360px;
 }
 
-.block:nth-child(even){
-  flex-direction:row-reverse;
+.block:nth-child(even) {
+  flex-direction: row-reverse;
 }
 
-.block-text{
-  flex:1;
+.block-text {
+  flex: 1;
 }
 
-.block-text h3{
-  margin:0 0 1.2rem;
-  font-size:2.6rem;
-  color:var(--green);
-  letter-spacing:2px;
+.block-text h3 {
+  margin: 0 0 1.2rem;
+  font-size: 2.6rem;
+  color: var(--green);
+  letter-spacing: 2px;
 }
 
-.block-text p{
-  font-size:1.15rem;
-  line-height:1.7;
+.block-text p {
+  font-size: 1.15rem;
+  line-height: 1.7;
 }
 
-.block-text-form{
-  font-size:1.15rem;
-  line-height:1.7;
+.block-text-form {
+  font-size: 1.15rem;
+  line-height: 1.7;
   color: var(--blue);
-  margin-bottom:2rem;
+  margin-bottom: 2rem;
+  max-width: 700px;
 }
 
-/* 🔹 BLOCCO IMMAGINI */
-.block-image img{
-  width:100%;
-  height:360px;
-  object-fit:cover;
-  border-radius:8px;
-  background:#eaeaea;
-  box-shadow:0 15px 40px rgba(0,0,0,.18);
+.block-image img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #eaeaea;
+  box-shadow: 0 15px 40px rgba(0,0,0,.18);
+}
+
+/* ================= BUTTONS ================= */
+.btn-discover {
+  display: inline-block;
+  background: var(--green);
+  color: #fff;
+  padding: .9rem 2rem;
+  font-size: .95rem;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background .3s, transform .3s;
+}
+
+.btn-discover:hover {
+  background: #17845e;
+  transform: translateY(-2px);
 }
 
 /* ================= FORM ================= */
-.form-section{
-  background:#f4f4f4;
-  padding:5rem 2rem;
+.form-section {
+  background: #f4f4f4;
+  padding: 5rem 2rem;
 }
 
-.form-wrapper{
-  max-width:700px;
-  margin:auto;
+.form-wrapper {
+  max-width: 700px;
+  margin: auto;
 }
 
-.form-wrapper p{
-  font-size:1.1rem;
-  margin-bottom:2rem;
-}
-
-.form-wrapper h3 {
+.form-wrapper h2 {
+  text-align: left;
+  margin: 0 0 1.5rem 0;
   font-size: 2.4rem;
-  color: var(--green);
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  line-height: 1.2;
-  letter-spacing: 1px;
 }
 
-form label{
-  display:block;
-  font-size:.85rem;
-  margin-top:1.2rem;
+.form-wrapper p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+form label {
+  display: block;
+  font-size: .85rem;
+  margin-top: 1.2rem;
 }
 
 form input,
-form textarea{
-  width:100%;
-  padding:.7rem;
-  margin-top:.3rem;
-  border:1px solid #ccc;
-  font-family:'Montserrat',sans-serif;
+form textarea {
+  width: 100%;
+  padding: .7rem;
+  margin-top: .3rem;
+  border: 1px solid #ccc;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .9rem;
 }
-    
-form select[name="prefisso"] {
-  padding: 0.65rem 0.7rem;
-  font-family: 'Montserrat', sans-serif; 
-  font-size: 0.85rem;       
-  height: 38px;              
+
+/* ── Phone row ── */
+.phone-row {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  margin-top: .3rem;
+}
+
+.phone-row select {
+  flex: 0 0 auto;
+  padding: .65rem .7rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .85rem;
+  height: 38px;
   line-height: 1.2;
-  border: 1px solid #ccc;     
-  border-radius: 0;           
-  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 0;
   appearance: none;
-  -webkit-appearance: none;    
-  -moz-appearance: none;      
+  -webkit-appearance: none;
+  -moz-appearance: none;
   cursor: pointer;
 }
 
-form textarea{
-  min-height:120px;
+.phone-row input[type="tel"] {
+  flex: 1;
+  margin-top: 0; /* override the global form input margin */
+}
+
+form textarea {
+  min-height: 120px;
 }
 
 form button {
@@ -278,107 +368,28 @@ form button {
   margin-top: 2rem;
   background: var(--green);
   color: #fff;
-  padding: 0.9rem 2rem;
-  font-size: 0.95rem;
+  padding: .9rem 2rem;
+  font-size: .95rem;
   font-weight: 600;
   border-radius: 6px;
   border: none;
   cursor: pointer;
   text-decoration: none;
-  transition: background 0.3s, transform 0.3s;
+  transition: background .3s, transform .3s;
 }
 
 form button:hover {
-  background: #17845e; /* verde leggermente più scuro */
-  transform: translateY(-2px);
-}
-  
-.btn-discover {
-  display: inline-block;
-  background: var(--green);
-  color: #fff;
-  padding: 0.9rem 2rem;
-  font-size: 0.95rem;
-  font-weight: 600;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: background 0.3s, transform 0.3s;
-}
-
-.btn-discover:hover {
-  background: #17845e; /* verde leggermente più scuro */
+  background: #17845e;
   transform: translateY(-2px);
 }
 
-/* ================= FOOTER ================= */
-footer{
-  background:var(--blue);
-  color:#ccc;
-  padding:4rem 2rem 2rem;
-}
-
-.footer-inner{
-  max-width:1200px;
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:3rem;
-}
-  
-.footer-logo {
-  max-width: 280px;   /* regolabile */
-  width: 100%;
-  margin-bottom: 1.5rem;
-  display: block;
-}
-
-.footer-brand h3{
-  margin:0;
-  color:var(--green);
-  font-size:1.6rem;
-}
-
-.footer-brand h4{
-  margin:.3rem 0 1.5rem;
-  font-weight:400;
-  color:#aaa;
-}
-
-.footer-brand i{
-  color:var(--green);
-  margin-right:8px;
-}
-
-.footer-links ul{
-  list-style:none;
-  padding:0;
-  margin: 0;
-}
-
-.footer-links li{
-  margin:.6rem 0;
-}
-
-.footer-links a{
-  color:#ccc;
-  text-decoration:none;
-}
-
-.footer-bottom{
-  text-align:center;
-  margin-top:3rem;
-  font-size:.75rem;
-  color:#888;
-}
-  
 .privacy-check {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 0.6rem;
+  gap: .6rem;
   align-items: start;
   margin-top: 1.5rem;
-  font-size: 0.85rem;
+  font-size: .85rem;
   line-height: 1.4;
   cursor: pointer;
 }
@@ -401,74 +412,127 @@ footer{
   color: var(--green);
   text-decoration: underline;
 }
-  
-.footer-brand p {
-  line-height: 1.8;
+
+/* ================= FOOTER ================= */
+footer {
+  background: var(--blue);
+  color: #ccc;
+  padding: 4rem 2rem 2rem;
 }
 
-.footer-brand p i {
+.footer-inner {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.footer-logo {
+  max-width: 280px;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.footer-brand h3 {
+  margin: 0;
+  color: var(--green);
+  font-size: 1.6rem;
+}
+
+.footer-brand h4 {
+  margin: .3rem 0 1.5rem;
+  font-weight: 400;
+  color: #aaa;
+}
+
+.footer-brand i {
+  color: var(--green);
+  margin-right: 8px;
   display: inline-block;
   width: 20px;
 }
 
-/* ===== BLOCCO CENTRALE HOME ===== */
-.central-block {
-  background:#fff;
-  padding:6rem 2rem;
+.footer-brand p {
+  line-height: 1.8;
 }
 
-/* ===== CENTRAL SECTION ===== */
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin: .6rem 0;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: .75rem;
+  color: #888;
+}
+
+/* ================= CENTRAL SECTION ================= */
 .central-section {
   width: 100%;
-  max-width: 1400px;   
+  max-width: 1400px;
   margin: 0 auto 4rem auto;
-  padding: 0 2rem;     
+  padding: 0 2rem;
 }
 
-  h2 {
-  color: var(--green);
-  font-size: 2.6rem; /* scegli la dimensione che ti piace, ad esempio 2.6rem */
-  margin-bottom: 1.5rem;
-  letter-spacing: 1px;
-  font-weight: 700; /* opzionale, per uniformare il peso */
-}
-
-  .services-section h2 {
-  margin-bottom: 3rem;
-}
-
-  .central-section h2 {
+.central-section h2 {
   text-align: center;
+  margin-top: 4rem;
+  margin-bottom: 3rem;
 }
 
 .central-section h3 {
   color: var(--green);
-  font-size:2.4rem;
-  margin-bottom:1.5rem;
-  letter-spacing:1px;
+  font-size: 2.4rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
 }
 
 .central-section p {
-  font-size:1.1rem;
-  line-height:1.7;
+  font-size: 1.1rem;
+  line-height: 1.7;
   color: var(--blue);
 }
 
 .central-section ul {
   list-style: disc inside;
-  font-size:1.15rem;
-  line-height:1.7;
+  font-size: 1.15rem;
+  line-height: 1.7;
   color: var(--blue);
 }
 
 .central-section ul li {
-  margin-bottom:1rem;
+  margin-bottom: 1rem;
 }
 
-/* ===== SERVIZI GRID PREMIUM (SOLUZIONE 3) ===== */
+/* ================= SERVICES SECTION ================= */
+.services-section {
+  padding: 4rem 0;
+  background-color: #f4f4f4;
+}
+
+.services-section h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* larghezza minima 260px, flessibile */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
 }
@@ -477,77 +541,65 @@ footer{
   background: #fff;
   border-radius: 16px;
   padding: 2rem 1.8rem;
-  min-height: 260px;        /* più alta */
+  min-height: 260px;
   display: flex;
   flex-direction: column;
-  justify-content: center;  /* testo centrato verticalmente */
+  justify-content: center;
   align-items: center;
   text-align: center;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-  transition: all 0.35s ease;
+  box-shadow: 0 12px 30px rgba(0,0,0,.08);
+  transition: all .35s ease;
 }
 
-/* ===== WHY GRID ===== */
-.why-grid {
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap:2rem;
-  margin-top:2rem;
-}
-
-.why-card {
-  background:#f4f4f4;
-  padding:1.5rem;
-  border-radius:8px;
-  text-align:center;
-  transition: transform 0.3s, box-shadow 0.3s;
-  cursor:pointer;
-}
-
-.why-card i {
-  font-size:2rem;
-  color: var(--green);
-  margin-bottom:0.8rem;
-}
-
-.why-card h4 {
-  font-size:1.2rem;
-  margin-bottom:0.5rem;
-}
-
-.why-card p {
-  font-size:1.15rem;
-  line-height:1.7;
-  color: var(--blue);
-}
-
-.why-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+.service-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
   background: var(--green);
-  color:#fff;
 }
 
-.why-card:hover p {
-  color:#fff;
+.service-icon {
+  font-size: 2.2rem;
+  color: var(--green);
+  margin-bottom: 1.2rem;
+  transition: transform .35s ease;
 }
 
-/* Hover effect su immagine */
-.strategic-image div:hover {
-  transform: translateY(-10px) scale(1.02);
+.service-card h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--blue);
+  margin-bottom: .8rem;
 }
 
-/* ===== STRATEGIC SECTION – BLOCCO DEFINITIVO ===== */
+.service-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--blue);
+  opacity: .8;
+}
 
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 22px 55px rgba(0,0,0,.14);
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.12);
+}
+
+/* ================= STRATEGIC SECTION ================= */
 .strategic-section {
   padding: 0;
 }
 
 .strategic-container {
   display: flex;
-  min-height: auto; /* altezza header */
   width: 100%;
 }
 
@@ -557,6 +609,23 @@ footer{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  /* override central-section centering for text alignment */
+  margin: 0;
+  max-width: 50%;
+}
+
+.strategic-text h2 {
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-size: 2.6rem;
+}
+
+.strategic-text p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--blue);
+  margin-bottom: 1rem;
 }
 
 .strategic-image {
@@ -570,97 +639,42 @@ footer{
   display: block;
 }
 
-/* ===== MOBILE ===== */
-@media (max-width: 992px) {
-  .strategic-container {
-    flex-direction: column;
-    min-height: auto;
-  }
-
-  .strategic-image {
-    height: 280px;
-  }
-
-  .strategic-text {
-    padding: 2rem;
-    text-align: center;
-  }
+/* ================= METHODOLOGY ================= */
+.methodology-section {
+  position: relative;
+  padding: 6rem 2rem;
+  overflow: hidden;
 }
 
-.service-card::after {
-  content:"";
+.methodology-section::before {
+  content: "";
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: var(--green);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(31,163,122,.15), transparent 70%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  z-index: 0;
 }
 
-.service-icon {
-  font-size: 2.2rem;
-  color: var(--green);
-  margin-bottom: 1.2rem;
-  transition: transform 0.35s ease;
-}
-
-.service-card h4 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--blue);
-  margin-bottom: 0.8rem;
-}
-
-.service-card p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--blue);
-  opacity: 0.8;
-}
-
-.service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 22px 55px rgba(0,0,0,0.14);
-}
-
-.service-card:hover .service-icon {
-  transform: scale(1.12);
-}
-
- .services-section {
-  padding: 4rem 0;           /* spazio verticale interno */
-  background-color: #f4f4f4; /* sfondo grigio chiaro */
-}
-
-  /* Spaziatura uniforme titoli principali */
-.central-section h2,
-.strategic-section h2,
-.form-section h2 {
-  margin-top: 4rem;   /* spazio sopra identico a "Servizi" */
-  margin-bottom: 3rem; /* spazio sotto identico a "Servizi" */
-  text-align: center;  /* mantiene centratura, se vuoi */
-}
-
-/* ===== PROCESS FLOW - IL NOSTRO APPROCCIO ===== */
-
-/* contenitore principale del flusso */
+/* ================= PROCESS FLOW ================= */
 .process-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 6rem; /* spazio tra le righe */
+  gap: 6rem;
   margin-top: 4rem;
 }
 
-/* righe del flusso */
 .process-row {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  gap: 4rem; /* spazio tra i box per le frecce */
+  gap: 4rem;
   flex-wrap: wrap;
 }
 
-/* singolo step */
 .process-step {
   position: relative;
   display: flex;
@@ -668,41 +682,32 @@ footer{
   align-items: center;
 }
 
-/* box smussato */
 .step-box {
   position: relative;
   background: #fff;
   border-radius: 16px;
-
-  /* dimensioni */
   min-width: 260px;
   min-height: 80px;
   padding: 1rem 1.4rem;
-
-  /* tipografia */
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.95rem;
+  font-size: .95rem;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
   color: var(--blue);
-
-  /* CENTRATURA DEL TESTO */
   display: flex;
   flex-direction: column;
-  justify-content: center; /* verticale */
-  align-items: center;     /* orizzontale */
-
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 22px rgba(0,0,0,.12);
   z-index: 1;
+  transition: all .3s ease;
 }
 
-/* numero task sopra il box */
 .step-box::before {
   content: attr(data-step);
   position: absolute;
-  top: -32px; /* sopra il rettangolo */
+  top: -32px;
   left: 50%;
   transform: translateX(-50%);
   width: 44px;
@@ -715,58 +720,194 @@ footer{
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,.15);
   z-index: 2;
 }
 
-/* descrizione sotto il box */
 .step-box span {
   position: absolute;
-  top: calc(100% + 0.8rem);
+  top: calc(100% + .8rem);
   left: 50%;
   transform: translateX(-50%);
-  width: 220px; 
-  font-size: 0.9rem;
+  width: 220px;
+  font-size: .9rem;
   font-weight: 400;
   text-transform: lowercase;
-  font-style: normal; /* non italic */
   color: var(--blue);
   text-align: center;
   line-height: 1.4;
   z-index: 0;
 }
 
-/* FRECCE ALLINEATE AL CENTRO DEI RETTANGOLI */
 .process-arrow {
   display: flex;
-  align-items: center;   /* centra verticalmente rispetto ai box */
+  align-items: center;
   justify-content: center;
-  font-size: 2.8rem;     /* ingrandisce la freccia */
+  font-size: 2.8rem;
   color: var(--green);
-  opacity: 0.95;
-  margin: 0 1.5rem;     /* distanza dai rettangoli */
+  opacity: .95;
+  margin: 0 1.5rem;
 }
 
-/* rimuoviamo la linea sottile inutilizzata */
-.process-arrow::after {
-  content: none;
-}
-
-/* hover box */
 .process-step:hover .step-box {
   background: var(--green);
   color: #fff;
   transform: translateY(-4px);
-  transition: all 0.3s ease;
 }
 
 .process-step:hover .step-box span {
   color: #fff;
 }
 
-/* ===== PROCESS FLOW MOBILE - RIMUOVI FRECCE ===== */
+/* ================= WHY GRID ================= */
+.why-section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-top: 4rem;
+}
+
+.why-section h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.why-card {
+  background: #f4f4f4;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform .3s, box-shadow .3s, background .3s;
+  cursor: pointer;
+}
+
+.why-card i {
+  font-size: 2rem;
+  color: var(--green);
+  margin-bottom: .8rem;
+}
+
+.why-card h4 {
+  font-size: 1.2rem;
+  margin-bottom: .5rem;
+}
+
+.why-card p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--blue);
+  transition: color .3s;
+}
+
+.why-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0,0,0,.12);
+  background: var(--green);
+  color: #fff;
+}
+
+.why-card:hover p,
+.why-card:hover h4 {
+  color: #fff;
+}
+
+.why-card:hover i {
+  color: #fff;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 992px) {
+  .strategic-container {
+    flex-direction: column;
+  }
+
+  .strategic-text {
+    max-width: 100%;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .strategic-text h2 {
+    text-align: center;
+  }
+
+  .strategic-image {
+    height: 280px;
+  }
+}
+
 @media (max-width: 768px) {
-  /* wrapper e step restano per allineamento verticale */
+  header {
+    height: 70px;
+  }
+
+  .navbar {
+    padding: 0 1.5rem;
+  }
+
+  .logo img {
+    height: 42px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hero {
+    margin-top: 70px;
+    min-height: 65vh;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-content img {
+    max-width: 220px;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-claim {
+    font-size: clamp(1.2rem, 4.5vw, 1.6rem);
+    line-height: 1.5;
+    margin-top: 0;
+    letter-spacing: .5px;
+  }
+
+  .central-section h2,
+  .strategic-text h2,
+  .services-section h2,
+  .why-section h2,
+  .form-section h2 {
+    font-size: 1.6rem;
+    line-height: 1.3;
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+    letter-spacing: .5px;
+  }
+
+  /* Phone row on mobile: prefix narrower */
+  .phone-row select {
+    flex: 0 0 35%;
+    max-width: 35%;
+  }
+
+  /* Process: hide arrows, stack vertically */
   .process-wrapper {
     gap: 3rem;
   }
@@ -791,241 +932,13 @@ footer{
     position: static;
     transform: none;
     width: 100%;
-    margin-top: 0.8rem;
+    margin-top: .8rem;
   }
 
-  /* NASCONDE TUTTE LE FRECCE */
   .process-arrow {
-    display: none !important;
-  }
-
-  /* rimuove eventuali frecce verticali aggiunte */
-  .process-step::after {
-    content: none !important;
+    display: none;
   }
 }
-
-}
-
-/* ===== SPAZIATURA COERENTE TRA SEZIONI ===== */
-.central-section,
-.form-section,
-.services-section,
-.why-section {
-  padding-top: 2rem;   /* spazio sopra le sezioni coerente con i titoli principali */
-  padding-bottom: 2rem; /* spazio sotto le sezioni */
-}
-
-/* Sezione “Perché scegliere MANAGECH” più distante dal flusso */
-.why-section {
-  margin-top: 4rem; /* aumenta lo spazio rispetto al processo */
-}
-
-/* Mantieni centratura del titolo */
-.why-section h2 {
-  text-align: center;
-  margin-bottom: 3rem; /* distanza dal contenuto interno della griglia */
-}
-
-/* Regola margini dei titoli principali del processo e servizi */
-.central-section h2,
-.services-section h2,
-.strategic-section h2,
-.form-section h2 {
-  margin-top: 4rem;
-  margin-bottom: 3rem;
-  text-align: center;
-}
-.methodology-section {
-  position: relative;
-  padding: 6rem 2rem; /* spazio sopra e sotto per il contenuto */
-  overflow: hidden;   /* così il triangolo non esce dai bordi */
-}
-  
-.methodology-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(31,163,122,0.15), transparent 70%);
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  z-index: 0; /* dietro al contenuto */
-}
-.strategic-text h2 {
-  margin-top: 3rem;      /* aumenta lo spazio sopra il titolo */
-  margin-bottom: 2rem;   /* margine sotto il titolo */
-  font-size: 2.6rem;
-  color: var(--green);
-  letter-spacing: 1px;
-}
-  
-.strategic-text p {
-  margin-top: 0;
-  margin-bottom: 1rem; /* o 1.2rem come prima */
-}
-/* Form - allineamento h2 e testo p */
-.form-wrapper h2 {
-  text-align: left;        /* titolo allineato a sinistra come il testo */
-  max-width: 700px;        /* stessa larghezza del p */
-  margin: 0 0 1.5rem 0;    /* margine inferiore coerente */
-}
-
-.block-text-form {
-  max-width: 700px;        /* stessa larghezza dell'h2 */
-  margin: 0 0 2rem 0;      /* margine inferiore */
-}
-
-@media (max-width: 768px){
-
-  header{
-    height:70px;
-  }
-
-  .navbar{
-    padding:0 1.5rem;
-  }
-  
-  .logo img {
-    height:42px;
-  }
-  
-  .hero{
-    margin-top:70px;
-    min-height:65vh;
-    padding:2.5rem 1.5rem;
-    text-align:center;
-  }
-
-  .hero-content{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-  }
-
-  .hero-content img{
-    max-width:220px;   /* LOGO più proporzionato */
-    margin-bottom:1.5rem;
-  }
-
-  .hero-claim{
-    font-size:clamp(1.2rem, 4.5vw, 1.6rem); /* fluido e proporzionato */
-    line-height:1.5;
-    margin-top:0;
-    letter-spacing:0.5px;
-  }
-/* ===== TITOLI SEZIONI MOBILE ===== */
-
-.central-section h2,
-.strategic-text h2,
-.services-section h2,
-.why-section h2,
-.form-section h2 {
-  font-size: 1.6rem;
-  line-height: 1.3;
-  margin-top: 2.5rem;
-  margin-bottom: 2rem;
-  letter-spacing: 0.5px;
-}
-
-}
-
-
-  /* ================= HAMBURGER ================= */
-
-.hamburger{
-  display:none;
-  flex-direction:column;
-  gap:6px;
-  cursor:pointer;
-}
-
-.hamburger span{
-  width:25px;
-  height:3px;
-  background:#fff;
-  transition:.4s;
-}
-
-.hamburger.active span:nth-child(1){
-  transform:rotate(45deg) translate(5px,5px);
-}
-
-.hamburger.active span:nth-child(2){
-  opacity:0;
-}
-
-.hamburger.active span:nth-child(3){
-  transform:rotate(-45deg) translate(6px,-6px);
-}
-
-/* MOBILE MENU */
-
-.mobile-menu{
-  position:fixed;
-  top:70px;                /* parte sotto header mobile */
-  left:0;
-  width:100%;
-  background:var(--blue);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:1.8rem;
-  padding:2rem 0;
-  transform:translateY(-120%);
-  transition:transform .4s ease;
-  z-index:999;
-  box-shadow:0 10px 30px rgba(0,0,0,0.3);
-}
-
-.mobile-menu.active{
-  transform:translateY(0);
-}
-
-.mobile-menu a{
-  color:#fff;
-  font-size:1.4rem;
-  text-decoration:none;
-}
-
-/* NASCONDE MENU DESKTOP SU MOBILE */
-@media(max-width:768px){
-
-  .nav-links{
-    display:none;
-  }
-
-  .hamburger{
-    display:flex;
-  }
-
-}
-  
-@media (max-width: 768px){
-
-  /* Contenitore telefono */
-  .form-wrapper form div[style*="display:flex"]{
-    display: flex !important;
-    gap: 0.5rem;
-  }
-
-  /* Prefisso più stretto */
-  .form-wrapper select[name="prefisso"]{
-    flex: 0 0 35%;   /* occupa solo il 35% */
-    max-width: 35%;
-  }
-
-  /* Numero telefono più largo */
-  .form-wrapper input[name="telefono"]{
-    flex: 1;         /* occupa tutto lo spazio restante */
-  }
-
-}
-
-  
 </style>
 </head>
 
@@ -1034,17 +947,17 @@ footer{
 <!-- ================= HEADER ================= -->
 <header>
   <div class="mobile-menu" id="mobileMenu">
-  <a href="chi-siamo.html">Chi siamo</a>
-  <a href="servizi.html">Servizi</a>
-  <a href="contatti.html">Contatti</a>
-  <a href="lavora-con-noi.html">Lavora con noi</a>
-  <a href="case-study.html">Case Study</a>
-</div>
+    <a href="chi-siamo.html">Chi siamo</a>
+    <a href="servizi.html">Servizi</a>
+    <a href="contatti.html">Contatti</a>
+    <a href="lavora-con-noi.html">Lavora con noi</a>
+    <a href="case-study.html">Case Study</a>
+  </div>
 
   <nav class="navbar">
     <div class="logo">
       <a href="index.html">
-        <img src="images/1-4.png">
+        <img src="images/1-4.png" alt="MANAGECH">
       </a>
     </div>
     <ul class="nav-links">
@@ -1055,32 +968,32 @@ footer{
       <li><a href="case-study.html">Case Study</a></li>
     </ul>
     <div class="hamburger" id="hamburger">
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
-
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </nav>
 </header>
-  
+
 <!-- ================= HERO ================= -->
 <section class="hero">
   <div class="hero-content">
-   <img src="images/1-4.png" alt="MANAGECH" style="max-width: 800px; width: 100%; height: auto;">
+    <img src="images/1-4.png" alt="MANAGECH" style="max-width:800px; width:100%; height:auto;">
     <div class="hero-claim">
-      Ingegneria del valore, 
+      Ingegneria del valore,
       gestione della complessità.
     </div>
   </div>
 </section>
 
+<!-- ================= STRATEGIC SECTION ================= -->
 <section class="strategic-section">
   <div class="strategic-container">
-    <!-- TESTO -->
+
     <div class="strategic-text central-section">
       <h2>Consulenza Strategica</h2>
       <p>
-        Managech supporta aziende, consorzi e professionisti nello sviluppo del business, nella gestione dei processi e dell’innovazione tecnologica.
+        Managech supporta aziende, consorzi e professionisti nello sviluppo del business, nella gestione dei processi e dell'innovazione tecnologica.
       </p>
       <p>
         Grazie a competenze manageriali, strategiche e consulenziali maturate in contesti complessi, il nostro team offre un supporto concreto per ottimizzare le performance economiche, prendere decisioni efficaci e affrontare le trasformazioni organizzative e digitali.
@@ -1090,83 +1003,83 @@ footer{
       </p>
     </div>
 
-    <!-- IMMAGINE -->
     <div class="strategic-image">
       <img src="images/consulenza-strategica5.jpg" alt="Consulenza Strategica Managech">
     </div>
+
   </div>
 </section>
 
-<!-- 2️⃣ SERVIZI OFFERTI -->
+<!-- ================= SERVICES SECTION ================= -->
 <section class="services-section">
   <div class="central-section">
-  <h2>I nostri servizi</h2>
-  <div class="services-grid">
-    <div class="service-card">
-      
-    <div class="service-icon"><i class="fas fa-lightbulb"></i></div>
-    <h4>Consulenza strategica</h4>
-    <p>Supporto decisionale e organizzativo per la crescita sostenibile dell’impresa</p>
+    <h2>I nostri servizi</h2>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-lightbulb"></i></div>
+        <h4>Consulenza strategica</h4>
+        <p>Supporto decisionale e organizzativo per la crescita sostenibile dell'impresa</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-file-contract"></i></div>
+        <h4>Preparazione Gare</h4>
+        <p>Supporto strategico alla predisposizione della documentazione di gara</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-cogs"></i></div>
+        <h4>Ottimizzazione dei Processi</h4>
+        <p>Miglioramento dell'efficienza operativa e riduzione dei costi aziendali</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-chart-pie"></i></div>
+        <h4>Contabilità Industriale e Controllo di Gestione</h4>
+        <p>Sistemi di monitoraggio economico-finanziario a supporto delle decisioni</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-database"></i></div>
+        <h4>Data Governance</h4>
+        <p>Gestione e valorizzazione del ciclo di vita dei dati</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-robot"></i></div>
+        <h4>Digital Analytics &amp; AI</h4>
+        <p>Analisi avanzata dei dati e AI a supporto delle decisioni data driven</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-network-wired"></i></div>
+        <h4>System Integration</h4>
+        <p>Integrazione tecnologica di sistemi e processi per continuità e scalabilità</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+        <h4>Formazione</h4>
+        <p>Programmi di formazione tecnica e manageriale per team e dirigenti</p>
+      </div>
+
     </div>
 
-    <div class="service-card">
-    <div class="service-icon"><i class="fas fa-file-contract"></i></div>
-    <h4>Preparazione Gare</h4>
-    <p>Supporto strategico alla predisposizione della documentazione di gara</p>
-    </div>
-    
-    <div class="service-card">
-    <div class="service-icon"><i class="fas fa-cogs"></i></div>
-    <h4>Ottimizzazione dei Processi</h4>
-    <p>Miglioramento dell’efficienza operativa e riduzione dei costi aziendali</p>
-    </div>
-
-    <div class="service-card">
-    <div class="service-icon"><i class="fas fa-chart-pie"></i></div>
-    <h4>Contabilità Industriale e Controllo di Gestione</h4>
-    <p>Sistemi di monitoraggio economico-finanziario a supporto delle decisioni</p>
-    </div>
-    
-    <div class="service-card">
-    <div class="service-icon"><i class="fas fa-database"></i></div>
-    <h4>Data Governance</h4>
-    <p>Gestione e valorizzazione del ciclo di vita dei dati</p>
-    </div>
-    
-    <div class="service-card">
-    <div class="service-icon"><i class="fas fa-robot"></i></div>
-    <h4>Digital Analytics & AI</h4>
-    <p>Analisi avanzata dei dati e AI a supporto delle decisioni data driven</p>
-    </div>
-
-    <div class="service-card">
-    <div class="service-icon"><i class="fas fa-network-wired"></i></div>
-    <h4>System Integration</h4>
-    <p>Integrazione tecnologica di sistemi e processi per continuità e scalabilità</p>
-    </div>
-    
-    <div class="service-card">
-    <div class="service-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-    <h4>Formazione</h4>
-    <p>Programmi di formazione tecnica e manageriale per team e dirigenti</p>
-    </div>
-    
-  </div>
     <div style="text-align:center; margin-top:3rem;">
-  <a href="servizi.html" class="btn-discover">Scopri di più</a>
-</div>
-
-</section>
+      <a href="servizi.html" class="btn-discover">Scopri di più</a>
+    </div>
   </div>
+</section>
 
+<!-- ================= METHODOLOGY / APPROACH ================= -->
 <div class="central-section methodology-section">
   <h2>Il nostro approccio</h2>
 
   <div class="process-wrapper">
 
-    <!-- RIGA 1 -->
+    <!-- ROW 1 -->
     <div class="process-row">
-
       <div class="process-step">
         <div class="step-box" data-step="1">
           DEFINIZIONE OBIETTIVI
@@ -1182,12 +1095,10 @@ footer{
           <span>Studio approfondito di processi, dati e risorse disponibili</span>
         </div>
       </div>
-
     </div>
 
-    <!-- RIGA 2 -->
+    <!-- ROW 2 -->
     <div class="process-row">
-
       <div class="process-step">
         <div class="step-box" data-step="3">
           MISURAZIONE
@@ -1212,46 +1123,49 @@ footer{
           <span>Supporto operativo e monitoraggio dei risultati</span>
         </div>
       </div>
-
     </div>
 
   </div>
 </div>
 
-
-<!-- 4️⃣ PERCHÉ SCEGLIERE MANAGECH -->
+<!-- ================= WHY MANAGECH ================= -->
 <div class="central-section why-section">
   <h2>Perché scegliere MANAGECH</h2>
   <div class="why-grid">
+
     <div class="why-card">
       <i class="fas fa-lightbulb"></i>
       <h4>Soluzioni innovative</h4>
       <p>Offriamo approcci creativi e personalizzati per massimizzare il valore</p>
     </div>
+
     <div class="why-card">
       <i class="fas fa-chart-line"></i>
       <h4>Risultati misurabili</h4>
       <p>Monitoriamo ogni intervento con indicatori chiari per garantire performance concrete</p>
     </div>
+
     <div class="why-card">
       <i class="fas fa-users"></i>
       <h4>Team multidisciplinare</h4>
       <p>Professionisti con competenze tecniche, economiche e gestionali sempre a disposizione</p>
     </div>
+
     <div class="why-card">
       <i class="fas fa-shield-alt"></i>
       <h4>Affidabilità e trasparenza</h4>
       <p>Operiamo con massima trasparenza, rispettando tempi, costi e obiettivi concordati</p>
     </div>
+
   </div>
 </div>
 
-<!-- ================= FORM CONTATTI ================= -->
+<!-- ================= CONTACT FORM ================= -->
 <section class="form-section">
   <div class="form-wrapper">
     <h2>Definiamo insieme il percorso</h2>
-    
-    <p class="block-text-form">    
+
+    <p class="block-text-form">
       Compila il modulo per ricevere una consulenza gratuita. Il nostro team è a disposizione per fornire informazioni, valutare richieste di collaborazione e accompagnare la tua azienda nella definizione di un percorso sostenibile, coerente con le priorità strategiche e gli obiettivi organizzativi.
     </p>
 
@@ -1260,88 +1174,90 @@ footer{
       <span><i class="fas fa-clock"></i> Risposta entro 24h</span>
     </div>
 
-    <form action="https://formspree.io/f/xreqljvv" method="POST">
+    <form id="contactForm" action="https://formspree.io/f/xreqljvv" method="POST">
       <input type="hidden" name="_subject" value="Nuova richiesta dal sito MANAGECH">
       <input type="hidden" name="_template" value="table">
-      <input type="text" name="_gotcha" style="display:none">
+      <!-- Honeypot anti-spam -->
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
       <label for="nome">Nome*</label>
       <input id="nome" name="nome" required>
+
       <label for="cognome">Cognome*</label>
       <input id="cognome" name="cognome" required>
 
       <label for="telefono">Telefono*</label>
-      
-      <div style="display:flex; gap:0.5rem; align-items:center;">
-        <select name="prefisso" required>
+      <div class="phone-row">
+        <select name="prefisso" id="prefisso" required>
           <option value="+39" selected>🇮🇹 Italia +39</option>
           <!-- Europa -->
-<option value="+43">🇦🇹 Austria +43</option>
-<option value="+32">🇧🇪 Belgio +32</option>
-<option value="+359">🇧🇬 Bulgaria +359</option>
-<option value="+385">🇭🇷 Croazia +385</option>
-<option value="+357">🇨🇾 Cipro +357</option>
-<option value="+420">🇨🇿 Repubblica Ceca +420</option>
-<option value="+45">🇩🇰 Danimarca +45</option>
-<option value="+372">🇪🇪 Estonia +372</option>
-<option value="+358">🇫🇮 Finlandia +358</option>
-<option value="+33">🇫🇷 Francia +33</option>
-<option value="+49">🇩🇪 Germania +49</option>
-<option value="+30">🇬🇷 Grecia +30</option>
-<option value="+36">🇭🇺 Ungheria +36</option>
-<option value="+353">🇮🇪 Irlanda +353</option>
-<option value="+39" selected>🇮🇹 Italia +39</option>
-<option value="+371">🇱🇻 Lettonia +371</option>
-<option value="+423">🇱🇮 Liechtenstein +423</option>
-<option value="+370">🇱🇹 Lituania +370</option>
-<option value="+352">🇱🇺 Lussemburgo +352</option>
-<option value="+356">🇲🇹 Malta +356</option>
-<option value="+31">🇳🇱 Paesi Bassi +31</option>
-<option value="+48">🇵🇱 Polonia +48</option>
-<option value="+351">🇵🇹 Portogallo +351</option>
-<option value="+40">🇷🇴 Romania +40</option>
-<option value="+7">🇷🇺 Russia +7</option>
-<option value="+381">🇷🇸 Serbia +381</option>
-<option value="+421">🇸🇰 Slovacchia +421</option>
-<option value="+386">🇸🇮 Slovenia +386</option>
-<option value="+34">🇪🇸 Spagna +34</option>
-<option value="+46">🇸🇪 Svezia +46</option>
-<option value="+41">🇨🇭 Svizzera +41</option>
-<option value="+44">🇬🇧 Regno Unito +44</option>
-<option value="+39">🇻🇦 Città del Vaticano +39</option>
-
-<!-- Principali stati globalizzati -->
-<option value="+1">🇺🇸 USA +1</option>
-<option value="+1">🇨🇦 Canada +1</option>
-<option value="+86">🇨🇳 Cina +86</option>
-<option value="+91">🇮🇳 India +91</option>
-<option value="+81">🇯🇵 Giappone +81</option>
-<option value="+55">🇧🇷 Brasile +55</option>
-<option value="+61">🇦🇺 Australia +61</option>
-<option value="+27">🇿🇦 Sud Africa +27</option>
-<option value="+82">🇰🇷 Corea del Sud +82</option>
-<option value="+60">🇲🇾 Malesia +60</option>
-<option value="+65">🇸🇬 Singapore +65</option>
-<option value="+66">🇹🇭 Thailandia +66</option>
-<option value="+971">🇦🇪 Emirati Arabi Uniti +971</option>
-<option value="+98">🇮🇷 Iran +98</option>
-<option value="+964">🇮🇶 Iraq +964</option>
-<option value="+52">🇲🇽 Messico +52</option>
-<option value="+57">🇨🇴 Colombia +57</option>
-<option value="+56">🇨🇱 Cile +56</option>
-
+          <option value="+43">🇦🇹 Austria +43</option>
+          <option value="+32">🇧🇪 Belgio +32</option>
+          <option value="+359">🇧🇬 Bulgaria +359</option>
+          <option value="+385">🇭🇷 Croazia +385</option>
+          <option value="+357">🇨🇾 Cipro +357</option>
+          <option value="+420">🇨🇿 Repubblica Ceca +420</option>
+          <option value="+45">🇩🇰 Danimarca +45</option>
+          <option value="+372">🇪🇪 Estonia +372</option>
+          <option value="+358">🇫🇮 Finlandia +358</option>
+          <option value="+33">🇫🇷 Francia +33</option>
+          <option value="+49">🇩🇪 Germania +49</option>
+          <option value="+30">🇬🇷 Grecia +30</option>
+          <option value="+36">🇭🇺 Ungheria +36</option>
+          <option value="+353">🇮🇪 Irlanda +353</option>
+          <option value="+371">🇱🇻 Lettonia +371</option>
+          <option value="+423">🇱🇮 Liechtenstein +423</option>
+          <option value="+370">🇱🇹 Lituania +370</option>
+          <option value="+352">🇱🇺 Lussemburgo +352</option>
+          <option value="+356">🇲🇹 Malta +356</option>
+          <option value="+31">🇳🇱 Paesi Bassi +31</option>
+          <option value="+48">🇵🇱 Polonia +48</option>
+          <option value="+351">🇵🇹 Portogallo +351</option>
+          <option value="+40">🇷🇴 Romania +40</option>
+          <option value="+7">🇷🇺 Russia +7</option>
+          <option value="+381">🇷🇸 Serbia +381</option>
+          <option value="+421">🇸🇰 Slovacchia +421</option>
+          <option value="+386">🇸🇮 Slovenia +386</option>
+          <option value="+34">🇪🇸 Spagna +34</option>
+          <option value="+46">🇸🇪 Svezia +46</option>
+          <option value="+41">🇨🇭 Svizzera +41</option>
+          <option value="+44">🇬🇧 Regno Unito +44</option>
+          <option value="+39">🇻🇦 Città del Vaticano +39</option>
+          <!-- Principali stati globalizzati -->
+          <option value="+1">🇺🇸 USA +1</option>
+          <option value="+1">🇨🇦 Canada +1</option>
+          <option value="+86">🇨🇳 Cina +86</option>
+          <option value="+91">🇮🇳 India +91</option>
+          <option value="+81">🇯🇵 Giappone +81</option>
+          <option value="+55">🇧🇷 Brasile +55</option>
+          <option value="+61">🇦🇺 Australia +61</option>
+          <option value="+27">🇿🇦 Sud Africa +27</option>
+          <option value="+82">🇰🇷 Corea del Sud +82</option>
+          <option value="+60">🇲🇾 Malesia +60</option>
+          <option value="+65">🇸🇬 Singapore +65</option>
+          <option value="+66">🇹🇭 Thailandia +66</option>
+          <option value="+971">🇦🇪 Emirati Arabi Uniti +971</option>
+          <option value="+98">🇮🇷 Iran +98</option>
+          <option value="+964">🇮🇶 Iraq +964</option>
+          <option value="+52">🇲🇽 Messico +52</option>
+          <option value="+57">🇨🇴 Colombia +57</option>
+          <option value="+56">🇨🇱 Cile +56</option>
         </select>
-        <input id="telefono" type="tel" name="telefono" placeholder="340 1234567" required style="flex:1; padding:0.7rem; font-family:'Montserrat',sans-serif; margin-top:0;">
+        <input id="telefono" type="tel" name="telefono" placeholder="340 1234567" required>
       </div>
 
       <label for="email">Email*</label>
       <input id="email" type="email" name="email" required>
+
       <label for="azienda">Azienda*</label>
       <input id="azienda" name="azienda" required>
+
       <label for="ruolo">Ruolo in azienda*</label>
       <input id="ruolo" name="ruolo" required>
+
       <label for="provincia">Provincia*</label>
       <input id="provincia" name="provincia" required>
+
       <label for="richiesta">Richiesta*</label>
       <textarea id="richiesta" name="richiesta" required></textarea>
 
@@ -1353,7 +1269,9 @@ footer{
         </label>
       </div>
 
+      <!-- Hidden field assembled by JS -->
       <input type="hidden" name="telefono_completo" id="telefono_completo">
+
       <button type="submit">Invia richiesta</button>
     </form>
   </div>
@@ -1362,6 +1280,7 @@ footer{
 <!-- ================= FOOTER ================= -->
 <footer>
   <div class="footer-inner">
+
     <div class="footer-brand">
       <img src="images/1-4.png" alt="MANAGECH" class="footer-logo">
       <p>
@@ -1382,40 +1301,39 @@ footer{
         <li><a href="cookie-policy.html">Cookie Policy</a></li>
       </ul>
     </div>
+
   </div>
 
   <div class="footer-bottom">
-    © 2026 MANAGECH - INGEGNERIA & MANAGEMENT STUDIO ASSOCIATO | P. IVA 18387251004
+    &copy; 2026 MANAGECH - INGEGNERIA &amp; MANAGEMENT STUDIO ASSOCIATO | P. IVA 18387251004
   </div>
 </footer>
-  
+
+<!-- ================= SCRIPTS ================= */
 <script>
-document.querySelector("form").addEventListener("submit", function () {
-  const prefisso = document.querySelector('select[name="prefisso"]').value;
-  const telefono = document.querySelector('input[name="telefono"]').value;
-  document.getElementById("telefono_completo").value = prefisso + " " + telefono;
-});
-
-  const faders = document.querySelectorAll('.fade-in');
-const appearOptions = { threshold:0.1, rootMargin:"0px 0px -50px 0px" };
-const appearOnScroll = new IntersectionObserver(function(entries, observer){
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('appear');
-      observer.unobserve(entry.target);
-    }
+  /* Combine phone prefix + number before form submission */
+  document.getElementById("contactForm").addEventListener("submit", function () {
+    const prefisso = document.getElementById("prefisso").value;
+    const telefono = document.getElementById("telefono").value;
+    document.getElementById("telefono_completo").value = prefisso + " " + telefono;
   });
-}, appearOptions);
 
-faders.forEach(fader => appearOnScroll.observe(fader));
-const hamburger = document.getElementById("hamburger");
-const mobileMenu = document.getElementById("mobileMenu");
+  /* Hamburger / mobile menu */
+  const hamburger = document.getElementById("hamburger");
+  const mobileMenu = document.getElementById("mobileMenu");
 
-hamburger.addEventListener("click", () => {
-  hamburger.classList.toggle("active");
-  mobileMenu.classList.toggle("active");
-});
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    mobileMenu.classList.toggle("active");
+  });
 
+  /* Close mobile menu when a link is clicked */
+  mobileMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      mobileMenu.classList.remove("active");
+    });
+  });
 </script>
 
 </body>
