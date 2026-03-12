@@ -2,12 +2,10 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-  <title>Consulenza Strategica e Gestione dei Processi | MANAGECH</title>
+<title>Consulenza Strategica e Gestione dei Processi | MANAGECH</title>
 <meta name="description" content="MANAGECH supporta aziende e professionisti nella consulenza strategica, ottimizzazione dei processi, data governance e digital analytics. Ingegneria del valore, gestione della complessità.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="format-detection" content="telephone=no">
-<meta name="description" content="MANAGECH – Consulenza strategica, gestione dei processi e innovazione tecnologica per aziende, consorzi e professionisti.">
-<title>MANAGECH – Home</title>
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -358,7 +356,7 @@ form textarea {
 
 .phone-row input[type="tel"] {
   flex: 1;
-  margin-top: 0; /* override the global form input margin */
+  margin-top: 0;
 }
 
 form textarea {
@@ -611,7 +609,6 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* override central-section centering for text alignment */
   margin: 0;
   max-width: 50%;
 }
@@ -903,13 +900,11 @@ footer {
     letter-spacing: .5px;
   }
 
-  /* Phone row on mobile: prefix narrower */
   .phone-row select {
     flex: 0 0 35%;
     max-width: 35%;
   }
 
-  /* Process: hide arrows, stack vertically */
   .process-wrapper {
     gap: 3rem;
   }
@@ -1192,7 +1187,6 @@ footer {
       <div class="phone-row">
         <select name="prefisso" id="prefisso" required>
           <option value="+39" selected>🇮🇹 Italia +39</option>
-          <!-- Europa -->
           <option value="+43">🇦🇹 Austria +43</option>
           <option value="+32">🇧🇪 Belgio +32</option>
           <option value="+359">🇧🇬 Bulgaria +359</option>
@@ -1225,7 +1219,6 @@ footer {
           <option value="+41">🇨🇭 Svizzera +41</option>
           <option value="+44">🇬🇧 Regno Unito +44</option>
           <option value="+39">🇻🇦 Città del Vaticano +39</option>
-          <!-- Principali stati globalizzati -->
           <option value="+1">🇺🇸 USA +1</option>
           <option value="+1">🇨🇦 Canada +1</option>
           <option value="+86">🇨🇳 Cina +86</option>
@@ -1264,7 +1257,7 @@ footer {
       <textarea id="richiesta" name="richiesta" required></textarea>
 
       <div class="-check">
-        <input type="checkbox" id="" name="privacy" required>
+        <input type="checkbox" id="privacy" name="privacy" required>
         <label for="privacy">
           Dichiaro di aver preso visione e di accettare integralmente
           <a href="informativa-privacy.html" target="_blank">l'informativa privacy</a>
@@ -1311,7 +1304,7 @@ footer {
   </div>
 </footer>
 
-<!-- ================= SCRIPTS ================= */
+<!-- ================= SCRIPTS ================= -->
 <script>
   /* Combine phone prefix + number before form submission */
   document.getElementById("contactForm").addEventListener("submit", function () {
