@@ -1120,4 +1120,14 @@ footer {
     hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
   });
 
-  mobileMenu.querySelectorAll("a").forEach(link 
+  mobileMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      mobileMenu.classList.remove("active");
+      hamburger.setAttribute("aria-expanded", "false");
+    });
+  });
+</script>
+
+</body>
+</html>
