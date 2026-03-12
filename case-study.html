@@ -139,7 +139,7 @@ footer a { color: #ccc; text-decoration: none; }
 
     <div class="cs-top">
       <div class="cs-logo-wrap">
-        <img src="logo-ml1.jpg" alt="ML1 Costruzioni">
+        <img src="images/logo-ml1.png" alt="ML1 Costruzioni">
       </div>
       <div class="cs-meta">
         <span class="cs-tag">Controllo di Gestione · Ottimizzazione Processi</span>
@@ -176,7 +176,7 @@ footer a { color: #ccc; text-decoration: none; }
 
     <div class="cs-top">
       <div class="cs-logo-wrap">
-        <img src="logo-solaris.png" alt="Solaris International Spa">
+        <img src="images/logo-solaris.png" alt="Solaris International Spa">
       </div>
       <div class="cs-meta">
         <span class="cs-tag">Consulenza Strategica · Gare d'Appalto · Scouting Commerciale</span>
@@ -222,7 +222,7 @@ footer a { color: #ccc; text-decoration: none; }
       <p>
         <i class="fas fa-map-marker-alt"></i> Piazza G. Mazzini 27, 00195 Roma<br>
         <i class="fas fa-phone"></i> +39 349 390 7663<br>
-        <i class="fas fa-envelope"></i> segreteria@managech.com
+        <i class="fas fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d7a4b2b0a5b2a3b2a5beb697bab6b9b6b0b2b4bff9b4b8ba">[email&#160;protected]</a>
       </p>
     </div>
     <div class="footer-links">
@@ -242,20 +242,9 @@ footer a { color: #ccc; text-decoration: none; }
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const hamburger = document.getElementById("hamburger");
   const mobileMenu = document.getElementById("mobileMenu");
   hamburger.addEventListener("click", () => {
     hamburger.classList.toggle("active");
-    mobileMenu.classList.toggle("active");
-  });
-  mobileMenu.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      hamburger.classList.remove("active");
-      mobileMenu.classList.remove("active");
-    });
-  });
-</script>
-
-</body>
-</html>
+    mobileMenu.classList.toggle("active")
