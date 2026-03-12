@@ -383,7 +383,7 @@ form button:hover {
   transform: translateY(-2px);
 }
 
-.privacy-check {
+.-check {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: .6rem;
@@ -394,7 +394,7 @@ form button:hover {
   cursor: pointer;
 }
 
-.privacy-check input[type="checkbox"] {
+.-check input[type="checkbox"] {
   margin: 0;
   padding: 0;
   width: 18px;
@@ -402,13 +402,13 @@ form button:hover {
   cursor: pointer;
 }
 
-.privacy-check label {
+.-check label {
   margin: 0;
   display: block;
   cursor: pointer;
 }
 
-.privacy-check a {
+.-check a {
   color: var(--green);
   text-decoration: underline;
 }
@@ -1261,11 +1261,11 @@ footer {
       <label for="richiesta">Richiesta*</label>
       <textarea id="richiesta" name="richiesta" required></textarea>
 
-      <div class="privacy-check">
-        <input type="checkbox" id="privacy" name="privacy" required>
+      <div class="-check">
+        <input type="checkbox" id="" name="privacy" required>
         <label for="privacy">
           Dichiaro di aver preso visione e di accettare integralmente
-          <a href="privacy.html" target="_blank">l'informativa privacy</a>
+          <a href="informativa-privacy.html" target="_blank">l'informativa privacy</a>
         </label>
       </div>
 
