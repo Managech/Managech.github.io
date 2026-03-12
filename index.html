@@ -7,23 +7,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="format-detection" content="telephone=no">
 
-<!-- PERFORMANCE: preconnect per Google Fonts e Font Awesome -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-
-<!-- PERFORMANCE: preload immagine hero (LCP) -->
 <link rel="preload" as="image" href="images/hero-bg.jpg">
 
-<!-- Google Fonts: caricamento non bloccante -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
 
-<!-- Font Awesome: caricamento non bloccante -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
 
-<!-- Schema markup -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -42,11 +36,7 @@
     "postalCode": "00195",
     "addressCountry": "IT"
   },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 41.9164,
-    "longitude": 12.4601
-  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 41.9164, "longitude": 12.4601 },
   "areaServed": { "@type": "Country", "name": "Italia" },
   "priceRange": "€€€",
   "sameAs": ["https://www.linkedin.com/company/managech"],
@@ -68,125 +58,33 @@
 </script>
 
 <style>
-/* ================= CSS VARIABLES ================= */
-:root {
-  --green: #1fa37a;
-  --blue:  #0b1f33;
-  --gray:  #d6d6d6;
-  --white: #ffffff;
-}
+:root { --green: #1fa37a; --blue: #0b1f33; --gray: #d6d6d6; --white: #ffffff; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Montserrat', sans-serif; background: #fff; color: var(--blue); }
 
-/* ================= RESET ================= */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: 'Montserrat', sans-serif;
-  background: #fff;
-  color: var(--blue);
-}
-
-/* ================= FORM TAGS ================= */
-.form-tags {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-}
-
-.form-tags span {
-  background: #fff;
-  border: 1px solid var(--green);
-  color: var(--blue);
-  padding: .55rem 1.3rem;
-  border-radius: 30px;
-  font-size: .8rem;
-  display: flex;
-  align-items: center;
-  gap: .5rem;
-  font-weight: 500;
-}
-
+/* FORM TAGS */
+.form-tags { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
+.form-tags span { background: #fff; border: 1px solid var(--green); color: var(--blue); padding: .55rem 1.3rem; border-radius: 30px; font-size: .8rem; display: flex; align-items: center; gap: .5rem; font-weight: 500; }
 .form-tags i { color: var(--green); }
 
-/* ================= HEADER ================= */
-header {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 90px;
-  background: var(--blue);
-  z-index: 1000;
-}
-
-.navbar {
-  height: 100%;
-  padding: 0 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo a {
-  display: flex;
-  align-items: center;
-  gap: .8rem;
-  color: var(--green);
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 1.3rem;
-  letter-spacing: 1px;
-}
-
+/* HEADER */
+header { position: fixed; top: 0; left: 0; width: 100%; height: 90px; background: var(--blue); z-index: 1000; }
+.navbar { height: 100%; padding: 0 3rem; display: flex; align-items: center; justify-content: space-between; }
+.logo a { display: flex; align-items: center; gap: .8rem; color: var(--green); text-decoration: none; font-weight: 700; font-size: 1.3rem; letter-spacing: 1px; }
 .logo img { height: 54px; width: auto; display: block; }
-
 .nav-links { list-style: none; display: flex; gap: 2rem; }
-
-.nav-links a {
-  color: #fff;
-  text-decoration: none;
-  font-size: .95rem;
-  position: relative;
-}
-
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  bottom: -6px; left: 0;
-  width: 0; height: 2px;
-  background: var(--green);
-  transition: .3s;
-}
-
+.nav-links a { color: #fff; text-decoration: none; font-size: .95rem; position: relative; }
+.nav-links a::after { content: ""; position: absolute; bottom: -6px; left: 0; width: 0; height: 2px; background: var(--green); transition: .3s; }
 .nav-links a:hover::after { width: 100%; }
 
-/* ================= HAMBURGER ================= */
-/* ACCESSIBILITY: button con aria-label invece di div */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 6px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 4px;
-  aria-label: "Apri menu";
-}
-
-.hamburger span {
-  width: 25px; height: 3px;
-  background: #fff;
-  transition: .4s;
-  display: block;
-}
-
+/* HAMBURGER */
+.hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; background: none; border: none; padding: 4px; }
+.hamburger span { width: 25px; height: 3px; background: #fff; transition: .4s; display: block; }
 .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
 .hamburger.active span:nth-child(2) { opacity: 0; }
 .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
 
-/* ================= MOBILE MENU ================= */
+/* MOBILE MENU - posizionato fuori dall'header nel DOM */
 .mobile-menu {
   position: fixed;
   top: 70px; left: 0;
@@ -197,224 +95,60 @@ header {
   align-items: center;
   gap: 1.8rem;
   padding: 2rem 0;
-  transform: translateY(-120%);
+  transform: translateY(-150%);
   transition: transform .4s ease;
   z-index: 999;
   box-shadow: 0 10px 30px rgba(0,0,0,.3);
 }
-
 .mobile-menu.active { transform: translateY(0); }
-
 .mobile-menu a { color: #fff; font-size: 1.4rem; text-decoration: none; }
 
-/* ================= HERO ================= */
-.hero {
-  margin-top: 90px;
-  min-height: 75vh;
-  background:
-    linear-gradient(rgba(11,31,51,.75), rgba(11,31,51,.75)),
-    url("images/hero-bg.jpg") center / cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 3rem 2rem;
-}
-
+/* HERO */
+.hero { margin-top: 90px; min-height: 75vh; background: linear-gradient(rgba(11,31,51,.75), rgba(11,31,51,.75)), url("images/hero-bg.jpg") center / cover no-repeat; display: flex; align-items: center; justify-content: center; text-align: center; padding: 3rem 2rem; }
 .hero-content { max-width: 1100px; }
+h1.hero-title { font-size: 5.6rem; font-weight: 800; letter-spacing: 6px; color: var(--green); }
+.hero-subtitle { margin-top: .8rem; font-size: 1.1rem; letter-spacing: 4px; color: var(--gray); }
+.hero-claim { margin-top: 3rem; font-size: 3rem; font-weight: 500; color: var(--gray); line-height: 1.6; }
 
-/* ACCESSIBILITY: hero-title è h1, dimensioni via CSS */
-h1.hero-title {
-  font-size: 5.6rem;
-  font-weight: 800;
-  letter-spacing: 6px;
-  color: var(--green);
-}
+/* HEADINGS */
+h2 { color: var(--green); font-size: 2.6rem; margin-bottom: 1.5rem; letter-spacing: 1px; font-weight: 700; }
 
-.hero-subtitle {
-  margin-top: .8rem;
-  font-size: 1.1rem;
-  letter-spacing: 4px;
-  color: var(--gray);
-}
-
-.hero-claim {
-  margin-top: 3rem;
-  font-size: 3rem;
-  font-weight: 500;
-  color: var(--gray);
-  line-height: 1.6;
-}
-
-/* ================= GLOBAL HEADINGS ================= */
-h2 {
-  color: var(--green);
-  font-size: 2.6rem;
-  margin-bottom: 1.5rem;
-  letter-spacing: 1px;
-  font-weight: 700;
-}
-
-/* ================= CONTENT BLOCKS ================= */
-.section { padding: 6rem 2rem; }
-
-.block {
-  max-width: 100%;
-  margin: 0 auto 6rem;
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-
+/* BLOCKS */
+.block { max-width: 100%; margin: 0 auto 6rem; display: flex; align-items: center; gap: 2rem; }
 .block-image { flex: 1; width: auto; height: 360px; }
 .block:nth-child(even) { flex-direction: row-reverse; }
 .block-text { flex: 1; }
-
-.block-text h3 {
-  margin: 0 0 1.2rem;
-  font-size: 2.6rem;
-  color: var(--green);
-  letter-spacing: 2px;
-}
-
+.block-text h3 { margin: 0 0 1.2rem; font-size: 2.6rem; color: var(--green); letter-spacing: 2px; }
 .block-text p { font-size: 1.15rem; line-height: 1.7; }
+.block-text-form { font-size: 1.15rem; line-height: 1.7; color: var(--blue); margin-bottom: 2rem; text-align: justify; }
+.block-image img { width: 100%; height: 360px; object-fit: cover; border-radius: 8px; background: #eaeaea; box-shadow: 0 15px 40px rgba(0,0,0,.18); }
 
-.block-text-form {
-  font-size: 1.15rem;
-  line-height: 1.7;
-  color: var(--blue);
-  margin-bottom: 2rem;
-  text-align: justify;
-}
-
-.block-image img {
-  width: 100%; height: 360px;
-  object-fit: cover;
-  border-radius: 8px;
-  background: #eaeaea;
-  box-shadow: 0 15px 40px rgba(0,0,0,.18);
-}
-
-/* ================= BUTTONS ================= */
-.btn-discover {
-  display: inline-block;
-  background: var(--green);
-  color: #fff;
-  padding: .9rem 2rem;
-  font-size: .95rem;
-  font-weight: 600;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: background .3s, transform .3s;
-}
-
+/* BUTTONS */
+.btn-discover { display: inline-block; background: var(--green); color: #fff; padding: .9rem 2rem; font-size: .95rem; font-weight: 600; border-radius: 6px; text-decoration: none; transition: background .3s, transform .3s; }
 .btn-discover:hover { background: #17845e; transform: translateY(-2px); }
 
-/* ================= FORM ================= */
+/* FORM */
 .form-section { background: #f4f4f4; padding: 5rem 2rem; }
-
 .form-wrapper { max-width: 700px; margin: auto; }
-
 .form-wrapper h2 { text-align: left; margin: 0 0 1.5rem 0; font-size: 2.4rem; }
-
-.form-wrapper p { font-size: 1.1rem; margin-bottom: 2rem; }
-
-form label {
-  display: block;
-  font-size: .85rem;
-  margin-top: 1.2rem;
-}
-
-form input, form textarea {
-  width: 100%;
-  padding: .7rem;
-  margin-top: .3rem;
-  border: 1px solid #ccc;
-  font-family: 'Montserrat', sans-serif;
-  font-size: .9rem;
-}
-
-/* ACCESSIBILITY: label visibile per il select prefisso */
+form label { display: block; font-size: .85rem; margin-top: 1.2rem; }
+form input, form textarea { width: 100%; padding: .7rem; margin-top: .3rem; border: 1px solid #ccc; font-family: 'Montserrat', sans-serif; font-size: .9rem; }
 .phone-label { display: block; font-size: .85rem; margin-top: 1.2rem; }
-
-.phone-row {
-  display: flex;
-  gap: .5rem;
-  align-items: center;
-  margin-top: .3rem;
-}
-
-.phone-row select {
-  flex: 0 0 auto;
-  padding: .65rem .7rem;
-  font-family: 'Montserrat', sans-serif;
-  font-size: .85rem;
-  height: 38px;
-  line-height: 1.2;
-  border: 1px solid #ccc;
-  border-radius: 0;
-  appearance: none;
-  -webkit-appearance: none;
-  cursor: pointer;
-}
-
+.phone-row { display: flex; gap: .5rem; align-items: center; margin-top: .3rem; }
+.phone-row select { flex: 0 0 160px; width: 160px; padding: .65rem .4rem .65rem .5rem; font-family: 'Montserrat', sans-serif; font-size: .82rem; border: 1px solid #ccc; background: #fff; cursor: pointer; height: auto; }
 .phone-row input[type="tel"] { flex: 1; margin-top: 0; }
-
 form textarea { min-height: 120px; }
-
-form button {
-  display: inline-block;
-  margin-top: 2rem;
-  background: var(--green);
-  color: #fff;
-  padding: .9rem 2rem;
-  font-size: .95rem;
-  font-weight: 600;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  transition: background .3s, transform .3s;
-}
-
+form button { display: inline-block; margin-top: 2rem; background: var(--green); color: #fff; padding: .9rem 2rem; font-size: .95rem; font-weight: 600; border-radius: 6px; border: none; cursor: pointer; transition: background .3s, transform .3s; }
 form button:hover { background: #17845e; transform: translateY(-2px); }
-
-.-check {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: .6rem;
-  align-items: start;
-  margin-top: 1.5rem;
-  font-size: .85rem;
-  line-height: 1.4;
-  cursor: pointer;
-}
-
-.-check input[type="checkbox"] {
-  margin: 0; padding: 0;
-  width: 18px; height: 18px;
-  cursor: pointer;
-}
-
+.-check { display: grid; grid-template-columns: auto 1fr; gap: .6rem; align-items: start; margin-top: 1.5rem; font-size: .85rem; line-height: 1.4; cursor: pointer; }
+.-check input[type="checkbox"] { margin: 0; padding: 0; width: 18px; height: 18px; cursor: pointer; }
 .-check label { margin: 0; display: block; cursor: pointer; }
 .-check a { color: var(--green); text-decoration: underline; }
 
-/* ================= FOOTER ================= */
-footer {
-  background: var(--blue);
-  color: #ccc;
-  padding: 4rem 2rem 2rem;
-}
-
-.footer-inner {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 3rem;
-}
-
-.footer-logo { max-width: 280px; width: auto; height: auto; max-height: 80px; margin-bottom: 1.5rem; display: block; }
+/* FOOTER */
+footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
+.footer-inner { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 3rem; }
+.footer-logo { width: 100%; max-width: 220px; height: auto; margin-bottom: 1.5rem; display: block; }
 .footer-brand h3 { margin: 0; color: var(--green); font-size: 1.6rem; }
 .footer-brand h4 { margin: .3rem 0 1.5rem; font-weight: 400; color: #aaa; }
 .footer-brand i { color: var(--green); margin-right: 8px; display: inline-block; width: 20px; }
@@ -423,243 +157,65 @@ footer {
 .footer-links ul { list-style: none; padding: 0; margin: 0; }
 .footer-links li { margin: .6rem 0; }
 .footer-links a { color: #ccc; text-decoration: none; }
+.footer-bottom { text-align: center; margin-top: 3rem; font-size: .75rem; color: #888; }
 
-.footer-bottom {
-  text-align: center;
-  margin-top: 3rem;
-  font-size: .75rem;
-  color: #888;
-}
-
-/* ================= CENTRAL SECTION ================= */
-.central-section {
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto 4rem auto;
-  padding: 0 2rem;
-}
-
+/* CENTRAL SECTION */
+.central-section { width: 100%; max-width: 1400px; margin: 0 auto 4rem auto; padding: 0 2rem; }
 .central-section h2 { text-align: center; margin-top: 4rem; margin-bottom: 3rem; }
-
-.central-section h3 {
-  color: var(--green);
-  font-size: 2.4rem;
-  margin-bottom: 1.5rem;
-  letter-spacing: 1px;
-}
-
+.central-section h3 { color: var(--green); font-size: 2.4rem; margin-bottom: 1.5rem; letter-spacing: 1px; }
 .central-section p { font-size: 1.1rem; line-height: 1.7; color: var(--blue); }
-
-.central-section ul {
-  list-style: disc inside;
-  font-size: 1.15rem;
-  line-height: 1.7;
-  color: var(--blue);
-}
-
+.central-section ul { list-style: disc inside; font-size: 1.15rem; line-height: 1.7; color: var(--blue); }
 .central-section ul li { margin-bottom: 1rem; }
 
-/* ================= SERVICES SECTION ================= */
+/* SERVICES */
 .services-section { padding: 4rem 0; background-color: #f4f4f4; }
 .services-section h2 { text-align: center; margin-bottom: 3rem; }
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.service-card {
-  background: #fff;
-  border-radius: 16px;
-  padding: 2rem 1.8rem;
-  min-height: 260px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 12px 30px rgba(0,0,0,.08);
-  transition: all .35s ease;
-}
-
-.service-card::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 4px;
-  background: var(--green);
-}
-
-.service-icon {
-  font-size: 2.2rem;
-  color: var(--green);
-  margin-bottom: 1.2rem;
-  transition: transform .35s ease;
-}
-
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; margin-top: 2rem; }
+.service-card { background: #fff; border-radius: 16px; padding: 2rem 1.8rem; min-height: 260px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; overflow: hidden; box-shadow: 0 12px 30px rgba(0,0,0,.08); transition: all .35s ease; }
+.service-card::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: var(--green); }
+.service-icon { font-size: 2.2rem; color: var(--green); margin-bottom: 1.2rem; transition: transform .35s ease; }
 .service-card h4 { font-size: 1.25rem; font-weight: 600; color: var(--blue); margin-bottom: .8rem; }
-
 .service-card p { font-size: 1rem; line-height: 1.6; color: var(--blue); opacity: .8; }
-
 .service-card:hover { transform: translateY(-10px); box-shadow: 0 22px 55px rgba(0,0,0,.14); }
 .service-card:hover .service-icon { transform: scale(1.12); }
 
-/* ================= STRATEGIC SECTION ================= */
+/* STRATEGIC */
 .strategic-section { padding: 0; }
-
 .strategic-container { display: flex; width: 100%; }
-
-.strategic-text {
-  flex: 1;
-  padding: 4rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0;
-  max-width: 50%;
-}
-
+.strategic-text { flex: 1; padding: 4rem; display: flex; flex-direction: column; justify-content: center; margin: 0; max-width: 50%; }
 .strategic-text h2 { text-align: left; margin-top: 0; margin-bottom: 2rem; font-size: 2.6rem; }
 .strategic-text p { font-size: 1.1rem; line-height: 1.7; color: var(--blue); margin-bottom: 1rem; }
-
 .strategic-image { flex: 1; }
-
 .strategic-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-/* ================= METHODOLOGY ================= */
-.methodology-section {
-  position: relative;
-  padding: 6rem 2rem;
-  overflow: hidden;
-}
+/* METHODOLOGY */
+.methodology-section { position: relative; padding: 6rem 2rem; overflow: hidden; margin-bottom: 0; }
+.methodology-section::before { content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 120%; height: 100%; background: linear-gradient(to bottom, rgba(31,163,122,.15), transparent 70%); clip-path: polygon(50% 0%, 0% 100%, 100% 100%); z-index: 0; }
 
-.methodology-section::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 50%;
-  transform: translateX(-50%);
-  width: 120%; height: 100%;
-  background: linear-gradient(to bottom, rgba(31,163,122,.15), transparent 70%);
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  z-index: 0;
-}
-
-/* ================= PROCESS FLOW ================= */
+/* PROCESS FLOW */
 .process-wrapper { display: flex; flex-direction: column; gap: 6rem; margin-top: 4rem; }
-
-.process-row {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 4rem;
-  flex-wrap: wrap;
-}
-
+.process-row { display: flex; align-items: flex-start; justify-content: center; gap: 4rem; flex-wrap: wrap; }
 .process-step { position: relative; display: flex; flex-direction: column; align-items: center; }
-
-.step-box {
-  position: relative;
-  background: #fff;
-  border-radius: 16px;
-  min-width: 260px; min-height: 80px;
-  padding: 1rem 1.4rem;
-  font-size: .95rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--blue);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  box-shadow: 0 8px 22px rgba(0,0,0,.12);
-  z-index: 1;
-  transition: all .3s ease;
-}
-
-.step-box::before {
-  content: attr(data-step);
-  position: absolute;
-  top: -32px; left: 50%;
-  transform: translateX(-50%);
-  width: 44px; height: 44px;
-  border-radius: 50%;
-  background: var(--green);
-  color: #fff;
-  font-weight: 800;
-  font-size: 1.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 6px 18px rgba(0,0,0,.15);
-  z-index: 2;
-}
-
-.step-box span {
-  position: absolute;
-  top: calc(100% + .8rem);
-  left: 50%;
-  transform: translateX(-50%);
-  width: 220px;
-  font-size: .9rem;
-  font-weight: 400;
-  text-transform: lowercase;
-  color: var(--blue);
-  text-align: center;
-  line-height: 1.4;
-  z-index: 0;
-}
-
-.process-arrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.8rem;
-  color: var(--green);
-  opacity: .95;
-  margin: 0 1.5rem;
-}
-
+.step-box { position: relative; background: #fff; border-radius: 16px; min-width: 260px; min-height: 80px; padding: 1rem 1.4rem; font-size: .95rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--blue); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; box-shadow: 0 8px 22px rgba(0,0,0,.12); z-index: 1; transition: all .3s ease; }
+.step-box::before { content: attr(data-step); position: absolute; top: -32px; left: 50%; transform: translateX(-50%); width: 44px; height: 44px; border-radius: 50%; background: var(--green); color: #fff; font-weight: 800; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0,0,0,.15); z-index: 2; }
+.step-box span { position: absolute; top: calc(100% + .8rem); left: 50%; transform: translateX(-50%); width: 220px; font-size: .9rem; font-weight: 400; text-transform: lowercase; color: var(--blue); text-align: center; line-height: 1.4; z-index: 0; }
+.process-arrow { display: flex; align-items: center; justify-content: center; font-size: 2.8rem; color: var(--green); opacity: .95; margin: 0 1.5rem; }
 .process-step:hover .step-box { background: var(--green); color: #fff; transform: translateY(-4px); }
 .process-step:hover .step-box span { color: #fff; }
 
-/* ================= WHY GRID ================= */
-.why-section-wrapper { background: var(--blue); width: 100%; margin-bottom: 0; }
+/* WHY MANAGECH - wrapper a tutta larghezza, nessun margin residuo */
+.why-section-wrapper { background: var(--blue); width: 100%; display: block; }
 .why-section { padding-top: 4rem; padding-bottom: 4rem; margin-bottom: 0; }
 .why-section h2 { text-align: center; margin-bottom: 3rem; }
-
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.why-card {
-  background: rgba(255,255,255,.07);
-  border: 1px solid rgba(255,255,255,.1);
-  padding: 1.5rem;
-  border-radius: 8px;
-  text-align: center;
-  transition: transform .3s, box-shadow .3s, background .3s;
-  cursor: pointer;
-}
-
+.why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-top: 2rem; }
+.why-card { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.1); padding: 1.5rem; border-radius: 8px; text-align: center; transition: transform .3s, box-shadow .3s, background .3s; cursor: pointer; }
 .why-card i { font-size: 2rem; color: var(--green); margin-bottom: .8rem; }
 .why-card h4 { font-size: 1.2rem; margin-bottom: .5rem; color: #fff; }
-
 .why-card p { font-size: 1.15rem; line-height: 1.7; color: #ccc; transition: color .3s; }
+.why-card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,.12); background: var(--green); }
+.why-card:hover p, .why-card:hover h4, .why-card:hover i { color: #fff; }
 
-.why-card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,.12); background: var(--green); color: #fff; }
-.why-card:hover p, .why-card:hover h4 { color: #fff; }
-.why-card:hover i { color: #fff; }
-
-/* ================= MOBILE ================= */
+/* RESPONSIVE */
 @media (max-width: 992px) {
   .strategic-container { flex-direction: column; }
   .strategic-text { max-width: 100%; padding: 2rem; text-align: center; }
@@ -668,61 +224,29 @@ footer {
 }
 
 @media (max-width: 768px) {
-  /* ---- Header ---- */
   header { height: 70px; }
   .navbar { padding: 0 1.5rem; }
   .logo img { height: 42px; width: auto; }
   .nav-links { display: none; }
   .hamburger { display: flex; }
 
-  /* ---- Hero ---- */
-  .hero {
-    margin-top: 70px;
-    min-height: 55vh;
-    padding: 2.5rem 1.2rem;
-    text-align: center;
-  }
-
-  .hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
+  .hero { margin-top: 70px; min-height: 55vh; padding: 2.5rem 1.2rem; text-align: center; }
+  .hero-content { display: flex; flex-direction: column; align-items: center; justify-content: center; }
   .hero-content img { max-width: 200px; margin-bottom: 1.2rem; }
-
   h1.hero-title { font-size: clamp(1.8rem, 9vw, 3.5rem); letter-spacing: 1px; }
-
   .hero-subtitle { font-size: .9rem; letter-spacing: 1px; }
+  .hero-claim { font-size: clamp(1.1rem, 4vw, 1.5rem); line-height: 1.5; margin-top: 1rem; letter-spacing: .3px; }
 
-  .hero-claim {
-    font-size: clamp(1.1rem, 4vw, 1.5rem);
-    line-height: 1.5;
-    margin-top: 1rem;
-    letter-spacing: .3px;
-  }
-
-  /* ---- Sezione strategica ---- */
   .strategic-text { padding: 2rem 1.2rem; }
 
-  /* ---- Titoli sezioni ---- */
   .central-section h2,
   .strategic-text h2,
   .services-section h2,
   .why-section h2,
-  .form-section h2 {
-    font-size: 1.5rem;
-    line-height: 1.3;
-    margin-top: 2rem;
-    margin-bottom: 1.5rem;
-    letter-spacing: .3px;
-  }
+  .form-section h2 { font-size: 1.5rem; line-height: 1.3; margin-top: 2rem; margin-bottom: 1.5rem; letter-spacing: .3px; }
 
-  /* ---- Central section padding ---- */
   .central-section { padding: 0 1.2rem; margin-bottom: 2rem; }
 
-  /* ---- Griglia servizi: 2 colonne su mobile ---- */
   .services-section { padding: 2.5rem 0; }
   .services-grid { grid-template-columns: 1fr 1fr; gap: .9rem; }
   .service-card { min-height: 180px; padding: 1.4rem 1rem; }
@@ -730,8 +254,7 @@ footer {
   .service-card h4 { font-size: .9rem; margin-bottom: .3rem; }
   .service-card p { font-size: .82rem; line-height: 1.5; }
 
-  /* ---- Approccio / process flow ---- */
-  .methodology-section { padding: 3rem 1.2rem; }
+  .methodology-section { padding: 3rem 1.2rem; margin-bottom: 0; }
   .process-wrapper { gap: 3rem; margin-top: 2.5rem; }
   .process-row { flex-direction: column; align-items: center; gap: 3.5rem; }
   .process-step { width: 100%; align-items: center; }
@@ -739,31 +262,28 @@ footer {
   .step-box span { position: static; transform: none; width: 100%; margin-top: .6rem; }
   .process-arrow { display: none; }
 
-  /* ---- Why grid: 2 colonne su mobile ---- */
-  .why-section-wrapper { margin-top: 2rem; }
-  .why-section { padding: 1.5rem 0; }
+  /* why-section: nessun margin residuo su mobile */
+  .why-section-wrapper { margin: 0; }
+  .why-section { padding: 2rem 0; margin-bottom: 0; }
   .why-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
   .why-card { padding: 1.2rem 1rem; }
   .why-card i { font-size: 1.5rem; }
   .why-card h4 { font-size: .95rem; }
   .why-card p { font-size: .85rem; line-height: 1.5; }
 
-  /* ---- Form ---- */
   .form-section { padding: 3rem 1.2rem; }
   .form-wrapper h2 { font-size: 1.4rem; }
   .form-tags { gap: .6rem; }
   .form-tags span { font-size: .75rem; padding: .4rem .9rem; }
-  .phone-row select { flex: 0 0 38%; max-width: 38%; font-size: .8rem; }
+  .phone-row select { flex: 0 0 140px; width: 140px; font-size: .78rem; }
   form input, form textarea { font-size: .88rem; }
   form button { width: 100%; text-align: center; }
 
-  /* ---- Footer ---- */
   .footer-inner { flex-direction: column; gap: 2rem; }
-  .footer-logo { max-width: 180px; }
+  .footer-logo { max-width: 160px; }
   footer { padding: 3rem 1.2rem 2rem; }
 }
 
-/* Schermi molto piccoli (< 400px) */
 @media (max-width: 400px) {
   h1.hero-title { font-size: 1.6rem; }
   .why-grid { grid-template-columns: 1fr; }
@@ -775,14 +295,14 @@ footer {
 
 <body>
 
-<!-- ACCESSIBILITY: main landmark -->
+<!-- Mobile menu FUORI dall'header: position:fixed funziona correttamente -->
 <div class="mobile-menu" id="mobileMenu">
-    <a href="chi-siamo.html">Chi siamo</a>
-    <a href="servizi.html">Servizi</a>
-    <a href="contatti.html">Contatti</a>
-    <a href="lavora-con-noi.html">Lavora con noi</a>
-    <a href="case-study.html">Case Study</a>
-  </div>
+  <a href="chi-siamo.html">Chi siamo</a>
+  <a href="servizi.html">Servizi</a>
+  <a href="contatti.html">Contatti</a>
+  <a href="lavora-con-noi.html">Lavora con noi</a>
+  <a href="case-study.html">Case Study</a>
+</div>
 
 <header>
   <nav class="navbar">
@@ -798,7 +318,6 @@ footer {
       <li><a href="lavora-con-noi.html">Lavora con noi</a></li>
       <li><a href="case-study.html">Case Study</a></li>
     </ul>
-    <!-- ACCESSIBILITY: button con aria-label e aria-expanded -->
     <button class="hamburger" id="hamburger" aria-label="Apri menu di navigazione" aria-expanded="false" aria-controls="mobileMenu">
       <span></span>
       <span></span>
@@ -809,19 +328,17 @@ footer {
 
 <main>
 
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <!-- PERFORMANCE: width/height espliciti per evitare layout shift -->
     <img src="images/1-4.png" alt="MANAGECH" style="max-width:700px; width:100%; height:auto; display:block; margin:0 auto;">
     <div class="hero-claim">
-      Ingegneria del valore,
-      gestione della complessità.
+      Ingegneria del valore,<br>gestione della complessità.
     </div>
   </div>
 </section>
 
-<!-- ================= STRATEGIC SECTION ================= -->
+<!-- STRATEGIC -->
 <section class="strategic-section">
   <div class="strategic-container">
     <div class="strategic-text central-section">
@@ -831,13 +348,12 @@ footer {
       <p>La nostra consulenza strategica integra approcci ingegneristici e manageriali per generare valore sostenibile.</p>
     </div>
     <div class="strategic-image">
-      <!-- PERFORMANCE: loading lazy per immagini sotto la fold, width/height espliciti -->
       <img src="images/consulenza-strategica5.jpg" alt="Consulenza Strategica Managech" width="700" height="500" loading="lazy">
     </div>
   </div>
 </section>
 
-<!-- ================= SERVICES SECTION ================= -->
+<!-- SERVICES -->
 <section class="services-section">
   <div class="central-section">
     <h2>I nostri servizi</h2>
@@ -889,80 +405,65 @@ footer {
   </div>
 </section>
 
-<!-- ================= METHODOLOGY ================= -->
-<div class="central-section methodology-section" style="margin-bottom:0;">
+<!-- METHODOLOGY -->
+<div class="central-section methodology-section">
   <h2>Il nostro approccio</h2>
   <div class="process-wrapper">
     <div class="process-row">
       <div class="process-step">
-        <div class="step-box" data-step="1">
-          DEFINIZIONE OBIETTIVI
-          <span>Identificazione delle priorità e degli obiettivi strategici</span>
-        </div>
+        <div class="step-box" data-step="1">DEFINIZIONE OBIETTIVI<span>Identificazione delle priorità e degli obiettivi strategici</span></div>
       </div>
-      <div class="process-arrow" aria-hidden="true">➜</div>
+      <div class="process-arrow" aria-hidden="true">&#10148;</div>
       <div class="process-step">
-        <div class="step-box" data-step="2">
-          ANALISI
-          <span>Studio approfondito di processi, dati e risorse disponibili</span>
-        </div>
+        <div class="step-box" data-step="2">ANALISI<span>Studio approfondito di processi, dati e risorse disponibili</span></div>
       </div>
     </div>
     <div class="process-row">
       <div class="process-step">
-        <div class="step-box" data-step="3">
-          MISURAZIONE
-          <span>Valutazione delle performance e individuazione criticità</span>
-        </div>
+        <div class="step-box" data-step="3">MISURAZIONE<span>Valutazione delle performance e individuazione criticità</span></div>
       </div>
-      <div class="process-arrow" aria-hidden="true">➜</div>
+      <div class="process-arrow" aria-hidden="true">&#10148;</div>
       <div class="process-step">
-        <div class="step-box" data-step="4">
-          AZIONI CORRETTIVE
-          <span>Pianificazione di interventi mirati di ottimizzazione</span>
-        </div>
+        <div class="step-box" data-step="4">AZIONI CORRETTIVE<span>Pianificazione di interventi mirati di ottimizzazione</span></div>
       </div>
-      <div class="process-arrow" aria-hidden="true">➜</div>
+      <div class="process-arrow" aria-hidden="true">&#10148;</div>
       <div class="process-step">
-        <div class="step-box" data-step="5">
-          IMPLEMENTAZIONE
-          <span>Supporto operativo e monitoraggio dei risultati</span>
-        </div>
+        <div class="step-box" data-step="5">IMPLEMENTAZIONE<span>Supporto operativo e monitoraggio dei risultati</span></div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ================= WHY MANAGECH ================= -->
+<!-- WHY MANAGECH: wrapper full-width, central-section solo per max-width contenuto -->
 <div class="why-section-wrapper">
-<div class="central-section why-section">
-  <h2>Perché scegliere MANAGECH</h2>
-  <div class="why-grid">
-    <div class="why-card">
-      <i class="fas fa-lightbulb" aria-hidden="true"></i>
-      <h4>Soluzioni innovative</h4>
-      <p>Offriamo approcci creativi e personalizzati per massimizzare il valore</p>
-    </div>
-    <div class="why-card">
-      <i class="fas fa-chart-line" aria-hidden="true"></i>
-      <h4>Risultati misurabili</h4>
-      <p>Monitoriamo ogni intervento con indicatori chiari per garantire performance concrete</p>
-    </div>
-    <div class="why-card">
-      <i class="fas fa-users" aria-hidden="true"></i>
-      <h4>Team multidisciplinare</h4>
-      <p>Professionisti con competenze tecniche, economiche e gestionali sempre a disposizione</p>
-    </div>
-    <div class="why-card">
-      <i class="fas fa-shield-alt" aria-hidden="true"></i>
-      <h4>Affidabilità e trasparenza</h4>
-      <p>Operiamo con massima trasparenza, rispettando tempi, costi e obiettivi concordati</p>
+  <div class="central-section why-section">
+    <h2>Perché scegliere MANAGECH</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <i class="fas fa-lightbulb" aria-hidden="true"></i>
+        <h4>Soluzioni innovative</h4>
+        <p>Offriamo approcci creativi e personalizzati per massimizzare il valore</p>
+      </div>
+      <div class="why-card">
+        <i class="fas fa-chart-line" aria-hidden="true"></i>
+        <h4>Risultati misurabili</h4>
+        <p>Monitoriamo ogni intervento con indicatori chiari per garantire performance concrete</p>
+      </div>
+      <div class="why-card">
+        <i class="fas fa-users" aria-hidden="true"></i>
+        <h4>Team multidisciplinare</h4>
+        <p>Professionisti con competenze tecniche, economiche e gestionali sempre a disposizione</p>
+      </div>
+      <div class="why-card">
+        <i class="fas fa-shield-alt" aria-hidden="true"></i>
+        <h4>Affidabilità e trasparenza</h4>
+        <p>Operiamo con massima trasparenza, rispettando tempi, costi e obiettivi concordati</p>
+      </div>
     </div>
   </div>
 </div>
-</div>
 
-<!-- ================= CONTACT FORM ================= -->
+<!-- CONTACT FORM -->
 <section class="form-section">
   <div class="form-wrapper">
     <h2>Definiamo insieme il percorso</h2>
@@ -985,63 +486,51 @@ footer {
       <label for="cognome">Cognome*</label>
       <input id="cognome" name="cognome" required>
 
-      <!-- ACCESSIBILITY: label esplicita per il gruppo telefono -->
       <label class="phone-label" for="telefono">Telefono*</label>
       <div class="phone-row">
-        <!-- ACCESSIBILITY: label associata al select prefisso -->
-        <label for="prefisso" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Prefisso internazionale</label>
         <select name="prefisso" id="prefisso" required aria-label="Prefisso internazionale">
-          <option value="+39" selected>🇮🇹 Italia +39</option>
-          <option value="+43">🇦🇹 Austria +43</option>
-          <option value="+32">🇧🇪 Belgio +32</option>
-          <option value="+359">🇧🇬 Bulgaria +359</option>
-          <option value="+385">🇭🇷 Croazia +385</option>
-          <option value="+357">🇨🇾 Cipro +357</option>
-          <option value="+420">🇨🇿 Repubblica Ceca +420</option>
-          <option value="+45">🇩🇰 Danimarca +45</option>
-          <option value="+372">🇪🇪 Estonia +372</option>
-          <option value="+358">🇫🇮 Finlandia +358</option>
-          <option value="+33">🇫🇷 Francia +33</option>
-          <option value="+49">🇩🇪 Germania +49</option>
-          <option value="+30">🇬🇷 Grecia +30</option>
-          <option value="+36">🇭🇺 Ungheria +36</option>
-          <option value="+353">🇮🇪 Irlanda +353</option>
-          <option value="+371">🇱🇻 Lettonia +371</option>
-          <option value="+423">🇱🇮 Liechtenstein +423</option>
-          <option value="+370">🇱🇹 Lituania +370</option>
-          <option value="+352">🇱🇺 Lussemburgo +352</option>
-          <option value="+356">🇲🇹 Malta +356</option>
-          <option value="+31">🇳🇱 Paesi Bassi +31</option>
-          <option value="+48">🇵🇱 Polonia +48</option>
-          <option value="+351">🇵🇹 Portogallo +351</option>
-          <option value="+40">🇷🇴 Romania +40</option>
-          <option value="+7">🇷🇺 Russia +7</option>
-          <option value="+381">🇷🇸 Serbia +381</option>
-          <option value="+421">🇸🇰 Slovacchia +421</option>
-          <option value="+386">🇸🇮 Slovenia +386</option>
-          <option value="+34">🇪🇸 Spagna +34</option>
-          <option value="+46">🇸🇪 Svezia +46</option>
-          <option value="+41">🇨🇭 Svizzera +41</option>
-          <option value="+44">🇬🇧 Regno Unito +44</option>
-          <option value="+39">🇻🇦 Città del Vaticano +39</option>
-          <option value="+1">🇺🇸 USA +1</option>
-          <option value="+1">🇨🇦 Canada +1</option>
-          <option value="+86">🇨🇳 Cina +86</option>
-          <option value="+91">🇮🇳 India +91</option>
-          <option value="+81">🇯🇵 Giappone +81</option>
-          <option value="+55">🇧🇷 Brasile +55</option>
-          <option value="+61">🇦🇺 Australia +61</option>
-          <option value="+27">🇿🇦 Sud Africa +27</option>
-          <option value="+82">🇰🇷 Corea del Sud +82</option>
-          <option value="+60">🇲🇾 Malesia +60</option>
-          <option value="+65">🇸🇬 Singapore +65</option>
-          <option value="+66">🇹🇭 Thailandia +66</option>
-          <option value="+971">🇦🇪 Emirati Arabi Uniti +971</option>
-          <option value="+98">🇮🇷 Iran +98</option>
-          <option value="+964">🇮🇶 Iraq +964</option>
-          <option value="+52">🇲🇽 Messico +52</option>
-          <option value="+57">🇨🇴 Colombia +57</option>
-          <option value="+56">🇨🇱 Cile +56</option>
+          <option value="+39" selected>&#127470;&#127481; Italia +39</option>
+          <option value="+43">&#127462;&#127481; Austria +43</option>
+          <option value="+32">&#127463;&#127466; Belgio +32</option>
+          <option value="+359">&#127463;&#127468; Bulgaria +359</option>
+          <option value="+385">&#127469;&#127479; Croazia +385</option>
+          <option value="+357">&#127464;&#127486; Cipro +357</option>
+          <option value="+420">&#127464;&#127487; Rep. Ceca +420</option>
+          <option value="+45">&#127465;&#127472; Danimarca +45</option>
+          <option value="+372">&#127466;&#127466; Estonia +372</option>
+          <option value="+358">&#127467;&#127470; Finlandia +358</option>
+          <option value="+33">&#127467;&#127479; Francia +33</option>
+          <option value="+49">&#127465;&#127466; Germania +49</option>
+          <option value="+30">&#127468;&#127479; Grecia +30</option>
+          <option value="+36">&#127469;&#127482; Ungheria +36</option>
+          <option value="+353">&#127470;&#127466; Irlanda +353</option>
+          <option value="+371">&#127473;&#127483; Lettonia +371</option>
+          <option value="+370">&#127473;&#127481; Lituania +370</option>
+          <option value="+352">&#127473;&#127482; Lussemburgo +352</option>
+          <option value="+356">&#127474;&#127481; Malta +356</option>
+          <option value="+31">&#127475;&#127473; Paesi Bassi +31</option>
+          <option value="+48">&#127477;&#127473; Polonia +48</option>
+          <option value="+351">&#127477;&#127481; Portogallo +351</option>
+          <option value="+40">&#127479;&#127476; Romania +40</option>
+          <option value="+381">&#127479;&#127480; Serbia +381</option>
+          <option value="+421">&#127480;&#127472; Slovacchia +421</option>
+          <option value="+386">&#127480;&#127470; Slovenia +386</option>
+          <option value="+34">&#127466;&#127480; Spagna +34</option>
+          <option value="+46">&#127480;&#127466; Svezia +46</option>
+          <option value="+41">&#127464;&#127469; Svizzera +41</option>
+          <option value="+44">&#127468;&#127463; Regno Unito +44</option>
+          <option value="+1">&#127482;&#127480; USA +1</option>
+          <option value="+1">&#127464;&#127462; Canada +1</option>
+          <option value="+86">&#127464;&#127475; Cina +86</option>
+          <option value="+91">&#127470;&#127475; India +91</option>
+          <option value="+81">&#127471;&#127477; Giappone +81</option>
+          <option value="+55">&#127463;&#127479; Brasile +55</option>
+          <option value="+61">&#127462;&#127482; Australia +61</option>
+          <option value="+27">&#127487;&#127462; Sud Africa +27</option>
+          <option value="+82">&#127472;&#127479; Corea del Sud +82</option>
+          <option value="+65">&#127480;&#127468; Singapore +65</option>
+          <option value="+971">&#127462;&#127466; Emirati Arabi +971</option>
+          <option value="+52">&#127474;&#127485; Messico +52</option>
         </select>
         <input id="telefono" type="tel" name="telefono" placeholder="340 1234567" required>
       </div>
@@ -1077,7 +566,7 @@ footer {
 
 </main>
 
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
@@ -1107,22 +596,41 @@ footer {
   </div>
 </footer>
 
-<!-- ================= SCRIPTS ================= -->
 <script>
-  document.getElementById("contactForm").addEventListener("submit", function () {
-    const prefisso = document.getElementById("prefisso").value;
-    const telefono = document.getElementById("telefono").value;
-    document.getElementById("telefono_completo").value = prefisso + " " + telefono;
-  });
+document.addEventListener("DOMContentLoaded", function () {
 
-  const hamburger = document.getElementById("hamburger");
-  const mobileMenu = document.getElementById("mobileMenu");
+  // Form: concatena prefisso + numero prima dell'invio
+  var contactForm = document.getElementById("contactForm");
+  if (contactForm) {
+    contactForm.addEventListener("submit", function () {
+      var prefisso = document.getElementById("prefisso").value;
+      var telefono = document.getElementById("telefono").value;
+      document.getElementById("telefono_completo").value = prefisso + " " + telefono;
+    });
+  }
 
-  hamburger.addEventListener("click", () => {
-    const isOpen = hamburger.classList.toggle("active");
-    mobileMenu.classList.toggle("active");
-    // ACCESSIBILITY: aggiorna aria-expanded
-    hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
-  });
+  // Hamburger menu
+  var hamburger = document.getElementById("hamburger");
+  var mobileMenu = document.getElementById("mobileMenu");
 
-  mobileMenu.querySelectorAll("a").forEach(link
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener("click", function () {
+      var isOpen = hamburger.classList.toggle("active");
+      mobileMenu.classList.toggle("active");
+      hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    mobileMenu.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        hamburger.classList.remove("active");
+        mobileMenu.classList.remove("active");
+        hamburger.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+
+});
+</script>
+
+</body>
+</html>
