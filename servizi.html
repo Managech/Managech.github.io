@@ -195,6 +195,49 @@ h1.hero-title {
 
 .service-strip:nth-child(even) .service-image { order: 1; }
 
+/* Icona sopra il titolo */
+.service-icon-large {
+  font-size: 2.2rem;
+  color: var(--green);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* Separatore tra strip bianche adiacenti */
+.service-strip.white + .service-strip.white {
+  border-top: 1px solid #e8e8e8;
+  box-shadow: inset 0 6px 12px -6px rgba(0,0,0,.06);
+}
+
+/* CTA finale */
+.services-cta {
+  text-align: center;
+  padding: 5rem 2rem;
+  background: #f4f4f4;
+}
+
+.services-cta p {
+  font-size: 1.15rem;
+  color: var(--blue);
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.btn-cta {
+  display: inline-block;
+  background: var(--green);
+  color: #fff;
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 6px;
+  text-decoration: none;
+  letter-spacing: .5px;
+  transition: background .3s, transform .3s;
+}
+
+.btn-cta:hover { background: #17845e; transform: translateY(-2px); }
+
 .service-text h2 {
   font-size: 2.4rem;
   font-weight: 700;
@@ -302,7 +345,50 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
   /* Strips */
   .service-text,
   .service-strip:nth-child(even) .service-text { padding: 2rem 1.2rem; }
-  .service-text h2 { font-size: 1.5rem; }
+  /* Icona sopra il titolo */
+.service-icon-large {
+  font-size: 2.2rem;
+  color: var(--green);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* Separatore tra strip bianche adiacenti */
+.service-strip.white + .service-strip.white {
+  border-top: 1px solid #e8e8e8;
+  box-shadow: inset 0 6px 12px -6px rgba(0,0,0,.06);
+}
+
+/* CTA finale */
+.services-cta {
+  text-align: center;
+  padding: 5rem 2rem;
+  background: #f4f4f4;
+}
+
+.services-cta p {
+  font-size: 1.15rem;
+  color: var(--blue);
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.btn-cta {
+  display: inline-block;
+  background: var(--green);
+  color: #fff;
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 6px;
+  text-decoration: none;
+  letter-spacing: .5px;
+  transition: background .3s, transform .3s;
+}
+
+.btn-cta:hover { background: #17845e; transform: translateY(-2px); }
+
+.service-text h2 { font-size: 1.5rem; }
   .service-text p { font-size: .95rem; }
   .service-image img { min-height: 220px; height: 220px; }
 
@@ -374,6 +460,7 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
   <div class="service-strip white">
     <div class="inner">
       <div class="service-text">
+        <i class="fas fa-lightbulb service-icon-large" aria-hidden="true"></i>
         <h2>Consulenza strategica</h2>
         <p>Offriamo supporto decisionale e organizzativo per guidare le imprese nella definizione e nell'implementazione delle strategie più efficaci. Analizziamo mercati, competitor e trend emergenti per individuare opportunità di crescita sostenibile, ottimizzando risorse e processi. Il nostro approccio combina visione strategica e pragmatismo operativo, assicurando risultati concreti e duraturi.</p>
       </div>
@@ -386,6 +473,7 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
   <div class="service-strip blue">
     <div class="inner">
       <div class="service-text">
+        <i class="fas fa-file-contract service-icon-large" aria-hidden="true"></i>
         <h2>Preparazione Gare</h2>
         <p>Offriamo consulenza specializzata nella preparazione di gare d'appalto pubbliche e private, supportando le aziende dalla lettura del bando alla stesura dell'offerta tecnica ed economica. Il nostro team gestisce l'intera documentazione di gara, garantendo conformità normativa secondo il Codice degli Appalti e massimizzando le possibilità di aggiudicazione. Accompagniamo il cliente in tutte le fasi: analisi dei requisiti, coordinamento interno, gestione delle tempistiche e verifica finale.</p>
       </div>
@@ -398,6 +486,7 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
   <div class="service-strip white">
     <div class="inner">
       <div class="service-text">
+        <i class="fas fa-cogs service-icon-large" aria-hidden="true"></i>
         <h2>Ottimizzazione dei Processi</h2>
         <p>Aiutiamo le aziende a migliorare l'efficienza operativa attraverso l'analisi e la reingegnerizzazione dei processi chiave. Identifichiamo inefficienze, colli di bottiglia e ridondanze, implementando soluzioni che riducono tempi e costi, aumentano la qualità del servizio e favoriscono la scalabilità del business. Il nostro obiettivo è trasformare i processi in leve di vantaggio competitivo.</p>
       </div>
@@ -410,6 +499,7 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
   <div class="service-strip blue">
     <div class="inner">
       <div class="service-text">
+        <i class="fas fa-chart-pie service-icon-large" aria-hidden="true"></i>
         <h2>Contabilità Industriale e Controllo di Gestione</h2>
         <p>Progettiamo e implementiamo sistemi di controllo economico-finanziario su misura, capaci di monitorare performance, margini e costi in tempo reale. Supportiamo le decisioni manageriali attraverso reporting chiari e KPI personalizzati, garantendo una visione completa della salute aziendale e facilitando interventi tempestivi per massimizzare redditività e sostenibilità.</p>
       </div>
@@ -422,6 +512,7 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
   <div class="service-strip white">
     <div class="inner">
       <div class="service-text">
+        <i class="fas fa-database service-icon-large" aria-hidden="true"></i>
         <h2>Data Governance</h2>
         <p>Accompagniamo le aziende nella gestione strategica del patrimonio informativo, assicurando qualità, integrità, sicurezza e conformità dei dati. Dall'architettura alla gestione del ciclo di vita dei dati, forniamo metodologie e strumenti per valorizzare le informazioni come asset strategico, abilitando decisioni basate su dati affidabili e migliorando l'efficienza complessiva dell'organizzazione.</p>
       </div>
@@ -434,6 +525,7 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
   <div class="service-strip blue">
     <div class="inner">
       <div class="service-text">
+        <i class="fas fa-robot service-icon-large" aria-hidden="true"></i>
         <h2>Digital Analytics &amp; AI</h2>
         <p>Supportiamo le aziende nella raccolta, analisi e interpretazione dei dati, integrando strumenti di intelligenza artificiale per estrarre insight operativi e strategici. Dall'analisi predittiva alla modellazione avanzata, trasformiamo i dati in decisioni concrete, migliorando performance, esperienza cliente e innovazione, con un approccio orientato al business e al ritorno tangibile degli investimenti.</p>
       </div>
@@ -446,6 +538,7 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
   <div class="service-strip white">
     <div class="inner">
       <div class="service-text">
+        <i class="fas fa-network-wired service-icon-large" aria-hidden="true"></i>
         <h2>System Integration</h2>
         <p>Progettiamo soluzioni tecnologiche integrate per garantire continuità operativa, interoperabilità e scalabilità dei sistemi aziendali. Connettiamo infrastrutture, applicazioni e processi, semplificando la gestione IT e favorendo un flusso informativo coerente e sicuro. L'obiettivo è creare ecosistemi digitali robusti che supportino la crescita e l'innovazione dell'impresa.</p>
       </div>
@@ -458,6 +551,7 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
   <div class="service-strip blue">
     <div class="inner">
       <div class="service-text">
+        <i class="fas fa-chalkboard-teacher service-icon-large" aria-hidden="true"></i>
         <h2>Formazione</h2>
         <p>Sviluppiamo programmi formativi executive e tecnici personalizzati per team e dirigenti, mirati a sviluppare competenze strategiche, digitali e manageriali. Dai workshop pratici alla formazione su strumenti avanzati, garantiamo un apprendimento efficace e immediatamente applicabile, rafforzando la capacità decisionale, la leadership e la cultura aziendale.</p>
       </div>
@@ -468,6 +562,12 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
   </div>
 
 </section>
+
+<!-- ================= CTA ================= -->
+<div class="services-cta">
+  <p>Hai un progetto in mente o vuoi saperne di più sui nostri servizi?</p>
+  <a href="contatti.html" class="btn-cta">Contattaci</a>
+</div>
 
 <!-- ================= WHY MANAGECH ================= -->
 <section class="why-section">
@@ -506,8 +606,7 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
       <p>
         <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Piazza G. Mazzini 27, 00195 Roma<br>
         <i class="fas fa-phone" aria-hidden="true"></i> +39 349 390 7663<br>
-        <i class="fas fa-envelope" aria-hidden="true"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a7d4c2c0d5c2d3c2d5cec6e7cac6c9c6c0c2c4cf89c4c8ca">[email&#160;protected]</a>
-      </p>
+        <i class="fas fa-envelope" aria-hidden="true"></i> segreteria@managech.com</p>
     </div>
     <nav aria-label="Footer navigation">
       <div class="footer-links">
