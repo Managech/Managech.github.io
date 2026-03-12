@@ -149,6 +149,7 @@ h1.hero-title {
   align-items: stretch;
   position: relative;
   overflow: hidden;
+  min-height: 480px;
 }
 
 .service-strip.blue  { background: var(--blue); color: #fff; }
@@ -183,7 +184,7 @@ h1.hero-title {
   width: 100%; height: 100%;
   object-fit: cover;
   display: block;
-  min-height: 380px;
+  min-height: 480px;
 }
 
 /* Strip pari: immagine a sinistra, testo a destra */
@@ -206,6 +207,7 @@ h1.hero-title {
   font-size: 1.1rem;
   line-height: 1.75;
   opacity: .95;
+  text-align: justify;
 }
 
 /* ================= WHY SECTION ================= */
@@ -504,7 +506,7 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
       <p>
         <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Piazza G. Mazzini 27, 00195 Roma<br>
         <i class="fas fa-phone" aria-hidden="true"></i> +39 349 390 7663<br>
-        <i class="fas fa-envelope" aria-hidden="true"></i> segreteria@managech.com
+        <i class="fas fa-envelope" aria-hidden="true"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a7d4c2c0d5c2d3c2d5cec6e7cac6c9c6c0c2c4cf89c4c8ca">[email&#160;protected]</a>
       </p>
     </div>
     <nav aria-label="Footer navigation">
@@ -527,7 +529,7 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
 </footer>
 
 <!-- ================= SCRIPTS ================= -->
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const hamburger = document.getElementById("hamburger");
   const mobileMenu = document.getElementById("mobileMenu");
 
@@ -537,14 +539,4 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
     hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
   });
 
-  mobileMenu.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      hamburger.classList.remove("active");
-      mobileMenu.classList.remove("active");
-      hamburger.setAttribute("aria-expanded", "false");
-    });
-  });
-</script>
-
-</body>
-</html>
+  mobileMenu.querySelectorAll("a").forEach(link 
