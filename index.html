@@ -629,7 +629,8 @@ footer {
 .process-step:hover .step-box span { color: #fff; }
 
 /* ================= WHY GRID ================= */
-.why-section { padding-top: 4rem; padding-bottom: 4rem; margin-top: 4rem; background: var(--blue); }
+.why-section-wrapper { background: var(--blue); width: 100%; margin-top: 4rem; }
+.why-section { padding-top: 4rem; padding-bottom: 4rem; }
 .why-section h2 { text-align: center; margin-bottom: 3rem; }
 
 .why-grid {
@@ -739,7 +740,8 @@ footer {
   .process-arrow { display: none; }
 
   /* ---- Why grid: 2 colonne su mobile ---- */
-  .why-section { margin-top: 2rem; padding: 1.5rem 0; }
+  .why-section-wrapper { margin-top: 2rem; }
+  .why-section { padding: 1.5rem 0; }
   .why-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
   .why-card { padding: 1.2rem 1rem; }
   .why-card i { font-size: 1.5rem; }
@@ -932,6 +934,7 @@ footer {
 </div>
 
 <!-- ================= WHY MANAGECH ================= -->
+<div class="why-section-wrapper">
 <div class="central-section why-section">
   <h2>Perché scegliere MANAGECH</h2>
   <div class="why-grid">
@@ -956,6 +959,7 @@ footer {
       <p>Operiamo con massima trasparenza, rispettando tempi, costi e obiettivi concordati</p>
     </div>
   </div>
+</div>
 </div>
 
 <!-- ================= CONTACT FORM ================= -->
