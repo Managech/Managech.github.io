@@ -2,9 +2,8 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-  <title>Lavora con Noi | MANAGECH – Collabora con uno Studio di Consulenza</title>
+<title>Lavora con Noi | MANAGECH – Collabora con uno Studio di Consulenza</title>
 <meta name="description" content="Sei un professionista con competenze manageriali, ingegneristiche o tecnologiche? Invia la tua candidatura e unisciti al team di MANAGECH.">
-<title>MANAGECH – Lavora con noi</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="format-detection" content="telephone=no">
 
@@ -119,61 +118,51 @@ header{
   font-weight:800;
   letter-spacing:4px;
   color:var(--green);
+  line-height:1.15;
 }
 
 .hero-subtitle{
   margin-top:.8rem;
   font-size:1.2rem;
-  letter-spacing:2px;
+  letter-spacing:1px;
   color:var(--gray);
+  max-width:720px;
+  margin:1.5rem auto 0;
 }
 
 /* ================= FORM ================= */
 .form-section{
   background:#fff;
-  padding:5rem 2rem;
+  padding:6rem 2rem;
 }
 
 .form-wrapper{
-  max-width:700px;
+  max-width:760px;
   margin:auto;
 }
 
-  .wide-section .form-wrapper {
+.wide-section .form-wrapper {
   max-width: 1100px;
 }
 
-  .wide-section .block-text-form {
+.wide-section .block-text-form {
   max-width: 900px;
 }
-
 
 .form-wrapper p{
   font-size:1.1rem;
   margin-bottom:2rem;
 }
 
-.form-wrapper h3 {
-  font-size: 2.4rem;
-  color: var(--green);
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  line-height: 1.2;
-  letter-spacing: 1px;
+.block-text-form {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--blue);
+  margin-bottom: 2rem;
 }
 
-.form-tags{
-  display:flex;
-  gap:1rem;
-  margin-bottom:2rem;
-  flex-wrap:wrap;
-}
-  
-.block-text-form {
-  font-size: 1.15rem;       /* dimensione testo leggibile */
-  line-height: 1.7;         /* spaziatura verticale identica alla home */
-  color: var(--blue);       /* stesso colore del testo dei block */
-  margin-bottom: 2rem;      /* distanza dal form o altri elementi */
+.block-text-form + .block-text-form {
+  margin-top: 1.2rem;
 }
 
 .form-tags {
@@ -181,27 +170,9 @@ header{
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
   margin-top: 2.5rem;
+  margin-bottom: 2rem;
 }
 
-  .form-tags span {
-  text-align: left;
-  min-height: 110px;
-}
-
-  
-@media (max-width: 900px) {
-  .form-tags {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 520px) {
-  .form-tags {
-    grid-template-columns: 1fr;
-  }
-}
-
-  
 .form-tags span {
   background: #ffffff;
   border-radius: 14px;
@@ -213,6 +184,8 @@ header{
   font-weight: 500;
   box-shadow: 0 10px 25px rgba(11,31,51,0.06);
   transition: transform .3s ease, box-shadow .3s ease;
+  text-align: left;
+  min-height: 110px;
 }
 
 .form-tags span:hover {
@@ -223,11 +196,7 @@ header{
 .form-tags i {
   font-size: 1.4rem;
   color: var(--green);
-}
-
-
-.form-tags i{
-  color:var(--green);
+  flex-shrink: 0;
 }
 
 form label{
@@ -243,21 +212,43 @@ form textarea{
   margin-top:.3rem;
   border:1px solid #ccc;
   font-family:'Montserrat',sans-serif;
+  border-radius: 6px;
+  transition: border .2s ease, box-shadow .2s ease;
 }
 
-form select[name="prefisso"] {
-  padding: 0.65rem 0.7rem;
-  font-family: 'Montserrat', sans-serif; 
-  font-size: 0.85rem;       
-  height: 38px;              
+form input:focus,
+form textarea:focus,
+form select:focus {
+  outline: none;
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(31,163,122,0.15);
+}
+
+.phone-row {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  margin-top: .3rem;
+}
+
+.phone-row select {
+  flex: 0 0 auto;
+  padding: .65rem .7rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .85rem;
+  height: 38px;
   line-height: 1.2;
-  border: 1px solid #ccc;     
-  border-radius: 0;           
-  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 6px;
   appearance: none;
-  -webkit-appearance: none;    
-  -moz-appearance: none;      
+  -webkit-appearance: none;
+  -moz-appearance: none;
   cursor: pointer;
+}
+
+.phone-row input[type="tel"] {
+  flex: 1;
+  margin-top: 0;
 }
 
 form textarea{
@@ -275,7 +266,6 @@ form button {
   border-radius: 6px;
   border: none;
   cursor: pointer;
-  text-decoration: none;
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
@@ -314,178 +304,7 @@ form button:hover {
   text-decoration: underline;
 }
 
-/* ================= FOOTER ================= */
-footer{
-  background:var(--blue);
-  color:#ccc;
-  padding:4rem 2rem 2rem;
-}
-
-.footer-inner{
-  max-width:1200px;
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:3rem;
-}
-  
-.footer-logo {
-  max-width: 280px;   /* regolabile */
-  width: 100%;
-  margin-bottom: 1.5rem;
-  display: block;
-}
-
-.footer-brand h3{
-  margin:0;
-  color:var(--green);
-  font-size:1.6rem;
-}
-
-.footer-brand h4{
-  margin:.3rem 0 1.5rem;
-  font-weight:400;
-  color:#aaa;
-}
-
-.footer-brand i{
-  color:var(--green);
-  margin-right:8px;
-}
-
-.footer-links ul{
-  list-style:none;
-  padding:0;
-  margin: 0;
-}
-
-.footer-links li{
-  margin:.6rem 0;
-}
-
-.footer-links a{
-  color:#ccc;
-  text-decoration:none;
-}
-
-.footer-bottom{
-  text-align:center;
-  margin-top:3rem;
-  font-size:.75rem;
-  color:#888;
-}
-  
-.footer-brand p {
-  line-height: 1.8;
-}
-
-.footer-brand p i {
-  display: inline-block;
-  width: 20px;
-}
-  
-/* Forza stile link nel footer */
-footer a{
-  color:#ccc;
-  text-decoration:none;
-}
-
-footer a:visited{
-  color:#ccc;
-}
-
-footer a:hover{
-  color:#ccc;
-  text-decoration:none;
-}
-
-/* ===== ALLINEAMENTO FORM CONTATTI ALLA HOME ===== */
-
-/* Titolo identico alla homepage */
-.form-section h2 {
-  font-size: 2.4rem;
-  color: var(--green);
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  line-height: 1.2;
-  letter-spacing: 1px;
-  text-align: left;
-}
-
-/* Testo sopra il form identico alla homepage */
-.form-section .block-text-form {
-  font-size: 1.15rem;
-  line-height: 1.7;
-  color: var(--blue);
-  margin-bottom: 2rem;
-  max-width: 100%;
-}
-/* ================= INTRO SEO ================= */
-.contact-intro {
-  background: #f4f4f4;          /* sfondo leggero per separarla dall'hero */
-  padding: 3rem 2rem;           /* spazio verticale */
-  text-align: center;            /* testo centrato */
-}
-
-.contact-intro .central-section {
-  max-width: 900px;              /* mantiene il testo leggibile */
-  margin: 0 auto;
-}
-
-.contact-intro p {
-  font-size: 1.15rem;            /* coerente con testo form e blocchi */
-  line-height: 1.7;
-  color: var(--blue);
-  margin: 0;
-}
-.form-wrapper {
-  max-width: 760px;
-}
-
-.form-section h2 {
-  margin-bottom: 2rem;
-}
-
-.block-text-form + .block-text-form {
-  margin-top: 1.2rem;
-}
-.form-section {
-  padding: 6rem 2rem;
-}
-
-.form-wrapper > p {
-  max-width: 620px;
-}
-.hero-title {
-  line-height: 1.15;
-}
-
-.hero-subtitle {
-  max-width: 720px;
-  margin: 1.5rem auto 0;
-  letter-spacing: 1px;
-}
-form input,
-form textarea,
-form select {
-  border-radius: 6px;
-  transition: border .2s ease, box-shadow .2s ease;
-}
-
-form input:focus,
-form textarea:focus,
-form select:focus {
-  outline: none;
-  border-color: var(--green);
-  box-shadow: 0 0 0 3px rgba(31,163,122,0.15);
-}
-section[style*="background:#f4f4f4"] .form-wrapper {
-  background: #ffffff;
-  padding: 3rem;
-  border-radius: 18px;
-  box-shadow: 0 20px 45px rgba(11,31,51,0.08);
-}
+/* ================= FILE UPLOAD ================= */
 .file-upload {
   position: relative;
   display: inline-block;
@@ -525,11 +344,7 @@ section[style*="background:#f4f4f4"] .form-wrapper {
   color: #fff;
   transform: translateY(-1px);
 }
-.file-upload label {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-}
+
 .file-status {
   margin-top: 0.6rem;
   font-size: 0.8rem;
@@ -538,21 +353,128 @@ section[style*="background:#f4f4f4"] .form-wrapper {
   display: none;
 }
 
-  /* ================= MOBILE HERO ================= */
-@media (max-width: 768px){
-
-  header{
-    height:70px;
-  }
-
-  .navbar{
-    padding:0 1.5rem;
-  }
-  
-  .logo img {
-    height:42px; /* leggermente più piccolo su mobile */
+/* ================= FORM SECTION TITOLO ================= */
+.form-section h2 {
+  font-size: 2.4rem;
+  color: var(--green);
+  font-weight: 700;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  text-align: left;
 }
-  
+
+/* ================= INTRO SEO ================= */
+.contact-intro {
+  background: #f4f4f4;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.contact-intro p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--blue);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Form candidatura sfondo grigio */
+.form-candidatura {
+  background: #f4f4f4;
+  padding: 6rem 2rem;
+}
+
+.form-candidatura .form-wrapper {
+  background: #ffffff;
+  padding: 3rem;
+  border-radius: 18px;
+  box-shadow: 0 20px 45px rgba(11,31,51,0.08);
+  max-width: 760px;
+  margin: auto;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  background:var(--blue);
+  color:#ccc;
+  padding:4rem 2rem 2rem;
+}
+
+.footer-inner{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:3rem;
+}
+
+.footer-logo {
+  max-width: 280px;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.footer-brand h3{
+  margin:0;
+  color:var(--green);
+  font-size:1.6rem;
+}
+
+.footer-brand i{
+  color:var(--green);
+  margin-right:8px;
+}
+
+.footer-links ul{
+  list-style:none;
+  padding:0;
+  margin: 0;
+}
+
+.footer-links li{
+  margin:.6rem 0;
+}
+
+.footer-links a{
+  color:#ccc;
+  text-decoration:none;
+}
+
+.footer-bottom{
+  text-align:center;
+  margin-top:3rem;
+  font-size:.75rem;
+  color:#888;
+}
+
+.footer-brand p {
+  line-height: 1.8;
+}
+
+.footer-brand p i {
+  display: inline-block;
+  width: 20px;
+}
+
+footer a{ color:#ccc; text-decoration:none; }
+footer a:visited{ color:#ccc; }
+footer a:hover{ color:#ccc; text-decoration:none; }
+
+/* ================= MOBILE ================= */
+@media (max-width: 900px) {
+  .form-tags {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px){
+  header{ height:70px; }
+  .navbar{ padding:0 1.5rem; }
+  .logo img { height:42px; }
+
   .hero{
     margin-top:70px;
     min-height:60vh;
@@ -571,10 +493,31 @@ section[style*="background:#f4f4f4"] .form-wrapper {
     line-height:1.6;
   }
 
+  .form-section h2{
+    font-size: 1.6rem;
+    line-height: 1.3;
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+    letter-spacing: 0.5px;
+  }
+
+  .phone-row select {
+    flex: 0 0 35%;
+    max-width: 35%;
+  }
+
+  .form-candidatura .form-wrapper {
+    padding: 1.5rem;
+  }
 }
 
-  /* ================= HAMBURGER ================= */
+@media (max-width: 520px) {
+  .form-tags {
+    grid-template-columns: 1fr;
+  }
+}
 
+/* ================= HAMBURGER ================= */
 .hamburger{
   display:none;
   flex-direction:column;
@@ -589,23 +532,13 @@ section[style*="background:#f4f4f4"] .form-wrapper {
   transition:.4s;
 }
 
-.hamburger.active span:nth-child(1){
-  transform:rotate(45deg) translate(5px,5px);
-}
-
-.hamburger.active span:nth-child(2){
-  opacity:0;
-}
-
-.hamburger.active span:nth-child(3){
-  transform:rotate(-45deg) translate(6px,-6px);
-}
-
-/* MOBILE MENU */
+.hamburger.active span:nth-child(1){ transform:rotate(45deg) translate(5px,5px); }
+.hamburger.active span:nth-child(2){ opacity:0; }
+.hamburger.active span:nth-child(3){ transform:rotate(-45deg) translate(6px,-6px); }
 
 .mobile-menu{
   position:fixed;
-  top:70px;                /* parte sotto header mobile */
+  top:70px;
   left:0;
   width:100%;
   background:var(--blue);
@@ -620,9 +553,7 @@ section[style*="background:#f4f4f4"] .form-wrapper {
   box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
 
-.mobile-menu.active{
-  transform:translateY(0);
-}
+.mobile-menu.active{ transform:translateY(0); }
 
 .mobile-menu a{
   color:#fff;
@@ -630,80 +561,29 @@ section[style*="background:#f4f4f4"] .form-wrapper {
   text-decoration:none;
 }
 
-/* NASCONDE MENU DESKTOP SU MOBILE */
 @media(max-width:768px){
-
-  .nav-links{
-    display:none;
-  }
-
-  .hamburger{
-    display:flex;
-  }
-
+  .nav-links{ display:none; }
+  .hamburger{ display:flex; }
 }
-@media (max-width: 768px){
-
-  /* Contenitore telefono */
-  .form-wrapper form div[style*="display:flex"]{
-    display: flex !important;
-    gap: 0.5rem;
-  }
-
-  /* Prefisso più stretto */
-  .form-wrapper select[name="prefisso"]{
-    flex: 0 0 35%;   /* occupa solo il 35% */
-    max-width: 35%;
-  }
-
-  /* Numero telefono più largo */
-  .form-wrapper input[name="telefono"]{
-    flex: 1;         /* occupa tutto lo spazio restante */
-  }
-
-}
-@media (max-width: 768px){
-
-  .form-section h2{
-    font-size: 1.6rem;
-    line-height: 1.3;
-    margin-top: 2.5rem;
-    margin-bottom: 2rem;
-    letter-spacing: 0.5px;
-  }
-
-}
-
-  
 </style>
 </head>
-  
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  document.querySelector("form").addEventListener("submit", function () {
-    const prefisso = document.querySelector('select[name="prefisso"]').value;
-    const telefono = document.querySelector('input[name="telefono"]').value;
-    document.getElementById("telefono_completo").value = prefisso + " " + telefono;
-  });
-});
-</script>
 
 <body>
 
 <!-- ================= HEADER ================= -->
 <header>
   <div class="mobile-menu" id="mobileMenu">
-  <a href="chi-siamo.html">Chi siamo</a>
-  <a href="servizi.html">Servizi</a>
-  <a href="contatti.html">Contatti</a>
-  <a href="lavora-con-noi.html">Lavora con noi</a>
-  <a href="case-study.html">Case Study</a>
-</div>
+    <a href="chi-siamo.html">Chi siamo</a>
+    <a href="servizi.html">Servizi</a>
+    <a href="contatti.html">Contatti</a>
+    <a href="lavora-con-noi.html">Lavora con noi</a>
+    <a href="case-study.html">Case Study</a>
+  </div>
 
   <nav class="navbar">
     <div class="logo">
       <a href="index.html">
-        <img src="images/1-4.png">
+        <img src="images/1-4.png" alt="MANAGECH">
       </a>
     </div>
     <ul class="nav-links">
@@ -714,52 +594,47 @@ document.addEventListener("DOMContentLoaded", function () {
       <li><a href="case-study.html">Case Study</a></li>
     </ul>
     <div class="hamburger" id="hamburger">
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
-
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </nav>
 </header>
 
 <!-- ================= HERO ================= -->
 <section class="hero">
   <div class="hero-content">
-    <div class="hero-title">Non cerchiamo profili.<br>Costruiamo competenze.</div>
+    <!-- SEO: h1 invece di div -->
+    <h1 class="hero-title">Non cerchiamo profili.<br>Costruiamo competenze.</h1>
     <div class="hero-subtitle">
-    Siamo uno studio di consulenza che lavora su progetti complessi,
-    con metodo, responsabilità e crescita continua.
+      Siamo uno studio di consulenza che lavora su progetti complessi,
+      con metodo, responsabilità e crescita continua.
     </div>
-    </div>
+  </div>
 </section>
 
 <!-- ================= INTRO VALORIALE ================= -->
 <section class="contact-intro">
-  <div class="central-section">
-    <p>
-      In MANAGECH crediamo che la consulenza sia prima di tutto un lavoro di metodo, responsabilità e visione.
-      Collaboriamo con imprese, istituzioni e organizzazioni complesse per supportarle nei processi decisionali,
-      di trasformazione e di crescita sostenibile.
-      <br><br>
-      Entrare a far parte del nostro team significa lavorare in un contesto professionale strutturato,
-      orientato all’analisi, al rigore tecnico e alla qualità delle soluzioni.
-    </p>
-  </div>
+  <p>
+    In MANAGECH crediamo che la consulenza sia prima di tutto un lavoro di metodo, responsabilità e visione.
+    Collaboriamo con imprese, istituzioni e organizzazioni complesse per supportarle nei processi decisionali,
+    di trasformazione e di crescita sostenibile.
+    <br><br>
+    Entrare a far parte del nostro team significa lavorare in un contesto professionale strutturato,
+    orientato all'analisi, al rigore tecnico e alla qualità delle soluzioni.
+  </p>
 </section>
 
+<!-- ================= SEZIONE LAVORARE IN MANAGECH ================= -->
 <section class="form-section wide-section">
-
   <div class="form-wrapper">
-
     <h2>Lavorare in MANAGECH</h2>
-
     <p class="block-text-form">
-      MANAGECH è uno studio di consulenza che opera nell’ambito dell’ingegneria gestionale,
+      MANAGECH è uno studio di consulenza che opera nell'ambito dell'ingegneria gestionale,
       della strategia aziendale e del supporto alle decisioni.
       Lavoriamo su progetti complessi, a stretto contatto con imprese e istituzioni,
       affiancando il management nei processi di trasformazione e crescita.
     </p>
-
     <p class="block-text-form">
       Entrare in MANAGECH significa confrontarsi con problemi reali,
       contesti organizzativi strutturati e decisioni ad alto impatto.
@@ -767,41 +642,36 @@ document.addEventListener("DOMContentLoaded", function () {
       competenze analitiche e manageriali in un ambiente professionale
       serio, collaborativo e orientato alla qualità.
     </p>
-
     <div class="form-tags">
       <span><i class="fas fa-chart-line"></i> Progetti strategici</span>
       <span><i class="fas fa-brain"></i> Approccio analitico</span>
       <span><i class="fas fa-users"></i> Team multidisciplinare</span>
       <span><i class="fas fa-graduation-cap"></i> Crescita professionale</span>
     </div>
-
     <p class="block-text-form">
       Valutiamo candidature di neolaureati e professionisti
       con background in ingegneria gestionale, economia, management
       o discipline affini, interessati alla consulenza direzionale
       e al supporto ai processi decisionali.
     </p>
-
   </div>
 </section>
 
-  
 <!-- ================= FORM CANDIDATURA ================= -->
-<section class="form-section" style="background:#f4f4f4;">
+<section class="form-candidatura">
   <div class="form-wrapper">
     <h2>Candidati</h2>
-    
-   <p class="block-text-form">
-  Se ti riconosci in questo approccio e vuoi metterti alla prova
-  in un contesto consulenziale strutturato, inviaci la tua candidatura.
-  Valuteremo il tuo profilo con attenzione e ti contatteremo
-  qualora emergano opportunità coerenti.
-</p>
-    
-    <form action="https://formspree.io/f/xreqljvv" method="POST" enctype="multipart/form-data">
+    <p class="block-text-form">
+      Se ti riconosci in questo approccio e vuoi metterti alla prova
+      in un contesto consulenziale strutturato, inviaci la tua candidatura.
+      Valuteremo il tuo profilo con attenzione e ti contatteremo
+      qualora emergano opportunità coerenti.
+    </p>
+
+    <form id="candidaturaForm" action="https://formspree.io/f/xreqljvv" method="POST" enctype="multipart/form-data">
       <input type="hidden" name="_subject" value="Nuova candidatura dal sito MANAGECH">
       <input type="hidden" name="_template" value="table">
-      <input type="text" name="_gotcha" style="display:none">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
       <label for="nome">Nome*</label>
       <input id="nome" name="nome" required>
@@ -810,88 +680,79 @@ document.addEventListener("DOMContentLoaded", function () {
       <input id="cognome" name="cognome" required>
 
       <label for="telefono">Telefono*</label>
-      <div style="display:flex; gap:0.5rem; align-items:center;">
+      <div class="phone-row">
         <select name="prefisso" required>
-
-  <!-- Europa -->
-<option value="+43">🇦🇹 Austria +43</option>
-<option value="+32">🇧🇪 Belgio +32</option>
-<option value="+359">🇧🇬 Bulgaria +359</option>
-<option value="+385">🇭🇷 Croazia +385</option>
-<option value="+357">🇨🇾 Cipro +357</option>
-<option value="+420">🇨🇿 Repubblica Ceca +420</option>
-<option value="+45">🇩🇰 Danimarca +45</option>
-<option value="+372">🇪🇪 Estonia +372</option>
-<option value="+358">🇫🇮 Finlandia +358</option>
-<option value="+33">🇫🇷 Francia +33</option>
-<option value="+49">🇩🇪 Germania +49</option>
-<option value="+30">🇬🇷 Grecia +30</option>
-<option value="+36">🇭🇺 Ungheria +36</option>
-<option value="+353">🇮🇪 Irlanda +353</option>
-<option value="+39" selected>🇮🇹 Italia +39</option>
-<option value="+371">🇱🇻 Lettonia +371</option>
-<option value="+423">🇱🇮 Liechtenstein +423</option>
-<option value="+370">🇱🇹 Lituania +370</option>
-<option value="+352">🇱🇺 Lussemburgo +352</option>
-<option value="+356">🇲🇹 Malta +356</option>
-<option value="+31">🇳🇱 Paesi Bassi +31</option>
-<option value="+48">🇵🇱 Polonia +48</option>
-<option value="+351">🇵🇹 Portogallo +351</option>
-<option value="+40">🇷🇴 Romania +40</option>
-<option value="+7">🇷🇺 Russia +7</option>
-<option value="+381">🇷🇸 Serbia +381</option>
-<option value="+421">🇸🇰 Slovacchia +421</option>
-<option value="+386">🇸🇮 Slovenia +386</option>
-<option value="+34">🇪🇸 Spagna +34</option>
-<option value="+46">🇸🇪 Svezia +46</option>
-<option value="+41">🇨🇭 Svizzera +41</option>
-<option value="+44">🇬🇧 Regno Unito +44</option>
-<option value="+39">🇻🇦 Città del Vaticano +39</option>
-
-<!-- Principali stati globalizzati -->
-<option value="+1">🇺🇸 USA +1</option>
-<option value="+1">🇨🇦 Canada +1</option>
-<option value="+86">🇨🇳 Cina +86</option>
-<option value="+91">🇮🇳 India +91</option>
-<option value="+81">🇯🇵 Giappone +81</option>
-<option value="+55">🇧🇷 Brasile +55</option>
-<option value="+61">🇦🇺 Australia +61</option>
-<option value="+27">🇿🇦 Sud Africa +27</option>
-<option value="+82">🇰🇷 Corea del Sud +82</option>
-<option value="+60">🇲🇾 Malesia +60</option>
-<option value="+65">🇸🇬 Singapore +65</option>
-<option value="+66">🇹🇭 Thailandia +66</option>
-<option value="+971">🇦🇪 Emirati Arabi Uniti +971</option>
-<option value="+98">🇮🇷 Iran +98</option>
-<option value="+964">🇮🇶 Iraq +964</option>
-<option value="+52">🇲🇽 Messico +52</option>
-<option value="+57">🇨🇴 Colombia +57</option>
-<option value="+56">🇨🇱 Cile +56</option>
-
+          <option value="+39" selected>🇮🇹 Italia +39</option>
+          <option value="+43">🇦🇹 Austria +43</option>
+          <option value="+32">🇧🇪 Belgio +32</option>
+          <option value="+359">🇧🇬 Bulgaria +359</option>
+          <option value="+385">🇭🇷 Croazia +385</option>
+          <option value="+357">🇨🇾 Cipro +357</option>
+          <option value="+420">🇨🇿 Repubblica Ceca +420</option>
+          <option value="+45">🇩🇰 Danimarca +45</option>
+          <option value="+372">🇪🇪 Estonia +372</option>
+          <option value="+358">🇫🇮 Finlandia +358</option>
+          <option value="+33">🇫🇷 Francia +33</option>
+          <option value="+49">🇩🇪 Germania +49</option>
+          <option value="+30">🇬🇷 Grecia +30</option>
+          <option value="+36">🇭🇺 Ungheria +36</option>
+          <option value="+353">🇮🇪 Irlanda +353</option>
+          <option value="+371">🇱🇻 Lettonia +371</option>
+          <option value="+423">🇱🇮 Liechtenstein +423</option>
+          <option value="+370">🇱🇹 Lituania +370</option>
+          <option value="+352">🇱🇺 Lussemburgo +352</option>
+          <option value="+356">🇲🇹 Malta +356</option>
+          <option value="+31">🇳🇱 Paesi Bassi +31</option>
+          <option value="+48">🇵🇱 Polonia +48</option>
+          <option value="+351">🇵🇹 Portogallo +351</option>
+          <option value="+40">🇷🇴 Romania +40</option>
+          <option value="+7">🇷🇺 Russia +7</option>
+          <option value="+381">🇷🇸 Serbia +381</option>
+          <option value="+421">🇸🇰 Slovacchia +421</option>
+          <option value="+386">🇸🇮 Slovenia +386</option>
+          <option value="+34">🇪🇸 Spagna +34</option>
+          <option value="+46">🇸🇪 Svezia +46</option>
+          <option value="+41">🇨🇭 Svizzera +41</option>
+          <option value="+44">🇬🇧 Regno Unito +44</option>
+          <option value="+39">🇻🇦 Città del Vaticano +39</option>
+          <option value="+1">🇺🇸 USA +1</option>
+          <option value="+1">🇨🇦 Canada +1</option>
+          <option value="+86">🇨🇳 Cina +86</option>
+          <option value="+91">🇮🇳 India +91</option>
+          <option value="+81">🇯🇵 Giappone +81</option>
+          <option value="+55">🇧🇷 Brasile +55</option>
+          <option value="+61">🇦🇺 Australia +61</option>
+          <option value="+27">🇿🇦 Sud Africa +27</option>
+          <option value="+82">🇰🇷 Corea del Sud +82</option>
+          <option value="+60">🇲🇾 Malesia +60</option>
+          <option value="+65">🇸🇬 Singapore +65</option>
+          <option value="+66">🇹🇭 Thailandia +66</option>
+          <option value="+971">🇦🇪 Emirati Arabi Uniti +971</option>
+          <option value="+98">🇮🇷 Iran +98</option>
+          <option value="+964">🇮🇶 Iraq +964</option>
+          <option value="+52">🇲🇽 Messico +52</option>
+          <option value="+57">🇨🇴 Colombia +57</option>
+          <option value="+56">🇨🇱 Cile +56</option>
         </select>
-
-        <input id="telefono" type="tel" name="telefono" placeholder="340 1234567" required style="flex:1; padding:0.7rem; font-family:'Montserrat',sans-serif; margin-top:0;">
+        <input id="telefono" type="tel" name="telefono" placeholder="340 1234567" required>
       </div>
 
       <label for="email">Email*</label>
       <input id="email" type="email" name="email" required>
 
-<div class="file-upload">
-  <label for="cv">
-    <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
-    <span>Allega CV</span>
-  </label>
-</div>
-
-<p id="cv-status" class="file-status"></p>
-
-
+      <label for="cv">Curriculum Vitae*</label>
+      <div class="file-upload">
+        <label for="cv">
+          <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+          <span>Allega CV</span>
+        </label>
+      </div>
+      <p id="cv-status" class="file-status"></p>
       <p style="font-size:0.75rem; color:#666; margin-top:0.4rem;">
-  Formati accettati: PDF, DOC, DOCX. Dimensione massima consigliata: 5MB.
-</p>
+        Formati accettati: PDF, DOC, DOCX. Dimensione massima consigliata: 5MB.
+      </p>
 
-
-      <label for="richiesta">Richiesta*</label>
+      <label for="richiesta">Presentati e descrivi le tue motivazioni*</label>
       <textarea id="richiesta" name="richiesta" required></textarea>
 
       <div class="privacy-check">
@@ -904,8 +765,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       <input type="hidden" name="telefono_completo" id="telefono_completo">
       <button type="submit">Candidati ora</button>
-
-      
     </form>
   </div>
 </section>
@@ -913,74 +772,72 @@ document.addEventListener("DOMContentLoaded", function () {
 <!-- ================= FOOTER ================= -->
 <footer>
   <div class="footer-inner">
-  <div class="footer-brand">
-    <img src="images/1-4.png" alt="MANAGECH" class="footer-logo">
-    <p>
-      <i class="fas fa-map-marker-alt"></i> Piazza G. Mazzini 27, 00195 Roma<br>
-      <i class="fas fa-phone"></i> +39 349 390 7663<br>
-      <i class="fas fa-envelope"></i> segreteria@managech.com
-    </p>
+    <div class="footer-brand">
+      <img src="images/1-4.png" alt="MANAGECH" class="footer-logo">
+      <p>
+        <i class="fas fa-map-marker-alt"></i> Piazza G. Mazzini 27, 00195 Roma<br>
+        <i class="fas fa-phone"></i> +39 349 390 7663<br>
+        <i class="fas fa-envelope"></i> segreteria@managech.com
+      </p>
+    </div>
+    <div class="footer-links">
+      <ul>
+        <li><a href="chi-siamo.html">Chi siamo</a></li>
+        <li><a href="servizi.html">Servizi</a></li>
+        <li><a href="contatti.html">Contatti</a></li>
+        <li><a href="lavora-con-noi.html">Lavora con noi</a></li>
+        <li><a href="case-study.html">Case Study</a></li>
+        <li><a href="informativa-privacy.html">Informativa Privacy</a></li>
+        <li><a href="cookie-policy.html">Cookie Policy</a></li>
+      </ul>
+    </div>
   </div>
-
-  <div class="footer-links">
-    <ul>
-      <li><a href="chi-siamo.html">Chi siamo</a></li>
-      <li><a href="servizi.html">Servizi</a></li>
-      <li><a href="contatti.html">Contatti</a></li>
-      <li><a href="lavora-con-noi.html">Lavora con noi</a></li>
-      <li><a href="case-study.html">Case Study</a></li>
-      <li><a href="informativa-privacy.html">Informativa Privacy</a></li>
-      <li><a href="cookie-policy.html">Cookie Policy</a></li>
-    </ul>
+  <div class="footer-bottom">
+    © 2026 MANAGECH - INGEGNERIA & MANAGEMENT STUDIO ASSOCIATO | P. IVA 18387251004
   </div>
-</div>
-
-<div class="footer-bottom">
-  © 2026 MANAGECH - INGEGNERIA & MANAGEMENT STUDIO ASSOCIATO | P. IVA 18387251004
-</div>
-
 </footer>
 
-  <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const fileInput = document.getElementById("cv");
-  const status = document.getElementById("cv-status");
-
-  fileInput.addEventListener("change", function () {
-    if (fileInput.files.length > 0) {
-      const fileName = fileInput.files[0].name;
-      status.textContent = "✔ CV caricato correttamente: " + fileName;
-      status.style.display = "block";
-    } else {
-      status.style.display = "none";
-    }
-  });
-});
-</script>
-<!-- ================= SCRIPT FADE-IN ================= -->
+<!-- ================= SCRIPTS ================= -->
 <script>
-const faders = document.querySelectorAll('.fade-in');
-const appearOptions = { threshold:0.1, rootMargin:"0px 0px -50px 0px" };
-const appearOnScroll = new IntersectionObserver(function(entries, observer){
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('appear');
-      observer.unobserve(entry.target);
-    }
+  document.addEventListener("DOMContentLoaded", function () {
+
+    /* Combine phone prefix + number before form submission */
+    document.getElementById("candidaturaForm").addEventListener("submit", function () {
+      const prefisso = document.querySelector('select[name="prefisso"]').value;
+      const telefono = document.getElementById("telefono").value;
+      document.getElementById("telefono_completo").value = prefisso + " " + telefono;
+    });
+
+    /* CV file status */
+    const fileInput = document.getElementById("cv");
+    const status = document.getElementById("cv-status");
+    fileInput.addEventListener("change", function () {
+      if (fileInput.files.length > 0) {
+        status.textContent = "✔ CV caricato correttamente: " + fileInput.files[0].name;
+        status.style.display = "block";
+      } else {
+        status.style.display = "none";
+      }
+    });
+
+    /* Hamburger / mobile menu */
+    const hamburger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      mobileMenu.classList.toggle("active");
+    });
+
+    mobileMenu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        mobileMenu.classList.remove("active");
+      });
+    });
+
   });
-}, appearOptions);
-
-faders.forEach(fader => appearOnScroll.observe(fader));
-const hamburger = document.getElementById("hamburger");
-const mobileMenu = document.getElementById("mobileMenu");
-
-hamburger.addEventListener("click", () => {
-  hamburger.classList.toggle("active");
-  mobileMenu.classList.toggle("active");
-});
-
-  
 </script>
-  
+
 </body>
 </html>
