@@ -140,7 +140,7 @@ header {
   letter-spacing: 1px;
 }
 
-.logo img { height: 54px; display: block; }
+.logo img { height: 54px; width: auto; display: block; }
 
 .nav-links { list-style: none; display: flex; gap: 2rem; }
 
@@ -414,11 +414,12 @@ footer {
   gap: 3rem;
 }
 
-.footer-logo { max-width: 280px; width: 100%; margin-bottom: 1.5rem; display: block; }
+.footer-logo { max-width: 280px; width: auto; height: auto; max-height: 80px; margin-bottom: 1.5rem; display: block; }
 .footer-brand h3 { margin: 0; color: var(--green); font-size: 1.6rem; }
 .footer-brand h4 { margin: .3rem 0 1.5rem; font-weight: 400; color: #aaa; }
 .footer-brand i { color: var(--green); margin-right: 8px; display: inline-block; width: 20px; }
-.footer-brand p { line-height: 1.8; }
+.footer-brand p { line-height: 1.8; color: #ccc; }
+.footer-brand p a { color: #ccc; text-decoration: none; }
 .footer-links ul { list-style: none; padding: 0; margin: 0; }
 .footer-links li { margin: .6rem 0; }
 .footer-links a { color: #ccc; text-decoration: none; }
@@ -668,7 +669,7 @@ footer {
   /* ---- Header ---- */
   header { height: 70px; }
   .navbar { padding: 0 1.5rem; }
-  .logo img { height: 42px; }
+  .logo img { height: 42px; width: auto; }
   .nav-links { display: none; }
   .hamburger { display: flex; }
 
@@ -719,14 +720,13 @@ footer {
   /* ---- Central section padding ---- */
   .central-section { padding: 0 1.2rem; margin-bottom: 2rem; }
 
-  /* ---- Griglia servizi: 1 colonna su mobile ---- */
+  /* ---- Griglia servizi: 2 colonne su mobile ---- */
   .services-section { padding: 2.5rem 0; }
-  .services-grid { grid-template-columns: 1fr; gap: 1rem; }
-  .service-card { min-height: 160px; padding: 1.5rem 1.2rem; flex-direction: row; text-align: left; gap: 1rem; }
-  .service-card::after { width: 4px; height: 100%; top: 0; left: 0; }
-  .service-icon { font-size: 1.6rem; margin-bottom: 0; flex-shrink: 0; }
-  .service-card h4 { font-size: 1rem; margin-bottom: .3rem; }
-  .service-card p { font-size: .88rem; opacity: .75; }
+  .services-grid { grid-template-columns: 1fr 1fr; gap: .9rem; }
+  .service-card { min-height: 180px; padding: 1.4rem 1rem; }
+  .service-icon { font-size: 1.6rem; margin-bottom: .7rem; }
+  .service-card h4 { font-size: .9rem; margin-bottom: .3rem; }
+  .service-card p { font-size: .82rem; line-height: 1.5; }
 
   /* ---- Approccio / process flow ---- */
   .methodology-section { padding: 3rem 1.2rem; }
@@ -785,7 +785,7 @@ footer {
   <nav class="navbar">
     <div class="logo">
       <a href="index.html">
-        <img src="images/1-4.png" alt="MANAGECH" width="54" height="54">
+        <img src="images/1-4.png" alt="MANAGECH">
       </a>
     </div>
     <ul class="nav-links">
@@ -810,7 +810,7 @@ footer {
 <section class="hero">
   <div class="hero-content">
     <!-- PERFORMANCE: width/height espliciti per evitare layout shift -->
-    <img src="images/1-4.png" alt="MANAGECH" width="800" height="200" style="max-width:800px; width:100%; height:auto;">
+    <img src="images/1-4.png" alt="MANAGECH" style="max-width:700px; width:100%; height:auto; display:block; margin:0 auto;">
     <div class="hero-claim">
       Ingegneria del valore,
       gestione della complessità.
@@ -1076,11 +1076,11 @@ footer {
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <img src="images/1-4.png" alt="MANAGECH" class="footer-logo" width="280" height="80" loading="lazy">
+      <img src="images/1-4.png" alt="MANAGECH" class="footer-logo" loading="lazy">
       <p>
         <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Piazza G. Mazzini 27, 00195 Roma<br>
         <i class="fas fa-phone" aria-hidden="true"></i> +39 349 390 7663<br>
-        <i class="fas fa-envelope" aria-hidden="true"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6112040613041504130800210c000f00060402094f020e0c">[email&#160;protected]</a>
+        <i class="fas fa-envelope" aria-hidden="true"></i> segreteria@managech.com
       </p>
     </div>
     <nav aria-label="Footer navigation">
@@ -1103,7 +1103,7 @@ footer {
 </footer>
 
 <!-- ================= SCRIPTS ================= -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   document.getElementById("contactForm").addEventListener("submit", function () {
     const prefisso = document.getElementById("prefisso").value;
     const telefono = document.getElementById("telefono").value;
