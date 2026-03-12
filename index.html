@@ -7,11 +7,65 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="format-detection" content="telephone=no">
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- PERFORMANCE: preconnect per Google Fonts e Font Awesome -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!-- PERFORMANCE: preload immagine hero (LCP) -->
+<link rel="preload" as="image" href="images/hero-bg.jpg">
+
+<!-- Google Fonts: caricamento non bloccante -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+
+<!-- Font Awesome: caricamento non bloccante -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+
+<!-- Schema markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "MANAGECH – Ingegneria & Management Studio Associato",
+  "url": "https://managech.com",
+  "logo": "https://managech.com/images/1-4.png",
+  "image": "https://managech.com/images/consulenza-strategica5.jpg",
+  "description": "MANAGECH supporta aziende, consorzi e professionisti nella consulenza strategica, ottimizzazione dei processi, data governance e digital analytics.",
+  "telephone": "+393493907663",
+  "email": "segreteria@managech.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Piazza G. Mazzini 27",
+    "addressLocality": "Roma",
+    "postalCode": "00195",
+    "addressCountry": "IT"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 41.9164,
+    "longitude": 12.4601
+  },
+  "areaServed": { "@type": "Country", "name": "Italia" },
+  "priceRange": "€€€",
+  "sameAs": ["https://www.linkedin.com/company/managech"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servizi di consulenza",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Consulenza strategica" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Preparazione gare d'appalto" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ottimizzazione dei processi" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Controllo di gestione" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Data Governance" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Digital Analytics e AI" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "System Integration" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Formazione manageriale" } }
+    ]
+  }
+}
+</script>
 
 <style>
 /* ================= CSS VARIABLES ================= */
@@ -56,17 +110,13 @@ body {
   font-weight: 500;
 }
 
-.form-tags i {
-  color: var(--green);
-}
+.form-tags i { color: var(--green); }
 
 /* ================= HEADER ================= */
 header {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 90px;
+  top: 0; left: 0;
+  width: 100%; height: 90px;
   background: var(--blue);
   z-index: 1000;
 }
@@ -90,16 +140,9 @@ header {
   letter-spacing: 1px;
 }
 
-.logo img {
-  height: 54px;
-  display: block;
-}
+.logo img { height: 54px; display: block; }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-}
+.nav-links { list-style: none; display: flex; gap: 2rem; }
 
 .nav-links a {
   color: #fff;
@@ -111,31 +154,32 @@ header {
 .nav-links a::after {
   content: "";
   position: absolute;
-  bottom: -6px;
-  left: 0;
-  width: 0;
-  height: 2px;
+  bottom: -6px; left: 0;
+  width: 0; height: 2px;
   background: var(--green);
   transition: .3s;
 }
 
-.nav-links a:hover::after {
-  width: 100%;
-}
+.nav-links a:hover::after { width: 100%; }
 
 /* ================= HAMBURGER ================= */
+/* ACCESSIBILITY: button con aria-label invece di div */
 .hamburger {
   display: none;
   flex-direction: column;
   gap: 6px;
   cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+  aria-label: "Apri menu";
 }
 
 .hamburger span {
-  width: 25px;
-  height: 3px;
+  width: 25px; height: 3px;
   background: #fff;
   transition: .4s;
+  display: block;
 }
 
 .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
@@ -145,8 +189,7 @@ header {
 /* ================= MOBILE MENU ================= */
 .mobile-menu {
   position: fixed;
-  top: 70px;
-  left: 0;
+  top: 70px; left: 0;
   width: 100%;
   background: var(--blue);
   display: flex;
@@ -160,15 +203,9 @@ header {
   box-shadow: 0 10px 30px rgba(0,0,0,.3);
 }
 
-.mobile-menu.active {
-  transform: translateY(0);
-}
+.mobile-menu.active { transform: translateY(0); }
 
-.mobile-menu a {
-  color: #fff;
-  font-size: 1.4rem;
-  text-decoration: none;
-}
+.mobile-menu a { color: #fff; font-size: 1.4rem; text-decoration: none; }
 
 /* ================= HERO ================= */
 .hero {
@@ -184,11 +221,10 @@ header {
   padding: 3rem 2rem;
 }
 
-.hero-content {
-  max-width: 1100px;
-}
+.hero-content { max-width: 1100px; }
 
-.hero-title {
+/* ACCESSIBILITY: hero-title è h1, dimensioni via CSS */
+h1.hero-title {
   font-size: 5.6rem;
   font-weight: 800;
   letter-spacing: 6px;
@@ -220,9 +256,7 @@ h2 {
 }
 
 /* ================= CONTENT BLOCKS ================= */
-.section {
-  padding: 6rem 2rem;
-}
+.section { padding: 6rem 2rem; }
 
 .block {
   max-width: 100%;
@@ -232,19 +266,9 @@ h2 {
   gap: 2rem;
 }
 
-.block-image {
-  flex: 1;
-  width: auto;
-  height: 360px;
-}
-
-.block:nth-child(even) {
-  flex-direction: row-reverse;
-}
-
-.block-text {
-  flex: 1;
-}
+.block-image { flex: 1; width: auto; height: 360px; }
+.block:nth-child(even) { flex-direction: row-reverse; }
+.block-text { flex: 1; }
 
 .block-text h3 {
   margin: 0 0 1.2rem;
@@ -253,10 +277,7 @@ h2 {
   letter-spacing: 2px;
 }
 
-.block-text p {
-  font-size: 1.15rem;
-  line-height: 1.7;
-}
+.block-text p { font-size: 1.15rem; line-height: 1.7; }
 
 .block-text-form {
   font-size: 1.15rem;
@@ -267,8 +288,7 @@ h2 {
 }
 
 .block-image img {
-  width: 100%;
-  height: 360px;
+  width: 100%; height: 360px;
   object-fit: cover;
   border-radius: 8px;
   background: #eaeaea;
@@ -288,32 +308,16 @@ h2 {
   transition: background .3s, transform .3s;
 }
 
-.btn-discover:hover {
-  background: #17845e;
-  transform: translateY(-2px);
-}
+.btn-discover:hover { background: #17845e; transform: translateY(-2px); }
 
 /* ================= FORM ================= */
-.form-section {
-  background: #f4f4f4;
-  padding: 5rem 2rem;
-}
+.form-section { background: #f4f4f4; padding: 5rem 2rem; }
 
-.form-wrapper {
-  max-width: 700px;
-  margin: auto;
-}
+.form-wrapper { max-width: 700px; margin: auto; }
 
-.form-wrapper h2 {
-  text-align: left;
-  margin: 0 0 1.5rem 0;
-  font-size: 2.4rem;
-}
+.form-wrapper h2 { text-align: left; margin: 0 0 1.5rem 0; font-size: 2.4rem; }
 
-.form-wrapper p {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-}
+.form-wrapper p { font-size: 1.1rem; margin-bottom: 2rem; }
 
 form label {
   display: block;
@@ -321,8 +325,7 @@ form label {
   margin-top: 1.2rem;
 }
 
-form input,
-form textarea {
+form input, form textarea {
   width: 100%;
   padding: .7rem;
   margin-top: .3rem;
@@ -331,7 +334,9 @@ form textarea {
   font-size: .9rem;
 }
 
-/* ── Phone row ── */
+/* ACCESSIBILITY: label visibile per il select prefisso */
+.phone-label { display: block; font-size: .85rem; margin-top: 1.2rem; }
+
 .phone-row {
   display: flex;
   gap: .5rem;
@@ -350,18 +355,12 @@ form textarea {
   border-radius: 0;
   appearance: none;
   -webkit-appearance: none;
-  -moz-appearance: none;
   cursor: pointer;
 }
 
-.phone-row input[type="tel"] {
-  flex: 1;
-  margin-top: 0;
-}
+.phone-row input[type="tel"] { flex: 1; margin-top: 0; }
 
-form textarea {
-  min-height: 120px;
-}
+form textarea { min-height: 120px; }
 
 form button {
   display: inline-block;
@@ -374,14 +373,10 @@ form button {
   border-radius: 6px;
   border: none;
   cursor: pointer;
-  text-decoration: none;
   transition: background .3s, transform .3s;
 }
 
-form button:hover {
-  background: #17845e;
-  transform: translateY(-2px);
-}
+form button:hover { background: #17845e; transform: translateY(-2px); }
 
 .-check {
   display: grid;
@@ -395,23 +390,13 @@ form button:hover {
 }
 
 .-check input[type="checkbox"] {
-  margin: 0;
-  padding: 0;
-  width: 18px;
-  height: 18px;
+  margin: 0; padding: 0;
+  width: 18px; height: 18px;
   cursor: pointer;
 }
 
-.-check label {
-  margin: 0;
-  display: block;
-  cursor: pointer;
-}
-
-.-check a {
-  color: var(--green);
-  text-decoration: underline;
-}
+.-check label { margin: 0; display: block; cursor: pointer; }
+.-check a { color: var(--green); text-decoration: underline; }
 
 /* ================= FOOTER ================= */
 footer {
@@ -429,50 +414,14 @@ footer {
   gap: 3rem;
 }
 
-.footer-logo {
-  max-width: 280px;
-  width: 100%;
-  margin-bottom: 1.5rem;
-  display: block;
-}
-
-.footer-brand h3 {
-  margin: 0;
-  color: var(--green);
-  font-size: 1.6rem;
-}
-
-.footer-brand h4 {
-  margin: .3rem 0 1.5rem;
-  font-weight: 400;
-  color: #aaa;
-}
-
-.footer-brand i {
-  color: var(--green);
-  margin-right: 8px;
-  display: inline-block;
-  width: 20px;
-}
-
-.footer-brand p {
-  line-height: 1.8;
-}
-
-.footer-links ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-links li {
-  margin: .6rem 0;
-}
-
-.footer-links a {
-  color: #ccc;
-  text-decoration: none;
-}
+.footer-logo { max-width: 280px; width: 100%; margin-bottom: 1.5rem; display: block; }
+.footer-brand h3 { margin: 0; color: var(--green); font-size: 1.6rem; }
+.footer-brand h4 { margin: .3rem 0 1.5rem; font-weight: 400; color: #aaa; }
+.footer-brand i { color: var(--green); margin-right: 8px; display: inline-block; width: 20px; }
+.footer-brand p { line-height: 1.8; }
+.footer-links ul { list-style: none; padding: 0; margin: 0; }
+.footer-links li { margin: .6rem 0; }
+.footer-links a { color: #ccc; text-decoration: none; }
 
 .footer-bottom {
   text-align: center;
@@ -489,11 +438,7 @@ footer {
   padding: 0 2rem;
 }
 
-.central-section h2 {
-  text-align: center;
-  margin-top: 4rem;
-  margin-bottom: 3rem;
-}
+.central-section h2 { text-align: center; margin-top: 4rem; margin-bottom: 3rem; }
 
 .central-section h3 {
   color: var(--green);
@@ -502,11 +447,7 @@ footer {
   letter-spacing: 1px;
 }
 
-.central-section p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: var(--blue);
-}
+.central-section p { font-size: 1.1rem; line-height: 1.7; color: var(--blue); }
 
 .central-section ul {
   list-style: disc inside;
@@ -515,20 +456,11 @@ footer {
   color: var(--blue);
 }
 
-.central-section ul li {
-  margin-bottom: 1rem;
-}
+.central-section ul li { margin-bottom: 1rem; }
 
 /* ================= SERVICES SECTION ================= */
-.services-section {
-  padding: 4rem 0;
-  background-color: #f4f4f4;
-}
-
-.services-section h2 {
-  text-align: center;
-  margin-bottom: 3rem;
-}
+.services-section { padding: 4rem 0; background-color: #f4f4f4; }
+.services-section h2 { text-align: center; margin-bottom: 3rem; }
 
 .services-grid {
   display: grid;
@@ -556,10 +488,8 @@ footer {
 .service-card::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
+  top: 0; left: 0;
+  width: 100%; height: 4px;
   background: var(--green);
 }
 
@@ -570,38 +500,17 @@ footer {
   transition: transform .35s ease;
 }
 
-.service-card h4 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--blue);
-  margin-bottom: .8rem;
-}
+.service-card h4 { font-size: 1.25rem; font-weight: 600; color: var(--blue); margin-bottom: .8rem; }
 
-.service-card p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--blue);
-  opacity: .8;
-}
+.service-card p { font-size: 1rem; line-height: 1.6; color: var(--blue); opacity: .8; }
 
-.service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 22px 55px rgba(0,0,0,.14);
-}
-
-.service-card:hover .service-icon {
-  transform: scale(1.12);
-}
+.service-card:hover { transform: translateY(-10px); box-shadow: 0 22px 55px rgba(0,0,0,.14); }
+.service-card:hover .service-icon { transform: scale(1.12); }
 
 /* ================= STRATEGIC SECTION ================= */
-.strategic-section {
-  padding: 0;
-}
+.strategic-section { padding: 0; }
 
-.strategic-container {
-  display: flex;
-  width: 100%;
-}
+.strategic-container { display: flex; width: 100%; }
 
 .strategic-text {
   flex: 1;
@@ -613,30 +522,12 @@ footer {
   max-width: 50%;
 }
 
-.strategic-text h2 {
-  text-align: left;
-  margin-top: 0;
-  margin-bottom: 2rem;
-  font-size: 2.6rem;
-}
+.strategic-text h2 { text-align: left; margin-top: 0; margin-bottom: 2rem; font-size: 2.6rem; }
+.strategic-text p { font-size: 1.1rem; line-height: 1.7; color: var(--blue); margin-bottom: 1rem; }
 
-.strategic-text p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: var(--blue);
-  margin-bottom: 1rem;
-}
+.strategic-image { flex: 1; }
 
-.strategic-image {
-  flex: 1;
-}
-
-.strategic-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+.strategic-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 /* ================= METHODOLOGY ================= */
 .methodology-section {
@@ -648,23 +539,16 @@ footer {
 .methodology-section::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 50%;
+  top: 0; left: 50%;
   transform: translateX(-50%);
-  width: 120%;
-  height: 100%;
+  width: 120%; height: 100%;
   background: linear-gradient(to bottom, rgba(31,163,122,.15), transparent 70%);
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   z-index: 0;
 }
 
 /* ================= PROCESS FLOW ================= */
-.process-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 6rem;
-  margin-top: 4rem;
-}
+.process-wrapper { display: flex; flex-direction: column; gap: 6rem; margin-top: 4rem; }
 
 .process-row {
   display: flex;
@@ -674,19 +558,13 @@ footer {
   flex-wrap: wrap;
 }
 
-.process-step {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+.process-step { position: relative; display: flex; flex-direction: column; align-items: center; }
 
 .step-box {
   position: relative;
   background: #fff;
   border-radius: 16px;
-  min-width: 260px;
-  min-height: 80px;
+  min-width: 260px; min-height: 80px;
   padding: 1rem 1.4rem;
   font-size: .95rem;
   font-weight: 700;
@@ -706,11 +584,9 @@ footer {
 .step-box::before {
   content: attr(data-step);
   position: absolute;
-  top: -32px;
-  left: 50%;
+  top: -32px; left: 50%;
   transform: translateX(-50%);
-  width: 44px;
-  height: 44px;
+  width: 44px; height: 44px;
   border-radius: 50%;
   background: var(--green);
   color: #fff;
@@ -748,27 +624,12 @@ footer {
   margin: 0 1.5rem;
 }
 
-.process-step:hover .step-box {
-  background: var(--green);
-  color: #fff;
-  transform: translateY(-4px);
-}
-
-.process-step:hover .step-box span {
-  color: #fff;
-}
+.process-step:hover .step-box { background: var(--green); color: #fff; transform: translateY(-4px); }
+.process-step:hover .step-box span { color: #fff; }
 
 /* ================= WHY GRID ================= */
-.why-section {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  margin-top: 4rem;
-}
-
-.why-section h2 {
-  text-align: center;
-  margin-bottom: 3rem;
-}
+.why-section { padding-top: 2rem; padding-bottom: 2rem; margin-top: 4rem; }
+.why-section h2 { text-align: center; margin-bottom: 3rem; }
 
 .why-grid {
   display: grid;
@@ -786,81 +647,29 @@ footer {
   cursor: pointer;
 }
 
-.why-card i {
-  font-size: 2rem;
-  color: var(--green);
-  margin-bottom: .8rem;
-}
+.why-card i { font-size: 2rem; color: var(--green); margin-bottom: .8rem; }
+.why-card h4 { font-size: 1.2rem; margin-bottom: .5rem; }
 
-.why-card h4 {
-  font-size: 1.2rem;
-  margin-bottom: .5rem;
-}
+.why-card p { font-size: 1.15rem; line-height: 1.7; color: var(--blue); transition: color .3s; }
 
-.why-card p {
-  font-size: 1.15rem;
-  line-height: 1.7;
-  color: var(--blue);
-  transition: color .3s;
-}
-
-.why-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 30px rgba(0,0,0,.12);
-  background: var(--green);
-  color: #fff;
-}
-
-.why-card:hover p,
-.why-card:hover h4 {
-  color: #fff;
-}
-
-.why-card:hover i {
-  color: #fff;
-}
+.why-card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,.12); background: var(--green); color: #fff; }
+.why-card:hover p, .why-card:hover h4 { color: #fff; }
+.why-card:hover i { color: #fff; }
 
 /* ================= MOBILE ================= */
 @media (max-width: 992px) {
-  .strategic-container {
-    flex-direction: column;
-  }
-
-  .strategic-text {
-    max-width: 100%;
-    padding: 2rem;
-    text-align: center;
-  }
-
-  .strategic-text h2 {
-    text-align: center;
-  }
-
-  .strategic-image {
-    height: 280px;
-  }
+  .strategic-container { flex-direction: column; }
+  .strategic-text { max-width: 100%; padding: 2rem; text-align: center; }
+  .strategic-text h2 { text-align: center; }
+  .strategic-image { height: 280px; }
 }
 
 @media (max-width: 768px) {
-  header {
-    height: 70px;
-  }
-
-  .navbar {
-    padding: 0 1.5rem;
-  }
-
-  .logo img {
-    height: 42px;
-  }
-
-  .nav-links {
-    display: none;
-  }
-
-  .hamburger {
-    display: flex;
-  }
+  header { height: 70px; }
+  .navbar { padding: 0 1.5rem; }
+  .logo img { height: 42px; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
 
   .hero {
     margin-top: 70px;
@@ -876,10 +685,9 @@ footer {
     justify-content: center;
   }
 
-  .hero-content img {
-    max-width: 220px;
-    margin-bottom: 1.5rem;
-  }
+  .hero-content img { max-width: 220px; margin-bottom: 1.5rem; }
+
+  h1.hero-title { font-size: clamp(2rem, 10vw, 4rem); letter-spacing: 2px; }
 
   .hero-claim {
     font-size: clamp(1.2rem, 4.5vw, 1.6rem);
@@ -900,95 +708,21 @@ footer {
     letter-spacing: .5px;
   }
 
-  .phone-row select {
-    flex: 0 0 35%;
-    max-width: 35%;
-  }
+  .phone-row select { flex: 0 0 35%; max-width: 35%; }
 
-  .process-wrapper {
-    gap: 3rem;
-  }
-
-  .process-row {
-    flex-direction: column;
-    align-items: center;
-    gap: 4rem;
-  }
-
-  .process-step {
-    width: 100%;
-    align-items: center;
-  }
-
-  .step-box {
-    width: 100%;
-    max-width: 300px;
-  }
-
-  .step-box span {
-    position: static;
-    transform: none;
-    width: 100%;
-    margin-top: .8rem;
-  }
-
-  .process-arrow {
-    display: none;
-  }
+  .process-wrapper { gap: 3rem; }
+  .process-row { flex-direction: column; align-items: center; gap: 4rem; }
+  .process-step { width: 100%; align-items: center; }
+  .step-box { width: 100%; max-width: 300px; }
+  .step-box span { position: static; transform: none; width: 100%; margin-top: .8rem; }
+  .process-arrow { display: none; }
 }
 </style>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "MANAGECH – Ingegneria & Management Studio Associato",
-  "url": "https://managech.com",
-  "logo": "https://managech.com/images/1-4.png",
-  "image": "https://managech.com/images/consulenza-strategica5.jpg",
-  "description": "MANAGECH supporta aziende, consorzi e professionisti nella consulenza strategica, ottimizzazione dei processi, data governance e digital analytics.",
-  "telephone": "+393493907663",
-  "email": "segreteria@managech.com",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Piazza G. Mazzini 27",
-    "addressLocality": "Roma",
-    "postalCode": "00195",
-    "addressCountry": "IT"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 41.9164,
-    "longitude": 12.4601
-  },
-  "areaServed": {
-    "@type": "Country",
-    "name": "Italia"
-  },
-  "priceRange": "€€€",
-  "sameAs": [
-    "https://www.linkedin.com/company/managech"
-  ],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Servizi di consulenza",
-    "itemListElement": [
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Consulenza strategica" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Preparazione gare d'appalto" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ottimizzazione dei processi" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Controllo di gestione" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Data Governance" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Digital Analytics e AI" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "System Integration" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Formazione manageriale" } }
-    ]
-  }
-}
-</script>
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- ACCESSIBILITY: main landmark -->
 <header>
   <div class="mobile-menu" id="mobileMenu">
     <a href="chi-siamo.html">Chi siamo</a>
@@ -1001,7 +735,7 @@ footer {
   <nav class="navbar">
     <div class="logo">
       <a href="index.html">
-        <img src="images/1-4.png" alt="MANAGECH">
+        <img src="images/1-4.png" alt="MANAGECH" width="54" height="54">
       </a>
     </div>
     <ul class="nav-links">
@@ -1011,18 +745,22 @@ footer {
       <li><a href="lavora-con-noi.html">Lavora con noi</a></li>
       <li><a href="case-study.html">Case Study</a></li>
     </ul>
-    <div class="hamburger" id="hamburger">
+    <!-- ACCESSIBILITY: button con aria-label e aria-expanded -->
+    <button class="hamburger" id="hamburger" aria-label="Apri menu di navigazione" aria-expanded="false" aria-controls="mobileMenu">
       <span></span>
       <span></span>
       <span></span>
-    </div>
+    </button>
   </nav>
 </header>
+
+<main>
 
 <!-- ================= HERO ================= -->
 <section class="hero">
   <div class="hero-content">
-    <img src="images/1-4.png" alt="MANAGECH" style="max-width:800px; width:100%; height:auto;">
+    <!-- PERFORMANCE: width/height espliciti per evitare layout shift -->
+    <img src="images/1-4.png" alt="MANAGECH" width="800" height="200" style="max-width:800px; width:100%; height:auto;">
     <div class="hero-claim">
       Ingegneria del valore,
       gestione della complessità.
@@ -1033,24 +771,16 @@ footer {
 <!-- ================= STRATEGIC SECTION ================= -->
 <section class="strategic-section">
   <div class="strategic-container">
-
     <div class="strategic-text central-section">
       <h2>Consulenza Strategica</h2>
-      <p>
-        Managech supporta aziende, consorzi e professionisti nello sviluppo del business, nella gestione dei processi e dell'innovazione tecnologica.
-      </p>
-      <p>
-        Grazie a competenze manageriali, strategiche e consulenziali maturate in contesti complessi, il nostro team offre un supporto concreto per ottimizzare le performance economiche, prendere decisioni efficaci e affrontare le trasformazioni organizzative e digitali.
-      </p>
-      <p>
-        La nostra consulenza strategica integra approcci ingegneristici e manageriali per generare valore sostenibile.
-      </p>
+      <p>Managech supporta aziende, consorzi e professionisti nello sviluppo del business, nella gestione dei processi e dell'innovazione tecnologica.</p>
+      <p>Grazie a competenze manageriali, strategiche e consulenziali maturate in contesti complessi, il nostro team offre un supporto concreto per ottimizzare le performance economiche, prendere decisioni efficaci e affrontare le trasformazioni organizzative e digitali.</p>
+      <p>La nostra consulenza strategica integra approcci ingegneristici e manageriali per generare valore sostenibile.</p>
     </div>
-
     <div class="strategic-image">
-      <img src="images/consulenza-strategica5.jpg" alt="Consulenza Strategica Managech">
+      <!-- PERFORMANCE: loading lazy per immagini sotto la fold, width/height espliciti -->
+      <img src="images/consulenza-strategica5.jpg" alt="Consulenza Strategica Managech" width="700" height="500" loading="lazy">
     </div>
-
   </div>
 </section>
 
@@ -1059,70 +789,57 @@ footer {
   <div class="central-section">
     <h2>I nostri servizi</h2>
     <div class="services-grid">
-
       <div class="service-card">
-        <div class="service-icon"><i class="fas fa-lightbulb"></i></div>
+        <div class="service-icon"><i class="fas fa-lightbulb" aria-hidden="true"></i></div>
         <h4>Consulenza strategica</h4>
         <p>Supporto decisionale e organizzativo per la crescita sostenibile dell'impresa</p>
       </div>
-
       <div class="service-card">
-        <div class="service-icon"><i class="fas fa-file-contract"></i></div>
+        <div class="service-icon"><i class="fas fa-file-contract" aria-hidden="true"></i></div>
         <h4>Preparazione Gare</h4>
         <p>Supporto strategico alla predisposizione della documentazione di gara</p>
       </div>
-
       <div class="service-card">
-        <div class="service-icon"><i class="fas fa-cogs"></i></div>
+        <div class="service-icon"><i class="fas fa-cogs" aria-hidden="true"></i></div>
         <h4>Ottimizzazione dei Processi</h4>
         <p>Miglioramento dell'efficienza operativa e riduzione dei costi aziendali</p>
       </div>
-
       <div class="service-card">
-        <div class="service-icon"><i class="fas fa-chart-pie"></i></div>
+        <div class="service-icon"><i class="fas fa-chart-pie" aria-hidden="true"></i></div>
         <h4>Contabilità Industriale e Controllo di Gestione</h4>
         <p>Sistemi di monitoraggio economico-finanziario a supporto delle decisioni</p>
       </div>
-
       <div class="service-card">
-        <div class="service-icon"><i class="fas fa-database"></i></div>
+        <div class="service-icon"><i class="fas fa-database" aria-hidden="true"></i></div>
         <h4>Data Governance</h4>
         <p>Gestione e valorizzazione del ciclo di vita dei dati</p>
       </div>
-
       <div class="service-card">
-        <div class="service-icon"><i class="fas fa-robot"></i></div>
+        <div class="service-icon"><i class="fas fa-robot" aria-hidden="true"></i></div>
         <h4>Digital Analytics &amp; AI</h4>
         <p>Analisi avanzata dei dati e AI a supporto delle decisioni data driven</p>
       </div>
-
       <div class="service-card">
-        <div class="service-icon"><i class="fas fa-network-wired"></i></div>
+        <div class="service-icon"><i class="fas fa-network-wired" aria-hidden="true"></i></div>
         <h4>System Integration</h4>
         <p>Integrazione tecnologica di sistemi e processi per continuità e scalabilità</p>
       </div>
-
       <div class="service-card">
-        <div class="service-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+        <div class="service-icon"><i class="fas fa-chalkboard-teacher" aria-hidden="true"></i></div>
         <h4>Formazione</h4>
         <p>Programmi di formazione tecnica e manageriale per team e dirigenti</p>
       </div>
-
     </div>
-
     <div style="text-align:center; margin-top:3rem;">
       <a href="servizi.html" class="btn-discover">Scopri di più</a>
     </div>
   </div>
 </section>
 
-<!-- ================= METHODOLOGY / APPROACH ================= -->
+<!-- ================= METHODOLOGY ================= -->
 <div class="central-section methodology-section">
   <h2>Il nostro approccio</h2>
-
   <div class="process-wrapper">
-
-    <!-- ROW 1 -->
     <div class="process-row">
       <div class="process-step">
         <div class="step-box" data-step="1">
@@ -1130,9 +847,7 @@ footer {
           <span>Identificazione delle priorità e degli obiettivi strategici</span>
         </div>
       </div>
-
-      <div class="process-arrow">➜</div>
-
+      <div class="process-arrow" aria-hidden="true">➜</div>
       <div class="process-step">
         <div class="step-box" data-step="2">
           ANALISI
@@ -1140,8 +855,6 @@ footer {
         </div>
       </div>
     </div>
-
-    <!-- ROW 2 -->
     <div class="process-row">
       <div class="process-step">
         <div class="step-box" data-step="3">
@@ -1149,18 +862,14 @@ footer {
           <span>Valutazione delle performance e individuazione criticità</span>
         </div>
       </div>
-
-      <div class="process-arrow">➜</div>
-
+      <div class="process-arrow" aria-hidden="true">➜</div>
       <div class="process-step">
         <div class="step-box" data-step="4">
           AZIONI CORRETTIVE
           <span>Pianificazione di interventi mirati di ottimizzazione</span>
         </div>
       </div>
-
-      <div class="process-arrow">➜</div>
-
+      <div class="process-arrow" aria-hidden="true">➜</div>
       <div class="process-step">
         <div class="step-box" data-step="5">
           IMPLEMENTAZIONE
@@ -1168,7 +877,6 @@ footer {
         </div>
       </div>
     </div>
-
   </div>
 </div>
 
@@ -1176,31 +884,26 @@ footer {
 <div class="central-section why-section">
   <h2>Perché scegliere MANAGECH</h2>
   <div class="why-grid">
-
     <div class="why-card">
-      <i class="fas fa-lightbulb"></i>
+      <i class="fas fa-lightbulb" aria-hidden="true"></i>
       <h4>Soluzioni innovative</h4>
       <p>Offriamo approcci creativi e personalizzati per massimizzare il valore</p>
     </div>
-
     <div class="why-card">
-      <i class="fas fa-chart-line"></i>
+      <i class="fas fa-chart-line" aria-hidden="true"></i>
       <h4>Risultati misurabili</h4>
       <p>Monitoriamo ogni intervento con indicatori chiari per garantire performance concrete</p>
     </div>
-
     <div class="why-card">
-      <i class="fas fa-users"></i>
+      <i class="fas fa-users" aria-hidden="true"></i>
       <h4>Team multidisciplinare</h4>
       <p>Professionisti con competenze tecniche, economiche e gestionali sempre a disposizione</p>
     </div>
-
     <div class="why-card">
-      <i class="fas fa-shield-alt"></i>
+      <i class="fas fa-shield-alt" aria-hidden="true"></i>
       <h4>Affidabilità e trasparenza</h4>
       <p>Operiamo con massima trasparenza, rispettando tempi, costi e obiettivi concordati</p>
     </div>
-
   </div>
 </div>
 
@@ -1208,20 +911,17 @@ footer {
 <section class="form-section">
   <div class="form-wrapper">
     <h2>Definiamo insieme il percorso</h2>
-
     <p class="block-text-form">
       Compila il modulo per ricevere una consulenza gratuita. Il nostro team è a disposizione per fornire informazioni, valutare richieste di collaborazione e accompagnare la tua azienda nella definizione di un percorso sostenibile, coerente con le priorità strategiche e gli obiettivi organizzativi.
     </p>
-
     <div class="form-tags">
-      <span><i class="fas fa-comments"></i> Consulenza gratuita</span>
-      <span><i class="fas fa-clock"></i> Risposta entro 24h</span>
+      <span><i class="fas fa-comments" aria-hidden="true"></i> Consulenza gratuita</span>
+      <span><i class="fas fa-clock" aria-hidden="true"></i> Risposta entro 24h</span>
     </div>
 
     <form id="contactForm" action="https://formspree.io/f/xreqljvv" method="POST">
       <input type="hidden" name="_subject" value="Nuova richiesta dal sito MANAGECH">
       <input type="hidden" name="_template" value="table">
-      <!-- Honeypot anti-spam -->
       <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
       <label for="nome">Nome*</label>
@@ -1230,9 +930,12 @@ footer {
       <label for="cognome">Cognome*</label>
       <input id="cognome" name="cognome" required>
 
-      <label for="telefono">Telefono*</label>
+      <!-- ACCESSIBILITY: label esplicita per il gruppo telefono -->
+      <label class="phone-label" for="telefono">Telefono*</label>
       <div class="phone-row">
-        <select name="prefisso" id="prefisso" required>
+        <!-- ACCESSIBILITY: label associata al select prefisso -->
+        <label for="prefisso" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Prefisso internazionale</label>
+        <select name="prefisso" id="prefisso" required aria-label="Prefisso internazionale">
           <option value="+39" selected>🇮🇹 Italia +39</option>
           <option value="+43">🇦🇹 Austria +43</option>
           <option value="+32">🇧🇪 Belgio +32</option>
@@ -1311,41 +1014,39 @@ footer {
         </label>
       </div>
 
-      <!-- Hidden field assembled by JS -->
       <input type="hidden" name="telefono_completo" id="telefono_completo">
-
       <button type="submit">Invia richiesta</button>
     </form>
   </div>
 </section>
 
+</main>
+
 <!-- ================= FOOTER ================= -->
 <footer>
   <div class="footer-inner">
-
     <div class="footer-brand">
-      <img src="images/1-4.png" alt="MANAGECH" class="footer-logo">
+      <img src="images/1-4.png" alt="MANAGECH" class="footer-logo" width="280" height="80" loading="lazy">
       <p>
-        <i class="fas fa-map-marker-alt"></i> Piazza G. Mazzini 27, 00195 Roma<br>
-        <i class="fas fa-phone"></i> +39 349 390 7663<br>
-        <i class="fas fa-envelope"></i> segreteria@managech.com
+        <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Piazza G. Mazzini 27, 00195 Roma<br>
+        <i class="fas fa-phone" aria-hidden="true"></i> +39 349 390 7663<br>
+        <i class="fas fa-envelope" aria-hidden="true"></i> segreteria@managech.com
       </p>
     </div>
-
-    <div class="footer-links">
-      <ul>
-        <li><a href="chi-siamo.html">Chi siamo</a></li>
-        <li><a href="servizi.html">Servizi</a></li>
-        <li><a href="contatti.html">Contatti</a></li>
-        <li><a href="lavora-con-noi.html">Lavora con noi</a></li>
-        <li><a href="case-study.html">Case Study</a></li>
-        <li><a href="informativa-privacy.html">Informativa Privacy</a></li>
-        <li><a href="cookie-policy.html">Cookie Policy</a></li>
-      </ul>
-    </div>
-
+    <nav aria-label="Footer navigation">
+      <div class="footer-links">
+        <ul>
+          <li><a href="chi-siamo.html">Chi siamo</a></li>
+          <li><a href="servizi.html">Servizi</a></li>
+          <li><a href="contatti.html">Contatti</a></li>
+          <li><a href="lavora-con-noi.html">Lavora con noi</a></li>
+          <li><a href="case-study.html">Case Study</a></li>
+          <li><a href="informativa-privacy.html">Informativa Privacy</a></li>
+          <li><a href="cookie-policy.html">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </nav>
   </div>
-
   <div class="footer-bottom">
     &copy; 2026 MANAGECH - INGEGNERIA &amp; MANAGEMENT STUDIO ASSOCIATO | P. IVA 18387251004
   </div>
@@ -1353,27 +1054,27 @@ footer {
 
 <!-- ================= SCRIPTS ================= -->
 <script>
-  /* Combine phone prefix + number before form submission */
   document.getElementById("contactForm").addEventListener("submit", function () {
     const prefisso = document.getElementById("prefisso").value;
     const telefono = document.getElementById("telefono").value;
     document.getElementById("telefono_completo").value = prefisso + " " + telefono;
   });
 
-  /* Hamburger / mobile menu */
   const hamburger = document.getElementById("hamburger");
   const mobileMenu = document.getElementById("mobileMenu");
 
   hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
+    const isOpen = hamburger.classList.toggle("active");
     mobileMenu.classList.toggle("active");
+    // ACCESSIBILITY: aggiorna aria-expanded
+    hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
   });
 
-  /* Close mobile menu when a link is clicked */
   mobileMenu.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", () => {
       hamburger.classList.remove("active");
       mobileMenu.classList.remove("active");
+      hamburger.setAttribute("aria-expanded", "false");
     });
   });
 </script>
