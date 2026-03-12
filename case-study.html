@@ -2,362 +2,119 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-  <meta name="robots" content="noindex, follow">
-<title>MANAGECH – Case Study</title>
+<title>Case Study | Consulenza Strategica e Ottimizzazione Processi | MANAGECH</title>
+<meta name="description" content="Scopri i case study di MANAGECH: consulenza strategica, controllo di gestione e supporto alle gare d'appalto per imprese italiane. Risultati concreti e misurabili.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="format-detection" content="telephone=no">
-  
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<!-- Font Awesome -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-:root{
-  --green:#1fa37a;
-  --blue:#0b1f33;
-  --gray:#d6d6d6;
-  --white:#ffffff;
+:root { --green: #1fa37a; --blue: #0b1f33; --gray: #d6d6d6; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Montserrat', sans-serif; background: #fff; color: var(--blue); }
+
+/* HEADER */
+header { position: fixed; top: 0; left: 0; width: 100%; height: 90px; background: var(--blue); z-index: 1000; }
+.navbar { height: 100%; padding: 0 3rem; display: flex; align-items: center; justify-content: space-between; }
+.logo a { display: flex; align-items: center; color: var(--green); text-decoration: none; font-weight: 700; font-size: 1.3rem; }
+.logo img { height: 54px; display: block; }
+.nav-links { list-style: none; display: flex; gap: 2rem; }
+.nav-links a { color: #fff; text-decoration: none; font-size: .95rem; position: relative; }
+.nav-links a::after { content: ""; position: absolute; bottom: -6px; left: 0; width: 0; height: 2px; background: var(--green); transition: .3s; }
+.nav-links a:hover::after { width: 100%; }
+.hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; }
+.hamburger span { width: 25px; height: 3px; background: #fff; transition: .4s; }
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(6px,-6px); }
+.mobile-menu { position: fixed; top: 70px; left: 0; width: 100%; background: var(--blue); display: flex; flex-direction: column; align-items: center; gap: 1.8rem; padding: 2rem 0; transform: translateY(-120%); transition: transform .4s ease; z-index: 999; box-shadow: 0 10px 30px rgba(0,0,0,.3); }
+.mobile-menu.active { transform: translateY(0); }
+.mobile-menu a { color: #fff; font-size: 1.4rem; text-decoration: none; }
+
+/* HERO */
+.hero { margin-top: 90px; min-height: 50vh; background: linear-gradient(rgba(11,31,51,.78), rgba(11,31,51,.78)), url("images/hero-chi-siamo.jpg") center/cover no-repeat; display: flex; align-items: center; justify-content: center; text-align: center; padding: 3rem 2rem; }
+h1.hero-title { font-size: 3.8rem; font-weight: 800; letter-spacing: 4px; color: var(--green); }
+.hero-subtitle { margin-top: .8rem; font-size: 1.1rem; letter-spacing: 2px; color: var(--gray); }
+
+/* CASE STUDY */
+.cs-section { padding: 5rem 2rem; border-top: 1px solid #e8e8e8; }
+.cs-section:nth-child(even) { background: #f9f9f9; }
+.cs-inner { max-width: 960px; margin: 0 auto; }
+
+/* Top row: logo + meta */
+.cs-top { display: flex; align-items: center; gap: 2rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
+.cs-logo-wrap {
+  flex: 0 0 auto;
+  width: 100px; height: 100px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(0,0,0,.1);
+  display: flex; align-items: center; justify-content: center;
+  padding: .8rem;
 }
+.cs-logo-wrap img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.cs-meta { flex: 1; }
+.cs-tag { display: inline-block; background: var(--green); color: #fff; font-size: .7rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: .28rem .85rem; border-radius: 20px; margin-bottom: .6rem; }
+.cs-meta h2 { font-size: 1.9rem; font-weight: 800; color: var(--blue); margin-bottom: .25rem; }
+.cs-meta .cs-sub { font-size: .93rem; color: #666; }
 
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+/* Stats */
+.cs-stats { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+.stat-pill { background: var(--blue); border-radius: 10px; padding: 1rem 1.4rem; text-align: center; flex: 1; min-width: 130px; }
+.stat-pill .val { font-size: 1.6rem; font-weight: 800; color: var(--green); }
+.stat-pill .lbl { font-size: .71rem; color: #aac; margin-top: .25rem; line-height: 1.3; text-transform: uppercase; letter-spacing: .4px; }
+
+.cs-summary { font-size: 1rem; line-height: 1.85; color: #333; margin-bottom: 2rem; }
+
+.cs-tags { display: flex; gap: .6rem; flex-wrap: wrap; }
+.cs-chip { background: #eaf7f2; color: var(--green); border: 1px solid #b8e8d8; font-size: .78rem; font-weight: 600; padding: .32rem .85rem; border-radius: 20px; }
+.cs-chip i { margin-right: .3rem; }
+
+/* CTA */
+.cta-section { background: var(--blue); padding: 5rem 2rem; text-align: center; }
+.cta-section h2 { color: var(--green); font-size: 2rem; margin-bottom: 1rem; letter-spacing: .5px; }
+.cta-section p { color: #ccc; font-size: 1rem; max-width: 560px; margin: 0 auto 2rem; line-height: 1.7; }
+.btn-cta { display: inline-block; background: var(--green); color: #fff; padding: .9rem 2.5rem; border-radius: 6px; font-weight: 700; font-size: .95rem; text-decoration: none; transition: background .3s; }
+.btn-cta:hover { background: #17845e; }
+
+/* FOOTER */
+footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
+.footer-inner { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 3rem; }
+.footer-logo { max-width: 280px; width: 100%; margin-bottom: 1.5rem; display: block; }
+.footer-brand i { color: var(--green); margin-right: 8px; display: inline-block; width: 20px; }
+.footer-brand p { line-height: 1.8; }
+.footer-links ul { list-style: none; padding: 0; margin: 0; }
+.footer-links li { margin: .6rem 0; }
+footer a { color: #ccc; text-decoration: none; }
+.footer-bottom { text-align: center; margin-top: 3rem; font-size: .75rem; color: #888; }
+
+@media (max-width: 768px) {
+  header { height: 70px; }
+  .navbar { padding: 0 1.5rem; }
+  .logo img { height: 42px; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .hero { margin-top: 70px; }
+  h1.hero-title { font-size: 2.2rem; letter-spacing: 1px; }
+  .cs-meta h2 { font-size: 1.5rem; }
+  .cs-logo-wrap { width: 72px; height: 72px; }
 }
-
-body{
-  font-family:'Montserrat',sans-serif;
-  background:#fff;
-  color:var(--blue);
-}
-
-/* ================= HEADER ================= */
-header{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:90px;
-  background:var(--blue);
-  z-index:1000;
-}
-
-.navbar{
-  height:100%;
-  padding:0 3rem;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.logo a{
-  display:flex;
-  align-items:center;
-  gap:.8rem;
-  color:var(--green);
-  text-decoration:none;
-  font-weight:700;
-  font-size:1.3rem;
-  letter-spacing:1px;
-}
-
-.logo img{
-  height:54px;
-}
-
-.nav-links{
-  list-style:none;
-  display:flex;
-  gap:2rem;
-}
-
-.nav-links a{
-  color:#fff;
-  text-decoration:none;
-  font-size:.95rem;
-  position:relative;
-}
-
-.nav-links a::after{
-  content:"";
-  position:absolute;
-  bottom:-6px;
-  left:0;
-  width:0;
-  height:2px;
-  background:var(--green);
-  transition:.3s;
-}
-
-.nav-links a:hover::after{
-  width:100%;
-}
-
-/* ================= HERO ================= */
-.hero{
-  margin-top:90px;
-  min-height:50vh;
-  background:
-    linear-gradient(rgba(11,31,51,.75),rgba(11,31,51,.75)),
-    url("images/hero-chi-siamo.jpg") center/cover no-repeat;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:3rem 2rem;
-}
-
-.hero-content{
-  max-width:1100px;
-}
-
-.hero-title{
-  font-size:4rem;
-  font-weight:800;
-  letter-spacing:4px;
-  color:var(--green);
-}
-
-.hero-subtitle{
-  margin-top:.8rem;
-  font-size:1.2rem;
-  letter-spacing:2px;
-  color:var(--gray);
-}
-
-
-/* ================= CASE STUDY SECTION ================= */
-
-.case-study-section {
-  max-width: 1100px;      /* larghezza come le sezioni principali */
-  margin: 0 auto;
-  padding: 6rem 2rem;
-  text-align: center;
-}
-.case-study-section h2 {
-  font-size: 2.4rem;     /* identico agli altri h2 */
-  color: var(--green);
-  font-weight: 700;
-  letter-spacing: 1px;
-  margin: 0;
-}
-
-  
-
-/* ================= FOOTER ================= */
-footer{
-  background:var(--blue);
-  color:#ccc;
-  padding:4rem 2rem 2rem;
-}
-
-.footer-inner{
-  max-width:1200px;
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:3rem;
-}
-  
-.footer-logo {
-  max-width: 280px;   /* regolabile */
-  width: 100%;
-  margin-bottom: 1.5rem;
-  display: block;
-}
-
-.footer-brand h3{
-  margin:0;
-  color:var(--green);
-  font-size:1.6rem;
-}
-
-.footer-brand h4{
-  margin:.3rem 0 1.5rem;
-  font-weight:400;
-  color:#aaa;
-}
-
-.footer-brand i{
-  color:var(--green);
-  margin-right:8px;
-}
-
-.footer-links ul{
-  list-style:none;
-  padding:0;
-  margin: 0;
-}
-
-.footer-links li{
-  margin:.6rem 0;
-}
-
-.footer-links a{
-  color:#ccc;
-  text-decoration:none;
-}
-
-.footer-bottom{
-  text-align:center;
-  margin-top:3rem;
-  font-size:.75rem;
-  color:#888;
-}
-  
-.footer-brand p {
-  line-height: 1.8;
-}
-
-.footer-brand p i {
-  display: inline-block;
-  width: 20px;
-}
-/* Forza stile link nel footer */
-footer a{
-  color:#ccc;
-  text-decoration:none;
-}
-
-footer a:visited{
-  color:#ccc;
-}
-
-footer a:hover{
-  color:#ccc;
-  text-decoration:none;
-}
-
-  /* ================= MOBILE HERO ================= */
-@media (max-width: 768px){
-
-  header{
-    height:70px;
-  }
-
-  .navbar{
-    padding:0 1.5rem;
-  }
-  
-  .logo img {
-    height:42px; /* leggermente più piccolo su mobile */
-}
-  
-  .hero{
-    margin-top:70px;
-    min-height:60vh;
-    padding:2rem 1.5rem;
-  }
-
-  .hero-title{
-    font-size:1.9rem;
-    letter-spacing:1px;
-    line-height:1.3;
-  }
-
-  .hero-subtitle{
-    font-size:.95rem;
-    letter-spacing:0.5px;
-    line-height:1.6;
-  }
-
-}
-
-  /* ================= HAMBURGER ================= */
-
-.hamburger{
-  display:none;
-  flex-direction:column;
-  gap:6px;
-  cursor:pointer;
-}
-
-.hamburger span{
-  width:25px;
-  height:3px;
-  background:#fff;
-  transition:.4s;
-}
-
-.hamburger.active span:nth-child(1){
-  transform:rotate(45deg) translate(5px,5px);
-}
-
-.hamburger.active span:nth-child(2){
-  opacity:0;
-}
-
-.hamburger.active span:nth-child(3){
-  transform:rotate(-45deg) translate(6px,-6px);
-}
-
-/* MOBILE MENU */
-
-.mobile-menu{
-  position:fixed;
-  top:70px;                /* parte sotto header mobile */
-  left:0;
-  width:100%;
-  background:var(--blue);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:1.8rem;
-  padding:2rem 0;
-  transform:translateY(-120%);
-  transition:transform .4s ease;
-  z-index:999;
-  box-shadow:0 10px 30px rgba(0,0,0,0.3);
-}
-
-.mobile-menu.active{
-  transform:translateY(0);
-}
-
-.mobile-menu a{
-  color:#fff;
-  font-size:1.4rem;
-  text-decoration:none;
-}
-
-/* NASCONDE MENU DESKTOP SU MOBILE */
-@media(max-width:768px){
-
-  .nav-links{
-    display:none;
-  }
-
-  .hamburger{
-    display:flex;
-  }
-
-}
-  
-  
 </style>
 </head>
-
 <body>
 
-<!-- ================= HEADER ================= -->
 <header>
   <div class="mobile-menu" id="mobileMenu">
-  <a href="chi-siamo.html">Chi siamo</a>
-  <a href="servizi.html">Servizi</a>
-  <a href="contatti.html">Contatti</a>
-  <a href="lavora-con-noi.html">Lavora con noi</a>
-  <a href="case-study.html">Case Study</a>
-</div>
-
+    <a href="chi-siamo.html">Chi siamo</a>
+    <a href="servizi.html">Servizi</a>
+    <a href="contatti.html">Contatti</a>
+    <a href="lavora-con-noi.html">Lavora con noi</a>
+    <a href="case-study.html">Case Study</a>
+  </div>
   <nav class="navbar">
-    <div class="logo">
-      <a href="index.html">
-        <img src="images/1-4.png">
-      </a>
-    </div>
+    <div class="logo"><a href="index.html"><img src="images/1-4.png" alt="MANAGECH"></a></div>
     <ul class="nav-links">
       <li><a href="chi-siamo.html">Chi siamo</a></li>
       <li><a href="servizi.html">Servizi</a></li>
@@ -365,87 +122,140 @@ footer a:hover{
       <li><a href="lavora-con-noi.html">Lavora con noi</a></li>
       <li><a href="case-study.html">Case Study</a></li>
     </ul>
-    <div class="hamburger" id="hamburger">
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
-
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
   </nav>
 </header>
 
-<!-- ================= HERO ================= -->
 <section class="hero">
-  <div class="hero-content">
-    <div class="hero-title">Coming Soon</div>
-    <div class="hero-subtitle">
-      Sarà presto disponibile la rassegna dei nostri Case Studies, con i contenuti relativi ai progetti implementati e in corso 
-    </div>
+  <div>
+    <h1 class="hero-title">Case Study</h1>
+    <p class="hero-subtitle">Progetti reali. Risultati misurabili.</p>
   </div>
 </section>
 
-<!-- ================= CONTENT ================= -->
-<section class="central-section case-study-section">
-  <h2>Case Study</h2>
+<!-- CS 1: ML1 -->
+<section class="cs-section">
+  <div class="cs-inner">
+
+    <div class="cs-top">
+      <div class="cs-logo-wrap">
+        <img src="logo-ml1.png" alt="ML1 Costruzioni">
+      </div>
+      <div class="cs-meta">
+        <span class="cs-tag">Controllo di Gestione · Ottimizzazione Processi</span>
+        <h2>M.L.1 Costruzioni Srl</h2>
+        <p class="cs-sub">Impresa edile romana · costruzioni e ristrutturazioni · oltre 30 anni di attività</p>
+      </div>
+    </div>
+
+    <div class="cs-stats">
+      <div class="stat-pill"><div class="val">ROI elevato</div><div class="lbl">Ritorno sull'investimento nel biennio</div></div>
+      <div class="stat-pill"><div class="val">−10%</div><div class="lbl">Riduzione tempi di ciclo operativi</div></div>
+      <div class="stat-pill"><div class="val">−5%</div><div class="lbl">Riduzione costo del personale</div></div>
+      <div class="stat-pill"><div class="val">6 mesi</div><div class="lbl">Durata del progetto</div></div>
+    </div>
+
+    <p class="cs-summary">
+      MANAGECH ha progettato e implementato un <strong>Sistema di Controllo di Gestione su misura</strong> per M.L.1 Costruzioni Srl, con l'obiettivo di migliorare l'efficienza operativa e rafforzare l'allineamento strategico. Il progetto — articolato in tre fasi nell'arco di sei mesi — ha incluso la mappatura dei processi aziendali, la definizione di KPI operativi, il setup di un sistema di reporting strutturato, l'introduzione di un gestionale per le commesse e un piano di formazione del personale. Il risultato è una struttura organizzativa più solida, con piena visibilità su costi, performance e scostamenti di budget in tempo reale.
+    </p>
+
+    <div class="cs-tags">
+      <span class="cs-chip"><i class="fas fa-chart-pie"></i> Controllo di gestione</span>
+      <span class="cs-chip"><i class="fas fa-cogs"></i> Ottimizzazione processi</span>
+      <span class="cs-chip"><i class="fas fa-database"></i> Gestione commesse</span>
+      <span class="cs-chip"><i class="fas fa-chart-line"></i> KPI e reporting</span>
+      <span class="cs-chip"><i class="fas fa-users"></i> Change management</span>
+    </div>
+
+  </div>
 </section>
 
+<!-- CS 2: SOLARIS -->
+<section class="cs-section">
+  <div class="cs-inner">
 
-<!-- ================= FOOTER ================= -->
+    <div class="cs-top">
+      <div class="cs-logo-wrap">
+        <img src="logo-solaris.png" alt="Solaris International Spa">
+      </div>
+      <div class="cs-meta">
+        <span class="cs-tag">Consulenza Strategica · Gare d'Appalto · Scouting Commerciale</span>
+        <h2>Solaris International S.p.A.</h2>
+        <p class="cs-sub">Outsourcing e servizi professionali · ospitalità, logistica e facility management · oltre 100 dipendenti</p>
+      </div>
+    </div>
+
+    <div class="cs-stats">
+      <div class="stat-pill"><div class="val">Pubblico</div><div class="lbl">Appalti pubblici e privati</div></div>
+      <div class="stat-pill"><div class="val">Nazionale</div><div class="lbl">Territorio di operatività</div></div>
+      <div class="stat-pill"><div class="val">12 mesi</div><div class="lbl">Contratto quadro rinnovabile</div></div>
+      <div class="stat-pill"><div class="val">End-to-end</div><div class="lbl">Dal bando all'aggiudicazione</div></div>
+    </div>
+
+    <p class="cs-summary">
+      MANAGECH affianca Solaris International S.p.A. come <strong>partner strategico per lo sviluppo commerciale</strong>, con un incarico di consulenza manageriale strutturato su contratto quadro. Le attività comprendono il monitoraggio continuativo di opportunità sui mercati pubblici e privati, il supporto alla predisposizione di offerte tecnico-economiche per gare d'appalto, la definizione della strategia di gara e il coordinamento dei professionisti specialistici coinvolti. MANAGECH segue l'intero processo — dall'analisi del bando fino all'aggiudicazione — garantendo continuità operativa e allineamento agli obiettivi di crescita del cliente.
+    </p>
+
+    <div class="cs-tags">
+      <span class="cs-chip"><i class="fas fa-file-contract"></i> Gare d'appalto</span>
+      <span class="cs-chip"><i class="fas fa-search"></i> Scouting commerciale</span>
+      <span class="cs-chip"><i class="fas fa-lightbulb"></i> Consulenza strategica</span>
+      <span class="cs-chip"><i class="fas fa-handshake"></i> Supporto all'aggiudicazione</span>
+      <span class="cs-chip"><i class="fas fa-network-wired"></i> Coordinamento team</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Vuoi risultati come questi?</h2>
+  <p>Contattaci per una consulenza gratuita. Analizziamo le esigenze della tua azienda e progettiamo insieme un percorso su misura.</p>
+  <a href="contatti.html" class="btn-cta">Richiedi una consulenza gratuita</a>
+</section>
+
+<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-  <div class="footer-brand">
-    <img src="images/1-4.png" alt="MANAGECH" class="footer-logo">
-    <p>
-      <i class="fas fa-map-marker-alt"></i> Piazza G. Mazzini 27, 00195 Roma<br>
-      <i class="fas fa-phone"></i> +39 349 390 7663<br>
-      <i class="fas fa-envelope"></i> segreteria@managech.com
-    </p>
+    <div class="footer-brand">
+      <img src="images/1-4.png" alt="MANAGECH" class="footer-logo">
+      <p>
+        <i class="fas fa-map-marker-alt"></i> Piazza G. Mazzini 27, 00195 Roma<br>
+        <i class="fas fa-phone"></i> +39 349 390 7663<br>
+        <i class="fas fa-envelope"></i> segreteria@managech.com
+      </p>
+    </div>
+    <div class="footer-links">
+      <ul>
+        <li><a href="chi-siamo.html">Chi siamo</a></li>
+        <li><a href="servizi.html">Servizi</a></li>
+        <li><a href="contatti.html">Contatti</a></li>
+        <li><a href="lavora-con-noi.html">Lavora con noi</a></li>
+        <li><a href="case-study.html">Case Study</a></li>
+        <li><a href="informativa-privacy.html">Informativa Privacy</a></li>
+        <li><a href="cookie-policy.html">Cookie Policy</a></li>
+      </ul>
+    </div>
   </div>
-
-  <div class="footer-links">
-    <ul>
-      <li><a href="chi-siamo.html">Chi siamo</a></li>
-      <li><a href="servizi.html">Servizi</a></li>
-      <li><a href="contatti.html">Contatti</a></li>
-      <li><a href="lavora-con-noi.html">Lavora con noi</a></li>
-      <li><a href="case-study.html">Case Study</a></li>
-      <li><a href="informativa-privacy.html">Informativa Privacy</a></li>
-      <li><a href="cookie-policy.html">Cookie Policy</a></li>
-    </ul>
+  <div class="footer-bottom">
+    &copy; 2026 MANAGECH - INGEGNERIA &amp; MANAGEMENT STUDIO ASSOCIATO | P. IVA 18387251004
   </div>
-</div>
-
-<div class="footer-bottom">
-  © 2026 MANAGECH - INGEGNERIA & MANAGEMENT STUDIO ASSOCIATO | P. IVA 18387251004
-</div>
-
 </footer>
 
-<!-- ================= SCRIPT FADE-IN ================= -->
 <script>
-const faders = document.querySelectorAll('.fade-in');
-const appearOptions = { threshold:0.1, rootMargin:"0px 0px -50px 0px" };
-const appearOnScroll = new IntersectionObserver(function(entries, observer){
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('appear');
-      observer.unobserve(entry.target);
-    }
+  const hamburger = document.getElementById("hamburger");
+  const mobileMenu = document.getElementById("mobileMenu");
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    mobileMenu.classList.toggle("active");
   });
-}, appearOptions);
-
-faders.forEach(fader => appearOnScroll.observe(fader));
-const hamburger = document.getElementById("hamburger");
-const mobileMenu = document.getElementById("mobileMenu");
-
-hamburger.addEventListener("click", () => {
-  hamburger.classList.toggle("active");
-  mobileMenu.classList.toggle("active");
-});
-
-  
+  mobileMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      mobileMenu.classList.remove("active");
+    });
+  });
 </script>
 
-  
 </body>
 </html>
