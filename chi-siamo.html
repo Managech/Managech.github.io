@@ -7,163 +7,162 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="format-detection" content="telephone=no">
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- PERFORMANCE: preconnect -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!-- PERFORMANCE: preload hero image (LCP) -->
+<link rel="preload" as="image" href="images/hero-chi-siamo.jpg">
+
+<!-- Google Fonts: non bloccante -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+
+<!-- Font Awesome: non bloccante -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
 
 <style>
-:root{
-  --green:#1fa37a;
-  --blue:#0b1f33;
-  --gray:#d6d6d6;
-  --white:#ffffff;
+:root {
+  --green: #1fa37a;
+  --blue:  #0b1f33;
+  --gray:  #d6d6d6;
+  --white: #ffffff;
 }
 
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-body{
-  font-family:'Montserrat',sans-serif;
-  background:#fff;
-  color:var(--blue);
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #fff;
+  color: var(--blue);
 }
 
 /* ================= HEADER ================= */
-header{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:90px;
-  background:var(--blue);
-  z-index:1000;
+header {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 90px;
+  background: var(--blue);
+  z-index: 1000;
 }
 
-.navbar{
-  height:100%;
-  padding:0 3rem;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+.navbar {
+  height: 100%;
+  padding: 0 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.logo img{
-  height:54px;
+/* LOGO: width:auto evita schiacciamento */
+.logo img { height: 54px; width: auto; display: block; }
+
+.nav-links { list-style: none; display: flex; gap: 2rem; }
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: .95rem;
+  position: relative;
 }
 
-.nav-links{
-  list-style:none;
-  display:flex;
-  gap:2rem;
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px; left: 0;
+  width: 0; height: 2px;
+  background: var(--green);
+  transition: .3s;
 }
 
-.nav-links a{
-  color:#fff;
-  text-decoration:none;
-  font-size:.95rem;
-  position:relative;
+.nav-links a:hover::after { width: 100%; }
+
+/* ================= HAMBURGER ================= */
+/* ACCESSIBILITY: button invece di div */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
 }
 
-.nav-links a::after{
-  content:"";
-  position:absolute;
-  bottom:-6px;
-  left:0;
-  width:0;
-  height:2px;
-  background:var(--green);
-  transition:.3s;
+.hamburger span {
+  width: 25px; height: 3px;
+  background: #fff;
+  transition: .4s;
+  display: block;
 }
 
-.nav-links a:hover::after{
-  width:100%;
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+
+/* ================= MOBILE MENU ================= */
+.mobile-menu {
+  position: fixed;
+  top: 70px; left: 0;
+  width: 100%;
+  background: var(--blue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.8rem;
+  padding: 2rem 0;
+  transform: translateY(-120%);
+  transition: transform .4s ease;
+  z-index: 999;
+  box-shadow: 0 10px 30px rgba(0,0,0,.3);
 }
+
+.mobile-menu.active { transform: translateY(0); }
+.mobile-menu a { color: #fff; font-size: 1.4rem; text-decoration: none; }
 
 /* ================= HERO ================= */
-.hero{
-  margin-top:90px;
-  min-height:50vh;
+.hero {
+  margin-top: 90px;
+  min-height: 50vh;
   background:
-    linear-gradient(rgba(11,31,51,.75),rgba(11,31,51,.75)),
-    url("images/hero-chi-siamo.jpg") center/cover no-repeat;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:3rem 2rem;
+    linear-gradient(rgba(11,31,51,.75), rgba(11,31,51,.75)),
+    url("images/hero-chi-siamo.jpg") center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 2rem;
 }
 
-.hero-content{
-  max-width:1100px;
+.hero-content { max-width: 1100px; }
+
+/* ACCESSIBILITY: h1 con stile via CSS, non con tag di heading sbagliato */
+h1.hero-title {
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: 4px;
+  color: var(--green);
 }
 
-.hero-title{
-  font-size:4rem;
-  font-weight:800;
-  letter-spacing:4px;
-  color:var(--green);
+.hero-subtitle {
+  margin-top: .8rem;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  color: var(--gray);
+  line-height: 1.7;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.hero-subtitle{
-  margin-top:.8rem;
-  font-size:1.2rem;
-  letter-spacing:2px;
-  color:var(--gray);
-}
-
-/* ================= CONTENT BLOCKS (Vision/Mission) ================= */
-.section{
-  padding:6rem 2rem;
-}
-
-.block{
-  display:flex;
-  width:100%;
-  margin:0 0 6rem;
-  align-items:stretch;
-}
-
-.block-text{
-  width:calc(50% - 4rem);
-  padding:4rem;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-}
-
-.block-image{
-  width:50vw;
-}
-
-.block-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
-
-.block:nth-child(even){
-  flex-direction:row-reverse;
-}
-
-.block:nth-child(odd) .block-image{
-  margin-right:calc(50% - 50vw);
-}
-
-.block:nth-child(even) .block-image{
-  margin-left:calc(50% - 50vw);
-}
-
-/* ===== ABOUT SPLIT (Vision / Mission) ===== */
-
-.about-split-section {
-  width: 100%;
-}
+/* ================= ABOUT SPLIT (Vision / Mission) ================= */
+.about-split-section { width: 100%; }
 
 .about-split {
   display: flex;
@@ -171,9 +170,7 @@ header{
   min-height: 420px;
 }
 
-.about-split.reverse {
-  flex-direction: row-reverse;
-}
+.about-split.reverse { flex-direction: row-reverse; }
 
 .about-text {
   flex: 1;
@@ -183,7 +180,8 @@ header{
   justify-content: center;
 }
 
-.about-text h3 {
+/* ACCESSIBILITY: h2 per gerarchia corretta (h1 → h2) */
+.about-text h2 {
   color: var(--green);
   font-size: 2.6rem;
   margin-bottom: 1.5rem;
@@ -197,381 +195,194 @@ header{
   text-align: justify;
 }
 
-.about-image {
-  flex: 1;
-}
+.about-image { flex: 1; overflow: hidden; }
 
 .about-image img {
-  width: 100%;
-  height: 100%;
+  width: 100%; height: 100%;
   object-fit: cover;
   display: block;
 }
-  
+
 /* ================= VALORI ================= */
-.values-section{
-  padding:6rem 2rem;
-  max-width:1200px;
-  margin:0 auto;
+.values-section {
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.values-section h2{
-  text-align:center;
-  color:var(--green);
-  font-size:2.8rem;
-  margin-bottom:3rem;
+/* ACCESSIBILITY: h2 per gerarchia corretta */
+.values-section h2 {
+  text-align: center;
+  color: var(--green);
+  font-size: 2.8rem;
+  margin-bottom: 3rem;
 }
 
-.values-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:2rem;
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
 }
 
-.value-card{
-  background:#f4f4f4;
-  padding:2rem;
-  border-radius:8px;
-  text-align:center;
-  box-shadow:0 5px 20px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.value-card {
+  background: #f4f4f4;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,.1);
+  transition: transform .3s ease, box-shadow .3s ease;
 }
 
-.value-card:hover{
+.value-card:hover {
   transform: translateY(-5px) scale(1.03);
-  box-shadow:0 15px 35px rgba(0,0,0,0.2);
+  box-shadow: 0 15px 35px rgba(0,0,0,.2);
 }
 
-.value-card h3{
-  font-size:1.4rem;
-  color:var(--green);
-  margin:1rem 0;
-}
-
-.value-card p{
-  font-size:1rem;
-  line-height:1.5;
-}
-
-.value-icon{
-  font-size:2rem;
-  color:var(--green);
-}
+/* ACCESSIBILITY: h3 dentro sezione h2 — gerarchia corretta */
+.value-card h3 { font-size: 1.4rem; color: var(--green); margin: 1rem 0; }
+.value-card p { font-size: 1rem; line-height: 1.5; }
+.value-icon { font-size: 2rem; color: var(--green); }
 
 /* ================= TEAM ================= */
-.team-section{
-  padding:6rem 2rem;
-  max-width:1200px;
-  margin:0 auto;
+.team-section {
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.team-section h2{
-  font-size:3rem;
-  color:var(--green);
-  text-align:center;
-  margin-bottom:3rem;
+.team-section h2 {
+  font-size: 3rem;
+  color: var(--green);
+  text-align: center;
+  margin-bottom: 3rem;
 }
 
-.team-grid{
-  display:flex;
-  flex-wrap:wrap;
-  gap:2rem;
-  justify-content:center;
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
 }
 
-.team-member{
-  flex:1 1 300px;
-  max-width:340px;
-  background:#f4f4f4;
-  border-radius:8px;
-  box-shadow:0 5px 20px rgba(0,0,0,0.1);
-  padding:2rem;
-  text-align:center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.team-member {
+  flex: 1 1 300px;
+  max-width: 340px;
+  background: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0,0,0,.1);
+  padding: 2rem;
+  text-align: center;
+  transition: transform .3s ease, box-shadow .3s ease;
 }
 
-.team-member:hover{
+.team-member:hover {
   transform: translateY(-5px) scale(1.03);
-  box-shadow:0 15px 35px rgba(0,0,0,0.2);
+  box-shadow: 0 15px 35px rgba(0,0,0,.2);
 }
 
-.team-member img{
-  width:120px;
-  height:120px;
-  border-radius:50%;
-  object-fit:cover;
-  margin-bottom:1rem;
+.team-member img {
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
 }
 
-.team-member h3{
-  font-size:1.5rem;
-  color:var(--green);
-  margin-bottom:.5rem;
-}
+.team-member h3 { font-size: 1.5rem; color: var(--green); margin-bottom: .5rem; }
+.team-member p.role { font-size: .95rem; color: #555; margin-bottom: 1rem; }
+.team-member p.contact { font-size: .9rem; color: #333; margin: .2rem 0; }
+.team-member p.contact i { color: var(--green); margin-right: 6px; }
 
-.team-member p.role{
-  font-size:.95rem;
-  color:#555;
-  margin-bottom:1rem;
-}
-
-.team-member p.contact{
-  font-size:.9rem;
-  color:#333;
-  margin:0.2rem 0;
-}
-
-.team-member p.contact i{
-  color:var(--green);
-  margin-right:6px;
-}
+/* email nel team: nessun blu da browser */
+.team-member a { color: #333; text-decoration: none; }
+.team-member a:hover { color: var(--green); }
 
 /* ================= FOOTER ================= */
-footer{
-  background:var(--blue);
-  color:#ccc;
-  padding:4rem 2rem 2rem;
+footer {
+  background: var(--blue);
+  color: #ccc;
+  padding: 4rem 2rem 2rem;
 }
 
-.footer-inner{
-  max-width:1200px;
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:3rem;
-}
-  
-.footer-logo {
-  max-width: 280px;
-  width: 100%;
-  margin-bottom: 1.5rem;
-  display: block;
+.footer-inner {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 3rem;
 }
 
-.footer-brand h3{
-  margin:0;
-  color:var(--green);
-  font-size:1.6rem;
-}
+/* LOGO FOOTER: width:auto + max-height evita schiacciamento */
+.footer-logo { width: auto; height: auto; max-width: 280px; max-height: 80px; margin-bottom: 1.5rem; display: block; }
 
-.footer-brand h4{
-  margin:.3rem 0 1.5rem;
-  font-weight:400;
-  color:#aaa;
-}
+.footer-brand i { color: var(--green); margin-right: 8px; display: inline-block; width: 20px; }
+.footer-brand p { line-height: 1.8; color: #ccc; }
+.footer-brand p a { color: #ccc; text-decoration: none; }
 
-.footer-brand i{
-  color:var(--green);
-  margin-right:8px;
-}
+.footer-links ul { list-style: none; padding: 0; margin: 0; }
+.footer-links li { margin: .6rem 0; }
+.footer-links a { color: #ccc; text-decoration: none; }
 
-.footer-links ul{
-  list-style:none;
-  padding:0;
-  margin: 0;
-}
-
-.footer-links li{
-  margin:.6rem 0;
-}
-
-.footer-links a{
-  color:#ccc;
-  text-decoration:none;
-}
-
-.footer-bottom{
-  text-align:center;
-  margin-top:3rem;
-  font-size:.75rem;
-  color:#888;
-}
-
-.footer-brand p {
-  line-height: 1.8;
-}
-
-.footer-brand p i {
-  display: inline-block;
-  width: 20px;
-}
-
-footer a{
-  color:#ccc;
-  text-decoration:none;
-}
-
-footer a:visited{
-  color:#ccc;
-}
-
-footer a:hover{
-  color:#ccc;
-  text-decoration:none;
+.footer-bottom {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: .75rem;
+  color: #888;
 }
 
 /* ================= FADE-IN ================= */
-.fade-in{
-  opacity:0;
+.fade-in {
+  opacity: 0;
   transform: translateY(40px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition: opacity .8s ease-out, transform .8s ease-out;
 }
 
-.fade-in.appear{
-  opacity:1;
-  transform: translateY(0);
+.fade-in.appear { opacity: 1; transform: translateY(0); }
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+  .about-split,
+  .about-split.reverse { flex-direction: column; }
+  .about-text { padding: 2.5rem 1.5rem; }
+  .about-image img { height: 280px; object-fit: cover; }
+  .about-text h2 { font-size: 1.8rem; text-align: center; }
 }
 
-/* ================= MOBILE HERO ================= */
-@media (max-width: 768px){
+@media (max-width: 768px) {
+  /* Header */
+  header { height: 70px; }
+  .navbar { padding: 0 1.5rem; }
+  .logo img { height: 42px; width: auto; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
 
-  header{
-    height:70px;
-  }
+  /* Hero */
+  .hero { margin-top: 70px; min-height: 45vh; padding: 2rem 1.2rem; }
+  h1.hero-title { font-size: clamp(1.6rem, 7vw, 2.6rem); letter-spacing: 1px; line-height: 1.3; }
+  .hero-subtitle { font-size: .9rem; letter-spacing: .3px; }
 
-  .navbar{
-    padding:0 1.5rem;
-  }
-  
-  .logo img {
-    height:42px;
-  }
-  
-  .hero{
-    margin-top:70px;
-    min-height:60vh;
-    padding:2rem 1.5rem;
-  }
+  /* About */
+  .about-text { padding: 2rem 1.2rem; }
+  .about-text h2 { font-size: 1.5rem; }
+  .about-text p { font-size: 1rem; }
+  .about-image img { height: 220px; }
 
-  .hero-title{
-    font-size:1.9rem;
-    letter-spacing:1px;
-    line-height:1.3;
-  }
+  /* Valori */
+  .values-section { padding: 3rem 1.2rem; }
+  .values-section h2 { font-size: 1.5rem; margin-bottom: 2rem; }
+  .values-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .value-card { padding: 1.5rem 1.2rem; }
 
-  .hero-subtitle{
-    font-size:.95rem;
-    letter-spacing:0.5px;
-    line-height:1.6;
-  }
+  /* Team */
+  .team-section { padding: 3rem 1.2rem; }
+  .team-section h2 { font-size: 1.8rem; margin-bottom: 2rem; }
+  .team-grid { flex-direction: column; align-items: center; }
+  .team-member { max-width: 100%; width: 100%; }
 
-}
-
-/* ================= MOBILE ABOUT ================= */
-@media (max-width: 900px){
-
-  .about-split{
-    flex-direction:column;
-  }
-
-  .about-split.reverse{
-    flex-direction:column;
-  }
-
-  .about-text{
-    padding:2.5rem 1.5rem;
-  }
-
-  .about-image img{
-    height:280px;
-  }
-
-  .about-text h3{
-    font-size:1.6rem;
-    white-space:normal;
-    text-align:center;
-  }
-
-  .values-section h2{
-    font-size:1.8rem;
-  }
-
-}
-
-/* ================= HAMBURGER ================= */
-.hamburger{
-  display:none;
-  flex-direction:column;
-  gap:6px;
-  cursor:pointer;
-}
-
-.hamburger span{
-  width:25px;
-  height:3px;
-  background:#fff;
-  transition:.4s;
-}
-
-.hamburger.active span:nth-child(1){
-  transform:rotate(45deg) translate(5px,5px);
-}
-
-.hamburger.active span:nth-child(2){
-  opacity:0;
-}
-
-.hamburger.active span:nth-child(3){
-  transform:rotate(-45deg) translate(6px,-6px);
-}
-
-/* MOBILE MENU */
-.mobile-menu{
-  position:fixed;
-  top:70px;
-  left:0;
-  width:100%;
-  background:var(--blue);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:1.8rem;
-  padding:2rem 0;
-  transform:translateY(-120%);
-  transition:transform .4s ease;
-  z-index:999;
-  box-shadow:0 10px 30px rgba(0,0,0,0.3);
-}
-
-.mobile-menu.active{
-  transform:translateY(0);
-}
-
-.mobile-menu a{
-  color:#fff;
-  font-size:1.4rem;
-  text-decoration:none;
-}
-
-@media(max-width:768px){
-
-  .nav-links{
-    display:none;
-  }
-
-  .hamburger{
-    display:flex;
-  }
-
-}
-
-@media(max-width:768px){
-
-  .values-section,
-  .team-section{
-    padding:3.5rem 1.5rem;
-  }
-
-  .values-grid{
-    grid-template-columns:1fr;
-  }
-
-  .team-grid{
-    flex-direction:column;
-    align-items:center;
-  }
-
+  /* Footer */
+  .footer-inner { flex-direction: column; gap: 2rem; }
+  .footer-logo { max-width: 160px; }
+  footer { padding: 2.5rem 1.2rem 1.5rem; }
 }
 </style>
 </head>
@@ -600,53 +411,54 @@ footer a:hover{
       <li><a href="lavora-con-noi.html">Lavora con noi</a></li>
       <li><a href="case-study.html">Case Study</a></li>
     </ul>
-    <div class="hamburger" id="hamburger">
+    <!-- ACCESSIBILITY: button con aria-label e aria-expanded -->
+    <button class="hamburger" id="hamburger" aria-label="Apri menu di navigazione" aria-expanded="false" aria-controls="mobileMenu">
       <span></span>
       <span></span>
       <span></span>
-    </div>
+    </button>
   </nav>
 </header>
+
+<main>
 
 <!-- ================= HERO ================= -->
 <section class="hero">
   <div class="hero-content">
-    <!-- SEO: h1 invece di div -->
     <h1 class="hero-title">Ingegneria manageriale al servizio di decisioni complesse</h1>
-    <div class="hero-subtitle">
+    <p class="hero-subtitle">
       Affianchiamo imprese, enti e professionisti nella partecipazione alle gare, nella gestione delle commesse e nella trasformazione organizzativa, combinando competenze tecniche, strategiche e manageriali per creare valore sostenibile, migliorare le performance e ridurre i rischi.
-    </div>
+    </p>
   </div>
 </section>
 
-<!-- ================= VISION & MISSION BLOCCO ================= -->
+<!-- ================= VISION & MISSION ================= -->
 <section class="about-split-section">
 
-  <!-- VISION -->
   <div class="about-split">
     <div class="about-text">
-      <h3>La nostra Vision</h3>
+      <h2>La nostra Vision</h2>
       <p>
         La visione di <strong>Managech</strong> è essere un <strong>partner tecnico-strategico di riferimento</strong> per imprese, enti e professionisti che operano in contesti complessi e regolamentati.
         Vogliamo supportare i nostri clienti nella partecipazione a gare pubbliche e private, nella gestione strutturata delle commesse e nei processi di trasformazione organizzativa e digitale.
       </p>
     </div>
     <div class="about-image">
-      <img src="images/vision.jpg" alt="Vision strategica MANAGECH per la consulenza aziendale">
+      <!-- PERFORMANCE: lazy loading + width/height espliciti -->
+      <img src="images/vision.jpg" alt="Vision strategica MANAGECH per la consulenza aziendale" width="800" height="600" loading="lazy">
     </div>
   </div>
 
-  <!-- MISSION -->
   <div class="about-split reverse">
     <div class="about-text">
-      <h3>La nostra Mission</h3>
+      <h2>La nostra Mission</h2>
       <p>
         La missione di <strong>Managech</strong> è fornire <strong>assistenza tecnico-economica, manageriale e strategica</strong> a imprese, enti e professionisti che operano in contesti complessi e regolamentati.
         Affianchiamo i clienti nella partecipazione alle gare, nella gestione delle commesse e nell'adozione di soluzioni data-driven.
       </p>
     </div>
     <div class="about-image">
-      <img src="images/light-bulb.jpg" alt="Mission MANAGECH innovazione e consulenza strategica">
+      <img src="images/light-bulb.jpg" alt="Mission MANAGECH innovazione e consulenza strategica" width="800" height="600" loading="lazy">
     </div>
   </div>
 
@@ -657,32 +469,32 @@ footer a:hover{
   <h2>I nostri Valori</h2>
   <div class="values-grid">
     <div class="value-card fade-in">
-      <div class="value-icon"><i class="fas fa-compass"></i></div>
+      <div class="value-icon"><i class="fas fa-compass" aria-hidden="true"></i></div>
       <h3>Rigorosità e metodo</h3>
       <p>Approccio ingegneristico e manageriale fondato su analisi e misurabilità per risultati concreti.</p>
     </div>
     <div class="value-card fade-in">
-      <div class="value-icon"><i class="fas fa-scale-balanced"></i></div>
+      <div class="value-icon"><i class="fas fa-scale-balanced" aria-hidden="true"></i></div>
       <h3>Responsabilità professionale</h3>
       <p>Operiamo nel rispetto della normativa e dei principi deontologici, tutelando i clienti con trasparenza.</p>
     </div>
     <div class="value-card fade-in">
-      <div class="value-icon"><i class="fas fa-chart-line"></i></div>
+      <div class="value-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
       <h3>Orientamento al valore</h3>
       <p>Trasformiamo la complessità in valore misurabile, migliorando performance e processi decisionali.</p>
     </div>
     <div class="value-card fade-in">
-      <div class="value-icon"><i class="fas fa-network-wired"></i></div>
+      <div class="value-icon"><i class="fas fa-network-wired" aria-hidden="true"></i></div>
       <h3>Integrazione delle competenze</h3>
       <p>Unione di ingegneria, management, economia e tecnologia per soluzioni coerenti ed efficaci.</p>
     </div>
     <div class="value-card fade-in">
-      <div class="value-icon"><i class="fas fa-users-gear"></i></div>
+      <div class="value-icon"><i class="fas fa-users-gear" aria-hidden="true"></i></div>
       <h3>Sviluppo delle persone</h3>
       <p>Investiamo nella crescita delle competenze, della leadership e della cultura manageriale.</p>
     </div>
     <div class="value-card fade-in">
-      <div class="value-icon"><i class="fas fa-microchip"></i></div>
+      <div class="value-icon"><i class="fas fa-microchip" aria-hidden="true"></i></div>
       <h3>Innovazione responsabile</h3>
       <p>Promuoviamo l'innovazione digitale e data-driven in modo consapevole e orientato al business.</p>
     </div>
@@ -694,93 +506,99 @@ footer a:hover{
   <h2>Il nostro Team</h2>
   <div class="team-grid">
     <div class="team-member fade-in">
-      <img src="images/gargano.jpg" alt="Giulio Gargano – Founder e CEO MANAGECH">
+      <img src="images/gargano.jpg" alt="Giulio Gargano – Founder e CEO MANAGECH" width="120" height="120" loading="lazy">
       <h3>Giulio Gargano</h3>
-      <p class="role">Founder & CEO</p>
-      <p class="contact"><i class="fas fa-phone"></i> +39 335 811 6800</p>
-      <p class="contact"><i class="fas fa-envelope"></i> giulio.gargano@managech.com</p>
+      <p class="role">Founder &amp; CEO</p>
+      <p class="contact"><i class="fas fa-phone" aria-hidden="true"></i> +39 335 811 6800</p>
+      <p class="contact"><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:giulio.gargano@managech.com">giulio.gargano@managech.com</a></p>
     </div>
     <div class="team-member fade-in">
-      <img src="images/petulla.jpg" alt="Stefano Petullà – Founder e Managing Partner MANAGECH">
-      <h3>Stefano Petullà</h3>
-      <p class="role">Founder & Managing Partner</p>
-      <p class="contact"><i class="fas fa-phone"></i> +39 349 390 7663</p>
-      <p class="contact"><i class="fas fa-envelope"></i> stefano.petulla@managech.com</p>
+      <img src="images/petulla.jpg" alt="Stefano Petullà – Founder e Managing Partner MANAGECH" width="120" height="120" loading="lazy">
+      <h3>Stefano Petull&agrave;</h3>
+      <p class="role">Founder &amp; Managing Partner</p>
+      <p class="contact"><i class="fas fa-phone" aria-hidden="true"></i> +39 349 390 7663</p>
+      <p class="contact"><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:stefano.petulla@managech.com">stefano.petulla@managech.com</a></p>
     </div>
     <div class="team-member fade-in">
-      <img src="images/leotta.jpg" alt="Giuliano Leotta – Consulenza Direzionale MANAGECH">
+      <img src="images/leotta.jpg" alt="Giuliano Leotta – Consulenza Direzionale MANAGECH" width="120" height="120" loading="lazy">
       <h3>Giuliano Leotta</h3>
       <p class="role">Consulenza Direzionale</p>
-      <p class="contact"><i class="fas fa-phone"></i> +39 339 505 5186</p>
-      <p class="contact"><i class="fas fa-envelope"></i> giuliano.leotta@managech.com</p>
+      <p class="contact"><i class="fas fa-phone" aria-hidden="true"></i> +39 339 505 5186</p>
+      <p class="contact"><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:giuliano.leotta@managech.com">giuliano.leotta@managech.com</a></p>
     </div>
     <div class="team-member fade-in">
-      <img src="images/anna.jpg" alt="Anna Neri – Gestione Gare e Commesse MANAGECH">
+      <img src="images/anna.jpg" alt="Anna Neri – Gestione Gare e Commesse MANAGECH" width="120" height="120" loading="lazy">
       <h3>Anna Neri</h3>
       <p class="role">Gestione Gare e Commesse</p>
-      <p class="contact"><i class="fas fa-phone"></i> +39 349 777 8888</p>
-      <p class="contact"><i class="fas fa-envelope"></i> a.neri@managech.com</p>
+      <p class="contact"><i class="fas fa-phone" aria-hidden="true"></i> +39 349 777 8888</p>
+      <p class="contact"><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:a.neri@managech.com">a.neri@managech.com</a></p>
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- ================= FOOTER ================= -->
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <img src="images/1-4.png" alt="MANAGECH" class="footer-logo">
+      <img src="images/1-4.png" alt="MANAGECH" class="footer-logo" loading="lazy">
       <p>
-        <i class="fas fa-map-marker-alt"></i> Piazza G. Mazzini 27, 00195 Roma<br>
-        <i class="fas fa-phone"></i> +39 349 390 7663<br>
-        <i class="fas fa-envelope"></i> segreteria@managech.com
+        <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Piazza G. Mazzini 27, 00195 Roma<br>
+        <i class="fas fa-phone" aria-hidden="true"></i> +39 349 390 7663<br>
+        <i class="fas fa-envelope" aria-hidden="true"></i> segreteria@managech.com
       </p>
     </div>
-    <div class="footer-links">
-      <ul>
-        <li><a href="chi-siamo.html">Chi siamo</a></li>
-        <li><a href="servizi.html">Servizi</a></li>
-        <li><a href="contatti.html">Contatti</a></li>
-        <li><a href="lavora-con-noi.html">Lavora con noi</a></li>
-        <li><a href="case-study.html">Case Study</a></li>
-        <li><a href="informativa-privacy.html">Informativa Privacy</a></li>
-        <li><a href="cookie-policy.html">Cookie Policy</a></li>
-      </ul>
-    </div>
+    <nav aria-label="Footer navigation">
+      <div class="footer-links">
+        <ul>
+          <li><a href="chi-siamo.html">Chi siamo</a></li>
+          <li><a href="servizi.html">Servizi</a></li>
+          <li><a href="contatti.html">Contatti</a></li>
+          <li><a href="lavora-con-noi.html">Lavora con noi</a></li>
+          <li><a href="case-study.html">Case Study</a></li>
+          <li><a href="informativa-privacy.html">Informativa Privacy</a></li>
+          <li><a href="cookie-policy.html">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </nav>
   </div>
   <div class="footer-bottom">
-    © 2026 MANAGECH - INGEGNERIA & MANAGEMENT STUDIO ASSOCIATO | P. IVA 18387251004
+    &copy; 2026 MANAGECH - INGEGNERIA &amp; MANAGEMENT STUDIO ASSOCIATO | P. IVA 18387251004
   </div>
 </footer>
 
 <!-- ================= SCRIPTS ================= -->
 <script>
-const faders = document.querySelectorAll('.fade-in');
-const appearOptions = { threshold:0.1, rootMargin:"0px 0px -50px 0px" };
-const appearOnScroll = new IntersectionObserver(function(entries, observer){
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('appear');
-      observer.unobserve(entry.target);
-    }
+  // Fade-in on scroll
+  const faders = document.querySelectorAll('.fade-in');
+  const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('appear');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+  faders.forEach(fader => appearOnScroll.observe(fader));
+
+  // Hamburger
+  const hamburger = document.getElementById("hamburger");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  hamburger.addEventListener("click", () => {
+    const isOpen = hamburger.classList.toggle("active");
+    mobileMenu.classList.toggle("active");
+    hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
   });
-}, appearOptions);
 
-faders.forEach(fader => appearOnScroll.observe(fader));
-
-const hamburger = document.getElementById("hamburger");
-const mobileMenu = document.getElementById("mobileMenu");
-
-hamburger.addEventListener("click", () => {
-  hamburger.classList.toggle("active");
-  mobileMenu.classList.toggle("active");
-});
-
-mobileMenu.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
-    hamburger.classList.remove("active");
-    mobileMenu.classList.remove("active");
+  mobileMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      mobileMenu.classList.remove("active");
+      hamburger.setAttribute("aria-expanded", "false");
+    });
   });
-});
 </script>
 
 </body>
