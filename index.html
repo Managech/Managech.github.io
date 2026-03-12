@@ -629,7 +629,7 @@ footer {
 .process-step:hover .step-box span { color: #fff; }
 
 /* ================= WHY GRID ================= */
-.why-section { padding-top: 2rem; padding-bottom: 2rem; margin-top: 4rem; }
+.why-section { padding-top: 4rem; padding-bottom: 4rem; margin-top: 4rem; background: var(--blue); }
 .why-section h2 { text-align: center; margin-bottom: 3rem; }
 
 .why-grid {
@@ -640,7 +640,8 @@ footer {
 }
 
 .why-card {
-  background: #f4f4f4;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.1);
   padding: 1.5rem;
   border-radius: 8px;
   text-align: center;
@@ -649,9 +650,9 @@ footer {
 }
 
 .why-card i { font-size: 2rem; color: var(--green); margin-bottom: .8rem; }
-.why-card h4 { font-size: 1.2rem; margin-bottom: .5rem; }
+.why-card h4 { font-size: 1.2rem; margin-bottom: .5rem; color: #fff; }
 
-.why-card p { font-size: 1.15rem; line-height: 1.7; color: var(--blue); transition: color .3s; }
+.why-card p { font-size: 1.15rem; line-height: 1.7; color: #ccc; transition: color .3s; }
 
 .why-card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,.12); background: var(--green); color: #fff; }
 .why-card:hover p, .why-card:hover h4 { color: #fff; }
@@ -1080,7 +1081,7 @@ footer {
       <p>
         <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Piazza G. Mazzini 27, 00195 Roma<br>
         <i class="fas fa-phone" aria-hidden="true"></i> +39 349 390 7663<br>
-        <i class="fas fa-envelope" aria-hidden="true"></i> segreteria@managech.com
+        <i class="fas fa-envelope" aria-hidden="true"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0172646673647564736860416c606f60666462692f626e6c">[email&#160;protected]</a>
       </p>
     </div>
     <nav aria-label="Footer navigation">
@@ -1103,7 +1104,7 @@ footer {
 </footer>
 
 <!-- ================= SCRIPTS ================= -->
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   document.getElementById("contactForm").addEventListener("submit", function () {
     const prefisso = document.getElementById("prefisso").value;
     const telefono = document.getElementById("telefono").value;
@@ -1120,14 +1121,4 @@ footer {
     hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
   });
 
-  mobileMenu.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      hamburger.classList.remove("active");
-      mobileMenu.classList.remove("active");
-      hamburger.setAttribute("aria-expanded", "false");
-    });
-  });
-</script>
-
-</body>
-</html>
+  mobileMenu.querySelectorAll("a").forEach(link
