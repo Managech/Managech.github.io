@@ -206,17 +206,25 @@ h1.hero-title {
 /* ================= VALORI ================= */
 .values-section {
   padding: 6rem 2rem;
+  background: var(--blue);
+}
+
+/* ACCESSIBILITY: h2 per gerarchia corretta */
+.values-inner {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* ACCESSIBILITY: h2 per gerarchia corretta */
 .values-section h2 {
   text-align: center;
   color: var(--green);
   font-size: 2.8rem;
   margin-bottom: 3rem;
 }
+
+.value-card { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.1); }
+.value-card h3 { color: var(--green); }
+.value-card p { color: #ccc; }
 
 .values-grid {
   display: grid;
@@ -369,6 +377,7 @@ footer {
 
   /* Valori */
   .values-section { padding: 3rem 1.2rem; }
+  .values-inner { padding: 0; }
   .values-section h2 { font-size: 1.5rem; margin-bottom: 2rem; }
   .values-grid { grid-template-columns: 1fr; gap: 1rem; }
   .value-card { padding: 1.5rem 1.2rem; }
@@ -466,6 +475,7 @@ footer {
 
 <!-- ================= VALORI ================= -->
 <section class="values-section">
+  <div class="values-inner">
   <h2>I nostri Valori</h2>
   <div class="values-grid">
     <div class="value-card fade-in">
@@ -499,6 +509,7 @@ footer {
       <p>Promuoviamo l'innovazione digitale e data-driven in modo consapevole e orientato al business.</p>
     </div>
   </div>
+  </div>
 </section>
 
 <!-- ================= TEAM ================= -->
@@ -510,28 +521,28 @@ footer {
       <h3>Giulio Gargano</h3>
       <p class="role">Founder &amp; CEO</p>
       <p class="contact"><i class="fas fa-phone" aria-hidden="true"></i> +39 335 811 6800</p>
-      <p class="contact"><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:giulio.gargano@managech.com">giulio.gargano@managech.com</a></p>
+      <p class="contact"><i class="fas fa-envelope" aria-hidden="true"></i> <a href="/cdn-cgi/l/email-protection#34535d41585d5b1a53554653555a5b7459555a555351575c1a575b59"><span class="__cf_email__" data-cfemail="23444a564f4a4c0d44425144424d4c634e424d424446404b0d404c4e">[email&#160;protected]</span></a></p>
     </div>
     <div class="team-member fade-in">
       <img src="images/petulla.jpg" alt="Stefano Petullà – Founder e Managing Partner MANAGECH" width="120" height="120" loading="lazy">
       <h3>Stefano Petull&agrave;</h3>
       <p class="role">Founder &amp; Managing Partner</p>
       <p class="contact"><i class="fas fa-phone" aria-hidden="true"></i> +39 349 390 7663</p>
-      <p class="contact"><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:stefano.petulla@managech.com">stefano.petulla@managech.com</a></p>
+      <p class="contact"><i class="fas fa-envelope" aria-hidden="true"></i> <a href="/cdn-cgi/l/email-protection#e497908182858a8bca94819091888885a489858a858381878cca878b89"><span class="__cf_email__" data-cfemail="87f4f3e2e1e6e9e8a9f7e2f3f2ebebe6c7eae6e9e6e0e2e4efa9e4e8ea">[email&#160;protected]</span></a></p>
     </div>
     <div class="team-member fade-in">
       <img src="images/leotta.jpg" alt="Giuliano Leotta – Consulenza Direzionale MANAGECH" width="120" height="120" loading="lazy">
       <h3>Giuliano Leotta</h3>
       <p class="role">Consulenza Direzionale</p>
       <p class="contact"><i class="fas fa-phone" aria-hidden="true"></i> +39 339 505 5186</p>
-      <p class="contact"><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:giuliano.leotta@managech.com">giuliano.leotta@managech.com</a></p>
+      <p class="contact"><i class="fas fa-envelope" aria-hidden="true"></i> <a href="/cdn-cgi/l/email-protection#1f78766a73767e717031737a706b6b7e5f727e717e787a7c77317c7072"><span class="__cf_email__" data-cfemail="25424c50494c444b4a0b49404a5151446548444b444240464d0b464a48">[email&#160;protected]</span></a></p>
     </div>
     <div class="team-member fade-in">
       <img src="images/anna.jpg" alt="Anna Neri – Gestione Gare e Commesse MANAGECH" width="120" height="120" loading="lazy">
       <h3>Anna Neri</h3>
       <p class="role">Gestione Gare e Commesse</p>
       <p class="contact"><i class="fas fa-phone" aria-hidden="true"></i> +39 349 777 8888</p>
-      <p class="contact"><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:a.neri@managech.com">a.neri@managech.com</a></p>
+      <p class="contact"><i class="fas fa-envelope" aria-hidden="true"></i> <a href="/cdn-cgi/l/email-protection#3e5f10505b4c577e535f505f595b5d56105d5153"><span class="__cf_email__" data-cfemail="7a1b54141f08133a171b141b1d1f191254191517">[email&#160;protected]</span></a></p>
     </div>
   </div>
 </section>
@@ -546,7 +557,7 @@ footer {
       <p>
         <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Piazza G. Mazzini 27, 00195 Roma<br>
         <i class="fas fa-phone" aria-hidden="true"></i> +39 349 390 7663<br>
-        <i class="fas fa-envelope" aria-hidden="true"></i> segreteria@managech.com
+        <i class="fas fa-envelope" aria-hidden="true"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="790a1c1e0b1c0d1c0b101839141817181e1c1a11571a1614">[email&#160;protected]</a>
       </p>
     </div>
     <nav aria-label="Footer navigation">
@@ -569,37 +580,10 @@ footer {
 </footer>
 
 <!-- ================= SCRIPTS ================= -->
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Fade-in on scroll
   const faders = document.querySelectorAll('.fade-in');
   const appearOnScroll = new IntersectionObserver(function(entries, observer) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('appear');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
-  faders.forEach(fader => appearOnScroll.observe(fader));
-
-  // Hamburger
-  const hamburger = document.getElementById("hamburger");
-  const mobileMenu = document.getElementById("mobileMenu");
-
-  hamburger.addEventListener("click", () => {
-    const isOpen = hamburger.classList.toggle("active");
-    mobileMenu.classList.toggle("active");
-    hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
-  });
-
-  mobileMenu.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      hamburger.classList.remove("active");
-      mobileMenu.classList.remove("active");
-      hamburger.setAttribute("aria-expanded", "false");
-    });
-  });
-</script>
-
-</body>
-</html>
+        entry.target.classList.add('a
