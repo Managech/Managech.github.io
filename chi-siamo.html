@@ -2,9 +2,8 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-  <title>Chi Siamo | MANAGECH – Consulenza Manageriale e Tecnologica</title>
+<title>Chi Siamo | MANAGECH – Consulenza Manageriale e Tecnologica</title>
 <meta name="description" content="Un team multidisciplinare con competenze manageriali, ingegneristiche ed economiche per supportare aziende nella crescita, nell'innovazione e nella trasformazione organizzativa.">
-<title>MANAGECH – Chi siamo</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="format-detection" content="telephone=no">
 
@@ -122,8 +121,6 @@ header{
   padding:6rem 2rem;
 }
 
-/* ===== VISION / MISSION – ALLINEAMENTO AL CENTRO SCHERMO ===== */
-
 .block{
   display:flex;
   width:100%;
@@ -131,18 +128,16 @@ header{
   align-items:stretch;
 }
 
-/* TESTO */
 .block-text{
-  width:calc(50% - 4rem); /* lo spazio rimanente */
+  width:calc(50% - 4rem);
   padding:4rem;
   display:flex;
   flex-direction:column;
   justify-content:center;
 }
 
-/* IMMAGINE */
 .block-image{
-  width:50vw; /* ESATTAMENTE metà viewport */
+  width:50vw;
 }
 
 .block-image img{
@@ -152,12 +147,10 @@ header{
   display:block;
 }
 
-/* BLOCCO PARI INVERTITO */
 .block:nth-child(even){
   flex-direction:row-reverse;
 }
 
-/* IMMAGINE A FILO ASSE CENTRALE */
 .block:nth-child(odd) .block-image{
   margin-right:calc(50% - 50vw);
 }
@@ -182,7 +175,6 @@ header{
   flex-direction: row-reverse;
 }
 
-/* TESTO */
 .about-text {
   flex: 1;
   padding: 6rem 4rem;
@@ -205,7 +197,6 @@ header{
   text-align: justify;
 }
 
-/* IMMAGINE FULL HEIGHT */
 .about-image {
   flex: 1;
 }
@@ -352,7 +343,7 @@ footer{
 }
   
 .footer-logo {
-  max-width: 280px;   /* regolabile */
+  max-width: 280px;
   width: 100%;
   margin-bottom: 1.5rem;
   display: block;
@@ -396,37 +387,7 @@ footer{
   font-size:.75rem;
   color:#888;
 }
-  
-.privacy-check {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 0.6rem;
-  align-items: start;
-  margin-top: 1.5rem;
-  font-size: 0.85rem;
-  line-height: 1.4;
-  cursor: pointer;
-}
 
-.privacy-check input[type="checkbox"] {
-  margin: 0;
-  padding: 0;
-  width: 18px;
-  height: 18px;
-  cursor: pointer;
-}
-
-.privacy-check label {
-  margin: 0;
-  display: block;
-  cursor: pointer;
-}
-
-.privacy-check a {
-  color: var(--green);
-  text-decoration: underline;
-}
-  
 .footer-brand p {
   line-height: 1.8;
 }
@@ -435,7 +396,7 @@ footer{
   display: inline-block;
   width: 20px;
 }
-/* Forza stile link nel footer */
+
 footer a{
   color:#ccc;
   text-decoration:none;
@@ -449,7 +410,6 @@ footer a:hover{
   color:#ccc;
   text-decoration:none;
 }
-
 
 /* ================= FADE-IN ================= */
 .fade-in{
@@ -475,8 +435,8 @@ footer a:hover{
   }
   
   .logo img {
-    height:42px; /* leggermente più piccolo su mobile */
-}
+    height:42px;
+  }
   
   .hero{
     margin-top:70px;
@@ -497,6 +457,7 @@ footer a:hover{
   }
 
 }
+
 /* ================= MOBILE ABOUT ================= */
 @media (max-width: 900px){
 
@@ -515,19 +476,20 @@ footer a:hover{
   .about-image img{
     height:280px;
   }
+
   .about-text h3{
-    font-size:1.6rem;     /* più piccolo su mobile */
-    white-space:normal;   /* permette adattamento se necessario */
+    font-size:1.6rem;
+    white-space:normal;
     text-align:center;
   }
 
   .values-section h2{
-    font-size:1.8rem;     /* ridotto solo su mobile */
+    font-size:1.8rem;
   }
 
 }
-/* ================= HAMBURGER ================= */
 
+/* ================= HAMBURGER ================= */
 .hamburger{
   display:none;
   flex-direction:column;
@@ -555,10 +517,9 @@ footer a:hover{
 }
 
 /* MOBILE MENU */
-
 .mobile-menu{
   position:fixed;
-  top:70px;                /* parte sotto header mobile */
+  top:70px;
   left:0;
   width:100%;
   background:var(--blue);
@@ -583,7 +544,6 @@ footer a:hover{
   text-decoration:none;
 }
 
-/* NASCONDE MENU DESKTOP SU MOBILE */
 @media(max-width:768px){
 
   .nav-links{
@@ -595,6 +555,7 @@ footer a:hover{
   }
 
 }
+
 @media(max-width:768px){
 
   .values-section,
@@ -612,8 +573,6 @@ footer a:hover{
   }
 
 }
-
-  
 </style>
 </head>
 <body>
@@ -621,17 +580,17 @@ footer a:hover{
 <!-- ================= HEADER ================= -->
 <header>
   <div class="mobile-menu" id="mobileMenu">
-  <a href="chi-siamo.html">Chi siamo</a>
-  <a href="servizi.html">Servizi</a>
-  <a href="contatti.html">Contatti</a>
-  <a href="lavora-con-noi.html">Lavora con noi</a>
-  <a href="case-study.html">Case Study</a>
-</div>
+    <a href="chi-siamo.html">Chi siamo</a>
+    <a href="servizi.html">Servizi</a>
+    <a href="contatti.html">Contatti</a>
+    <a href="lavora-con-noi.html">Lavora con noi</a>
+    <a href="case-study.html">Case Study</a>
+  </div>
 
   <nav class="navbar">
     <div class="logo">
       <a href="index.html">
-        <img src="images/1-4.png">
+        <img src="images/1-4.png" alt="MANAGECH">
       </a>
     </div>
     <ul class="nav-links">
@@ -642,18 +601,18 @@ footer a:hover{
       <li><a href="case-study.html">Case Study</a></li>
     </ul>
     <div class="hamburger" id="hamburger">
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
-
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </nav>
 </header>
 
 <!-- ================= HERO ================= -->
 <section class="hero">
   <div class="hero-content">
-    <div class="hero-title">Ingegneria manageriale al servizio di decisioni complesse</div>
+    <!-- SEO: h1 invece di div -->
+    <h1 class="hero-title">Ingegneria manageriale al servizio di decisioni complesse</h1>
     <div class="hero-subtitle">
       Affianchiamo imprese, enti e professionisti nella partecipazione alle gare, nella gestione delle commesse e nella trasformazione organizzativa, combinando competenze tecniche, strategiche e manageriali per creare valore sostenibile, migliorare le performance e ridurre i rischi.
     </div>
@@ -672,9 +631,8 @@ footer a:hover{
         Vogliamo supportare i nostri clienti nella partecipazione a gare pubbliche e private, nella gestione strutturata delle commesse e nei processi di trasformazione organizzativa e digitale.
       </p>
     </div>
-
     <div class="about-image">
-      <img src="images/vision.jpg" alt="Vision">
+      <img src="images/vision.jpg" alt="Vision strategica MANAGECH per la consulenza aziendale">
     </div>
   </div>
 
@@ -684,12 +642,11 @@ footer a:hover{
       <h3>La nostra Mission</h3>
       <p>
         La missione di <strong>Managech</strong> è fornire <strong>assistenza tecnico-economica, manageriale e strategica</strong> a imprese, enti e professionisti che operano in contesti complessi e regolamentati.
-        Affianchiamo i clienti nella partecipazione alle gare, nella gestione delle commesse e nell’adozione di soluzioni data-driven.
+        Affianchiamo i clienti nella partecipazione alle gare, nella gestione delle commesse e nell'adozione di soluzioni data-driven.
       </p>
     </div>
-
     <div class="about-image">
-      <img src="images/light-bulb.jpg" alt="Mission">
+      <img src="images/light-bulb.jpg" alt="Mission MANAGECH innovazione e consulenza strategica">
     </div>
   </div>
 
@@ -727,39 +684,38 @@ footer a:hover{
     <div class="value-card fade-in">
       <div class="value-icon"><i class="fas fa-microchip"></i></div>
       <h3>Innovazione responsabile</h3>
-      <p>Promuoviamo l’innovazione digitale e data-driven in modo consapevole e orientato al business.</p>
+      <p>Promuoviamo l'innovazione digitale e data-driven in modo consapevole e orientato al business.</p>
     </div>
   </div>
 </section>
 
 <!-- ================= TEAM ================= -->
-  
 <section class="team-section">
   <h2>Il nostro Team</h2>
   <div class="team-grid">
     <div class="team-member fade-in">
-      <img src="images/gargano.jpg" alt="Giulio Gargano">
+      <img src="images/gargano.jpg" alt="Giulio Gargano – Founder e CEO MANAGECH">
       <h3>Giulio Gargano</h3>
       <p class="role">Founder & CEO</p>
       <p class="contact"><i class="fas fa-phone"></i> +39 335 811 6800</p>
       <p class="contact"><i class="fas fa-envelope"></i> giulio.gargano@managech.com</p>
     </div>
     <div class="team-member fade-in">
-      <img src="images/petulla.jpg" alt="Stefano Petullà">
+      <img src="images/petulla.jpg" alt="Stefano Petullà – Founder e Managing Partner MANAGECH">
       <h3>Stefano Petullà</h3>
       <p class="role">Founder & Managing Partner</p>
       <p class="contact"><i class="fas fa-phone"></i> +39 349 390 7663</p>
       <p class="contact"><i class="fas fa-envelope"></i> stefano.petulla@managech.com</p>
     </div>
     <div class="team-member fade-in">
-      <img src="images/leotta.jpg" alt="Giuliano Leotta">
+      <img src="images/leotta.jpg" alt="Giuliano Leotta – Consulenza Direzionale MANAGECH">
       <h3>Giuliano Leotta</h3>
       <p class="role">Consulenza Direzionale</p>
       <p class="contact"><i class="fas fa-phone"></i> +39 339 505 5186</p>
       <p class="contact"><i class="fas fa-envelope"></i> giuliano.leotta@managech.com</p>
     </div>
     <div class="team-member fade-in">
-      <img src="images/anna.jpg" alt="Anna Neri">
+      <img src="images/anna.jpg" alt="Anna Neri – Gestione Gare e Commesse MANAGECH">
       <h3>Anna Neri</h3>
       <p class="role">Gestione Gare e Commesse</p>
       <p class="contact"><i class="fas fa-phone"></i> +39 349 777 8888</p>
@@ -771,35 +727,32 @@ footer a:hover{
 <!-- ================= FOOTER ================= -->
 <footer>
   <div class="footer-inner">
-  <div class="footer-brand">
-    <img src="images/1-4.png" alt="MANAGECH" class="footer-logo">
-    <p>
-      <i class="fas fa-map-marker-alt"></i> Piazza G. Mazzini 27, 00195 Roma<br>
-      <i class="fas fa-phone"></i> +39 349 390 7663<br>
-      <i class="fas fa-envelope"></i> segreteria@managech.com
-    </p>
+    <div class="footer-brand">
+      <img src="images/1-4.png" alt="MANAGECH" class="footer-logo">
+      <p>
+        <i class="fas fa-map-marker-alt"></i> Piazza G. Mazzini 27, 00195 Roma<br>
+        <i class="fas fa-phone"></i> +39 349 390 7663<br>
+        <i class="fas fa-envelope"></i> segreteria@managech.com
+      </p>
+    </div>
+    <div class="footer-links">
+      <ul>
+        <li><a href="chi-siamo.html">Chi siamo</a></li>
+        <li><a href="servizi.html">Servizi</a></li>
+        <li><a href="contatti.html">Contatti</a></li>
+        <li><a href="lavora-con-noi.html">Lavora con noi</a></li>
+        <li><a href="case-study.html">Case Study</a></li>
+        <li><a href="informativa-privacy.html">Informativa Privacy</a></li>
+        <li><a href="cookie-policy.html">Cookie Policy</a></li>
+      </ul>
+    </div>
   </div>
-
-  <div class="footer-links">
-    <ul>
-      <li><a href="chi-siamo.html">Chi siamo</a></li>
-      <li><a href="servizi.html">Servizi</a></li>
-      <li><a href="contatti.html">Contatti</a></li>
-      <li><a href="lavora-con-noi.html">Lavora con noi</a></li>
-      <li><a href="case-study.html">Case Study</a></li>
-      <li><a href="informativa-privacy.html">Informativa Privacy</a></li>
-      <li><a href="cookie-policy.html">Cookie Policy</a></li>
-    </ul>
+  <div class="footer-bottom">
+    © 2026 MANAGECH - INGEGNERIA & MANAGEMENT STUDIO ASSOCIATO | P. IVA 18387251004
   </div>
-</div>
-
-<div class="footer-bottom">
-  © 2026 MANAGECH - INGEGNERIA & MANAGEMENT STUDIO ASSOCIATO | P. IVA 18387251004
-</div>
-
 </footer>
 
-<!-- ================= SCRIPT FADE-IN ================= -->
+<!-- ================= SCRIPTS ================= -->
 <script>
 const faders = document.querySelectorAll('.fade-in');
 const appearOptions = { threshold:0.1, rootMargin:"0px 0px -50px 0px" };
@@ -813,6 +766,7 @@ const appearOnScroll = new IntersectionObserver(function(entries, observer){
 }, appearOptions);
 
 faders.forEach(fader => appearOnScroll.observe(fader));
+
 const hamburger = document.getElementById("hamburger");
 const mobileMenu = document.getElementById("mobileMenu");
 
@@ -821,7 +775,12 @@ hamburger.addEventListener("click", () => {
   mobileMenu.classList.toggle("active");
 });
 
-  
+mobileMenu.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    mobileMenu.classList.remove("active");
+  });
+});
 </script>
 
 </body>
