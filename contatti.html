@@ -175,11 +175,10 @@ h1.hero-title {
 }
 
 .contact-info img {
-  max-width: 200px;
-  width: auto;
+  width: 100%;
+  max-width: 320px;
   height: auto;
-  max-height: 70px;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   display: block;
 }
 
@@ -225,6 +224,7 @@ h1.hero-title {
   line-height: 1.7;
   color: var(--blue);
   margin-bottom: 2rem;
+  text-align: justify;
 }
 
 .form-tags {
@@ -271,7 +271,9 @@ form input, form textarea {
 }
 
 .phone-row select {
-  flex: 0 0 auto;
+  flex: 0 0 180px;
+  width: 180px;
+  min-width: 0;
   padding: .65rem .7rem;
   font-family: 'Montserrat', sans-serif;
   font-size: .85rem;
@@ -281,6 +283,9 @@ form input, form textarea {
   appearance: none;
   -webkit-appearance: none;
   cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .phone-row input[type="tel"] { flex: 1; margin-top: 0; }
@@ -361,7 +366,7 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
 
   .form-section { padding: 3rem 1.2rem; }
   .form-wrapper h2 { font-size: 1.5rem; }
-  .phone-row select { flex: 0 0 38%; max-width: 38%; font-size: .8rem; }
+  .phone-row select { flex: 0 0 160px; width: 160px; font-size: .8rem; }
   form button { width: 100%; text-align: center; }
 
   .footer-inner { flex-direction: column; gap: 2rem; }
@@ -427,8 +432,8 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
     <img src="images/logo-su-bianco.jpg" alt="MANAGECH" loading="lazy">
     <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Piazza G. Mazzini 27, 00195 Roma</p>
     <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+393493907663">+39 349 390 7663</a></p>
-    <p><i class="fas fa-envelope" aria-hidden="true"></i> segreteria@managech.com</p>
-    <p><i class="fas fa-envelope" aria-hidden="true"></i> managech@pec.it</p>
+    <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0c7f696b7e6978697e656d4c616d626d6b696f64226f6361">[email&#160;protected]</a></p>
+    <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c2afa3aca3a5a7a1aa82b2a7a1ecabb6">[email&#160;protected]</a></p>
   </div>
 
   <div class="contact-map">
@@ -557,7 +562,7 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
       <p>
         <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Piazza G. Mazzini 27, 00195 Roma<br>
         <i class="fas fa-phone" aria-hidden="true"></i> +39 349 390 7663<br>
-        <i class="fas fa-envelope" aria-hidden="true"></i> segreteria@managech.com
+        <i class="fas fa-envelope" aria-hidden="true"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f586909287908190879c94b598949b949290969ddb969a98">[email&#160;protected]</a>
       </p>
     </div>
     <nav aria-label="Footer navigation">
@@ -579,7 +584,7 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   document.getElementById("contactForm").addEventListener("submit", function () {
     const prefisso = document.getElementById("prefisso").value;
     const telefono = document.getElementById("telefono").value;
@@ -589,20 +594,4 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
   const hamburger = document.getElementById("hamburger");
   const mobileMenu = document.getElementById("mobileMenu");
 
-  hamburger.addEventListener("click", () => {
-    const isOpen = hamburger.classList.toggle("active");
-    mobileMenu.classList.toggle("active");
-    hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
-  });
-
-  mobileMenu.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      hamburger.classList.remove("active");
-      mobileMenu.classList.remove("active");
-      hamburger.setAttribute("aria-expanded", "false");
-    });
-  });
-</script>
-
-</body>
-</html>
+  hamburger.addEventListener(
