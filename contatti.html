@@ -2,199 +2,216 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-  <title>Contatti | MANAGECH – Richiedi una Consulenza Gratuita</title>
+<title>Contatti | MANAGECH – Richiedi una Consulenza Gratuita</title>
 <meta name="description" content="Contatta MANAGECH per una consulenza gratuita. Il nostro team risponde entro 24 ore per valutare la tua richiesta e definire insieme il percorso migliore per la tua azienda.">
-<title>MANAGECH – Contatti</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="format-detection" content="telephone=no">
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- PERFORMANCE: preconnect -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!-- PERFORMANCE: preload hero -->
+<link rel="preload" as="image" href="images/hero-contatti.jpg">
+
+<!-- Google Fonts: non bloccante -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+
+<!-- Font Awesome: non bloccante -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
 
 <style>
-:root{
-  --green:#1fa37a;
-  --blue:#0b1f33;
-  --gray:#d6d6d6;
-  --white:#ffffff;
+:root {
+  --green: #1fa37a;
+  --blue:  #0b1f33;
+  --gray:  #d6d6d6;
+  --white: #ffffff;
 }
 
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-body{
-  font-family:'Montserrat',sans-serif;
-  background:#fff;
-  color:var(--blue);
-}
+body { font-family: 'Montserrat', sans-serif; background: #fff; color: var(--blue); }
 
 /* ================= HEADER ================= */
-header{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:90px;
-  background:var(--blue);
-  z-index:1000;
+header {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 90px;
+  background: var(--blue);
+  z-index: 1000;
 }
 
-.navbar{
-  height:100%;
-  padding:0 3rem;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+.navbar {
+  height: 100%;
+  padding: 0 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.logo a{
-  display:flex;
-  align-items:center;
-  gap:.8rem;
-  color:var(--green);
-  text-decoration:none;
-  font-weight:700;
-  font-size:1.3rem;
-  letter-spacing:1px;
+.logo img { height: 54px; width: auto; display: block; }
+
+.nav-links { list-style: none; display: flex; gap: 2rem; }
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: .95rem;
+  position: relative;
 }
 
-.logo img{
-  height:54px;
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px; left: 0;
+  width: 0; height: 2px;
+  background: var(--green);
+  transition: .3s;
 }
 
-.nav-links{
-  list-style:none;
-  display:flex;
-  gap:2rem;
+.nav-links a:hover::after { width: 100%; }
+
+/* ================= HAMBURGER ================= */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
 }
 
-.nav-links a{
-  color:#fff;
-  text-decoration:none;
-  font-size:.95rem;
-  position:relative;
+.hamburger span { width: 25px; height: 3px; background: #fff; transition: .4s; display: block; }
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+
+/* ================= MOBILE MENU ================= */
+.mobile-menu {
+  position: fixed;
+  top: 70px; left: 0;
+  width: 100%;
+  background: var(--blue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.8rem;
+  padding: 2rem 0;
+  transform: translateY(-120%);
+  transition: transform .4s ease;
+  z-index: 999;
+  box-shadow: 0 10px 30px rgba(0,0,0,.3);
 }
 
-.nav-links a::after{
-  content:"";
-  position:absolute;
-  bottom:-6px;
-  left:0;
-  width:0;
-  height:2px;
-  background:var(--green);
-  transition:.3s;
-}
-
-.nav-links a:hover::after{
-  width:100%;
-}
+.mobile-menu.active { transform: translateY(0); }
+.mobile-menu a { color: #fff; font-size: 1.4rem; text-decoration: none; }
 
 /* ================= HERO ================= */
-.hero{
-  margin-top:90px;
-  min-height:50vh;
+.hero {
+  margin-top: 90px;
+  min-height: 50vh;
   background:
-    linear-gradient(rgba(11,31,51,.75),rgba(11,31,51,.75)),
-    url("images/hero-contatti.jpg") center/cover no-repeat;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:3rem 2rem;
+    linear-gradient(rgba(11,31,51,.75), rgba(11,31,51,.75)),
+    url("images/hero-contatti.jpg") center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 2rem;
 }
 
-.hero-content{
-  max-width:1100px;
+.hero-content { max-width: 1100px; }
+
+h1.hero-title {
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: 4px;
+  color: var(--green);
 }
 
-.hero-title{
-  font-size:4rem;
-  font-weight:800;
-  letter-spacing:4px;
-  color:var(--green);
+.hero-subtitle {
+  margin-top: .8rem;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  color: var(--gray);
 }
 
-.hero-subtitle{
-  margin-top:.8rem;
-  font-size:1.2rem;
-  letter-spacing:2px;
-  color:var(--gray);
+/* ================= INTRO ================= */
+.contact-intro {
+  padding: 3rem 2rem;
+  text-align: center;
+  background: #f4f4f4;
 }
 
-/* ================= INFORMAZIONI + MAPPA ================= */
-.contact-container{
-  display:flex;
-  flex-wrap:wrap;
-  max-width:1200px;
-  margin:3rem auto;
-  gap:2rem;
+.contact-intro p {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--blue);
 }
 
-.contact-info{
-  flex:1;
-  min-width:300px;
-  background:#f4f4f4;
-  border-radius:8px;
-  padding:2rem;
-  box-shadow:0 5px 20px rgba(0,0,0,0.1);
+/* ================= INFO + MAPPA ================= */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 3rem auto;
+  gap: 2rem;
+  padding: 0 2rem;
 }
 
-.contact-info p{
-  font-size:1.1rem;
-  margin:0.8rem 0;
+.contact-info {
+  flex: 1;
+  min-width: 280px;
+  background: #f4f4f4;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 5px 20px rgba(0,0,0,.1);
 }
 
-.contact-info i{
-  color:var(--green);
-  margin-right:8px;
+.contact-info img {
+  max-width: 200px;
+  width: auto;
+  height: auto;
+  max-height: 70px;
+  margin-bottom: 1.5rem;
+  display: block;
 }
 
-.contact-title h3 {
-  margin:0;
-  color:var(--green);
-  font-size:1.6rem;
-  font-weight:700;
+.contact-info p {
+  font-size: 1rem;
+  margin: .8rem 0;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
 }
 
-.contact-title h4 {
-  margin:.3rem 0 1rem;
-  font-weight:400;
-  color:#aaa;
-  font-size:1rem;
+.contact-info i { color: var(--green); width: 18px; flex-shrink: 0; }
+
+.contact-info a { color: var(--blue); text-decoration: none; }
+.contact-info a:hover { color: var(--green); }
+
+.contact-map {
+  flex: 1.5;
+  min-width: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,.1);
 }
 
-.contact-map{
-  flex:1;
-  min-width:300px;
-  border-radius:8px;
-  overflow:hidden;
-  box-shadow:0 5px 20px rgba(0,0,0,0.1);
-}
+.contact-map iframe { display: block; width: 100%; height: 100%; min-height: 300px; border: 0; }
 
 /* ================= FORM ================= */
-.form-section{
-  background:#f4f4f4;
-  padding:5rem 2rem;
-}
+.form-section { background: #f4f4f4; padding: 5rem 2rem; }
 
-.form-wrapper{
-  max-width:700px;
-  margin:auto;
-}
+.form-wrapper { max-width: 700px; margin: auto; }
 
-.form-wrapper p{
-  font-size:1.1rem;
-  margin-bottom:2rem;
-}
-
-.form-wrapper h3 {
+.form-wrapper h2 {
   font-size: 2.4rem;
   color: var(--green);
   font-weight: 700;
@@ -203,408 +220,172 @@ header{
   letter-spacing: 1px;
 }
 
-.form-tags{
-  display:flex;
-  gap:1rem;
-  margin-bottom:2rem;
-  flex-wrap:wrap;
-}
-  
 .block-text-form {
-  font-size: 1.15rem;       /* dimensione testo leggibile */
-  line-height: 1.7;         /* spaziatura verticale identica alla home */
-  color: var(--blue);       /* stesso colore del testo dei block */
-  margin-bottom: 2rem;      /* distanza dal form o altri elementi */
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--blue);
+  margin-bottom: 2rem;
 }
 
-.form-tags span{
-  background:#fff;
-  border:1px solid var(--green);
-  color:var(--blue);
-  padding:.55rem 1.3rem;
-  border-radius:30px;
-  font-size:.8rem;
-  display:flex;
-  align-items:center;
-  gap:.5rem;
-  font-weight:500;
+.form-tags {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
 }
 
-.form-tags i{
-  color:var(--green);
+.form-tags span {
+  background: #fff;
+  border: 1px solid var(--green);
+  color: var(--blue);
+  padding: .55rem 1.3rem;
+  border-radius: 30px;
+  font-size: .8rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-weight: 500;
 }
 
-form label{
-  display:block;
-  font-size:.85rem;
-  margin-top:1.2rem;
+.form-tags i { color: var(--green); }
+
+form label { display: block; font-size: .85rem; margin-top: 1.2rem; }
+
+form input, form textarea {
+  width: 100%;
+  padding: .7rem;
+  margin-top: .3rem;
+  border: 1px solid #ccc;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .9rem;
 }
 
-form input,
-form textarea{
-  width:100%;
-  padding:.7rem;
-  margin-top:.3rem;
-  border:1px solid #ccc;
-  font-family:'Montserrat',sans-serif;
+/* ACCESSIBILITY: label visibile per prefisso */
+.phone-label { display: block; font-size: .85rem; margin-top: 1.2rem; }
+
+.phone-row {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  margin-top: .3rem;
 }
 
-form select[name="prefisso"] {
-  padding: 0.65rem 0.7rem;
-  font-family: 'Montserrat', sans-serif; 
-  font-size: 0.85rem;       
-  height: 38px;              
-  line-height: 1.2;
-  border: 1px solid #ccc;     
-  border-radius: 0;           
-  box-sizing: border-box;
+.phone-row select {
+  flex: 0 0 auto;
+  padding: .65rem .7rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .85rem;
+  height: 38px;
+  border: 1px solid #ccc;
+  border-radius: 0;
   appearance: none;
-  -webkit-appearance: none;    
-  -moz-appearance: none;      
+  -webkit-appearance: none;
   cursor: pointer;
 }
 
-form textarea{
-  min-height:120px;
-}
+.phone-row input[type="tel"] { flex: 1; margin-top: 0; }
+
+form textarea { min-height: 120px; }
 
 form button {
   display: inline-block;
   margin-top: 2rem;
   background: var(--green);
   color: #fff;
-  padding: 0.9rem 2rem;
-  font-size: 0.95rem;
+  padding: .9rem 2rem;
+  font-size: .95rem;
   font-weight: 600;
   border-radius: 6px;
   border: none;
   cursor: pointer;
-  text-decoration: none;
-  transition: background 0.3s ease, transform 0.3s ease;
+  transition: background .3s, transform .3s;
 }
 
-form button:hover {
-  background: #17845e;
-  transform: translateY(-2px);
-}
+form button:hover { background: #17845e; transform: translateY(-2px); }
 
 .privacy-check {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 0.6rem;
+  gap: .6rem;
   align-items: start;
   margin-top: 1.5rem;
-  font-size: 0.85rem;
+  font-size: .85rem;
   line-height: 1.4;
   cursor: pointer;
 }
 
-.privacy-check input[type="checkbox"] {
-  margin: 0;
-  padding: 0;
-  width: 18px;
-  height: 18px;
-  cursor: pointer;
-}
-
-.privacy-check label {
-  margin: 0;
-  display: block;
-  cursor: pointer;
-}
-
-.privacy-check a {
-  color: var(--green);
-  text-decoration: underline;
-}
+.privacy-check input[type="checkbox"] { margin: 0; padding: 0; width: 18px; height: 18px; cursor: pointer; }
+.privacy-check label { margin: 0; display: block; cursor: pointer; }
+.privacy-check a { color: var(--green); text-decoration: underline; }
 
 /* ================= FOOTER ================= */
-footer{
-  background:var(--blue);
-  color:#ccc;
-  padding:4rem 2rem 2rem;
+footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
+
+.footer-inner {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 3rem;
 }
 
-.footer-inner{
-  max-width:1200px;
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:3rem;
+.footer-logo { width: auto; height: auto; max-width: 280px; max-height: 80px; margin-bottom: 1.5rem; display: block; }
+.footer-brand i { color: var(--green); margin-right: 8px; display: inline-block; width: 20px; }
+.footer-brand p { line-height: 1.8; color: #ccc; }
+.footer-brand p a { color: #ccc; text-decoration: none; }
+
+.footer-links ul { list-style: none; padding: 0; margin: 0; }
+.footer-links li { margin: .6rem 0; }
+.footer-links a { color: #ccc; text-decoration: none; }
+
+.footer-bottom { text-align: center; margin-top: 3rem; font-size: .75rem; color: #888; }
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  header { height: 70px; }
+  .navbar { padding: 0 1.5rem; }
+  .logo img { height: 42px; width: auto; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+
+  .hero { margin-top: 70px; min-height: 45vh; padding: 2rem 1.2rem; }
+  h1.hero-title { font-size: clamp(1.8rem, 8vw, 3rem); letter-spacing: 1px; line-height: 1.3; }
+  .hero-subtitle { font-size: .9rem; letter-spacing: .3px; }
+
+  .contact-intro { padding: 2rem 1.2rem; }
+  .contact-intro p { font-size: 1rem; }
+
+  .contact-container { margin: 2rem auto; padding: 0 1.2rem; flex-direction: column; }
+  .contact-map iframe { min-height: 240px; }
+
+  .form-section { padding: 3rem 1.2rem; }
+  .form-wrapper h2 { font-size: 1.5rem; }
+  .phone-row select { flex: 0 0 38%; max-width: 38%; font-size: .8rem; }
+  form button { width: 100%; text-align: center; }
+
+  .footer-inner { flex-direction: column; gap: 2rem; }
+  .footer-logo { max-width: 160px; }
+  footer { padding: 2.5rem 1.2rem 1.5rem; }
 }
-  
-.footer-logo {
-  max-width: 280px;   /* regolabile */
-  width: 100%;
-  margin-bottom: 1.5rem;
-  display: block;
-}
-
-.footer-brand h3{
-  margin:0;
-  color:var(--green);
-  font-size:1.6rem;
-}
-
-.footer-brand h4{
-  margin:.3rem 0 1.5rem;
-  font-weight:400;
-  color:#aaa;
-}
-
-.footer-brand i{
-  color:var(--green);
-  margin-right:8px;
-}
-
-.footer-links ul{
-  list-style:none;
-  padding:0;
-  margin: 0;
-}
-
-.footer-links li{
-  margin:.6rem 0;
-}
-
-.footer-links a{
-  color:#ccc;
-  text-decoration:none;
-}
-
-.footer-bottom{
-  text-align:center;
-  margin-top:3rem;
-  font-size:.75rem;
-  color:#888;
-}
-  
-.footer-brand p {
-  line-height: 1.8;
-}
-
-.footer-brand p i {
-  display: inline-block;
-  width: 20px;
-}
-  
-/* Forza stile link nel footer */
-footer a{
-  color:#ccc;
-  text-decoration:none;
-}
-
-footer a:visited{
-  color:#ccc;
-}
-
-footer a:hover{
-  color:#ccc;
-  text-decoration:none;
-}
-/* ===== ALLINEAMENTO FORM CONTATTI ALLA HOME ===== */
-
-/* Titolo identico alla homepage */
-.form-section h2 {
-  font-size: 2.4rem;
-  color: var(--green);
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  line-height: 1.2;
-  letter-spacing: 1px;
-  text-align: left;
-}
-
-/* Testo sopra il form identico alla homepage */
-.form-section .block-text-form {
-  font-size: 1.15rem;
-  line-height: 1.7;
-  color: var(--blue);
-  margin-bottom: 2rem;
-  max-width: 100%;
-}
-/* ================= INTRO SEO ================= */
-.contact-intro {
-  background: #f4f4f4;          /* sfondo leggero per separarla dall'hero */
-  padding: 3rem 2rem;           /* spazio verticale */
-  text-align: center;            /* testo centrato */
-}
-
-.contact-intro .central-section {
-  max-width: 900px;              /* mantiene il testo leggibile */
-  margin: 0 auto;
-}
-
-.contact-intro p {
-  font-size: 1.15rem;            /* coerente con testo form e blocchi */
-  line-height: 1.7;
-  color: var(--blue);
-  margin: 0;
-}
-/* ================= MOBILE HERO ================= */
-@media (max-width: 768px){
-
-  header{
-    height:70px;
-  }
-
-  .navbar{
-    padding:0 1.5rem;
-  }
-  
-  .logo img {
-    height:42px; /* leggermente più piccolo su mobile */
-}
-  
-  .hero{
-    margin-top:70px;
-    min-height:60vh;
-    padding:2rem 1.5rem;
-  }
-
-  .hero-title{
-    font-size:1.9rem;
-    letter-spacing:1px;
-    line-height:1.3;
-  }
-
-  .hero-subtitle{
-    font-size:.95rem;
-    letter-spacing:0.5px;
-    line-height:1.6;
-  }
-
-}
-  /* ================= HAMBURGER ================= */
-
-.hamburger{
-  display:none;
-  flex-direction:column;
-  gap:6px;
-  cursor:pointer;
-}
-
-.hamburger span{
-  width:25px;
-  height:3px;
-  background:#fff;
-  transition:.4s;
-}
-
-.hamburger.active span:nth-child(1){
-  transform:rotate(45deg) translate(5px,5px);
-}
-
-.hamburger.active span:nth-child(2){
-  opacity:0;
-}
-
-.hamburger.active span:nth-child(3){
-  transform:rotate(-45deg) translate(6px,-6px);
-}
-
-/* MOBILE MENU */
-
-.mobile-menu{
-  position:fixed;
-  top:70px;                /* parte sotto header mobile */
-  left:0;
-  width:100%;
-  background:var(--blue);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:1.8rem;
-  padding:2rem 0;
-  transform:translateY(-120%);
-  transition:transform .4s ease;
-  z-index:999;
-  box-shadow:0 10px 30px rgba(0,0,0,0.3);
-}
-
-.mobile-menu.active{
-  transform:translateY(0);
-}
-
-.mobile-menu a{
-  color:#fff;
-  font-size:1.4rem;
-  text-decoration:none;
-}
-
-/* NASCONDE MENU DESKTOP SU MOBILE */
-@media(max-width:768px){
-
-  .nav-links{
-    display:none;
-  }
-
-  .hamburger{
-    display:flex;
-  }
-
-}
-@media (max-width: 768px){
-
-  /* Contenitore telefono */
-  .form-wrapper form div[style*="display:flex"]{
-    display: flex !important;
-    gap: 0.5rem;
-  }
-
-  /* Prefisso più stretto */
-  .form-wrapper select[name="prefisso"]{
-    flex: 0 0 35%;   /* occupa solo il 35% */
-    max-width: 35%;
-  }
-
-  /* Numero telefono più largo */
-  .form-wrapper input[name="telefono"]{
-    flex: 1;         /* occupa tutto lo spazio restante */
-  }
-
-}
-@media (max-width: 768px){
-
-  .form-section h2{
-    font-size: 1.6rem;
-    line-height: 1.3;
-    margin-top: 2.5rem;
-    margin-bottom: 2rem;
-    letter-spacing: 0.5px;
-  }
-
-}
-
-  
 </style>
 </head>
-  
-<script>
-document.querySelector("form").addEventListener("submit", function () {
-  const prefisso = document.querySelector('select[name="prefisso"]').value;
-  const telefono = document.querySelector('input[name="telefono"]').value;
-  document.getElementById("telefono_completo").value = prefisso + " " + telefono;
-});
-</script>
-
 <body>
 
 <!-- ================= HEADER ================= -->
 <header>
   <div class="mobile-menu" id="mobileMenu">
-  <a href="chi-siamo.html">Chi siamo</a>
-  <a href="servizi.html">Servizi</a>
-  <a href="contatti.html">Contatti</a>
-  <a href="lavora-con-noi.html">Lavora con noi</a>
-  <a href="case-study.html">Case Study</a>
-</div>
+    <a href="chi-siamo.html">Chi siamo</a>
+    <a href="servizi.html">Servizi</a>
+    <a href="contatti.html">Contatti</a>
+    <a href="lavora-con-noi.html">Lavora con noi</a>
+    <a href="case-study.html">Case Study</a>
+  </div>
 
   <nav class="navbar">
     <div class="logo">
       <a href="index.html">
-        <img src="images/1-4.png">
+        <img src="images/1-4.png" alt="MANAGECH">
       </a>
     </div>
     <ul class="nav-links">
@@ -614,79 +395,70 @@ document.querySelector("form").addEventListener("submit", function () {
       <li><a href="lavora-con-noi.html">Lavora con noi</a></li>
       <li><a href="case-study.html">Case Study</a></li>
     </ul>
-    <div class="hamburger" id="hamburger">
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
-
+    <button class="hamburger" id="hamburger" aria-label="Apri menu di navigazione" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
 </header>
+
+<main>
 
 <!-- ================= HERO ================= -->
 <section class="hero">
   <div class="hero-content">
-    <div class="hero-title">Contattaci</div>
-    <div class="hero-subtitle">Il nostro team è a tua disposizione per ogni richiesta o collaborazione</div>
+    <h1 class="hero-title">Contattaci</h1>
+    <p class="hero-subtitle">Il nostro team è a tua disposizione per ogni richiesta o collaborazione</p>
   </div>
 </section>
 
-<!-- ================= INTRO SEO ================= -->
+<!-- ================= INTRO ================= -->
 <section class="contact-intro">
-  <div class="central-section">
-    <p>
-      Siamo a disposizione di imprese, professionisti e organizzazioni che desiderano approfondire i servizi di consulenza strategica, ingegneria gestionale e supporto decisionale offerti da MANAGECH.  
-      Contattaci per informazioni, richieste di collaborazione o per fissare un primo confronto conoscitivo con il nostro team. La nostra sede è a Roma, in Piazza Mazzini, facilmente raggiungibile e punto di riferimento per attività consulenziali su tutto il territorio nazionale.
-    </p>
-  </div>
+  <p>
+    Siamo a disposizione di imprese, professionisti e organizzazioni che desiderano approfondire i servizi di consulenza strategica, ingegneria gestionale e supporto decisionale offerti da MANAGECH.
+    Contattaci per informazioni, richieste di collaborazione o per fissare un primo confronto conoscitivo con il nostro team.
+  </p>
 </section>
 
-  <!-- ================= INFORMAZIONI + MAPPA ================= -->
-<section class="contact-container">
+<!-- ================= INFO + MAPPA ================= -->
+<div class="contact-container">
   <div class="contact-info">
-   
-   
-    <div class="footer-inner">
-   <div class="footer-brand">
-    <img src="images/logo-su-bianco.jpg" alt="MANAGECH" class="footer-logo">
-    
-    <p><i class="fas fa-map-marker-alt"></i> Piazza G. Mazzini 27, 00195 Roma</p>
-    <p><i class="fas fa-phone"></i> +39 349 390 7663</p>
-    <p><i class="fas fa-envelope"></i> segreteria@managech.com</p>
-    <p><i class="fas fa-envelope"></i> managech@pec.it</p>
+    <img src="images/logo-su-bianco.jpg" alt="MANAGECH" loading="lazy">
+    <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Piazza G. Mazzini 27, 00195 Roma</p>
+    <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+393493907663">+39 349 390 7663</a></p>
+    <p><i class="fas fa-envelope" aria-hidden="true"></i> segreteria@managech.com</p>
+    <p><i class="fas fa-envelope" aria-hidden="true"></i> managech@pec.it</p>
   </div>
 
   <div class="contact-map">
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5937.80748221322!2d12.460074776783461!3d41.91642797123757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f60f31544089b%3A0x54a128d5c9b620f9!2sPiazza%20Giuseppe%20Mazzini%2C%2027%2C%2000195%20Roma%20RM!5e0!3m2!1sit!2sit!4v1769465478963!5m2!1sit!2sit" 
-      width="100%" 
-      height="400" 
-      style="border:0;" 
-      allowfullscreen="" 
-      loading="lazy" 
-      referrerpolicy="no-referrer-when-downgrade">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5937.80748221322!2d12.460074776783461!3d41.91642797123757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f60f31544089b%3A0x54a128d5c9b620f9!2sPiazza%20Giuseppe%20Mazzini%2C%2027%2C%2000195%20Roma%20RM!5e0!3m2!1sit!2sit!4v1769465478963!5m2!1sit!2sit"
+      width="100%" height="400"
+      style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Sede MANAGECH – Piazza G. Mazzini 27, Roma">
     </iframe>
   </div>
-</section>
+</div>
 
-<!-- ================= FORM CONTATTI ================= -->
+<!-- ================= FORM ================= -->
 <section class="form-section">
   <div class="form-wrapper">
     <h2>Definiamo insieme il percorso</h2>
-    
-    <p class="block-text-form">    
+    <p class="block-text-form">
       Compila il modulo per ricevere una consulenza gratuita. Il nostro team è a disposizione per fornire informazioni, valutare richieste di collaborazione e accompagnare la tua azienda nella definizione di un percorso sostenibile, coerente con le priorità strategiche e gli obiettivi organizzativi.
     </p>
 
     <div class="form-tags">
-      <span><i class="fas fa-comments"></i> Consulenza gratuita</span>
-      <span><i class="fas fa-clock"></i> Risposta entro 24h</span>
+      <span><i class="fas fa-comments" aria-hidden="true"></i> Consulenza gratuita</span>
+      <span><i class="fas fa-clock" aria-hidden="true"></i> Risposta entro 24h</span>
     </div>
 
-    <form action="https://formspree.io/f/xreqljvv" method="POST">
+    <form id="contactForm" action="https://formspree.io/f/xreqljvv" method="POST">
       <input type="hidden" name="_subject" value="Nuova richiesta dal sito MANAGECH">
       <input type="hidden" name="_template" value="table">
-      <input type="text" name="_gotcha" style="display:none">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
       <label for="nome">Nome*</label>
       <input id="nome" name="nome" required>
@@ -694,68 +466,56 @@ document.querySelector("form").addEventListener("submit", function () {
       <label for="cognome">Cognome*</label>
       <input id="cognome" name="cognome" required>
 
-      <label for="telefono">Telefono*</label>
-      <div style="display:flex; gap:0.5rem; align-items:center;">
-        <select name="prefisso" required>
-
-  <!-- Europa -->
-<option value="+43">🇦🇹 Austria +43</option>
-<option value="+32">🇧🇪 Belgio +32</option>
-<option value="+359">🇧🇬 Bulgaria +359</option>
-<option value="+385">🇭🇷 Croazia +385</option>
-<option value="+357">🇨🇾 Cipro +357</option>
-<option value="+420">🇨🇿 Repubblica Ceca +420</option>
-<option value="+45">🇩🇰 Danimarca +45</option>
-<option value="+372">🇪🇪 Estonia +372</option>
-<option value="+358">🇫🇮 Finlandia +358</option>
-<option value="+33">🇫🇷 Francia +33</option>
-<option value="+49">🇩🇪 Germania +49</option>
-<option value="+30">🇬🇷 Grecia +30</option>
-<option value="+36">🇭🇺 Ungheria +36</option>
-<option value="+353">🇮🇪 Irlanda +353</option>
-<option value="+39" selected>🇮🇹 Italia +39</option>
-<option value="+371">🇱🇻 Lettonia +371</option>
-<option value="+423">🇱🇮 Liechtenstein +423</option>
-<option value="+370">🇱🇹 Lituania +370</option>
-<option value="+352">🇱🇺 Lussemburgo +352</option>
-<option value="+356">🇲🇹 Malta +356</option>
-<option value="+31">🇳🇱 Paesi Bassi +31</option>
-<option value="+48">🇵🇱 Polonia +48</option>
-<option value="+351">🇵🇹 Portogallo +351</option>
-<option value="+40">🇷🇴 Romania +40</option>
-<option value="+7">🇷🇺 Russia +7</option>
-<option value="+381">🇷🇸 Serbia +381</option>
-<option value="+421">🇸🇰 Slovacchia +421</option>
-<option value="+386">🇸🇮 Slovenia +386</option>
-<option value="+34">🇪🇸 Spagna +34</option>
-<option value="+46">🇸🇪 Svezia +46</option>
-<option value="+41">🇨🇭 Svizzera +41</option>
-<option value="+44">🇬🇧 Regno Unito +44</option>
-<option value="+39">🇻🇦 Città del Vaticano +39</option>
-
-<!-- Principali stati globalizzati -->
-<option value="+1">🇺🇸 USA +1</option>
-<option value="+1">🇨🇦 Canada +1</option>
-<option value="+86">🇨🇳 Cina +86</option>
-<option value="+91">🇮🇳 India +91</option>
-<option value="+81">🇯🇵 Giappone +81</option>
-<option value="+55">🇧🇷 Brasile +55</option>
-<option value="+61">🇦🇺 Australia +61</option>
-<option value="+27">🇿🇦 Sud Africa +27</option>
-<option value="+82">🇰🇷 Corea del Sud +82</option>
-<option value="+60">🇲🇾 Malesia +60</option>
-<option value="+65">🇸🇬 Singapore +65</option>
-<option value="+66">🇹🇭 Thailandia +66</option>
-<option value="+971">🇦🇪 Emirati Arabi Uniti +971</option>
-<option value="+98">🇮🇷 Iran +98</option>
-<option value="+964">🇮🇶 Iraq +964</option>
-<option value="+52">🇲🇽 Messico +52</option>
-<option value="+57">🇨🇴 Colombia +57</option>
-<option value="+56">🇨🇱 Cile +56</option>
-
+      <label class="phone-label" for="telefono">Telefono*</label>
+      <div class="phone-row">
+        <label for="prefisso" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Prefisso internazionale</label>
+        <select name="prefisso" id="prefisso" required aria-label="Prefisso internazionale">
+          <option value="+39" selected>🇮🇹 Italia +39</option>
+          <option value="+43">🇦🇹 Austria +43</option>
+          <option value="+32">🇧🇪 Belgio +32</option>
+          <option value="+359">🇧🇬 Bulgaria +359</option>
+          <option value="+385">🇭🇷 Croazia +385</option>
+          <option value="+357">🇨🇾 Cipro +357</option>
+          <option value="+420">🇨🇿 Repubblica Ceca +420</option>
+          <option value="+45">🇩🇰 Danimarca +45</option>
+          <option value="+372">🇪🇪 Estonia +372</option>
+          <option value="+358">🇫🇮 Finlandia +358</option>
+          <option value="+33">🇫🇷 Francia +33</option>
+          <option value="+49">🇩🇪 Germania +49</option>
+          <option value="+30">🇬🇷 Grecia +30</option>
+          <option value="+36">🇭🇺 Ungheria +36</option>
+          <option value="+353">🇮🇪 Irlanda +353</option>
+          <option value="+371">🇱🇻 Lettonia +371</option>
+          <option value="+423">🇱🇮 Liechtenstein +423</option>
+          <option value="+370">🇱🇹 Lituania +370</option>
+          <option value="+352">🇱🇺 Lussemburgo +352</option>
+          <option value="+356">🇲🇹 Malta +356</option>
+          <option value="+31">🇳🇱 Paesi Bassi +31</option>
+          <option value="+48">🇵🇱 Polonia +48</option>
+          <option value="+351">🇵🇹 Portogallo +351</option>
+          <option value="+40">🇷🇴 Romania +40</option>
+          <option value="+7">🇷🇺 Russia +7</option>
+          <option value="+381">🇷🇸 Serbia +381</option>
+          <option value="+421">🇸🇰 Slovacchia +421</option>
+          <option value="+386">🇸🇮 Slovenia +386</option>
+          <option value="+34">🇪🇸 Spagna +34</option>
+          <option value="+46">🇸🇪 Svezia +46</option>
+          <option value="+41">🇨🇭 Svizzera +41</option>
+          <option value="+44">🇬🇧 Regno Unito +44</option>
+          <option value="+1">🇺🇸 USA +1</option>
+          <option value="+1">🇨🇦 Canada +1</option>
+          <option value="+86">🇨🇳 Cina +86</option>
+          <option value="+91">🇮🇳 India +91</option>
+          <option value="+81">🇯🇵 Giappone +81</option>
+          <option value="+55">🇧🇷 Brasile +55</option>
+          <option value="+61">🇦🇺 Australia +61</option>
+          <option value="+27">🇿🇦 Sud Africa +27</option>
+          <option value="+82">🇰🇷 Corea del Sud +82</option>
+          <option value="+65">🇸🇬 Singapore +65</option>
+          <option value="+971">🇦🇪 Emirati Arabi Uniti +971</option>
+          <option value="+52">🇲🇽 Messico +52</option>
         </select>
-
-        <input id="telefono" type="tel" name="telefono" placeholder="340 1234567" required style="flex:1; padding:0.7rem; font-family:'Montserrat',sans-serif; margin-top:0;">
+        <input id="telefono" type="tel" name="telefono" placeholder="340 1234567" required>
       </div>
 
       <label for="email">Email*</label>
@@ -787,61 +547,62 @@ document.querySelector("form").addEventListener("submit", function () {
   </div>
 </section>
 
+</main>
+
 <!-- ================= FOOTER ================= -->
 <footer>
   <div class="footer-inner">
-  <div class="footer-brand">
-    <img src="images/1-4.png" alt="MANAGECH" class="footer-logo">
-    <p>
-      <i class="fas fa-map-marker-alt"></i> Piazza G. Mazzini 27, 00195 Roma<br>
-      <i class="fas fa-phone"></i> +39 349 390 7663<br>
-      <i class="fas fa-envelope"></i> segreteria@managech.com
-    </p>
+    <div class="footer-brand">
+      <img src="images/1-4.png" alt="MANAGECH" class="footer-logo" loading="lazy">
+      <p>
+        <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Piazza G. Mazzini 27, 00195 Roma<br>
+        <i class="fas fa-phone" aria-hidden="true"></i> +39 349 390 7663<br>
+        <i class="fas fa-envelope" aria-hidden="true"></i> segreteria@managech.com
+      </p>
+    </div>
+    <nav aria-label="Footer navigation">
+      <div class="footer-links">
+        <ul>
+          <li><a href="chi-siamo.html">Chi siamo</a></li>
+          <li><a href="servizi.html">Servizi</a></li>
+          <li><a href="contatti.html">Contatti</a></li>
+          <li><a href="lavora-con-noi.html">Lavora con noi</a></li>
+          <li><a href="case-study.html">Case Study</a></li>
+          <li><a href="informativa-privacy.html">Informativa Privacy</a></li>
+          <li><a href="cookie-policy.html">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </nav>
   </div>
-
-  <div class="footer-links">
-    <ul>
-      <li><a href="chi-siamo.html">Chi siamo</a></li>
-      <li><a href="servizi.html">Servizi</a></li>
-      <li><a href="contatti.html">Contatti</a></li>
-      <li><a href="lavora-con-noi.html">Lavora con noi</a></li>
-      <li><a href="case-study.html">Case Study</a></li>
-      <li><a href="informativa-privacy.html">Informativa Privacy</a></li>
-      <li><a href="cookie-policy.html">Cookie Policy</a></li>
-    </ul>
+  <div class="footer-bottom">
+    &copy; 2026 MANAGECH - INGEGNERIA &amp; MANAGEMENT STUDIO ASSOCIATO | P. IVA 18387251004
   </div>
-</div>
-
-<div class="footer-bottom">
-  © 2026 MANAGECH - INGEGNERIA & MANAGEMENT STUDIO ASSOCIATO | P. IVA 18387251004
-</div>
-
 </footer>
 
-<!-- ================= SCRIPT FADE-IN ================= -->
 <script>
-const faders = document.querySelectorAll('.fade-in');
-const appearOptions = { threshold:0.1, rootMargin:"0px 0px -50px 0px" };
-const appearOnScroll = new IntersectionObserver(function(entries, observer){
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('appear');
-      observer.unobserve(entry.target);
-    }
+  document.getElementById("contactForm").addEventListener("submit", function () {
+    const prefisso = document.getElementById("prefisso").value;
+    const telefono = document.getElementById("telefono").value;
+    document.getElementById("telefono_completo").value = prefisso + " " + telefono;
   });
-}, appearOptions);
 
-faders.forEach(fader => appearOnScroll.observe(fader));
-const hamburger = document.getElementById("hamburger");
-const mobileMenu = document.getElementById("mobileMenu");
+  const hamburger = document.getElementById("hamburger");
+  const mobileMenu = document.getElementById("mobileMenu");
 
-hamburger.addEventListener("click", () => {
-  hamburger.classList.toggle("active");
-  mobileMenu.classList.toggle("active");
-});
+  hamburger.addEventListener("click", () => {
+    const isOpen = hamburger.classList.toggle("active");
+    mobileMenu.classList.toggle("active");
+    hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  });
 
-  
+  mobileMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      mobileMenu.classList.remove("active");
+      hamburger.setAttribute("aria-expanded", "false");
+    });
+  });
 </script>
-      
+
 </body>
 </html>
