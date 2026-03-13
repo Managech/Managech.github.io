@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-<link rel="preload" as="image" href="images/hero-contatti.jpg">
+<link rel="preload" as="image" href="images/hero-contatti.jpg" fetchpriority="high">
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
@@ -50,9 +50,12 @@ header { position: fixed; top: 0; left: 0; width: 100%; height: 90px; background
 .mobile-menu a { color: #fff; font-size: 1.4rem; text-decoration: none; }
 
 /* HERO */
+.hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: 0; }
+.hero-overlay { position: absolute; inset: 0; background: rgba(11,31,51,.75); z-index: 1; }
+.hero-content { position: relative; z-index: 2; }
 .hero {
   margin-top: 90px; min-height: 50vh;
-  background: linear-gradient(rgba(11,31,51,.75), rgba(11,31,51,.75)), url("images/hero-contatti.jpg") center / cover no-repeat;
+  position: relative; overflow: hidden;
   display: flex; align-items: center; justify-content: center; text-align: center; padding: 3rem 2rem;
 }
 .hero-content { max-width: 1100px; }
@@ -164,6 +167,8 @@ footer a { color: #ccc; text-decoration: none; }
 <main>
 
 <section class="hero">
+  <img src="images/hero-contatti.jpg" alt="Hero Contatti MANAGECH" class="hero-bg" fetchpriority="high" decoding="async" width="1920" height="1080">
+  <div class="hero-overlay"></div>
   <div class="hero-content">
     <h1 class="hero-title">Contattaci</h1>
     <p class="hero-subtitle">Il nostro team è a tua disposizione per ogni richiesta o collaborazione</p>
@@ -182,8 +187,8 @@ footer a { color: #ccc; text-decoration: none; }
     <img src="images/logo-su-bianco.jpg" alt="MANAGECH" width="320" height="100" loading="lazy">
     <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Piazza G. Mazzini 27, 00195 Roma</p>
     <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+393493907663">+39 349 390 7663</a></p>
-    <p><i class="fas fa-envelope" aria-hidden="true"></i> segreteria@managech.com</p>
-    <p><i class="fas fa-envelope" aria-hidden="true"></i> managech@pec.it</p>
+    <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d5a6b0b2a7b0a1b0a7bcb495b8b4bbb4b2b0b6bdfbb6bab8">[email&#160;protected]</a></p>
+    <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="472a2629262022242f07372224692e33">[email&#160;protected]</a></p>
   </div>
   <div class="contact-map">
     <iframe
@@ -307,7 +312,7 @@ footer a { color: #ccc; text-decoration: none; }
       <p>
         <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Piazza G. Mazzini 27, 00195 Roma<br>
         <i class="fas fa-phone" aria-hidden="true"></i> +39 349 390 7663<br>
-        <i class="fas fa-envelope" aria-hidden="true"></i> segreteria@managech.com
+        <i class="fas fa-envelope" aria-hidden="true"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="98ebfdffeafdecfdeaf1f9d8f5f9f6f9fffdfbf0b6fbf7f5">[email&#160;protected]</a>
       </p>
     </div>
     <nav aria-label="Footer navigation">
@@ -329,7 +334,7 @@ footer a { color: #ccc; text-decoration: none; }
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 var hamburger = document.getElementById("hamburger");
 var mobileMenu = document.getElementById("mobileMenu");
 
@@ -339,21 +344,4 @@ hamburger.addEventListener("click", function() {
 });
 
 mobileMenu.querySelectorAll("a").forEach(function(link) {
-  link.addEventListener("click", function() {
-    hamburger.classList.remove("active");
-    mobileMenu.classList.remove("active");
-  });
-});
-
-var contactForm = document.getElementById("contactForm");
-if (contactForm) {
-  contactForm.addEventListener("submit", function() {
-    var prefisso = document.getElementById("prefisso").value;
-    var telefono = document.getElementById("telefono").value;
-    document.getElementById("telefono_completo").value = prefisso + " " + telefono;
-  });
-}
-</script>
-
-</body>
-</html>
+  link.addEventListener("click", funct
