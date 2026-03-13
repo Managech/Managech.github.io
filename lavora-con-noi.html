@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
 <!-- PERFORMANCE: preload hero (LCP) -->
-<link rel="preload" as="image" href="images/hero-lavora-con-noi.jpg">
+<link rel="preload" as="image" href="images/hero-lavora-con-noi.jpg" fetchpriority="high">
 
 <!-- Google Fonts: non bloccante -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
@@ -57,9 +57,12 @@ header { position: fixed; top: 0; left: 0; width: 100%; height: 90px; background
 .mobile-menu a { color: #fff; font-size: 1.4rem; text-decoration: none; }
 
 /* HERO */
+.hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: 0; }
+.hero-overlay { position: absolute; inset: 0; background: rgba(11,31,51,.75); z-index: 1; }
+.hero-content { position: relative; z-index: 2; }
 .hero {
   margin-top: 90px; min-height: 50vh;
-  background: linear-gradient(rgba(11,31,51,.75), rgba(11,31,51,.75)), url("images/hero-lavora-con-noi.jpg") center / cover no-repeat;
+  position: relative; overflow: hidden;
   display: flex; align-items: center; justify-content: center; text-align: center; padding: 3rem 2rem;
 }
 .hero-content { max-width: 1100px; }
@@ -249,6 +252,8 @@ footer a { color: #ccc; text-decoration: none; }
 
 <!-- HERO -->
 <section class="hero">
+  <img src="images/hero-lavora-con-noi.jpg" alt="Hero Lavora Con Noi MANAGECH" class="hero-bg" fetchpriority="high" decoding="async" width="1920" height="1080">
+  <div class="hero-overlay"></div>
   <div class="hero-content">
     <h1 class="hero-title">Non cerchiamo profili.<br>Costruiamo competenze.</h1>
     <p class="hero-subtitle">
@@ -413,7 +418,7 @@ footer a { color: #ccc; text-decoration: none; }
       <p>
         <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Piazza G. Mazzini 27, 00195 Roma<br>
         <i class="fas fa-phone" aria-hidden="true"></i> +39 349 390 7663<br>
-        <i class="fas fa-envelope" aria-hidden="true"></i> segreteria@managech.com
+        <i class="fas fa-envelope" aria-hidden="true"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2d5e484a5f4859485f444c6d404c434c4a484e45034e4240">[email&#160;protected]</a>
       </p>
     </div>
     <nav aria-label="Footer navigation">
@@ -435,7 +440,7 @@ footer a { color: #ccc; text-decoration: none; }
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 document.addEventListener("DOMContentLoaded", function () {
 
   // Form candidatura: concatena prefisso + numero
@@ -472,16 +477,4 @@ document.addEventListener("DOMContentLoaded", function () {
       hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
     });
     mobileMenu.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", function () {
-        hamburger.classList.remove("active");
-        mobileMenu.classList.remove("active");
-        hamburger.setAttribute("aria-expanded", "false");
-      });
-    });
-  }
-
-});
-</script>
-
-</body>
-</html>
+      link.addEventLis
