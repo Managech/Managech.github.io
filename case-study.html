@@ -7,8 +7,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="format-detection" content="telephone=no">
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!-- PERFORMANCE: preconnect -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+<!-- PERFORMANCE: preload hero (LCP) -->
+<link rel="preload" as="image" href="images/hero-chi-siamo.webp" fetchpriority="high">
+
+<!-- Google Fonts: non bloccante -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+
+<!-- Font Awesome: non bloccante -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
 
 <style>
 :root { --green: #1fa37a; --blue: #0b1f33; --gray: #d6d6d6; }
@@ -18,23 +31,41 @@ body { font-family: 'Montserrat', sans-serif; background: #fff; color: var(--blu
 /* HEADER */
 header { position: fixed; top: 0; left: 0; width: 100%; height: 90px; background: var(--blue); z-index: 1000; }
 .navbar { height: 100%; padding: 0 3rem; display: flex; align-items: center; justify-content: space-between; }
-.logo a { display: flex; align-items: center; color: var(--green); text-decoration: none; font-weight: 700; font-size: 1.3rem; }
-.logo img { height: 54px; display: block; }
+.logo a { display: flex; align-items: center; text-decoration: none; }
+.logo img { height: 54px; width: auto; display: block; }
 .nav-links { list-style: none; display: flex; gap: 2rem; }
 .nav-links a { color: #fff; text-decoration: none; font-size: .95rem; position: relative; }
 .nav-links a::after { content: ""; position: absolute; bottom: -6px; left: 0; width: 0; height: 2px; background: var(--green); transition: .3s; }
 .nav-links a:hover::after { width: 100%; }
-.hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; }
-.hamburger span { width: 25px; height: 3px; background: #fff; transition: .4s; }
-.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+
+/* HAMBURGER */
+.hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; background: none; border: none; padding: 4px; }
+.hamburger span { width: 25px; height: 3px; background: #fff; transition: .4s; display: block; }
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
 .hamburger.active span:nth-child(2) { opacity: 0; }
-.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(6px,-6px); }
-.mobile-menu { position: fixed; top: 70px; left: 0; width: 100%; background: var(--blue); display: flex; flex-direction: column; align-items: center; gap: 1.8rem; padding: 2rem 0; transform: translateY(-120%); transition: transform .4s ease; z-index: 999; box-shadow: 0 10px 30px rgba(0,0,0,.3); }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+
+/* MOBILE MENU */
+.mobile-menu {
+  position: fixed; top: 70px; left: 0; width: 100%;
+  background: var(--blue); display: flex; flex-direction: column;
+  align-items: center; gap: 1.8rem; padding: 2rem 0;
+  transform: translateY(-150%); transition: transform .4s ease;
+  z-index: 999; box-shadow: 0 10px 30px rgba(0,0,0,.3);
+}
 .mobile-menu.active { transform: translateY(0); }
 .mobile-menu a { color: #fff; font-size: 1.4rem; text-decoration: none; }
 
 /* HERO */
-.hero { margin-top: 90px; min-height: 50vh; background: linear-gradient(rgba(11,31,51,.78), rgba(11,31,51,.78)), url("images/hero-chi-siamo.jpg") center/cover no-repeat; display: flex; align-items: center; justify-content: center; text-align: center; padding: 3rem 2rem; }
+.hero {
+  margin-top: 90px; min-height: 50vh;
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 3rem 2rem;
+}
+.hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: 0; }
+.hero-overlay { position: absolute; inset: 0; background: rgba(11,31,51,.78); z-index: 1; }
+.hero-content { position: relative; z-index: 2; }
 h1.hero-title { font-size: 3.8rem; font-weight: 800; letter-spacing: 4px; color: var(--green); }
 .hero-subtitle { margin-top: .8rem; font-size: 1.1rem; letter-spacing: 2px; color: var(--gray); }
 
@@ -43,16 +74,12 @@ h1.hero-title { font-size: 3.8rem; font-weight: 800; letter-spacing: 4px; color:
 .cs-section:nth-child(even) { background: #f9f9f9; }
 .cs-inner { max-width: 960px; margin: 0 auto; }
 
-/* Top row: logo + meta */
 .cs-top { display: flex; align-items: center; gap: 2rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
 .cs-logo-wrap {
-  flex: 0 0 auto;
-  width: 100px; height: 100px;
-  background: #fff;
-  border-radius: 14px;
+  flex: 0 0 auto; width: 100px; height: 100px;
+  background: #fff; border-radius: 14px;
   box-shadow: 0 4px 18px rgba(0,0,0,.1);
-  display: flex; align-items: center; justify-content: center;
-  padding: .8rem;
+  display: flex; align-items: center; justify-content: center; padding: .8rem;
 }
 .cs-logo-wrap img { max-width: 100%; max-height: 100%; object-fit: contain; }
 .cs-meta { flex: 1; }
@@ -60,13 +87,12 @@ h1.hero-title { font-size: 3.8rem; font-weight: 800; letter-spacing: 4px; color:
 .cs-meta h2 { font-size: 1.9rem; font-weight: 800; color: var(--blue); margin-bottom: .25rem; }
 .cs-meta .cs-sub { font-size: .93rem; color: #666; }
 
-/* Stats */
 .cs-stats { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
 .stat-pill { background: var(--blue); border-radius: 10px; padding: 1rem 1.4rem; text-align: center; flex: 1; min-width: 130px; }
 .stat-pill .val { font-size: 1.6rem; font-weight: 800; color: var(--green); }
 .stat-pill .lbl { font-size: .71rem; color: #aac; margin-top: .25rem; line-height: 1.3; text-transform: uppercase; letter-spacing: .4px; }
 
-.cs-summary { font-size: 1rem; line-height: 1.85; color: #333; margin-bottom: 2rem; }
+.cs-summary { font-size: 1rem; line-height: 1.85; color: #333; margin-bottom: 2rem; text-align: justify; }
 
 .cs-tags { display: flex; gap: .6rem; flex-wrap: wrap; }
 .cs-chip { background: #eaf7f2; color: var(--green); border: 1px solid #b8e8d8; font-size: .78rem; font-weight: 600; padding: .32rem .85rem; border-radius: 20px; }
@@ -82,74 +108,63 @@ h1.hero-title { font-size: 3.8rem; font-weight: 800; letter-spacing: 4px; color:
 /* FOOTER */
 footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
 .footer-inner { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 3rem; }
-.footer-logo { max-width: 280px; width: 100%; margin-bottom: 1.5rem; display: block; }
+.footer-logo { width: 100%; max-width: 320px; height: auto; margin-bottom: 1.5rem; display: block; }
 .footer-brand i { color: var(--green); margin-right: 8px; display: inline-block; width: 20px; }
-.footer-brand p { line-height: 1.8; }
+.footer-brand p { line-height: 1.8; color: #ccc; }
+footer a { color: #ccc; text-decoration: none; }
 .footer-links ul { list-style: none; padding: 0; margin: 0; }
 .footer-links li { margin: .6rem 0; }
-footer a { color: #ccc; text-decoration: none; }
 .footer-bottom { text-align: center; margin-top: 3rem; font-size: .75rem; color: #888; }
 
+/* RESPONSIVE 768px */
 @media (max-width: 768px) {
-  /* Header */
   header { height: 70px; }
   .navbar { padding: 0 1.5rem; }
   .logo img { height: 42px; }
   .nav-links { display: none; }
   .hamburger { display: flex; }
-
-  /* Hero */
   .hero { margin-top: 70px; min-height: 40vh; padding: 2rem 1.5rem; }
   h1.hero-title { font-size: 2rem; letter-spacing: 1px; }
   .hero-subtitle { font-size: .9rem; letter-spacing: .5px; }
-
-  /* Case study sections */
   .cs-section { padding: 3rem 1.2rem; }
-
-  /* Top row */
   .cs-top { flex-direction: row; align-items: center; gap: 1rem; margin-bottom: 1.8rem; }
   .cs-logo-wrap { width: 64px; height: 64px; border-radius: 10px; padding: .5rem; flex-shrink: 0; }
   .cs-meta h2 { font-size: 1.25rem; line-height: 1.3; }
   .cs-meta .cs-sub { font-size: .82rem; line-height: 1.5; }
   .cs-tag { font-size: .62rem; letter-spacing: 1px; }
-
-  /* Stats: 2 columns on mobile */
   .cs-stats { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; margin-bottom: 1.8rem; }
   .stat-pill { min-width: unset; padding: .85rem 1rem; }
   .stat-pill .val { font-size: 1.25rem; }
   .stat-pill .lbl { font-size: .65rem; }
-
-  /* Summary */
   .cs-summary { font-size: .93rem; line-height: 1.75; margin-bottom: 1.5rem; }
-
-  /* Chips */
   .cs-tags { gap: .45rem; }
   .cs-chip { font-size: .73rem; padding: .28rem .7rem; }
-
-  /* CTA */
   .cta-section { padding: 3.5rem 1.5rem; }
   .cta-section h2 { font-size: 1.5rem; }
   .cta-section p { font-size: .93rem; }
   .btn-cta { display: block; width: 100%; max-width: 320px; margin: 0 auto; text-align: center; }
-
-  /* Footer */
   .footer-inner { flex-direction: column; gap: 2rem; }
-  .footer-logo { max-width: 180px; }
+  .footer-logo { max-width: 300px; }
+  footer { padding: 2.5rem 1.2rem 1.5rem; }
 }
 </style>
 </head>
 <body>
 
+<!-- Mobile menu FUORI dall'header -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="chi-siamo.html">Chi siamo</a>
+  <a href="servizi.html">Servizi</a>
+  <a href="contatti.html">Contatti</a>
+  <a href="lavora-con-noi.html">Lavora con noi</a>
+  <a href="case-study.html">Case Study</a>
+</div>
+
 <header>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="chi-siamo.html">Chi siamo</a>
-    <a href="servizi.html">Servizi</a>
-    <a href="contatti.html">Contatti</a>
-    <a href="lavora-con-noi.html">Lavora con noi</a>
-    <a href="case-study.html">Case Study</a>
-  </div>
   <nav class="navbar">
-    <div class="logo"><a href="index.html"><img src="images/1-4.png" alt="MANAGECH"></a></div>
+    <div class="logo">
+      <a href="index.html"><img src="images/1-4.webp" alt="MANAGECH" width="200" height="54"></a>
+    </div>
     <ul class="nav-links">
       <li><a href="chi-siamo.html">Chi siamo</a></li>
       <li><a href="servizi.html">Servizi</a></li>
@@ -157,12 +172,18 @@ footer a { color: #ccc; text-decoration: none; }
       <li><a href="lavora-con-noi.html">Lavora con noi</a></li>
       <li><a href="case-study.html">Case Study</a></li>
     </ul>
-    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    <button class="hamburger" id="hamburger" aria-label="Apri menu di navigazione" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 </header>
 
+<main>
+
 <section class="hero">
-  <div>
+  <img src="images/hero-chi-siamo.webp" alt="Case Study MANAGECH" class="hero-bg" fetchpriority="high" decoding="async" width="1920" height="1080">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
     <h1 class="hero-title">Case Study</h1>
     <p class="hero-subtitle">Progetti reali. Risultati misurabili.</p>
   </div>
@@ -171,10 +192,9 @@ footer a { color: #ccc; text-decoration: none; }
 <!-- CS 1: ML1 -->
 <section class="cs-section">
   <div class="cs-inner">
-
     <div class="cs-top">
       <div class="cs-logo-wrap">
-        <img src="images/logo-ml1.webp" alt="ML1 Costruzioni">
+        <img src="images/logo-ml1.webp" alt="ML1 Costruzioni" width="100" height="100" loading="lazy">
       </div>
       <div class="cs-meta">
         <span class="cs-tag">Controllo di Gestione · Ottimizzazione Processi</span>
@@ -195,16 +215,14 @@ footer a { color: #ccc; text-decoration: none; }
     </p>
 
     <div class="cs-tags">
-      <span class="cs-chip"><i class="fas fa-chart-pie"></i> Controllo di gestione</span>
-      <span class="cs-chip"><i class="fas fa-cogs"></i> Ottimizzazione processi</span>
-      <span class="cs-chip"><i class="fas fa-database"></i> Gestione commesse</span>
-      <span class="cs-chip"><i class="fas fa-chart-line"></i> KPI e reporting</span>
-      <span class="cs-chip"><i class="fas fa-users"></i> Change management</span>
+      <span class="cs-chip"><i class="fas fa-chart-pie" aria-hidden="true"></i> Controllo di gestione</span>
+      <span class="cs-chip"><i class="fas fa-cogs" aria-hidden="true"></i> Ottimizzazione processi</span>
+      <span class="cs-chip"><i class="fas fa-database" aria-hidden="true"></i> Gestione commesse</span>
+      <span class="cs-chip"><i class="fas fa-chart-line" aria-hidden="true"></i> KPI e reporting</span>
+      <span class="cs-chip"><i class="fas fa-users" aria-hidden="true"></i> Change management</span>
     </div>
-
   </div>
 </section>
-
 
 <!-- CTA -->
 <section class="cta-section">
@@ -213,29 +231,31 @@ footer a { color: #ccc; text-decoration: none; }
   <a href="contatti.html" class="btn-cta">Richiedi una consulenza gratuita</a>
 </section>
 
-<!-- FOOTER -->
+</main>
+
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <img src="images/1-4.webp" alt="MANAGECH" class="footer-logo">
+      <img src="images/1-4.webp" alt="MANAGECH" class="footer-logo" loading="lazy" width="320" height="100">
       <p>
-        <i class="fas fa-map-marker-alt"></i> Piazza G. Mazzini 27, 00195 Roma<br>
-        <i class="fas fa-phone"></i> +39 349 390 7663<br>
-
-<i class="fas fa-envelope" aria-hidden="true"></i> <a id="emailFooter" href="#">segreteria@managech.com</a>
+        <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Piazza G. Mazzini 27, 00195 Roma<br>
+        <i class="fas fa-phone" aria-hidden="true"></i> +39 349 390 7663<br>
+        <i class="fas fa-envelope" aria-hidden="true"></i> <a id="emailFooter" href="#">segreteria@managech.com</a>
       </p>
     </div>
-    <div class="footer-links">
-      <ul>
-        <li><a href="chi-siamo.html">Chi siamo</a></li>
-        <li><a href="servizi.html">Servizi</a></li>
-        <li><a href="contatti.html">Contatti</a></li>
-        <li><a href="lavora-con-noi.html">Lavora con noi</a></li>
-        <li><a href="case-study.html">Case Study</a></li>
-        <li><a href="informativa-privacy.html">Informativa Privacy</a></li>
-        <li><a href="cookie-policy.html">Cookie Policy</a></li>
-      </ul>
-    </div>
+    <nav aria-label="Footer navigation">
+      <div class="footer-links">
+        <ul>
+          <li><a href="chi-siamo.html">Chi siamo</a></li>
+          <li><a href="servizi.html">Servizi</a></li>
+          <li><a href="contatti.html">Contatti</a></li>
+          <li><a href="lavora-con-noi.html">Lavora con noi</a></li>
+          <li><a href="case-study.html">Case Study</a></li>
+          <li><a href="informativa-privacy.html">Informativa Privacy</a></li>
+          <li><a href="cookie-policy.html">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </nav>
   </div>
   <div class="footer-bottom">
     &copy; 2026 MANAGECH - INGEGNERIA &amp; MANAGEMENT STUDIO ASSOCIATO | P. IVA 18387251004
@@ -257,5 +277,7 @@ mobileMenu.querySelectorAll("a").forEach(function(link) {
     hamburger.setAttribute("aria-expanded", "false");
   });
 });
-  document.getElementById("emailFooter").href = "mailto:" + "segreteria" + "@" + "managech.com";
+document.getElementById("emailFooter").href = "mailto:" + "segreteria" + "@" + "managech.com";
 </script>
+</body>
+</html>
