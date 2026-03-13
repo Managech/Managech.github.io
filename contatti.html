@@ -65,14 +65,12 @@ h1.hero-title { font-size: 4rem; font-weight: 800; letter-spacing: 4px; color: v
 
 /* INFO + MAPPA */
 .contact-container { display: flex; flex-wrap: wrap; max-width: 1200px; margin: 3rem auto; gap: 2rem; padding: 0 2rem; }
-
 .contact-info { flex: 1; min-width: 280px; background: #f4f4f4; border-radius: 8px; padding: 2rem; box-shadow: 0 5px 20px rgba(0,0,0,.1); }
 .contact-info img { width: 100%; max-width: 320px; height: auto; margin-bottom: 2rem; display: block; }
 .contact-info p { font-size: 1rem; margin: .8rem 0; display: flex; align-items: center; gap: .6rem; }
 .contact-info i { color: var(--green); width: 18px; flex-shrink: 0; }
 .contact-info a { color: var(--blue); text-decoration: none; }
 .contact-info a:hover { color: var(--green); }
-
 .contact-map { flex: 1.5; min-width: 300px; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,.1); }
 .contact-map iframe { display: block; width: 100%; height: 100%; min-height: 300px; border: 0; }
 
@@ -85,15 +83,16 @@ h1.hero-title { font-size: 4rem; font-weight: 800; letter-spacing: 4px; color: v
 .form-tags span { background: #fff; border: 1px solid var(--green); color: var(--blue); padding: .55rem 1.3rem; border-radius: 30px; font-size: .8rem; display: flex; align-items: center; gap: .5rem; font-weight: 500; }
 .form-tags i { color: var(--green); }
 form label { display: block; font-size: .85rem; margin-top: 1.2rem; }
-form input, form textarea { width: 100%; padding: .7rem; margin-top: .3rem; border: 1px solid #ccc; font-family: 'Montserrat', sans-serif; font-size: .9rem; }
+form input, form textarea { width: 100%; padding: .7rem; margin-top: .3rem; border: 1px solid #ccc; font-family: 'Montserrat', sans-serif; font-size: .9rem; border-radius: 4px; }
+form input:focus, form textarea:focus, form select:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px rgba(31,163,122,.15); }
 .phone-label { display: block; font-size: .85rem; margin-top: 1.2rem; }
 .phone-row { display: flex; gap: .5rem; align-items: stretch; margin-top: .3rem; }
-.phone-row select { flex: 0 0 160px; width: 160px; padding: .7rem .4rem .7rem .5rem; font-family: 'Montserrat', sans-serif; font-size: .82rem; border: 1px solid #ccc; background: #fff; cursor: pointer; height: auto; }
+.phone-row select { flex: 0 0 160px; width: 160px; padding: .7rem .4rem .7rem .5rem; font-family: 'Montserrat', sans-serif; font-size: .82rem; border: 1px solid #ccc; background: #fff; cursor: pointer; border-radius: 4px; }
 .phone-row input[type="tel"] { flex: 1; margin-top: 0; }
 form textarea { min-height: 120px; }
 form button { display: inline-block; margin-top: 2rem; background: var(--green); color: #fff; padding: .9rem 2rem; font-size: .95rem; font-weight: 600; border-radius: 6px; border: none; cursor: pointer; transition: background .3s, transform .3s; }
 form button:hover { background: #17845e; transform: translateY(-2px); }
-.privacy-check { display: grid; grid-template-columns: auto 1fr; gap: .6rem; align-items: start; margin-top: 1.5rem; font-size: .85rem; line-height: 1.4; cursor: pointer; }
+.privacy-check { display: grid; grid-template-columns: auto 1fr; gap: .6rem; align-items: start; margin-top: 1.5rem; font-size: .85rem; line-height: 1.4; }
 .privacy-check input[type="checkbox"] { margin: 0; padding: 0; width: 18px; height: 18px; cursor: pointer; }
 .privacy-check label { margin: 0; display: block; cursor: pointer; }
 .privacy-check a { color: var(--green); text-decoration: underline; }
@@ -104,33 +103,29 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
 .footer-logo { width: 100%; max-width: 320px; height: auto; margin-bottom: 1.5rem; display: block; }
 .footer-brand i { color: var(--green); margin-right: 8px; display: inline-block; width: 20px; }
 .footer-brand p { line-height: 1.8; color: #ccc; }
+footer a { color: #ccc; text-decoration: none; }
 .footer-links ul { list-style: none; padding: 0; margin: 0; }
 .footer-links li { margin: .6rem 0; }
-.footer-links a { color: #ccc; text-decoration: none; }
 .footer-bottom { text-align: center; margin-top: 3rem; font-size: .75rem; color: #888; }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
   header { height: 70px; }
   .navbar { padding: 0 1.5rem; }
-  .logo img { height: 42px; width: auto; }
+  .logo img { height: 42px; }
   .nav-links { display: none; }
   .hamburger { display: flex; }
-
   .hero { margin-top: 70px; min-height: 45vh; padding: 2rem 1.2rem; }
   h1.hero-title { font-size: clamp(1.8rem, 8vw, 3rem); letter-spacing: 1px; line-height: 1.3; }
-  .hero-subtitle { font-size: .9rem; letter-spacing: .3px; }
-
+  .hero-subtitle { font-size: .9rem; }
   .contact-intro { padding: 2rem 1.2rem; }
   .contact-intro p { font-size: 1rem; }
   .contact-container { margin: 2rem auto; padding: 0 1.2rem; flex-direction: column; }
   .contact-map iframe { min-height: 240px; }
-
   .form-section { padding: 3rem 1.2rem; }
   .form-wrapper h2 { font-size: 1.5rem; }
   .phone-row select { flex: 0 0 150px; width: 150px; font-size: .78rem; }
   form button { width: 100%; text-align: center; }
-
   .footer-inner { flex-direction: column; gap: 2rem; }
   .footer-logo { max-width: 300px; }
   footer { padding: 2.5rem 1.2rem 1.5rem; }
@@ -160,7 +155,7 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
       <li><a href="lavora-con-noi.html">Lavora con noi</a></li>
       <li><a href="case-study.html">Case Study</a></li>
     </ul>
-    <button class="hamburger" id="hamburger" aria-label="Apri menu di navigazione" aria-expanded="false" aria-controls="mobileMenu">
+    <button class="hamburger" id="hamburger" aria-label="Apri menu di navigazione" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </nav>
@@ -168,7 +163,6 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
 
 <main>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-content">
     <h1 class="hero-title">Contattaci</h1>
@@ -176,7 +170,6 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
   </div>
 </section>
 
-<!-- INTRO -->
 <section class="contact-intro">
   <p>
     Siamo a disposizione di imprese, professionisti e organizzazioni che desiderano approfondire i servizi di consulenza strategica, ingegneria gestionale e supporto decisionale offerti da MANAGECH.
@@ -184,14 +177,13 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
   </p>
 </section>
 
-<!-- INFO + MAPPA -->
 <div class="contact-container">
   <div class="contact-info">
     <img src="images/logo-su-bianco.jpg" alt="MANAGECH" width="320" height="100" loading="lazy">
     <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Piazza G. Mazzini 27, 00195 Roma</p>
     <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+393493907663">+39 349 390 7663</a></p>
-    <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0576606277607160776c644568646b646260666d2b666a68">[email&#160;protected]</a></p>
-    <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bcd1ddd2dddbd9dfd4fcccd9df92d5c8">[email&#160;protected]</a></p>
+    <p><i class="fas fa-envelope" aria-hidden="true"></i> segreteria@managech.com</p>
+    <p><i class="fas fa-envelope" aria-hidden="true"></i> managech@pec.it</p>
   </div>
   <div class="contact-map">
     <iframe
@@ -204,7 +196,6 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
   </div>
 </div>
 
-<!-- FORM -->
 <section class="form-section">
   <div class="form-wrapper">
     <h2>Definiamo insieme il percorso</h2>
@@ -309,7 +300,6 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
 
 </main>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
@@ -317,7 +307,7 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
       <p>
         <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Piazza G. Mazzini 27, 00195 Roma<br>
         <i class="fas fa-phone" aria-hidden="true"></i> +39 349 390 7663<br>
-        <i class="fas fa-envelope" aria-hidden="true"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6714020015021302150e06270a0609060002040f4904080a">[email&#160;protected]</a>
+        <i class="fas fa-envelope" aria-hidden="true"></i> segreteria@managech.com
       </p>
     </div>
     <nav aria-label="Footer navigation">
@@ -339,18 +329,31 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-document.addEventListener("DOMContentLoaded", function () {
-  var contactForm = document.getElementById("contactForm");
-  if (contactForm) {
-    contactForm.addEventListener("submit", function () {
-      var prefisso = document.getElementById("prefisso").value;
-      var telefono = document.getElementById("telefono").value;
-      document.getElementById("telefono_completo").value = prefisso + " " + telefono;
-    });
-  }
-  var hamburger = document.getElementById("hamburger");
-  var mobileMenu = document.getElementById("mobileMenu");
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener("click", function () {
-      var isOpen = hambu
+<script>
+var hamburger = document.getElementById("hamburger");
+var mobileMenu = document.getElementById("mobileMenu");
+
+hamburger.addEventListener("click", function() {
+  hamburger.classList.toggle("active");
+  mobileMenu.classList.toggle("active");
+});
+
+mobileMenu.querySelectorAll("a").forEach(function(link) {
+  link.addEventListener("click", function() {
+    hamburger.classList.remove("active");
+    mobileMenu.classList.remove("active");
+  });
+});
+
+var contactForm = document.getElementById("contactForm");
+if (contactForm) {
+  contactForm.addEventListener("submit", function() {
+    var prefisso = document.getElementById("prefisso").value;
+    var telefono = document.getElementById("telefono").value;
+    document.getElementById("telefono_completo").value = prefisso + " " + telefono;
+  });
+}
+</script>
+
+</body>
+</html>
