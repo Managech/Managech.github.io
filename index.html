@@ -578,8 +578,8 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
       <img src="images/1-4.png" alt="MANAGECH" class="footer-logo" loading="lazy">
       <p>
         <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Piazza G. Mazzini 27, 00195 Roma<br>
-        <i class="fas fa-phone" aria-hidden="true"></i> +39 349 390 7663<br>
-        <i class="fas fa-envelope" aria-hidden="true"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ea998f8d988f9e8f98838baa878b848b8d8f8982c4898587">[email&#160;protected]</a>
+       <i class="fas fa-phone" aria-hidden="true"></i> +39 349 390 7663<br>
+<i class="fas fa-envelope" aria-hidden="true"></i> <a id="emailFooter" href="#">segreteria@managech.com</a>
       </p>
     </div>
     <nav aria-label="Footer navigation">
@@ -625,6 +625,7 @@ if (contactForm) {
     if (completo) completo.value = prefisso + " " + telefono;
   });
 }
+  document.getElementById("emailFooter").href = "mailto:" + "segreteria" + "@" + "managech.com";
 </script>
 </body>
 </html>
