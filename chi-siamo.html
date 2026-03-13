@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
 <!-- PERFORMANCE: preload hero (LCP) -->
-<link rel="preload" as="image" href="images/hero-chi-siamo.jpg">
+<link rel="preload" as="image" href="images/hero-chi-siamo.jpg" fetchpriority="high">
 
 <!-- Google Fonts: non bloccante -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
@@ -57,9 +57,12 @@ header { position: fixed; top: 0; left: 0; width: 100%; height: 90px; background
 .mobile-menu a { color: #fff; font-size: 1.4rem; text-decoration: none; }
 
 /* HERO */
+.hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: 0; }
+.hero-overlay { position: absolute; inset: 0; background: rgba(11,31,51,.75); z-index: 1; }
+.hero-content { position: relative; z-index: 2; }
 .hero {
   margin-top: 90px; min-height: 50vh;
-  background: linear-gradient(rgba(11,31,51,.75), rgba(11,31,51,.75)), url("images/hero-chi-siamo.jpg") center / cover no-repeat;
+  position: relative; overflow: hidden;
   display: flex; align-items: center; justify-content: center; text-align: center; padding: 3rem 2rem;
 }
 .hero-content { max-width: 1100px; }
@@ -185,6 +188,8 @@ footer a { color: #ccc; text-decoration: none; }
 <main>
 
 <section class="hero">
+  <img src="images/hero-chi-siamo.jpg" alt="Hero Chi Siamo MANAGECH" class="hero-bg" fetchpriority="high" decoding="async" width="1920" height="1080">
+  <div class="hero-overlay"></div>
   <div class="hero-content">
     <h1 class="hero-title">Ingegneria manageriale al servizio di decisioni complesse</h1>
     <p class="hero-subtitle">Affianchiamo imprese e professionisti per creare valore, migliorare le performance e ridurre i rischi</p>
@@ -263,28 +268,28 @@ footer a { color: #ccc; text-decoration: none; }
       <h3>Giulio Gargano</h3>
       <p class="role">Founder &amp; CEO</p>
       <p class="contact"><i class="fas fa-phone" aria-hidden="true"></i> +39 335 811 6800</p>
-      <p class="contact"><i class="fas fa-envelope" aria-hidden="true"></i> giulio.gargano@managech.com</p>
+      <p class="contact"><i class="fas fa-envelope" aria-hidden="true"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f6919f839a9f99d891978491979899b69b9798979193959ed895999b">[email&#160;protected]</a></p>
     </div>
     <div class="team-member">
       <img src="images/petulla.jpg" alt="Stefano Petulla Founder e Managing Partner MANAGECH" width="120" height="120" loading="lazy">
       <h3>Stefano Petull&agrave;</h3>
       <p class="role">Founder &amp; Managing Partner</p>
       <p class="contact"><i class="fas fa-phone" aria-hidden="true"></i> +39 349 390 7663</p>
-      <p class="contact"><i class="fas fa-envelope" aria-hidden="true"></i> stefano.petulla@managech.com</p>
+      <p class="contact"><i class="fas fa-envelope" aria-hidden="true"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7407001112151a1b5a041100011818153419151a151311171c5a171b19">[email&#160;protected]</a></p>
     </div>
     <div class="team-member">
       <img src="images/leotta.jpg" alt="Giuliano Leotta Consulenza Direzionale MANAGECH" width="120" height="120" loading="lazy">
       <h3>Giuliano Leotta</h3>
       <p class="role">Consulenza Direzionale</p>
       <p class="contact"><i class="fas fa-phone" aria-hidden="true"></i> +39 339 505 5186</p>
-      <p class="contact"><i class="fas fa-envelope" aria-hidden="true"></i> giuliano.leotta@managech.com</p>
+      <p class="contact"><i class="fas fa-envelope" aria-hidden="true"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cdaaa4b8a1a4aca3a2e3a1a8a2b9b9ac8da0aca3acaaa8aea5e3aea2a0">[email&#160;protected]</a></p>
     </div>
     <div class="team-member">
       <img src="images/anna.jpg" alt="Anna Neri Gestione Gare e Commesse MANAGECH" width="120" height="120" loading="lazy">
       <h3>Anna Neri</h3>
       <p class="role">Gestione Gare e Commesse</p>
       <p class="contact"><i class="fas fa-phone" aria-hidden="true"></i> +39 349 777 8888</p>
-      <p class="contact"><i class="fas fa-envelope" aria-hidden="true"></i> a.neri@managech.com</p>
+      <p class="contact"><i class="fas fa-envelope" aria-hidden="true"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4627682823342f062b2728272123252e6825292b">[email&#160;protected]</a></p>
     </div>
   </div>
 </section>
@@ -298,7 +303,7 @@ footer a { color: #ccc; text-decoration: none; }
       <p>
         <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Piazza G. Mazzini 27, 00195 Roma<br>
         <i class="fas fa-phone" aria-hidden="true"></i> +39 349 390 7663<br>
-        <i class="fas fa-envelope" aria-hidden="true"></i> segreteria@managech.com
+        <i class="fas fa-envelope" aria-hidden="true"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e89b8d8f9a8d9c8d9a8189a8858986898f8d8b80c68b8785">[email&#160;protected]</a>
       </p>
     </div>
     <nav aria-label="Footer navigation">
@@ -313,29 +318,4 @@ footer a { color: #ccc; text-decoration: none; }
           <li><a href="cookie-policy.html">Cookie Policy</a></li>
         </ul>
       </div>
-    </nav>
-  </div>
-  <div class="footer-bottom">
-    &copy; 2026 MANAGECH - INGEGNERIA &amp; MANAGEMENT STUDIO ASSOCIATO | P. IVA 18387251004
-  </div>
-</footer>
-
-<script>
-var hamburger = document.getElementById("hamburger");
-var mobileMenu = document.getElementById("mobileMenu");
-
-hamburger.addEventListener("click", function() {
-  hamburger.classList.toggle("active");
-  mobileMenu.classList.toggle("active");
-});
-
-mobileMenu.querySelectorAll("a").forEach(function(link) {
-  link.addEventListener("click", function() {
-    hamburger.classList.remove("active");
-    mobileMenu.classList.remove("active");
-  });
-});
-</script>
-
-</body>
-</html>
+    
