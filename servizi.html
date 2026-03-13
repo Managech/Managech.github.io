@@ -378,7 +378,7 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
       <p>
         <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Piazza G. Mazzini 27, 00195 Roma<br>
         <i class="fas fa-phone" aria-hidden="true"></i> +39 349 390 7663<br>
-        <i class="fas fa-envelope" aria-hidden="true"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2754424055425342554e46674a4649464042444f0944484a">[email&#160;protected]</a>
+        <i class="fas fa-envelope" aria-hidden="true"></i> segreteria@managech.com
       </p>
     </div>
     <nav aria-label="Footer navigation">
@@ -400,15 +400,23 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-document.addEventListener("DOMContentLoaded", function () {
-  var hamburger = document.getElementById("hamburger");
-  var mobileMenu = document.getElementById("mobileMenu");
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener("click", function () {
-      var isOpen = hamburger.classList.toggle("active");
-      mobileMenu.classList.toggle("active");
-      hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    });
-    mobileMenu.querySelectorAll("a").forEach(function (link) {
-      link.addEventLi
+
+<script>
+var hamburger = document.getElementById("hamburger");
+var mobileMenu = document.getElementById("mobileMenu");
+
+hamburger.addEventListener("click", function() {
+  hamburger.classList.toggle("active");
+  mobileMenu.classList.toggle("active");
+});
+
+mobileMenu.querySelectorAll("a").forEach(function(link) {
+  link.addEventListener("click", function() {
+    hamburger.classList.remove("active");
+    mobileMenu.classList.remove("active");
+  });
+});
+</script>
+
+</body>
+</html>
