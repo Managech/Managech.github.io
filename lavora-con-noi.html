@@ -440,41 +440,30 @@ footer a { color: #ccc; text-decoration: none; }
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  // Form candidatura: concatena prefisso + numero
-  var form = document.getElementById("candidaturaForm");
-  if (form) {
-    form.addEventListener("submit", function () {
-      var prefisso = document.getElementById("prefisso").value;
-      var telefono = document.getElementById("telefono").value;
-      document.getElementById("telefono_completo").value = prefisso + " " + telefono;
-    });
-  }
-
-  // CV file status
-  var fileInput = document.getElementById("cv");
-  var status = document.getElementById("cv-status");
-  if (fileInput && status) {
-    fileInput.addEventListener("change", function () {
-      if (fileInput.files.length > 0) {
-        status.textContent = "✔ CV caricato correttamente: " + fileInput.files[0].name;
-        status.style.display = "block";
-      } else {
-        status.style.display = "none";
-      }
-    });
-  }
-
-  // Hamburger menu
-  var hamburger = document.getElementById("hamburger");
-  var mobileMenu = document.getElementById("mobileMenu");
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener("click", function () {
-      var isOpen = hamburger.classList.toggle("active");
-      mobileMenu.classList.toggle("active");
-      hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    });
-    mobileMenu.querySelectorAll("a").forEach(function (link) {
-      link.addEventLis
+<script>
+var hamburger = document.getElementById("hamburger");
+var mobileMenu = document.getElementById("mobileMenu");
+hamburger.addEventListener("click", function() {
+  hamburger.classList.toggle("active");
+  mobileMenu.classList.toggle("active");
+  hamburger.setAttribute("aria-expanded", hamburger.classList.contains("active") ? "true" : "false");
+});
+mobileMenu.querySelectorAll("a").forEach(function(link) {
+  link.addEventListener("click", function() {
+    hamburger.classList.remove("active");
+    mobileMenu.classList.remove("active");
+    hamburger.setAttribute("aria-expanded", "false");
+  });
+});
+var contactForm = document.getElementById("contactForm");
+if (contactForm) {
+  contactForm.addEventListener("submit", function() {
+    var prefisso = document.getElementById("prefisso").value;
+    var telefono = document.getElementById("telefono").value;
+    var completo = document.getElementById("telefono_completo");
+    if (completo) completo.value = prefisso + " " + telefono;
+  });
+}
+</script>
+</body>
+</html>
