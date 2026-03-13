@@ -61,7 +61,7 @@ h1.hero-title { font-size: 4rem; font-weight: 800; letter-spacing: 4px; color: v
 
 /* INTRO */
 .contact-intro { padding: 3rem 2rem; text-align: center; background: #f4f4f4; }
-.contact-intro p { max-width: 900px; margin: 0 auto; font-size: 1.1rem; line-height: 1.7; color: var(--blue); }
+.contact-intro p { max-width: 900px; margin: 0 auto; font-size: 1.1rem; line-height: 1.7; color: var(--blue); text-align: justify; }
 
 /* INFO + MAPPA */
 .contact-container { display: flex; flex-wrap: wrap; max-width: 1200px; margin: 3rem auto; gap: 2rem; padding: 0 2rem; }
@@ -190,8 +190,8 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
     <img src="images/logo-su-bianco.jpg" alt="MANAGECH" width="320" height="100" loading="lazy">
     <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Piazza G. Mazzini 27, 00195 Roma</p>
     <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+393493907663">+39 349 390 7663</a></p>
-    <p><i class="fas fa-envelope" aria-hidden="true"></i> segreteria@managech.com</p>
-    <p><i class="fas fa-envelope" aria-hidden="true"></i> managech@pec.it</p>
+    <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0576606277607160776c644568646b646260666d2b666a68">[email&#160;protected]</a></p>
+    <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bcd1ddd2dddbd9dfd4fcccd9df92d5c8">[email&#160;protected]</a></p>
   </div>
   <div class="contact-map">
     <iframe
@@ -317,7 +317,7 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
       <p>
         <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Piazza G. Mazzini 27, 00195 Roma<br>
         <i class="fas fa-phone" aria-hidden="true"></i> +39 349 390 7663<br>
-        <i class="fas fa-envelope" aria-hidden="true"></i> segreteria@managech.com
+        <i class="fas fa-envelope" aria-hidden="true"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6714020015021302150e06270a0609060002040f4904080a">[email&#160;protected]</a>
       </p>
     </div>
     <nav aria-label="Footer navigation">
@@ -339,7 +339,7 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 document.addEventListener("DOMContentLoaded", function () {
   var contactForm = document.getElementById("contactForm");
   if (contactForm) {
@@ -353,20 +353,4 @@ document.addEventListener("DOMContentLoaded", function () {
   var mobileMenu = document.getElementById("mobileMenu");
   if (hamburger && mobileMenu) {
     hamburger.addEventListener("click", function () {
-      var isOpen = hamburger.classList.toggle("active");
-      mobileMenu.classList.toggle("active");
-      hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    });
-    mobileMenu.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", function () {
-        hamburger.classList.remove("active");
-        mobileMenu.classList.remove("active");
-        hamburger.setAttribute("aria-expanded", "false");
-      });
-    });
-  }
-});
-</script>
-
-</body>
-</html>
+      var isOpen = hambu
