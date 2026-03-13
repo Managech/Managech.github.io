@@ -187,8 +187,8 @@ footer a { color: #ccc; text-decoration: none; }
     <img src="images/logo-su-bianco.jpg" alt="MANAGECH" width="320" height="100" loading="lazy">
     <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Piazza G. Mazzini 27, 00195 Roma</p>
     <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+393493907663">+39 349 390 7663</a></p>
-    <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d5a6b0b2a7b0a1b0a7bcb495b8b4bbb4b2b0b6bdfbb6bab8">[email&#160;protected]</a></p>
-    <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="472a2629262022242f07372224692e33">[email&#160;protected]</a></p>
+    <p><i class="fas fa-envelope" aria-hidden="true"></i> segreteria@managech.com</p>
+    <p><i class="fas fa-envelope" aria-hidden="true"></i> managech@pec.it</p>
   </div>
   <div class="contact-map">
     <iframe
@@ -334,14 +334,30 @@ footer a { color: #ccc; text-decoration: none; }
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 var hamburger = document.getElementById("hamburger");
 var mobileMenu = document.getElementById("mobileMenu");
-
 hamburger.addEventListener("click", function() {
   hamburger.classList.toggle("active");
   mobileMenu.classList.toggle("active");
+  hamburger.setAttribute("aria-expanded", hamburger.classList.contains("active") ? "true" : "false");
 });
-
 mobileMenu.querySelectorAll("a").forEach(function(link) {
-  link.addEventListener("click", funct
+  link.addEventListener("click", function() {
+    hamburger.classList.remove("active");
+    mobileMenu.classList.remove("active");
+    hamburger.setAttribute("aria-expanded", "false");
+  });
+});
+var contactForm = document.getElementById("contactForm");
+if (contactForm) {
+  contactForm.addEventListener("submit", function() {
+    var prefisso = document.getElementById("prefisso").value;
+    var telefono = document.getElementById("telefono").value;
+    var completo = document.getElementById("telefono_completo");
+    if (completo) completo.value = prefisso + " " + telefono;
+  });
+}
+</script>
+</body>
+</html>
