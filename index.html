@@ -313,9 +313,9 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
   </div>
 </section>
 <div class="kb-banner" id="kbBanner">
-  <div class="kb-slide active"><img src="images/ai4.webp" alt="AI e Digital Analytics MANAGECH" loading="lazy"></div>
-  <div class="kb-slide kb-s2"><img src="images/controllo-gestione.webp" alt="Controllo di gestione MANAGECH" loading="lazy"></div>
-  <div class="kb-slide kb-s3"><img src="images/system-integration3.webp" alt="System Integration MANAGECH" loading="lazy"></div>
+  <div class="kb-slide active"><img src="images/ai4.webp" alt="AI e Digital Analytics MANAGECH"></div>
+  <div class="kb-slide kb-s2"><img data-src="images/controllo-gestione.webp" src="" alt="Controllo di gestione MANAGECH"></div>
+  <div class="kb-slide kb-s3"><img data-src="images/system-integration3.webp" src="" alt="System Integration MANAGECH"></div>
   <div class="kb-overlay"></div>
   <div class="kb-content">
     <p class="kb-label">Innovazione &amp; Trasformazione Digitale</p>
@@ -532,6 +532,7 @@ document.getElementById("emailFooter").href = "mailto:" + "segreteria" + "@" + "
     dots[cur].classList.remove('active');
     cur = (n + total) % total;
     var img = slides[cur].querySelector('img');
+    if(img.dataset.src){ img.src = img.dataset.src; delete img.dataset.src; }
     img.style.animation = 'none';
     slides[cur].classList.add('active');
     dots[cur].classList.add('active');
