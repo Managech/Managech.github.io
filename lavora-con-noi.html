@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
 <!-- PERFORMANCE: preload hero (LCP) -->
-<link rel="preload" as="image" href="images/hero-lavora-con-noi.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="images/hero-lavora-con-noi.webp" fetchpriority="high">
 
 <!-- Google Fonts: non bloccante -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
@@ -78,7 +78,6 @@ h1.hero-title { font-size: 4rem; font-weight: 800; letter-spacing: 4px; color: v
 .form-section h2 { font-size: 2.4rem; color: var(--green); font-weight: 700; margin-bottom: 2rem; line-height: 1.2; letter-spacing: 1px; text-align: left; }
 .form-wrapper { max-width: 760px; margin: auto; }
 .wide-section .form-wrapper { max-width: 1100px; }
-
 .block-text-form { font-size: 1.15rem; line-height: 1.7; color: var(--blue); margin-bottom: 2rem; text-align: justify; }
 .block-text-form + .block-text-form { margin-top: 0; }
 
@@ -113,7 +112,6 @@ h1.hero-title { font-size: 4rem; font-weight: 800; letter-spacing: 4px; color: v
   margin: auto;
 }
 .form-candidatura h2 { font-size: 2.4rem; color: var(--green); font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2; letter-spacing: 1px; }
-
 form label { display: block; font-size: .85rem; margin-top: 1.2rem; }
 form input, form textarea {
   width: 100%; padding: .7rem; margin-top: .3rem;
@@ -137,7 +135,6 @@ form input:focus, form textarea:focus, form select:focus {
   border-radius: 6px; cursor: pointer; height: auto;
 }
 .phone-row input[type="tel"] { flex: 1; margin-top: 0; }
-
 form textarea { min-height: 120px; }
 form button {
   display: inline-block; margin-top: 2rem;
@@ -183,41 +180,34 @@ footer a { color: #ccc; text-decoration: none; }
 @media (max-width: 900px) {
   .form-tags { grid-template-columns: repeat(2, 1fr); }
 }
-
 @media (max-width: 768px) {
   header { height: 70px; }
   .navbar { padding: 0 1.5rem; }
   .logo img { height: 42px; }
   .nav-links { display: none; }
   .hamburger { display: flex; }
-
   .hero { margin-top: 70px; min-height: 55vh; padding: 2rem 1.5rem; }
   h1.hero-title { font-size: clamp(1.8rem, 8vw, 2.8rem); letter-spacing: 1px; line-height: 1.3; }
   .hero-subtitle { font-size: .95rem; letter-spacing: .5px; line-height: 1.6; }
-
   .contact-intro { padding: 2rem 1.2rem; }
   .contact-intro p { font-size: 1rem; }
-
   .form-section { padding: 3rem 1.2rem; }
   .form-section h2 { font-size: 1.6rem; }
-
   .form-candidatura { padding: 3rem 1.2rem; }
   .form-candidatura h2 { font-size: 1.5rem; }
   .form-candidatura .form-wrapper { padding: 1.5rem; }
-
   .phone-row select { flex: 0 0 150px; width: 150px; font-size: .78rem; }
   form button { width: 100%; text-align: center; }
-
   .footer-inner { flex-direction: column; gap: 2rem; }
   .footer-logo { max-width: 300px; }
   footer { padding: 2.5rem 1.2rem 1.5rem; }
 }
-
 @media (max-width: 520px) {
   .form-tags { grid-template-columns: 1fr; }
 }
 </style>
 </head>
+
 <body>
 
 <!-- Mobile menu FUORI dall'header -->
@@ -241,7 +231,6 @@ footer a { color: #ccc; text-decoration: none; }
       <li><a href="lavora-con-noi.html">Lavora con noi</a></li>
       <li><a href="case-study.html">Case Study</a></li>
     </ul>
-    <!-- ACCESSIBILITY: button invece di div -->
     <button class="hamburger" id="hamburger" aria-label="Apri menu di navigazione" aria-expanded="false" aria-controls="mobileMenu">
       <span></span><span></span><span></span>
     </button>
@@ -317,7 +306,6 @@ footer a { color: #ccc; text-decoration: none; }
       Valuteremo il tuo profilo con attenzione e ti contatteremo
       qualora emergano opportunità coerenti.
     </p>
-
     <form id="candidaturaForm" action="https://formspree.io/f/xreqljvv" method="POST" enctype="multipart/form-data">
       <input type="hidden" name="_subject" value="Nuova candidatura dal sito MANAGECH">
       <input type="hidden" name="_template" value="table">
@@ -386,7 +374,7 @@ footer a { color: #ccc; text-decoration: none; }
       <label for="cv">Curriculum Vitae*</label>
       <div class="file-upload">
         <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
-        <span>Allega CV</span>
+        <span><i class="fas fa-paperclip" aria-hidden="true"></i> Allega CV</span>
       </div>
       <p id="cv-status" class="file-status"></p>
       <p style="font-size:.75rem; color:#666; margin-top:.4rem;">Formati accettati: PDF, DOC, DOCX. Dimensione massima consigliata: 5MB.</p>
@@ -418,8 +406,7 @@ footer a { color: #ccc; text-decoration: none; }
       <p>
         <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Piazza G. Mazzini 27, 00195 Roma<br>
         <i class="fas fa-phone" aria-hidden="true"></i> +39 349 390 7663<br>
-
-<i class="fas fa-envelope" aria-hidden="true"></i> <a id="emailFooter" href="#">segreteria@managech.com</a>
+        <i class="fas fa-envelope" aria-hidden="true"></i> <a id="emailFooter" href="#">segreteria@managech.com</a>
       </p>
     </div>
     <nav aria-label="Footer navigation">
@@ -456,16 +443,24 @@ mobileMenu.querySelectorAll("a").forEach(function(link) {
     hamburger.setAttribute("aria-expanded", "false");
   });
 });
-var contactForm = document.getElementById("contactForm");
-if (contactForm) {
-  contactForm.addEventListener("submit", function() {
+var candidaturaForm = document.getElementById("candidaturaForm");
+if (candidaturaForm) {
+  candidaturaForm.addEventListener("submit", function() {
     var prefisso = document.getElementById("prefisso").value;
     var telefono = document.getElementById("telefono").value;
     var completo = document.getElementById("telefono_completo");
     if (completo) completo.value = prefisso + " " + telefono;
   });
 }
-  document.getElementById("emailFooter").href = "mailto:" + "segreteria" + "@" + "managech.com";
+document.getElementById("cv").addEventListener("change", function() {
+  var status = document.getElementById("cv-status");
+  if (this.files && this.files[0]) {
+    status.textContent = "File selezionato: " + this.files[0].name;
+    status.style.display = "block";
+  }
+});
+document.getElementById("emailFooter").href = "mailto:" + "segreteria" + "@" + "managech.com";
 </script>
+
 </body>
 </html>
