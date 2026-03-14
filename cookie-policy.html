@@ -6,12 +6,17 @@
 <title>MANAGECH – Cookie Policy</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="format-detection" content="telephone=no">
-  
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!-- Google Fonts: non bloccante -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+
+<!-- Font Awesome: non bloccante -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
 
 <style>
 :root{
@@ -95,13 +100,72 @@ header{
   width:100%;
 }
 
+/* ================= HAMBURGER ================= */
+.hamburger{
+  display:none;
+  flex-direction:column;
+  gap:6px;
+  cursor:pointer;
+  background:none;
+  border:none;
+  padding:4px;
+}
+
+.hamburger span{
+  width:25px;
+  height:3px;
+  background:#fff;
+  transition:.4s;
+  display:block;
+}
+
+.hamburger.active span:nth-child(1){
+  transform:rotate(45deg) translate(5px,5px);
+}
+
+.hamburger.active span:nth-child(2){
+  opacity:0;
+}
+
+.hamburger.active span:nth-child(3){
+  transform:rotate(-45deg) translate(6px,-6px);
+}
+
+/* ================= MOBILE MENU ================= */
+.mobile-menu{
+  position:fixed;
+  top:70px;
+  left:0;
+  width:100%;
+  background:var(--blue);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:1.8rem;
+  padding:2rem 0;
+  transform:translateY(-150%);
+  transition:transform .4s ease;
+  z-index:999;
+  box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+.mobile-menu.active{
+  transform:translateY(0);
+}
+
+.mobile-menu a{
+  color:#fff;
+  font-size:1.4rem;
+  text-decoration:none;
+}
+
 /* ================= HERO ================= */
 .hero{
   margin-top:90px;
   padding:5rem 2rem;
   background:
     linear-gradient(rgba(11,31,51,.8),rgba(11,31,51,.8)),
-    url("images/hero-bg.jpg") center/cover no-repeat;
+    url("images/hero-bg.webp") center/cover no-repeat;
   text-align:center;
 }
 
@@ -161,62 +225,35 @@ footer{
   flex-wrap:wrap;
   gap:3rem;
 }
-  
+
 .footer-logo {
-  max-width: 280px;   /* regolabile */
-  width: 100%;
-  margin-bottom: 1.5rem;
-  display: block;
-}
-
-.footer-brand h3{
-  margin:0;
-  color:var(--green);
-  font-size:1.6rem;
-}
-
-.footer-brand h4{
-  margin:.3rem 0 1.5rem;
-  font-weight:400;
-  color:#aaa;
+  max-width:280px;
+  width:100%;
+  margin-bottom:1.5rem;
+  display:block;
 }
 
 .footer-brand i{
   color:var(--green);
   margin-right:8px;
+  display:inline-block;
+  width:20px;
+}
+
+.footer-brand p {
+  line-height:1.8;
 }
 
 .footer-links ul{
   list-style:none;
   padding:0;
-  margin: 0;
+  margin:0;
 }
 
 .footer-links li{
   margin:.6rem 0;
 }
 
-.footer-links a{
-  color:#ccc;
-  text-decoration:none;
-}
-
-.footer-bottom{
-  text-align:center;
-  margin-top:3rem;
-  font-size:.75rem;
-  color:#888;
-}
-  
-.footer-brand p {
-  line-height: 1.8;
-}
-
-.footer-brand p i {
-  display: inline-block;
-  width: 20px;
-}
-/* Forza stile link nel footer */
 footer a{
   color:#ccc;
   text-decoration:none;
@@ -230,8 +267,16 @@ footer a:hover{
   color:#ccc;
   text-decoration:none;
 }
-  /* ================= MOBILE HERO ================= */
-@media (max-width: 768px){
+
+.footer-bottom{
+  text-align:center;
+  margin-top:3rem;
+  font-size:.75rem;
+  color:#888;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width:768px){
 
   header{
     height:70px;
@@ -240,90 +285,10 @@ footer a:hover{
   .navbar{
     padding:0 1.5rem;
   }
-  
-  .logo img {
-    height:42px; /* leggermente più piccolo su mobile */
-}
-  
-  .hero{
-    margin-top:70px;
-    min-height:60vh;
-    padding:2rem 1.5rem;
+
+  .logo img{
+    height:42px;
   }
-
-  .hero-title{
-    font-size:1.9rem;
-    letter-spacing:1px;
-    line-height:1.3;
-  }
-
-  .hero-subtitle{
-    font-size:.95rem;
-    letter-spacing:0.5px;
-    line-height:1.6;
-  }
-
-}
-
-  /* ================= HAMBURGER ================= */
-
-.hamburger{
-  display:none;
-  flex-direction:column;
-  gap:6px;
-  cursor:pointer;
-}
-
-.hamburger span{
-  width:25px;
-  height:3px;
-  background:#fff;
-  transition:.4s;
-}
-
-.hamburger.active span:nth-child(1){
-  transform:rotate(45deg) translate(5px,5px);
-}
-
-.hamburger.active span:nth-child(2){
-  opacity:0;
-}
-
-.hamburger.active span:nth-child(3){
-  transform:rotate(-45deg) translate(6px,-6px);
-}
-
-/* MOBILE MENU */
-
-.mobile-menu{
-  position:fixed;
-  top:70px;                /* parte sotto header mobile */
-  left:0;
-  width:100%;
-  background:var(--blue);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:1.8rem;
-  padding:2rem 0;
-  transform:translateY(-120%);
-  transition:transform .4s ease;
-  z-index:999;
-  box-shadow:0 10px 30px rgba(0,0,0,0.3);
-}
-
-.mobile-menu.active{
-  transform:translateY(0);
-}
-
-.mobile-menu a{
-  color:#fff;
-  font-size:1.4rem;
-  text-decoration:none;
-}
-
-/* NASCONDE MENU DESKTOP SU MOBILE */
-@media(max-width:768px){
 
   .nav-links{
     display:none;
@@ -333,17 +298,48 @@ footer a:hover{
     display:flex;
   }
 
-}
+  .hero{
+    margin-top:70px;
+    min-height:60vh;
+    padding:2rem 1.5rem;
+  }
 
-  
+  .hero h1{
+    font-size:1.9rem;
+    letter-spacing:1px;
+    line-height:1.3;
+  }
+
+  .hero p{
+    font-size:.95rem;
+    letter-spacing:0.5px;
+    line-height:1.6;
+  }
+
+  .cookie-section{
+    padding:3rem 1.2rem;
+  }
+
+  .footer-inner{
+    flex-direction:column;
+    gap:2rem;
+  }
+
+  .footer-logo{
+    max-width:300px;
+  }
+
+  footer{
+    padding:2.5rem 1.2rem 1.5rem;
+  }
+}
 </style>
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
-<header>
-  <div class="mobile-menu" id="mobileMenu">
+<!-- Mobile menu FUORI dall'header -->
+<div class="mobile-menu" id="mobileMenu">
   <a href="chi-siamo.html">Chi siamo</a>
   <a href="servizi.html">Servizi</a>
   <a href="contatti.html">Contatti</a>
@@ -351,10 +347,11 @@ footer a:hover{
   <a href="case-study.html">Case Study</a>
 </div>
 
+<header>
   <nav class="navbar">
     <div class="logo">
       <a href="index.html">
-        <img src="images/1-4.webp">
+        <img src="images/1-4.webp" alt="MANAGECH">
       </a>
     </div>
     <ul class="nav-links">
@@ -364,19 +361,18 @@ footer a:hover{
       <li><a href="lavora-con-noi.html">Lavora con noi</a></li>
       <li><a href="case-study.html">Case Study</a></li>
     </ul>
-    <div class="hamburger" id="hamburger">
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
-
+    <button class="hamburger" id="hamburger" aria-label="Apri menu di navigazione" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
 </header>
 
 <!-- ================= HERO ================= -->
 <section class="hero">
   <h1>Cookie Policy</h1>
-  <p>Informativa sull’utilizzo dei cookie</p>
+  <p>Informativa sull'utilizzo dei cookie</p>
 </section>
 
 <!-- ================= CONTENT ================= -->
@@ -384,7 +380,7 @@ footer a:hover{
 
   <h2>1. Cosa sono i cookie</h2>
   <p>
-    I cookie sono piccoli file di testo che i siti visitati inviano al dispositivo dell’utente,
+    I cookie sono piccoli file di testo che i siti visitati inviano al dispositivo dell'utente,
     dove vengono memorizzati per essere poi ritrasmessi agli stessi siti alla visita successiva.
   </p>
 
@@ -394,7 +390,7 @@ footer a:hover{
   </p>
   <ul>
     <li><strong>Cookie tecnici</strong>: necessari al corretto funzionamento del sito e non richiedono consenso.</li>
-    <li><strong>Cookie di funzionalità</strong>: migliorano l’esperienza di navigazione.</li>
+    <li><strong>Cookie di funzionalità</strong>: migliorano l'esperienza di navigazione.</li>
     <li><strong>Cookie analitici</strong>: utilizzati in forma aggregata per analisi statistiche.</li>
   </ul>
 
@@ -406,7 +402,7 @@ footer a:hover{
 
   <h2>4. Gestione del consenso</h2>
   <p>
-    L’utente può esprimere o revocare il consenso all’uso dei cookie non tecnici tramite il banner
+    L'utente può esprimere o revocare il consenso all'uso dei cookie non tecnici tramite il banner
     di gestione dei cookie presente sul sito.
   </p>
 
@@ -418,7 +414,7 @@ footer a:hover{
 
   <h2>6. Titolare del trattamento</h2>
   <p>
-    Titolare del trattamento è <strong>MANAGECH – Ingegneria & Management Studio Associato</strong>,
+    Titolare del trattamento è <strong>MANAGECH – Ingegneria &amp; Management Studio Associato</strong>,
     Piazza Mazzini 27, 00195 Roma – Email: <strong>segreteria@managech.com</strong>
   </p>
 
@@ -427,61 +423,50 @@ footer a:hover{
 <!-- ================= FOOTER ================= -->
 <footer>
   <div class="footer-inner">
-  <div class="footer-brand">
-    <img src="images/1-4.webp" alt="MANAGECH" class="footer-logo">
-    <p>
-      <i class="fas fa-map-marker-alt"></i> Piazza G. Mazzini 27, 00195 Roma<br>
-      <i class="fas fa-phone"></i> +39 349 390 7663<br>
-
-<i class="fas fa-envelope" aria-hidden="true"></i> <a id="emailFooter" href="#">segreteria@managech.com</a>
-    </p>
+    <div class="footer-brand">
+      <img src="images/1-4.webp" alt="MANAGECH" class="footer-logo" loading="lazy">
+      <p>
+        <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Piazza G. Mazzini 27, 00195 Roma<br>
+        <i class="fas fa-phone" aria-hidden="true"></i> +39 349 390 7663<br>
+        <i class="fas fa-envelope" aria-hidden="true"></i> <a id="emailFooter" href="#">segreteria@managech.com</a>
+      </p>
+    </div>
+    <nav aria-label="Footer navigation">
+      <div class="footer-links">
+        <ul>
+          <li><a href="chi-siamo.html">Chi siamo</a></li>
+          <li><a href="servizi.html">Servizi</a></li>
+          <li><a href="contatti.html">Contatti</a></li>
+          <li><a href="lavora-con-noi.html">Lavora con noi</a></li>
+          <li><a href="case-study.html">Case Study</a></li>
+          <li><a href="informativa-privacy.html">Informativa Privacy</a></li>
+          <li><a href="cookie-policy.html">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </nav>
   </div>
-
-  <div class="footer-links">
-    <ul>
-      <li><a href="chi-siamo.html">Chi siamo</a></li>
-      <li><a href="servizi.html">Servizi</a></li>
-      <li><a href="contatti.html">Contatti</a></li>
-      <li><a href="lavora-con-noi.html">Lavora con noi</a></li>
-      <li><a href="case-study.html">Case Study</a></li>
-      <li><a href="informativa-privacy.html">Informativa Privacy</a></li>
-      <li><a href="cookie-policy.html">Cookie Policy</a></li>
-    </ul>
+  <div class="footer-bottom">
+    &copy; 2026 MANAGECH - INGEGNERIA &amp; MANAGEMENT STUDIO ASSOCIATO | P. IVA 18387251004
   </div>
-</div>
-
-<div class="footer-bottom">
-  © 2026 MANAGECH - INGEGNERIA & MANAGEMENT STUDIO ASSOCIATO | P. IVA 18387251004
-</div>
-
 </footer>
 
-<!-- ================= SCRIPT FADE-IN ================= -->
 <script>
-const faders = document.querySelectorAll('.fade-in');
-const appearOptions = { threshold:0.1, rootMargin:"0px 0px -50px 0px" };
-const appearOnScroll = new IntersectionObserver(function(entries, observer){
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('appear');
-      observer.unobserve(entry.target);
-    }
-  });
-}, appearOptions);
-
-faders.forEach(fader => appearOnScroll.observe(fader));
-const hamburger = document.getElementById("hamburger");
-const mobileMenu = document.getElementById("mobileMenu");
-
-hamburger.addEventListener("click", () => {
+var hamburger = document.getElementById("hamburger");
+var mobileMenu = document.getElementById("mobileMenu");
+hamburger.addEventListener("click", function() {
   hamburger.classList.toggle("active");
   mobileMenu.classList.toggle("active");
+  hamburger.setAttribute("aria-expanded", hamburger.classList.contains("active") ? "true" : "false");
+});
+mobileMenu.querySelectorAll("a").forEach(function(link) {
+  link.addEventListener("click", function() {
+    hamburger.classList.remove("active");
+    mobileMenu.classList.remove("active");
+    hamburger.setAttribute("aria-expanded", "false");
+  });
 });
 document.getElementById("emailFooter").href = "mailto:" + "segreteria" + "@" + "managech.com";
-  
 </script>
 
-  
 </body>
 </html>
-
