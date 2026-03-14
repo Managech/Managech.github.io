@@ -69,7 +69,7 @@ h1.hero-title { font-size: 4rem; font-weight: 800; letter-spacing: 4px; color: v
 /* INFO + MAPPA */
 .contact-container { display: flex; flex-wrap: wrap; max-width: 1200px; margin: 3rem auto; gap: 2rem; padding: 0 2rem; }
 .contact-info { flex: 1; min-width: 280px; background: #f4f4f4; border-radius: 8px; padding: 2rem; box-shadow: 0 5px 20px rgba(0,0,0,.1); }
-.contact-info  { width: 100%; max-width: 320px; height: auto; margin-bottom: 2rem; display: block; }
+.contact-info img { width: 100%; max-width: 220px; height: auto; margin-bottom: 2rem; display: block; }
 .contact-info p { font-size: 1rem; margin: .8rem 0; display: flex; align-items: center; gap: .6rem; }
 .contact-info i { color: var(--green); width: 18px; flex-shrink: 0; }
 .contact-info a { color: var(--blue); text-decoration: none; }
@@ -115,7 +115,7 @@ footer a { color: #ccc; text-decoration: none; }
 @media (max-width: 768px) {
   header { height: 70px; }
   .navbar { padding: 0 1.5rem; }
-  .logo  { height: 42px; }
+  .logo img { height: 42px; }
   .nav-links { display: none; }
   .hamburger { display: flex; }
   .hero { margin-top: 70px; min-height: 45vh; padding: 2rem 1.2rem; }
@@ -135,6 +135,7 @@ footer a { color: #ccc; text-decoration: none; }
 }
 </style>
 </head>
+
 <body>
 
 <!-- Mobile menu FUORI dall'header -->
@@ -184,13 +185,11 @@ footer a { color: #ccc; text-decoration: none; }
 
 <div class="contact-container">
   <div class="contact-info">
-    <img src="images/logo-su-bianco.webp" alt="MANAGECH" width="320" height="100" loading="lazy">
+    <img src="images/1-4.webp" alt="MANAGECH" width="220" height="70" loading="lazy">
     <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Piazza G. Mazzini 27, 00195 Roma</p>
     <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+393493907663">+39 349 390 7663</a></p>
-    <p><i class="fas fa-envelope" aria-hidden="true"></i> 
-<a id="emailSegreteria" href="#">segreteria@managech.com</a></p>
-<p><i class="fas fa-envelope" aria-hidden="true"></i> 
-<a id="emailPec" href="#">managech@pec.it</a></p>
+    <p><i class="fas fa-envelope" aria-hidden="true"></i> <a id="emailSegreteria" href="#">segreteria@managech.com</a></p>
+    <p><i class="fas fa-envelope" aria-hidden="true"></i> <a id="emailPec" href="#">managech@pec.it</a></p>
   </div>
   <div class="contact-map">
     <iframe
@@ -314,7 +313,7 @@ footer a { color: #ccc; text-decoration: none; }
       <p>
         <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Piazza G. Mazzini 27, 00195 Roma<br>
         <i class="fas fa-phone" aria-hidden="true"></i> +39 349 390 7663<br>
-      <i class="fas fa-envelope" aria-hidden="true"></i> <a id="emailFooter" href="#">segreteria@managech.com</a>  
+        <i class="fas fa-envelope" aria-hidden="true"></i> <a id="emailFooter" href="#">segreteria@managech.com</a>
       </p>
     </div>
     <nav aria-label="Footer navigation">
@@ -360,9 +359,10 @@ if (contactForm) {
     if (completo) completo.value = prefisso + " " + telefono;
   });
 }
-  document.getElementById("emailSegreteria").href = "mailto:" + "segreteria" + "@" + "managech.com";
+document.getElementById("emailSegreteria").href = "mailto:" + "segreteria" + "@" + "managech.com";
 document.getElementById("emailPec").href = "mailto:" + "managech" + "@" + "pec.it";
 document.getElementById("emailFooter").href = "mailto:" + "segreteria" + "@" + "managech.com";
 </script>
+
 </body>
 </html>
