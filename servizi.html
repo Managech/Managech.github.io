@@ -63,59 +63,73 @@ header { position: fixed; top: 0; left: 0; width: 100%; height: 90px; background
 h1.hero-title { font-size: 4rem; font-weight: 800; letter-spacing: 4px; color: var(--green); }
 .hero-subtitle { margin-top: .8rem; font-size: 1.2rem; letter-spacing: 2px; color: var(--gray); }
 
-/* SERVICE STRIPS — layout flex identico alla sezione strategica della home */
+/* SERVICE STRIPS */
 .services-wrapper { width: 100%; }
-
-.service-strip {
-  display: flex;
-  align-items: stretch;
-  width: 100%;
-  overflow: hidden;
-  min-height: 480px;
-}
-
+.service-strip { display: flex; align-items: stretch; width: 100%; overflow: hidden; min-height: 480px; }
 .service-strip.blue  { background: var(--blue); color: #fff; }
 .service-strip.white { background: #fff; color: var(--blue); }
-
-/* Inner: flex row, nessun max-width per andare a tutta larghezza come la home */
-.service-strip .inner {
-  width: 100%;
-  display: flex;
-  align-items: stretch;
-}
-
-/* Strip pari: row-reverse → foto a sinistra, testo a destra */
+.service-strip .inner { width: 100%; display: flex; align-items: stretch; }
 .service-strip:nth-child(even) .inner { flex-direction: row-reverse; }
-
-/* Testo: flex:1, padding e max-width identici alla home */
-.service-text {
-  flex: 1;
-  max-width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 4rem;
-}
-
-/* Immagine: flex:1, copre tutta l'altezza */
+.service-text { flex: 1; max-width: 50%; display: flex; flex-direction: column; justify-content: center; padding: 4rem; }
 .service-image { flex: 1; overflow: hidden; }
 .service-image img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 480px; }
-
-/* Icona sopra il titolo */
 .service-icon-large { font-size: 2.2rem; color: var(--green); margin-bottom: 1rem; display: block; }
-
-/* Separatore visivo tra strip bianche adiacenti */
 .service-strip.white + .service-strip.white { border-top: 1px solid #e8e8e8; box-shadow: inset 0 6px 12px -6px rgba(0,0,0,.06); }
-
-/* Testo nelle strip */
 .service-text h2 { font-size: 2.4rem; font-weight: 700; color: var(--green); margin-bottom: 1.2rem; letter-spacing: 1px; }
 .service-text p { font-size: 1.1rem; line-height: 1.75; opacity: .95; text-align: justify; }
 
-/* CTA */
-.services-cta { text-align: center; padding: 5rem 2rem; background: #f4f4f4; }
-.services-cta p { font-size: 1.15rem; color: var(--blue); margin-bottom: 2rem; line-height: 1.7; }
-.btn-cta { display: inline-block; background: var(--green); color: #fff; padding: 1rem 2.5rem; font-size: 1rem; font-weight: 700; border-radius: 6px; text-decoration: none; letter-spacing: .5px; transition: background .3s, transform .3s; }
-.btn-cta:hover { background: #17845e; transform: translateY(-2px); }
+/* PARTICLE BANNER */
+.particle-banner {
+  position: relative;
+  overflow: hidden;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--blue);
+}
+.particle-banner canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.particle-banner-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 3rem 2rem;
+  max-width: 900px;
+}
+.particle-banner-content .typed-heading {
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  font-weight: 800;
+  color: var(--green);
+  line-height: 1.2;
+  margin: 0 0 1.5rem;
+  letter-spacing: 1px;
+  min-height: 4rem;
+}
+.particle-banner-content p {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.7;
+  margin: 0 auto 2.5rem;
+  max-width: 680px;
+}
+.particle-banner-content .btn-particle {
+  display: inline-block;
+  background: var(--green);
+  color: #fff;
+  padding: .9rem 2.4rem;
+  font-size: .95rem;
+  font-weight: 700;
+  border-radius: 6px;
+  text-decoration: none;
+  letter-spacing: .5px;
+  transition: background .3s, transform .3s;
+}
+.particle-banner-content .btn-particle:hover { background: #17845e; transform: translateY(-2px); }
 
 /* WHY SECTION */
 .why-section { padding: 5rem 2rem; }
@@ -155,23 +169,21 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
   .logo img { height: 42px; width: auto; }
   .nav-links { display: none; }
   .hamburger { display: flex; }
-
   .hero { margin-top: 70px; min-height: 45vh; padding: 2rem 1.2rem; }
   h1.hero-title { font-size: clamp(1.6rem, 7vw, 2.8rem); letter-spacing: 1px; line-height: 1.3; }
   .hero-subtitle { font-size: .95rem; letter-spacing: .5px; }
-
   .service-text { padding: 2rem 1.2rem; }
   .service-text h2 { font-size: 1.5rem; }
   .service-text p { font-size: .95rem; }
   .service-image img { min-height: 220px; height: 220px; }
-
+  .particle-banner { min-height: 360px; }
+  .particle-banner-content .typed-heading { min-height: 3rem; }
   .why-section { padding: 3rem 1.2rem; }
   .why-section h2 { font-size: 1.6rem; margin-bottom: 2rem; }
   .why-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
   .why-card { padding: 1.2rem 1rem; }
   .why-card h4 { font-size: 1rem; }
   .why-card p { font-size: .88rem; }
-
   .footer-inner { flex-direction: column; gap: 2rem; }
   .footer-logo { max-width: 300px; }
   footer { padding: 2.5rem 1.2rem 1.5rem; }
@@ -182,6 +194,7 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
 }
 </style>
 </head>
+
 <body>
 
 <!-- Mobile menu FUORI dall'header -->
@@ -226,7 +239,6 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
 <!-- SERVICE STRIPS -->
 <section class="services-wrapper">
 
-  <!-- 1 — bianca — testo sx, foto dx -->
   <div class="service-strip white">
     <div class="inner">
       <div class="service-text">
@@ -240,7 +252,6 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
     </div>
   </div>
 
-  <!-- 2 — blu — row-reverse → foto sx, testo dx -->
   <div class="service-strip blue">
     <div class="inner">
       <div class="service-text">
@@ -254,7 +265,6 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
     </div>
   </div>
 
-  <!-- 3 — bianca — testo sx, foto dx -->
   <div class="service-strip white">
     <div class="inner">
       <div class="service-text">
@@ -268,7 +278,6 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
     </div>
   </div>
 
-  <!-- 4 — blu — row-reverse → foto sx, testo dx -->
   <div class="service-strip blue">
     <div class="inner">
       <div class="service-text">
@@ -282,7 +291,6 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
     </div>
   </div>
 
-  <!-- 5 — bianca — testo sx, foto dx -->
   <div class="service-strip white">
     <div class="inner">
       <div class="service-text">
@@ -296,7 +304,6 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
     </div>
   </div>
 
-  <!-- 6 — blu — row-reverse → foto sx, testo dx -->
   <div class="service-strip blue">
     <div class="inner">
       <div class="service-text">
@@ -310,7 +317,6 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
     </div>
   </div>
 
-  <!-- 7 — bianca — testo sx, foto dx -->
   <div class="service-strip white">
     <div class="inner">
       <div class="service-text">
@@ -324,7 +330,6 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
     </div>
   </div>
 
-  <!-- 8 — blu — row-reverse → foto sx, testo dx -->
   <div class="service-strip blue">
     <div class="inner">
       <div class="service-text">
@@ -340,10 +345,14 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
 
 </section>
 
-<!-- CTA -->
-<div class="services-cta">
-  <p>Hai un progetto in mente o vuoi saperne di più sui nostri servizi?</p>
-  <a href="contatti.html" class="btn-cta">Contattaci</a>
+<!-- PARTICLE BANNER -->
+<div class="particle-banner">
+  <canvas id="particleCanvas"></canvas>
+  <div class="particle-banner-content">
+    <h2 id="typedHeading" class="typed-heading"></h2>
+    <p>Dati, strategia e tecnologia convergono in soluzioni su misura per guidare il cambiamento nelle organizzazioni complesse</p>
+    <a href="contatti.html" class="btn-particle">Parla con noi</a>
+  </div>
 </div>
 
 <!-- WHY MANAGECH -->
@@ -383,8 +392,7 @@ footer { background: var(--blue); color: #ccc; padding: 4rem 2rem 2rem; }
       <p>
         <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Piazza G. Mazzini 27, 00195 Roma<br>
         <i class="fas fa-phone" aria-hidden="true"></i> +39 349 390 7663<br>
-        
-<i class="fas fa-envelope" aria-hidden="true"></i> <a id="emailFooter" href="#">segreteria@managech.com</a>
+        <i class="fas fa-envelope" aria-hidden="true"></i> <a id="emailFooter" href="#">segreteria@managech.com</a>
       </p>
     </div>
     <nav aria-label="Footer navigation">
@@ -421,7 +429,103 @@ mobileMenu.querySelectorAll("a").forEach(function(link) {
     hamburger.setAttribute("aria-expanded", "false");
   });
 });
-  document.getElementById("emailFooter").href = "mailto:" + "segreteria" + "@" + "managech.com";
+document.getElementById("emailFooter").href = "mailto:" + "segreteria" + "@" + "managech.com";
+
+/* PARTICLE BANNER */
+(function(){
+  var canvas = document.getElementById('particleCanvas');
+  var ctx = canvas.getContext('2d');
+  var particles = [];
+  var W, H;
+
+  function resize(){
+    W = canvas.offsetWidth;
+    H = canvas.offsetHeight || 420;
+    canvas.width = W;
+    canvas.height = H;
+  }
+
+  function Particle(){
+    this.x = Math.random() * W;
+    this.y = Math.random() * H;
+    this.vx = (Math.random() - 0.5) * 0.5;
+    this.vy = (Math.random() - 0.5) * 0.5;
+    this.r = Math.random() * 2 + 1;
+  }
+
+  Particle.prototype.update = function(){
+    this.x += this.vx;
+    this.y += this.vy;
+    if(this.x < 0 || this.x > W) this.vx *= -1;
+    if(this.y < 0 || this.y > H) this.vy *= -1;
+  };
+
+  function init(){
+    resize();
+    particles = [];
+    var count = Math.floor((W * H) / 9000);
+    count = Math.max(40, Math.min(count, 120));
+    for(var i = 0; i < count; i++){
+      particles.push(new Particle());
+    }
+  }
+
+  function draw(){
+    ctx.clearRect(0, 0, W, H);
+    for(var i = 0; i < particles.length; i++){
+      particles[i].update();
+      ctx.beginPath();
+      ctx.arc(particles[i].x, particles[i].y, particles[i].r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(31,163,122,0.8)';
+      ctx.fill();
+      for(var j = i + 1; j < particles.length; j++){
+        var dx = particles[i].x - particles[j].x;
+        var dy = particles[i].y - particles[j].y;
+        var dist = Math.sqrt(dx*dx + dy*dy);
+        if(dist < 120){
+          var alpha = (1 - dist/120) * 0.35;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = 'rgba(31,163,122,' + alpha + ')';
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+
+  init();
+  draw();
+  window.addEventListener('resize', init);
+
+  var phrases = [
+    'Decisioni data-driven',
+    'Processi ad alta performance',
+    'Tecnologia che crea valore'
+  ];
+  var pi = 0, ci = 0, deleting = false, pause = 0;
+  var el = document.getElementById('typedHeading');
+
+  function type(){
+    if(pause > 0){ pause--; setTimeout(type, 50); return; }
+    var full = phrases[pi];
+    if(!deleting){
+      ci++;
+      el.textContent = full.slice(0, ci);
+      if(ci === full.length){ deleting = true; pause = 40; setTimeout(type, 50); }
+      else { setTimeout(type, 60); }
+    } else {
+      ci--;
+      el.textContent = full.slice(0, ci);
+      if(ci === 0){ deleting = false; pi = (pi + 1) % phrases.length; pause = 10; setTimeout(type, 50); }
+      else { setTimeout(type, 30); }
+    }
+  }
+  setTimeout(type, 500);
+})();
 </script>
+
 </body>
 </html>
