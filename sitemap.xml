@@ -22,8 +22,23 @@
   </url>
 
   <url>
+    <loc>https://managech.com/case-study.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://managech.com/lavora-con-noi.html</loc>
     <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://managech.com/informativa-privacy.html</loc>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://managech.com/cookie-policy.html</loc>
+    <priority>0.4</priority>
   </url>
 
 </urlset>
