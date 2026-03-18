@@ -75,8 +75,28 @@ h1.hero-title { font-size: 4rem; font-weight: 800; letter-spacing: 4px; color: v
 .contact-info i { color: var(--green); width: 18px; flex-shrink: 0; }
 .contact-info a { color: var(--blue); text-decoration: none; }
 .contact-info a:hover { color: var(--green); }
-.contact-map { flex: 1.5; min-width: 300px; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,.1); }
+.contact-map { flex: 1.5; min-width: 300px; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,.1); min-height: 300px; }
 .contact-map iframe { display: block; width: 100%; height: 100%; min-height: 300px; border: 0; }
+
+/* MAP PLACEHOLDER */
+#map-placeholder {
+  width: 100%; height: 100%; min-height: 300px;
+  background: #f4f4f4;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 1rem; text-align: center; padding: 2rem;
+}
+#map-placeholder i { font-size: 2.5rem; color: var(--green); }
+#map-placeholder p { color: var(--blue); font-size: .95rem; font-weight: 600; max-width: 260px; line-height: 1.5; }
+#map-placeholder small { color: #888; font-size: .78rem; max-width: 260px; line-height: 1.5; }
+#map-placeholder button {
+  background: var(--green); color: #fff; border: none;
+  padding: .65rem 1.5rem; border-radius: 6px;
+  font-family: 'Montserrat', sans-serif; font-size: .85rem;
+  cursor: pointer; font-weight: 600; transition: background .3s;
+}
+#map-placeholder button:hover { background: #17845e; }
+#map-iframe { display: none; }
 
 /* FORM */
 .form-section { background: #f4f4f4; padding: 5rem 2rem; }
@@ -125,7 +145,9 @@ footer a { color: #ccc; text-decoration: none; }
   .contact-intro { padding: 2rem 1.2rem; }
   .contact-intro p { font-size: 1rem; }
   .contact-container { margin: 2rem auto; padding: 0 1.2rem; flex-direction: column; }
+  .contact-map { min-height: 240px; }
   .contact-map iframe { min-height: 240px; }
+  #map-placeholder { min-height: 240px; }
   .form-section { padding: 3rem 1.2rem; }
   .form-wrapper h2 { font-size: 1.5rem; }
   .phone-row select { flex: 0 0 150px; width: 150px; font-size: .78rem; }
@@ -192,16 +214,24 @@ footer a { color: #ccc; text-decoration: none; }
     <p><i class="fas fa-envelope" aria-hidden="true"></i> <a id="emailSegreteria" href="#">segreteria@managech.com</a></p>
     <p><i class="fas fa-envelope" aria-hidden="true"></i> <a id="emailPec" href="#">managech@pec.it</a></p>
   </div>
- <div class="contact-map">
-  <iframe
-    data-cookieyes="cookieyes-analytics"
-    data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5937.80748221322!2d12.460074776783461!3d41.91642797123757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f60f31544089b%3A0x54a128d5c9b620f9!2sPiazza%20Giuseppe%20Mazzini%2C%2027%2C%2000195%20Roma%20RM!5e0!3m2!1sit!2sit!4v1769465478963!5m2!1sit!2sit"
-    width="600" height="400"
-    style="border:0;" allowfullscreen="" loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"
-    title="Sede MANAGECH – Piazza G. Mazzini 27, Roma">
-  </iframe>
-</div>
+
+  <div class="contact-map">
+    <!-- Placeholder visibile finché l'utente non accetta i cookie analytics -->
+    <div id="map-placeholder">
+      <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+      <p>Accetta i cookie per visualizzare la mappa</p>
+      <small>La mappa utilizza Google Maps che richiede il tuo consenso per i cookie analytics.</small>
+      <button onclick="loadMap()">Accetta e mostra mappa</button>
+    </div>
+    <!-- Iframe senza src: viene popolato solo dopo il consenso -->
+    <iframe
+      id="map-iframe"
+      width="600" height="400"
+      style="border:0;" allowfullscreen=""
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Sede MANAGECH – Piazza G. Mazzini 27, Roma">
+    </iframe>
+  </div>
 </div>
 
 <section class="form-section">
@@ -338,6 +368,47 @@ footer a { color: #ccc; text-decoration: none; }
 </footer>
 
 <script>
+/* ── Google Maps: carica solo dopo consenso analytics ── */
+var MAP_SRC = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5937.80748221322!2d12.460074776783461!3d41.91642797123757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f60f31544089b%3A0x54a128d5c9b620f9!2sPiazza%20Giuseppe%20Mazzini%2C%2027%2C%2000195%20Roma%20RM!5e0!3m2!1sit!2sit!4v1769465478963!5m2!1sit!2sit";
+
+function loadMap() {
+  var ph = document.getElementById("map-placeholder");
+  var iframe = document.getElementById("map-iframe");
+  if (!iframe.src || iframe.src === window.location.href) {
+    iframe.src = MAP_SRC;
+  }
+  if (ph) ph.style.display = "none";
+  iframe.style.display = "block";
+}
+
+/* Controlla se il consenso era già stato dato in una visita precedente */
+function checkExistingConsent() {
+  try {
+    var ckyes = document.cookie.split(";").find(function(c) {
+      return c.trim().startsWith("cookieyes-consent=");
+    });
+    if (ckyes) {
+      var val = decodeURIComponent(ckyes.split("=")[1]);
+      if (val.indexOf("analytics:yes") !== -1) {
+        loadMap();
+      }
+    }
+  } catch(e) {}
+}
+
+/* Ascolta l'evento di aggiornamento consenso di CookieYes */
+document.addEventListener("cookieyes_consent_update", function(e) {
+  if (e.detail && e.detail.accepted && e.detail.accepted.indexOf("analytics") !== -1) {
+    loadMap();
+  }
+});
+
+/* Al caricamento della pagina controlla se il consenso esiste già */
+window.addEventListener("load", function() {
+  checkExistingConsent();
+});
+
+/* ── Hamburger menu ── */
 var hamburger = document.getElementById("hamburger");
 var mobileMenu = document.getElementById("mobileMenu");
 hamburger.addEventListener("click", function() {
@@ -352,6 +423,8 @@ mobileMenu.querySelectorAll("a").forEach(function(link) {
     hamburger.setAttribute("aria-expanded", "false");
   });
 });
+
+/* ── Form ── */
 var contactForm = document.getElementById("contactForm");
 if (contactForm) {
   contactForm.addEventListener("submit", function() {
@@ -361,6 +434,8 @@ if (contactForm) {
     if (completo) completo.value = prefisso + " " + telefono;
   });
 }
+
+/* ── Email obfuscation ── */
 document.getElementById("emailSegreteria").href = "mailto:" + "segreteria" + "@" + "managech.com";
 document.getElementById("emailPec").href = "mailto:" + "managech" + "@" + "pec.it";
 document.getElementById("emailFooter").href = "mailto:" + "segreteria" + "@" + "managech.com";
